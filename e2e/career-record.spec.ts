@@ -1,0 +1,95 @@
+import { expect, test } from '@playwright/test';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { instant } from '@next/playwright';
+
+test('shows the Career Record shell immediately when opening it from home', async ({ page }) => {
+  await page.goto('/');
+  await instant(page, async () => {
+    await page.getByRole('link', { name: 'Build your Career Record', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Career Record', exact: true })).toBeVisible();
+    await expect(page.getByRole('status')).toHaveText('Loading your Career Record…');
+    await expect(page.getByLabel('Name · English', { exact: true })).toBeHidden();
+  });
+  await expect(page.getByLabel('Name · English', { exact: true })).toBeVisible();
+});
+
+test('autosaves bilingual CRUD for every entry kind and retries failed saves', async ({ page }) => {
+  await page.goto('/career-record');
+  const saved = () => expect(page.getByRole('status')).toHaveText('Saved');
+  await page.getByLabel('Name · English', { exact: true }).fill('Verification person');
+  await page.getByRole('button', { name: 'Name: edit Arabic version', exact: true }).click();
+  await expect(page.getByLabel('Name · Arabic (optional)', { exact: true })).toBeFocused();
+  await page.getByLabel('Name · Arabic (optional)', { exact: true }).fill('اسم تجريبي');
+  await page.getByRole('dialog').getByRole('button', { name: 'Done', exact: true }).click();
+  const arabicBadge = page.getByRole('button', { name: 'Name: edit Arabic version', exact: true });
+  await expect(arabicBadge).toHaveClass(/has-arabic/);
+  await expect(arabicBadge).toBeFocused();
+  await arabicBadge.click();
+  await page.getByLabel('Name · Arabic (optional)', { exact: true }).fill('');
+  await page.keyboard.press('Escape');
+  await expect(arabicBadge).not.toHaveClass(/has-arabic/);
+  await arabicBadge.click();
+  await page.getByLabel('Name · Arabic (optional)', { exact: true }).fill('اسم تجريبي');
+  await page.keyboard.press('Escape');
+  await saved();
+  await page.getByRole('button', { name: 'Add experience', exact: true }).click();
+  const experience = page.getByRole('group', { name: 'Experience 1', exact: true });
+  await experience.getByLabel('Employer · English (required)', { exact: true }).fill('Example employer');
+  await experience.getByLabel('Job title · English (required)', { exact: true }).fill('Developer');
+  await experience.getByLabel('Start month (required)', { exact: true }).fill('2022-01');
+  await experience.getByRole('button', { name: 'Add achievement' }).click();
+  await experience.getByLabel('Achievement 1 · English (required)', { exact: true }).fill('Built a useful application');
+  await experience.getByRole('button', { name: 'Achievement 1: edit Arabic version', exact: true }).click();
+  await experience.getByLabel('Achievement 1 · Arabic (optional)', { exact: true }).fill('بناء تطبيق مفيد');
+  await page.getByRole('dialog').getByRole('button', { name: 'Done', exact: true }).click();
+  await experience.getByRole('button', { name: 'Add achievement' }).click();
+  await experience.getByLabel('Achievement 2 · English (required)', { exact: true }).fill('Improved performance');
+  await experience.getByRole('button', { name: 'Move up', exact: true }).last().click();
+  await saved();
+  await page.getByRole('button', { name: 'Add education', exact: true }).click();
+  const education = page.getByRole('group', { name: 'Education 1', exact: true });
+  await education.getByLabel('Institution · English (required)', { exact: true }).fill('Example university');
+  await education.getByLabel('Qualification · English (required)', { exact: true }).fill('Degree');
+  await education.getByLabel('Start month (required)', { exact: true }).fill('2018-09');
+  await saved();
+  await page.getByRole('button', { name: 'Add project', exact: true }).click();
+  const project = page.getByRole('group', { name: 'Projects 1', exact: true });
+  await project.getByLabel('Name · English (required)', { exact: true }).fill('Portfolio');
+  await project.getByLabel('Description · English (required)', { exact: true }).fill('Personal website');
+  await saved();
+  await page.getByRole('button', { name: 'Add skill', exact: true }).click();
+  await page.getByLabel('Skill · English (required)', { exact: true }).fill('TypeScript');
+  await page.getByRole('button', { name: 'Skill: edit Arabic version', exact: true }).click();
+  await page.getByLabel('Skill · Arabic (optional)', { exact: true }).fill('تايب سكريبت');
+  await page.getByRole('dialog').getByRole('button', { name: 'Done', exact: true }).click();
+  await saved();
+  await page.getByRole('button', { name: 'Add certification', exact: true }).click();
+  const certificate = page.getByRole('group', { name: 'Certifications 1', exact: true });
+  await certificate.getByLabel('Name · English (required)', { exact: true }).fill('Certificate');
+  await certificate.getByLabel('Issuer · English (required)', { exact: true }).fill('Example issuer');
+  await saved();
+  await page.reload();
+  await expect(page.getByLabel('Name · Arabic (optional)', { exact: true }).first()).toHaveValue('اسم تجريبي');
+  await expect(page.getByLabel('Achievement 1 · English (required)', { exact: true })).toHaveValue('Improved performance');
+  await expect(page.getByLabel('Skill · English (required)', { exact: true })).toHaveValue('TypeScript');
+  const directory = process.env.CAREERY_E2E_DATA_DIR;
+  if (!directory) throw new Error('Missing isolated test directory');
+  const record = JSON.parse(await readFile(join(directory, 'career-record.json'), 'utf8'));
+  expect(record.entries).toHaveLength(5);
+
+  await page.route('**/career-record', (route) => route.request().method() === 'POST' ? route.abort() : route.continue());
+  await page.getByLabel('Phone', { exact: true }).fill('+20 100 000 0000');
+  await expect(page.getByRole('status')).toContainText('Could not save');
+  await expect(page.getByLabel('Phone', { exact: true })).toHaveValue('+20 100 000 0000');
+  await page.unroute('**/career-record');
+  await page.getByRole('button', { name: 'Save now / retry', exact: true }).click();
+  await saved();
+  page.on('dialog', (dialog) => dialog.accept());
+  for (const kind of ['experience', 'education', 'project', 'skill', 'certification']) {
+    await page.getByRole('button', { name: `Delete ${kind}`, exact: true }).click();
+    await saved();
+  }
+  await page.reload();
+  await expect(page.getByRole('group')).toHaveCount(0);
+});

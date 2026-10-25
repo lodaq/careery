@@ -1,2 +1,45 @@
-# careery
-enhance your career
+# Careery
+
+A personal, local-first resume builder: keep reusable English/Arabic career content, organize editable Profiles and independent Resumes, tailor a Resume, and download an A4 PDF.
+
+Implementation has started: the local app scaffold, Career Record editor for all five entry kinds, Profile management with independent copies and Unfiled, PDF smoke route, independent bilingual data contracts, and atomic JSON storage are implemented. Resume creation and editing are not implemented yet. The JavaScript budget is 180 kB per route, approved after measuring the framework baseline. See the task list for verified progress.
+
+- [Project specification](SPEC-MAP.md) and linked module specs
+- [Domain language](GLOSSARY.md)
+- [Independent content decision](docs/adr/0002-independent-content-and-resume-organization.md)
+- [Quality constraints](CONSTRAINTS.md)
+- [Implementation plan](tasks/plan.md) and [task cards](tasks/todo.md)
+
+Tooling: Next.js App Router, strict TypeScript, Tailwind for the app, isolated plain CSS for the Resume template, local JSON persistence, and Playwright PDF export.
+## Run locally
+
+Requires Node.js 20.9+ and pnpm 12.14.0.
+
+```sh
+pnpm install
+pnpm exec playwright install chromium
+NEXT_TELEMETRY_DISABLED=1 pnpm dev
+```
+
+Open http://127.0.0.1:3000. The development server binds only to loopback. The `/career-record` page edits bilingual content with automatic saving, validation and retry. It prevents stale tabs from overwriting newer saves. The home page creates and lists Profiles; Profile editors select Career Record copies and edit them independently. Deleting a Profile moves its Resumes to Unfiled. The temporary `/api/pdf/test` route downloads a PDF of the home page; it will be replaced by Resume export later.
+
+## Verify
+
+```sh
+pnpm test
+pnpm typecheck
+pnpm lint
+CAREERY_BUILD_DIR=.next-build NEXT_TELEMETRY_DISABLED=1 pnpm build
+```
+
+The separate build directory preserves the running development server. For the production readiness test, build with `CAREERY_INSTANT_TEST=1` as documented in `instant-nav.rig.md`, then run `pnpm exec playwright test`.
+
+`data/` contains editable personal data and is intended to be versioned in this local project. Tests use isolated temporary directories. Storage rejects legacy `profiles.json` until an explicit migration is provided.
+
+### Fictional demo data and Resume editing
+
+Run `pnpm seed:demo` to add 80 bilingual career entries, 8 Profiles, and 54 Resumes (including 6 Unfiled). Demo content is clearly fictional. The seed preserves existing IDs and personal content; rerunning it does not duplicate demo entries. Stop other writers while seeding.
+
+Open a Profile or Unfiled to create, reopen, or delete Resumes. The Resume editor supports independent bilingual wording, Career Record selection, hiding and ordering entries, section order, language choice, autosave, and moving between Profiles and Unfiled. The live A4 preview and PDF download share one template. Arabic uses RTL with unchanged LTR email/URL values; missing Arabic shows highlighted local English. The paginated preview shows the generated PDF itself, with an exact page count and a small overflow warning. It refreshes after saving; the selectable live text preview remains available while it updates. Download waits for autosave and offers retry after failures. Preview and download use identical PDF bytes, including page boundaries. Browsers without embedded PDF support can open the preview in a new tab.
+
+Saved Resume lists put the most recently edited items first. Existing undated Resumes retain their relative order until edited; no historical edit dates are invented. Opening previews and downloading PDFs do not update edit times.
