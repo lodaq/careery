@@ -1,0 +1,12 @@
+.resume-dashboard { max-width:1200px; }
+.library-heading { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:28px; }
+.library-heading p { color:var(--muted-foreground); margin:8px 0 0; }
+.library-filters { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:24px 0 16px; }
+.library-filters > a { margin-left:auto; color:var(--muted-foreground); font-size:13px; }
+.library-filters [aria-pressed=true] { background:var(--accent); color:var(--accent-foreground); }
+.library-search { max-width:560px; }
+.library-document { display:grid; place-items:center; width:40px; height:48px; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); flex:none; }
+.resume-library .resume-list { margin-top:24px; }
+.resume-library .resume-list-item:hover { background:var(--muted); }
+.library-empty { padding:40px 0; color:var(--muted-foreground); }
+@media(max-width:540px) { .library-heading { align-items:flex-start; flex-direction:column; gap:16px; } .library-filters > a { margin-left:0; } }

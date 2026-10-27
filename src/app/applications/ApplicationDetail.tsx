@@ -1,0 +1,54 @@
+import Link from 'next/link';
+import { SubmittedResume } from './SubmittedResume';
+import { NativeSelect } from '@/components/ui/native-select';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { ApplicationForm, AppField } from './ApplicationForm';
+import { EditContact, InterviewForm, ItemAction, Tasks, UploadDocument } from './ApplicationItems';
+import { cairoDate, detailFields, lastContact, nextTask, statuses } from './application-types';
+import type { DetailKey, JobApplication, ApplicationSummary } from './application-types';
+const multiline = ['description', 'skills', 'benefits', 'interest', 'strengths', 'gaps', 'concerns', 'notes', 'coverLetter', 'answers', 'offerBenefits', 'negotiation', 'outcomeReason'];
+const dateFields = ['foundDate', 'deadline', 'appliedDate', 'startDate', 'offerDeadline', 'outcomeDate'];
+function Fields({ app, fields }: { app: ApplicationSummary; fields: DetailKey[] }) {
+  if (fields.length > 20) {
+    const groups: { title: string; keys: DetailKey[] }[] = [
+      { title: 'Posting & role', keys: ['jobUrl', 'reference', 'description', 'location', 'seniority', 'department', 'employmentType', 'skills'] },
+      { title: 'Work eligibility', keys: ['eligibleCountries', 'timezone', 'relocation', 'sponsorship'] },
+      { title: 'Compensation', keys: ['salaryMin', 'salaryMax', 'currency', 'payPeriod', 'bonus', 'equity', 'benefits', 'expectedSalary'] },
+      { title: 'Interest & fit', keys: ['interest', 'strengths', 'gaps', 'concerns'] },
+      { title: 'Discovery & submission', keys: ['source', 'sourceUrl', 'referral', 'foundDate', 'deadline', 'appliedDate', 'submissionMethod', 'confirmation', 'tags', 'notes'] },
+      { title: 'Outcome', keys: ['outcomeDate', 'outcomeReason', 'applyAgain'] },
+    ];
+    return <>{groups.map((group, index) => <Collapsible key={group.title} defaultOpen={index === 0} className="application-field-group"><CollapsibleTrigger className="application-disclosure">{group.title}</CollapsibleTrigger><CollapsibleContent keepMounted><Fields app={app} fields={group.keys} /></CollapsibleContent></Collapsible>)}</>;
+  }
+  return <div className="application-fields">{fields.map((key) => <AppField key={key} name={key} label={detailFields[key]} value={app.details[key]} type={dateFields.includes(key) ? 'date' : ['jobUrl', 'sourceUrl', 'portfolio'].includes(key) ? 'url' : 'text'} multiline={multiline.includes(key)} />)}</div>;
+}
+function Identity({ app }: { app: ApplicationSummary }) { return <><input type="hidden" name="company" value={app.company} /><input type="hidden" name="role" value={app.role} /></>; }
+const time = (at: string, timezone = 'Africa/Cairo') => new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: timezone }).format(new Date(at));
+export function ApplicationDetail({ app: application, resumes }: { app: JobApplication; resumes: { id: string; name: string }[] }) {
+  const { documents, ...app } = application;
+  const today = cairoDate();
+  const daysSince = (value: string) => Math.max(0, Math.floor((Date.parse(today) - Date.parse(value.length > 10 ? cairoDate(new Date(value)) : value)) / 86400000));
+  const contact = lastContact(app);
+  return <>
+    <Link href="/applications" prefetch={false}>← Applications</Link>
+    <p className="application-meta">{app.details.appliedDate ? `${daysSince(app.details.appliedDate)} days since applying` : 'Not applied'} · {contact ? `${daysSince(contact)} days since last contact` : 'No contact recorded'}</p>
+    <div className="section-title application-detail-title"><div><h1>{app.company}</h1><p>{app.role} · {app.status}{app.archived ? ' · Archived' : ''}</p><p className="application-meta">{nextTask(app) ? `Next: ${nextTask(app)!.title}${nextTask(app)!.due ? ` · ${nextTask(app)!.due}` : ''}` : 'No next action scheduled'}</p></div>{app.details.jobUrl && <a href={app.details.jobUrl} target="_blank" rel="noreferrer">Open job posting ↗</a>}</div>
+    <ApplicationForm id={app.id} revision={app.revision} operation="edit"><div className="application-fields"><AppField name="company" label="Company" value={app.company} required /><AppField name="role" label="Job title" value={app.role} required /><AppField name="status" label="Status" options={statuses} value={app.status} /><AppField name="priority" label="Priority" options={['High', 'Medium', 'Low']} value={app.priority} /></div></ApplicationForm>
+    <Tasks app={app} />
+    <Tabs defaultValue="overview" className="application-tabs"><TabsList variant="line" aria-label="Application details">{['Overview', 'Activity', 'Interviews', 'Documents', 'Offer'].map((tab) => <TabsTrigger key={tab} value={tab.toLowerCase()}>{tab}</TabsTrigger>)}</TabsList>
+      <TabsContent value="overview"><section className="application-section"><h2>Job details</h2><ApplicationForm id={app.id} revision={app.revision} operation="edit"><Identity app={app} /><div className="application-fields"><AppField name="arrangement" label="Work arrangement" options={['', 'Remote', 'Hybrid', 'On-site']} value={app.arrangement} /></div><Fields app={app} fields={['jobUrl', 'reference', 'description', 'location', 'eligibleCountries', 'timezone', 'relocation', 'sponsorship', 'seniority', 'department', 'employmentType', 'skills', 'salaryMin', 'salaryMax', 'currency', 'payPeriod', 'bonus', 'equity', 'benefits', 'expectedSalary', 'interest', 'strengths', 'gaps', 'concerns', 'source', 'sourceUrl', 'referral', 'foundDate', 'deadline', 'appliedDate', 'submissionMethod', 'confirmation', 'tags', 'notes', 'outcomeDate', 'outcomeReason', 'applyAgain']} /></ApplicationForm></section>
+        <section className="application-section"><h2>Contacts</h2><ul className="application-items">{app.contacts.map((contact) => <li key={contact.id}><h3>{contact.name}</h3><p>{[contact.role, contact.relationship, contact.email, contact.phone].filter(Boolean).join(' · ')}</p>{contact.linkedin && <p><a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></p>}<EditContact app={app} contact={contact} /><ItemAction app={app} operation="removeItem" values={{ collection: 'contacts', itemId: contact.id }} label="Delete contact" destructive /></li>)}</ul><ApplicationForm id={app.id} revision={app.revision} operation="contact" label="Add contact" reset><div className="application-fields"><AppField name="name" label="Contact name" required /><AppField name="contactRole" label="Contact role" /><AppField name="email" label="Email" type="email" /><AppField name="phone" label="Phone" /><AppField name="linkedin" label="LinkedIn URL" type="url" /><AppField name="relationship" label="Relationship" /></div></ApplicationForm></section>
+      </TabsContent>
+      <TabsContent value="activity"><section className="application-section"><h2>Activity timeline</h2><ApplicationForm id={app.id} revision={app.revision} operation="event" label="Log activity" reset><div className="application-fields"><AppField name="kind" label="Activity type" options={['note', 'email', 'call', 'message', 'response']} value="note" /><AppField name="at" label="Time (your device timezone; blank for now)" type="datetime-local" /><AppField name="text" label="Activity" required /></div></ApplicationForm><ul className="application-items">{[...app.events].sort((a, b) => b.at.localeCompare(a.at)).map((event) => <li key={event.id}><p className="application-meta">{event.kind} · <time dateTime={event.at}>{time(event.at)} Cairo</time></p><p className="application-note">{event.text}</p></li>)}</ul></section></TabsContent>
+      <TabsContent value="interviews"><section className="application-section"><h2>Interviews & assessments</h2>{!app.interviews.length && <p>No rounds scheduled.</p>}<ul className="application-items">{app.interviews.map((item) => <li key={item.id}><h3>{item.title}</h3><p className="application-meta">{item.kind}{item.at ? ` · ${time(item.at, item.timezone)} ${item.timezone}` : ''}</p><Collapsible><CollapsibleTrigger className="application-disclosure">Edit round & feedback</CollapsibleTrigger><CollapsibleContent><InterviewForm app={app} item={item} /></CollapsibleContent></Collapsible><div className="application-form-actions"><ItemAction app={app} operation="removeItem" values={{ collection: 'interviews', itemId: item.id }} label="Delete round" destructive /></div></li>)}</ul><h3>Add round</h3><InterviewForm app={app} /></section></TabsContent>
+      <TabsContent value="documents"><section className="application-section"><h2>Submitted materials</h2><ul className="application-items">{documents.map((document) => <li key={document.id}><div className="application-item-heading"><div><a href={`/api/applications/${app.id}/documents/${document.id}`}>{document.name}{document.resume ? ' · Resume snapshot (.json)' : ''}</a><p className="application-meta">Saved {time(document.createdAt)} Cairo{document.size ? ` · ${Math.ceil(document.size / 1024)} KB` : ''}</p></div><ItemAction app={app} operation="removeItem" values={{ collection: 'documents', itemId: document.id }} label="Delete document" destructive /></div>{document.resume && <Collapsible><CollapsibleTrigger className="application-disclosure">View submitted Resume</CollapsibleTrigger><CollapsibleContent><SubmittedResume resume={document.resume} /></CollapsibleContent></Collapsible>}</li>)}</ul>
+        {resumes.length ? <ApplicationForm id={app.id} revision={app.revision} operation="snapshot" label="Record Resume submission"><div className="application-field"><label htmlFor="resumeId">Resume</label><NativeSelect id="resumeId" name="resumeId">{resumes.map((resume) => <option key={resume.id} value={resume.id}>{resume.name}</option>)}</NativeSelect></div></ApplicationForm> : <p><Link prefetch={false} href="/resumes">Create a Resume</Link> to record a submission.</p>}
+        <div className="application-section"><UploadDocument app={app} /></div>
+        <ApplicationForm id={app.id} revision={app.revision} operation="edit"><Identity app={app} /><Fields app={app} fields={['coverLetter', 'portfolio', 'answers']} /></ApplicationForm>
+      </section></TabsContent>
+      <TabsContent value="offer"><section className="application-section"><h2>Offer & negotiation</h2><ApplicationForm id={app.id} revision={app.revision} operation="edit"><Identity app={app} /><Fields app={app} fields={['offerSalary', 'currency', 'payPeriod', 'offerBonus', 'offerEquity', 'offerBenefits', 'offerArrangement', 'startDate', 'offerDeadline', 'negotiation']} /></ApplicationForm></section></TabsContent>
+    </Tabs>
+    <div className="application-danger"><ItemAction app={app} operation="archive" label={app.archived ? 'Restore application' : 'Archive application'} icon="restore" /><ItemAction app={app} operation="delete" label="Delete application" destructive /></div>
+  </>;
+}

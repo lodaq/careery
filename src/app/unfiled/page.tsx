@@ -11,5 +11,5 @@ async function Resumes() {
   return <ResumeList resumes={sortResumes(resumes).map((resume) => ({ id: resume.id, name: resume.name, language: resume.language, revision: resumeRevision(resume) }))} />;
 }
 export default function UnfiledPage() {
-  return <WorkspaceShell navigation={<Link href="/">Back to workspace</Link>}><h1>Unfiled</h1><p className="page-intro">Resumes that do not belong to a Profile. Deleting a Profile preserves its Resumes here.</p><Suspense fallback={<p role="status">Loading your Resumes…</p>}><Resumes /></Suspense></WorkspaceShell>;
+  return <WorkspaceShell contentId="unfiled-content" navigation={<Link prefetch={false} href="/profiles">Back to workspace</Link>}><h1>Unfiled</h1><p className="page-intro">Resumes that do not belong to a Profile. Deleting a Profile preserves its Resumes here.</p><Suspense fallback={<p role="status">Loading your Resumes…</p>}><Resumes /></Suspense></WorkspaceShell>;
 }

@@ -5,5 +5,6 @@ export const metadata: Metadata = {
   description: 'A personal workspace for your career and resumes.',
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>;
+  // Browser extensions can add body attributes before React hydrates.
+  return <html lang="en" suppressHydrationWarning><body suppressHydrationWarning><script dangerouslySetInnerHTML={{ __html: "try{document.documentElement.classList.toggle('dark',localStorage.getItem('careery-theme')==='dark')}catch{document.documentElement.classList.remove('dark')}" }} />{children}</body></html>;
 }

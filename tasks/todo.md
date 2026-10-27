@@ -302,3 +302,20 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 - Added backward-compatible optional `updatedAt` metadata. Creation and real persisted changes stamp server time; unchanged saves preserve both timestamp and revision. No historical timestamps were filled into existing data.
 - Unit tests cover stable sorting, immutable input, default and previously edited no-op saves, real changes and creation timestamps. Browser tests cover both containers, editing a legacy Resume, promotion to first position and reload persistence.
 - 33 unit/component tests and all 13 production browser scenarios pass; typecheck and lint pass. Testing-build route JS remains under 180,000 gzip bytes (largest observed: Profile 161,279). Runtime dependency count remains three.
+
+## Tadween reference redesign (2026-10-25)
+
+- Implemented compact Edit/Customize/Review navigation, sidebar editing, lavender styling and persistent PDF preview using the supplied screenshots.
+- Added six shared-layout visual variants, saved typography/color/spacing controls, section visibility, drag ordering and a local readiness checklist. Arabic badge dialogs and independent Resume content remain supported.
+- Verified 37 tests, resolver 100% coverage, 15 production browser scenarios, typecheck/lint, and desktop/mobile rendering. Route bundles remain below 180,000 gzip bytes, with no new runtime dependencies.
+
+## Resume library reference (2026-10-25)
+
+- Added /resumes with screenshot-inspired compact navigation, lavender background, searchable cards, profile/unfiled filters and an expandable creation form. Profiles remain at / and existing Profile/Unfiled workflows remain available.
+- Search and organization filter composition covered by a component test. All 38 tests, typecheck, lint and production build pass. Real browser confirmed six Unfiled results, creation form expansion, no overflow at 390px, zero axe violations/incomplete checks and no Next compilation issues.
+
+## Compact translation controls and visual consistency (2026-10-25)
+
+- Moved all shared BilingualInput Arabic controls beside field labels; inputs/textareas now fill the available width. Badges are 26×22px with populated styling, accessible labels, keyboard focus and larger coarse-pointer hit regions.
+- Unified shared lavender/plum tokens and inherited app control fonts; aligned primary actions, input borders and translation dialogs. Resume document typography remains separate.
+- Verified 38 tests, typecheck/lint, native dialog open/close, and no horizontal overflow at 320/768/1024/1440px. Axe reports no confirmed violations; the pre-existing closed native dialog aria-controls check requires manual review, and references resolve to mounted dialogs. Next reports no compilation issues.

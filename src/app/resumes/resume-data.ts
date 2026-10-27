@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from 'node:crypto';
 import { readRecord, updateWorkspace } from '../../lib/storage';
 import { copyResume, type Resume } from '../../lib/types';
+import { parseAppearance } from './appearance';
 import { parseRecord } from '../career-record/record-data';
 export const resumeRevision = (resume: Resume) => createHash('sha256').update(JSON.stringify(resume)).digest('hex');
 export function sortResumes(resumes: Resume[]): Resume[] {
@@ -26,7 +27,7 @@ export async function createResume(form: FormData) {
 }
 export async function saveResume(id: string, form: FormData) {
   try {
-    const content = parseRecord(form), name = title(form, 'resumeName');
+    const content = parseRecord(form), name = title(form, 'resumeName'), appearance = parseAppearance(form);
     const language = form.get('language');
     if (language !== 'en' && language !== 'ar') throw new Error('Choose English or Arabic.');
     const slot = (key: string) => {
@@ -42,11 +43,13 @@ export async function saveResume(id: string, form: FormData) {
       if (profileId && !workspace.profiles.some((item) => item.id === profileId)) throw new Error('The selected Profile no longer exists.');
       const sectionOrder = form.getAll('sectionOrder').map(String);
       if (sectionOrder.length !== 6 || new Set(sectionOrder).size !== 6 || sectionOrder.some((kind) => !['summary', 'experience', 'education', 'projects', 'skills', 'certifications'].includes(kind))) throw new Error('Invalid section order.');
+      const hiddenSections = form.getAll('hiddenSectionId').map(String);
+      if (hiddenSections.some((kind) => !sectionOrder.includes(kind))) throw new Error('Invalid hidden section.');
       const hiddenEntryIds = form.getAll('hiddenEntryId').map(String);
       if (hiddenEntryIds.some((key) => !content.entries.some((entry) => entry.id === key))) throw new Error('Invalid hidden entry.');
       if (resume.language !== language) workspace.lastLanguage = language;
       const before = JSON.stringify(resume);
-      Object.assign(resume, { name, language, profileId, basics: content.basics, entries: content.entries, headline, summary, hiddenEntryIds, sectionOrder });
+      Object.assign(resume, { name, language, profileId, basics: content.basics, entries: content.entries, headline, summary, hiddenEntryIds, sectionOrder, ...(appearance ? { appearance } : {}), ...(hiddenSections.length || resume.hiddenSections ? { hiddenSections } : {}) });
       if (JSON.stringify(resume) !== before) resume.updatedAt = new Date().toISOString();
     });
     return { revision: resumeRevision(workspace.resumes.find((item) => item.id === id)!) };

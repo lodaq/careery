@@ -13,7 +13,7 @@ async function Editor() {
   return <RecordEditor record={record} revision={recordRevision(record)} saveAction={saveCareerRecord} />;
 }
 export default function CareerRecordPage() {
-  return <WorkspaceShell navigation={<Link href="/">Back to workspace</Link>} className="record-main"><h1>Career Record</h1><p className="page-intro">Your experience, in your own words. Build it once, then choose what belongs in each resume.</p>
+  return <WorkspaceShell contentId="career-content" navigation={<Link prefetch={false} href="/">Back to workspace</Link>} className="record-main"><h1>Career Record</h1><p className="page-intro">Your experience, in your own words. Build it once, then choose what belongs in each resume.</p>
       <Suspense fallback={<p role="status">Loading your Career Record…</p>}><Editor /></Suspense>
   </WorkspaceShell>;
 }

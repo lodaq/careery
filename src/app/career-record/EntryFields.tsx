@@ -1,11 +1,21 @@
 'use client';
+import { useConfirmAction } from '@/components/ConfirmAction';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { FieldGroup, FieldLabel } from '@/components/ui/field';
+
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { SortableList } from '@/components/ui/sortable-list';
+import { ChevronDownIcon } from 'lucide-react';
 import { useState } from 'react';
 import type { CareerEntry } from '../../lib/types';
 import { BilingualInput } from '../../components/BilingualInput';
 
 export function EntryFields({ entry, changed }: { entry: CareerEntry; changed: () => void }) {
+  const { confirm, confirmation } = useConfirmAction();
+  const [newBulletIds, setNewBulletIds] = useState<string[]>([]);
   const [bullets, setBullets] = useState('bullets' in entry ? entry.bullets : []);
-  return <>
+  return <>{confirmation}
     {entry.kind === 'experience' ? <>
       <BilingualInput name={`${entry.id}.employer`} label="Employer" value={entry.employer} required />
       <BilingualInput name={`${entry.id}.title`} label="Job title" value={entry.title} required />
@@ -19,24 +29,26 @@ export function EntryFields({ entry, changed }: { entry: CareerEntry; changed: (
     {entry.kind === 'skills' ? <BilingualInput name={`${entry.id}.category`} label="Category" value={entry.category ?? { en: '' }} /> : null}
     {entry.kind === 'certifications' ? <>
       <BilingualInput name={`${entry.id}.issuer`} label="Issuer" value={entry.issuer} required />
-      <label>Issued month<input type="month" name={`${entry.id}.date`} defaultValue={entry.date ?? ''} /></label>
+      <FieldLabel>Issued month<Input type="month" name={`${entry.id}.date`} defaultValue={entry.date ?? ''} /></FieldLabel>
     </> : null}
-    {entry.kind === 'projects' || entry.kind === 'certifications' ? <label>Web address<input type="url" name={`${entry.id}.url`} defaultValue={entry.url ?? ''} maxLength={2000} autoComplete="url" dir="ltr" spellCheck={false} /></label> : null}
-    {'dates' in entry ? <div className="field-grid">
-      <label>Start month (required)<input type="month" name={`${entry.id}.start`} defaultValue={entry.dates.start} required /></label>
-      <label>End month <span className="optional">(leave empty for present)</span><input type="month" name={`${entry.id}.end`} defaultValue={entry.dates.end ?? ''} /></label>
-    </div> : null}
+    {entry.kind === 'projects' || entry.kind === 'certifications' ? <FieldLabel>Web address<Input type="url" name={`${entry.id}.url`} defaultValue={entry.url ?? ''} maxLength={2000} autoComplete="url" dir="ltr" spellCheck={false} /></FieldLabel> : null}
+    {'dates' in entry ? <FieldGroup className="field-grid">
+      <FieldLabel>Start month<Input type="month" name={`${entry.id}.start`} defaultValue={entry.dates.start} required /></FieldLabel>
+      <FieldLabel>End month<Input type="month" name={`${entry.id}.end`} defaultValue={entry.dates.end ?? ''} /><span className="optional">Leave empty for present</span></FieldLabel>
+    </FieldGroup> : null}
     {'bullets' in entry ? <div className="bullet-fields">
-      <h3>Achievements</h3>
-      {bullets.map((bullet, index) => <div className="bullet-row" key={bullet.id}>
+      <div className="achievement-section-heading"><h3>Achievements</h3><Button variant="outline" type="button" onClick={() => { const id = crypto.randomUUID(); setNewBulletIds((items) => [...items, id]); setBullets((items) => [...items, { id, text: { en: '' } }]); changed(); }}>Add achievement</Button></div>
+      <SortableList items={bullets} label="Achievements" itemLabel={(_bullet, index) => `achievement ${index + 1}`} onReorder={(items) => { setBullets(items); changed(); }} renderItem={(bullet, index, handle) => <Collapsible className="bullet-row" key={bullet.id} onChangeCapture={(event) => { const input = event.target; if (input instanceof HTMLTextAreaElement && input.name.startsWith(`${entry.id}.${bullet.id}.`)) { const language = input.name.endsWith('.ar') ? 'ar' : 'en'; setBullets((items) => items.map((item) => item.id === bullet.id ? { ...item, text: { ...item.text, [language]: input.value } } : item)); } }} defaultOpen={newBulletIds.includes(bullet.id)}>
+        <div className="achievement-header">{handle}<CollapsibleTrigger render={<Button variant="ghost" />}><span>Achievement {index + 1}<small>{bullet.text.en || bullet.text.ar || 'New achievement'}</small></span><ChevronDownIcon className="entry-chevron" aria-hidden="true" /></CollapsibleTrigger></div>
+        <CollapsibleContent keepMounted>
         <input type="hidden" name={`${entry.id}.bulletId`} value={bullet.id} />
         <BilingualInput name={`${entry.id}.${bullet.id}`} label={`Achievement ${index + 1}`} value={bullet.text} required multiline />
-        <div className="row-actions">
-          <button type="button" disabled={index === 0} onClick={() => { setBullets((items) => { const next = [...items]; [next[index - 1], next[index]] = [next[index], next[index - 1]]; return next; }); changed(); }}>Move up</button>
-          <button type="button" onClick={() => { if (window.confirm('Remove this achievement?')) { setBullets((items) => items.filter((item) => item.id !== bullet.id)); changed(); } }}>Remove achievement</button>
+        <div className="row-actions achievement-actions">
+
+          <Button variant="destructive" type="button" onClick={async () => { if (await confirm('Remove this achievement?')) { setBullets((items) => items.filter((item) => item.id !== bullet.id)); changed(); } }}>Remove achievement</Button>
         </div>
-      </div>)}
-      <button type="button" onClick={() => { setBullets((items) => [...items, { id: crypto.randomUUID(), text: { en: '' } }]); changed(); }}>Add achievement</button>
+      </CollapsibleContent></Collapsible>} />
+
     </div> : null}
   </>;
 }

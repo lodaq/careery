@@ -6,7 +6,7 @@ import { gzipSync } from 'node:zlib';
 for (const path of ['/', '/career-record', '/unfiled']) {
   test(`initial JavaScript stays within 180 kB on ${path}`, async ({ page }) => {
     await page.goto(path);
-    if (path === '/career-record') await expect(page.getByLabel('Name · English', { exact: true })).toBeVisible();
+    if (path === '/career-record') await expect(page.getByLabel('Name', { exact: true })).toBeVisible();
     await page.waitForLoadState('networkidle');
     const scripts = await page.evaluate(() => [...new Set(performance.getEntriesByType('resource').map((entry) => new URL(entry.name).pathname).filter((path) => path.startsWith('/_next/static/') && path.endsWith('.js')))]);
     expect(scripts.length).toBeGreaterThan(0);

@@ -1,6 +1,6 @@
 # Spec: template
 
-One ATS template rendering a `ResolvedDocument` to HTML — used by the live preview and by `pdf-export`, so there is exactly one layout in the codebase.
+One shared ATS layout rendering a `ResolvedDocument` to HTML, with six selectable visual variants and persisted typography, color and spacing. Live preview and `pdf-export` use the same component.
 
 ## Objective
 

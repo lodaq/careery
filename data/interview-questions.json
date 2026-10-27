@@ -1,0 +1,868 @@
+{
+  "version": 1,
+  "schema": 2,
+  "tagRevision": 0,
+  "tags": [
+    {
+      "id": "general",
+      "name": "General"
+    },
+    {
+      "id": "behavioral",
+      "name": "Behavioral"
+    },
+    {
+      "id": "technical",
+      "name": "Technical"
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript"
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript"
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend"
+    },
+    {
+      "id": "react",
+      "name": "React"
+    },
+    {
+      "id": "next.js",
+      "name": "Next.js"
+    },
+    {
+      "id": "backend",
+      "name": "Backend"
+    },
+    {
+      "id": "databases",
+      "name": "Databases"
+    },
+    {
+      "id": "security",
+      "name": "Security"
+    },
+    {
+      "id": "testing",
+      "name": "Testing"
+    },
+    {
+      "id": "system-design",
+      "name": "System design"
+    },
+    {
+      "id": "algorithms",
+      "name": "Algorithms"
+    }
+  ],
+  "questions": [
+    {
+      "id": "starter-1",
+      "question": "Tell me about yourself.",
+      "answer": "Give a brief career-focused introduction: your current work or training, the experience most relevant to this role, and what you want to do next. Connect one concrete achievement to the job requirements. Aim for about one to two minutes.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-2",
+      "question": "Why do you want this job?",
+      "answer": "Name the responsibilities that interest you, explain how your experience prepares you for them, and describe the contribution you hope to make. Use details from the job description rather than general enthusiasm.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-3",
+      "question": "Why do you want to work here?",
+      "answer": "Choose something specific about the organization’s work, product, or mission that you have researched. Explain why it matters to you and how your skills could support it.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-4",
+      "question": "What are your strengths?",
+      "answer": "Choose one or two strengths relevant to the position. For each, describe a real situation where you used it and the result. Focus on evidence rather than a list of adjectives.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-5",
+      "question": "What is a weakness you are working on?",
+      "answer": "Share a real area for improvement. Explain what you have changed, how you practice, and what progress you have seen. Avoid presenting a strength as a weakness or claiming the issue is completely solved.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-6",
+      "question": "Why should we hire you?",
+      "answer": "Connect the role’s main needs to two or three relevant skills or experiences. Back them with a concrete example and explain the value you could bring without comparing yourself to candidates you do not know.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-7",
+      "question": "Tell me about a challenge you overcame.",
+      "answer": "Use STAR: briefly explain the Situation and Task, spend most of the answer on the Actions you personally took, then describe the Result and what you learned. Choose a relevant example with a clear outcome.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-8",
+      "question": "Tell me about a time you worked in a team.",
+      "answer": "Describe the shared goal, your responsibility, and how you coordinated with others. Include how you communicated or handled differing ideas, then explain the team’s result and your contribution.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-9",
+      "question": "How do you handle conflict at work?",
+      "answer": "Use a real example. Explain how you listened, clarified the disagreement, and worked toward a shared goal. Describe your actions respectfully and finish with the outcome or lesson.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-10",
+      "question": "Tell me about a mistake or failure.",
+      "answer": "Choose a genuine example, take responsibility, and explain how you addressed the consequences. Describe the change you made to prevent a repeat and what you learned. Do not blame others.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-11",
+      "question": "How do you handle stress and pressure?",
+      "answer": "Explain your practical approach: clarify priorities, break work into steps, and communicate risks early. Add a real example of a demanding situation and how your approach helped.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-12",
+      "question": "How do you prioritize competing deadlines?",
+      "answer": "Explain how you assess urgency, impact, and dependencies, agree on priorities, and track progress. Give an example of a tradeoff you communicated and how you adjusted when plans changed.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-13",
+      "question": "What is your greatest professional achievement?",
+      "answer": "Choose an achievement relevant to this role. Explain the starting problem, your specific contribution, and the outcome. Use an accurate measure when available; never invent numbers.",
+      "tagIds": [
+        "behavioral"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-14",
+      "question": "Why are you leaving your current job?",
+      "answer": "Be honest, brief, and forward-looking. Explain what you are seeking in your next role, such as different responsibilities or growth. If discussing a difficult departure, stay factual and respectful.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-15",
+      "question": "Where do you see yourself in five years?",
+      "answer": "Describe skills, responsibilities, or impact you want to develop. Connect that direction to the opportunity while acknowledging that you expect to learn and refine your goals.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-16",
+      "question": "What motivates you?",
+      "answer": "Identify the work or conditions that help you do your best, such as solving problems, helping people, or mastering a skill. Give a specific example and connect it to this role.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-17",
+      "question": "What are your salary expectations?",
+      "answer": "Research the role, location, and level before the interview. Give a considered range if you are ready, explain the basis, and clarify that the overall responsibilities and compensation package matter. You can also ask for the budgeted range.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "starter-18",
+      "question": "Do you have any questions for us?",
+      "answer": "Prepare questions that help you evaluate the opportunity: What would success look like in the first few months? What challenges is the team working on? How is feedback shared? What are the next steps? Choose questions not already answered.",
+      "tagIds": [
+        "general"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null
+    },
+    {
+      "id": "technical-v1-1",
+      "question": "What is a JavaScript closure?",
+      "answer": "A closure combines a function with references to its surrounding lexical environment. It lets callbacks retain access to variables after the outer function returns; those references can also keep objects alive longer than expected.",
+      "tagIds": [
+        "technical",
+        "javascript",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+    },
+    {
+      "id": "technical-v1-2",
+      "question": "How do let, const, and var differ?",
+      "answer": "let and const are block-scoped and cannot be accessed before initialization. var is function-scoped and initialized to undefined during hoisting. const prevents reassignment of the binding, not mutation of an object stored in it.",
+      "tagIds": [
+        "technical",
+        "javascript"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+    },
+    {
+      "id": "technical-v1-3",
+      "question": "How do promises and async/await handle asynchronous work?",
+      "answer": "A promise represents eventual fulfillment or rejection. An async function returns a promise, and await suspends that function until the awaited value settles without blocking the whole thread. Handle rejections with try/catch or a rejection handler.",
+      "tagIds": [
+        "technical",
+        "javascript"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+    },
+    {
+      "id": "technical-v1-4",
+      "question": "How does the browser event loop schedule work?",
+      "answer": "JavaScript tasks run to completion. After a task, the browser drains queued microtasks, including promise reactions, before it may render and run another task. Long tasks or continuously added microtasks can delay rendering and input.",
+      "tagIds": [
+        "technical",
+        "javascript",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide"
+    },
+    {
+      "id": "technical-v1-5",
+      "question": "What is the difference between shallow and deep copying?",
+      "answer": "A shallow copy creates a new outer object but shares nested references. A deep copy duplicates supported nested values. structuredClone handles many built-in types and cycles, but not functions; JSON serialization has different limitations and is not a universal deep clone.",
+      "tagIds": [
+        "technical",
+        "javascript"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone"
+    },
+    {
+      "id": "technical-v1-6",
+      "question": "When would you debounce or throttle an event handler?",
+      "answer": "Debouncing waits for a quiet period, which suits search requests after typing. Throttling limits execution frequency during continuous activity such as scrolling. Consider cancellation and trailing calls, and keep expensive work out of input handlers.",
+      "tagIds": [
+        "technical",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/Debounce"
+    },
+    {
+      "id": "technical-v1-7",
+      "question": "How does TypeScript narrow a union type?",
+      "answer": "TypeScript follows control flow and guards such as typeof, property checks, and discriminant comparisons to refine a value’s type. A discriminated union gives each variant a literal field so branches can safely access variant-specific properties.",
+      "tagIds": [
+        "technical",
+        "typescript"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+    },
+    {
+      "id": "technical-v1-8",
+      "question": "What is the difference between unknown and any?",
+      "answer": "any disables type checking for operations on that value and can spread unsafety. unknown accepts any value but requires narrowing before most operations. Prefer unknown at untrusted boundaries, then validate at runtime.",
+      "tagIds": [
+        "technical",
+        "typescript"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.typescriptlang.org/docs/handbook/2/functions.html"
+    },
+    {
+      "id": "technical-v1-9",
+      "question": "What are React props and state?",
+      "answer": "Props are inputs supplied by a parent; state is component memory updated through React. Treat both as immutable snapshots. Updating state requests a render; it does not mutate the value captured by the current render.",
+      "tagIds": [
+        "technical",
+        "react",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://react.dev/learn"
+    },
+    {
+      "id": "technical-v1-10",
+      "question": "Why do React lists need stable keys?",
+      "answer": "Keys identify siblings across renders so React can match their state and DOM correctly. Use a stable data ID. Array indexes are risky when items move, are inserted, or are removed; generating random keys during rendering recreates components.",
+      "tagIds": [
+        "technical",
+        "react"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://react.dev/learn/rendering-lists"
+    },
+    {
+      "id": "technical-v1-11",
+      "question": "When should you use a React Effect?",
+      "answer": "Use an Effect to synchronize with an external system, such as a subscription or browser API. Compute derived values during rendering and handle user actions in event handlers. Include reactive dependencies and clean up subscriptions or connections.",
+      "tagIds": [
+        "technical",
+        "react"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://react.dev/learn/synchronizing-with-effects"
+    },
+    {
+      "id": "technical-v1-12",
+      "question": "What causes stale state in a React callback?",
+      "answer": "A callback captures values from the render that created it. A later invocation can still see that snapshot. Use a functional state updater when deriving the next value from previous state, and keep Effect dependencies accurate.",
+      "tagIds": [
+        "technical",
+        "react"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://react.dev/learn/state-as-a-snapshot"
+    },
+    {
+      "id": "technical-v1-13",
+      "question": "How do Server and Client Components differ in Next.js?",
+      "answer": "Server Components run on the server and can access server resources without shipping their implementation to the browser. Client Components support state, event handlers, and browser APIs and are also prerendered on initial loads. Keep secrets on the server and pass serializable values across the boundary.",
+      "tagIds": [
+        "technical",
+        "react",
+        "next.js"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://nextjs.org/docs/app/getting-started/server-and-client-components"
+    },
+    {
+      "id": "technical-v1-14",
+      "question": "What does use client do in Next.js?",
+      "answer": "It declares a client boundary: the module and its imported client dependency graph become part of the client bundle. It does not mean the component skips server prerendering. Place the boundary near interactive UI to limit shipped JavaScript.",
+      "tagIds": [
+        "technical",
+        "next.js",
+        "react"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://nextjs.org/docs/app/getting-started/server-and-client-components"
+    },
+    {
+      "id": "technical-v1-15",
+      "question": "What is hydration?",
+      "answer": "Hydration attaches React behavior to server-generated HTML. The initial client output must agree with the server output; browser-only values, changing timestamps, or invalid HTML nesting can cause mismatches. Prefer a consistent initial render and intentional client updates.",
+      "tagIds": [
+        "technical",
+        "react",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://react.dev/reference/react-dom/client/hydrateRoot"
+    },
+    {
+      "id": "technical-v1-16",
+      "question": "What makes a form accessible?",
+      "answer": "Provide programmatically associated labels, meaningful instructions, keyboard access, and visible focus. Identify errors in text and associate them with affected fields; announce submission results without relying only on color. Use native controls where possible.",
+      "tagIds": [
+        "technical",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.w3.org/WAI/tutorials/forms/"
+    },
+    {
+      "id": "technical-v1-17",
+      "question": "How would you investigate a slow web page?",
+      "answer": "Measure before changing code: examine network timing, JavaScript tasks, rendering, and layout shifts. Use field data where available and reproduce a realistic device and connection. Fix the measured bottleneck, then compare the same scenario again.",
+      "tagIds": [
+        "technical",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://web.dev/articles/vitals"
+    },
+    {
+      "id": "technical-v1-18",
+      "question": "How do cookies, localStorage, and sessionStorage differ?",
+      "answer": "Cookies can accompany matching HTTP requests and support attributes such as HttpOnly, Secure, and SameSite. Web Storage is synchronous, string-based browser storage; localStorage persists across sessions while sessionStorage is scoped to a page session. Neither is a safe place for secrets accessible to injected scripts.",
+      "tagIds": [
+        "technical",
+        "frontend",
+        "security"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
+    },
+    {
+      "id": "technical-v1-19",
+      "question": "What is HTTP idempotency?",
+      "answer": "An idempotent method has the same intended server effect when repeated as when called once; responses can still differ. PUT and DELETE are idempotent by HTTP semantics. Retried POST operations often need an application-level idempotency key.",
+      "tagIds": [
+        "technical",
+        "backend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent"
+    },
+    {
+      "id": "technical-v1-20",
+      "question": "How do authentication and authorization differ?",
+      "answer": "Authentication establishes who a caller is; authorization decides what that caller may do. Check authorization on the server for each protected operation and resource. Hiding a UI control does not enforce access control.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "security"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://owasp.org/www-project-top-ten/"
+    },
+    {
+      "id": "technical-v1-21",
+      "question": "How would you prevent SQL injection?",
+      "answer": "Use parameterized queries so input is handled as data rather than executable SQL. Allowlist dynamic identifiers that cannot be parameterized, minimize database privileges, and avoid concatenating untrusted text into queries.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "databases",
+        "security"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "id": "technical-v1-22",
+      "question": "How do you reduce cross-site scripting risk?",
+      "answer": "Render untrusted text with context-appropriate escaping, avoid unsafe HTML insertion, and sanitize HTML with a maintained sanitizer when rich content is required. Validate URLs and use Content Security Policy as defense in depth; input validation alone is insufficient.",
+      "tagIds": [
+        "technical",
+        "frontend",
+        "security"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "id": "technical-v1-23",
+      "question": "What is CSRF and how can it be mitigated?",
+      "answer": "CSRF tricks a browser into sending an unwanted authenticated request using ambient credentials such as cookies. Use framework protections, appropriate SameSite cookies, CSRF tokens and origin checks as applicable. Never use GET for state-changing actions.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "security"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "id": "technical-v1-24",
+      "question": "What is CORS?",
+      "answer": "Cross-Origin Resource Sharing lets a server tell browsers which origins may read responses through cross-origin requests. Some requests require a preflight. CORS is a browser-enforced access mechanism, not authentication, and does not stop non-browser clients.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "frontend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+    },
+    {
+      "id": "technical-v1-25",
+      "question": "What do database indexes trade off?",
+      "answer": "An index can speed up matching, ordering, or uniqueness checks, but consumes storage and adds write maintenance. Its usefulness depends on query shape, selectivity, and index order. Inspect the query plan rather than assuming an index will be used.",
+      "tagIds": [
+        "technical",
+        "databases"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.postgresql.org/docs/current/indexes.html"
+    },
+    {
+      "id": "technical-v1-26",
+      "question": "What does a database transaction provide?",
+      "answer": "A transaction groups operations into a unit that commits or rolls back. ACID describes atomicity, consistency, isolation, and durability. Isolation guarantees vary by level; use constraints and suitable concurrency control to preserve invariants.",
+      "tagIds": [
+        "technical",
+        "databases"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+    },
+    {
+      "id": "technical-v1-27",
+      "question": "How do INNER JOIN and LEFT JOIN differ?",
+      "answer": "INNER JOIN returns matching row combinations. LEFT JOIN also retains unmatched left-side rows with null right-side values. A right-table condition in WHERE can discard those unmatched rows; place conditions deliberately and check for one-to-many row multiplication.",
+      "tagIds": [
+        "technical",
+        "databases"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.postgresql.org/docs/current/queries-table-expressions.html"
+    },
+    {
+      "id": "technical-v1-28",
+      "question": "What is the N+1 query problem?",
+      "answer": "It occurs when loading a collection triggers another query for each item. Fetch related data in batches, use appropriate joins or eager loading, and measure both query count and returned data volume. One giant join is not automatically the best fix.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "databases"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://docs.djangoproject.com/en/5.2/ref/models/querysets/#prefetch-related"
+    },
+    {
+      "id": "technical-v1-29",
+      "question": "When would you use cursor pagination instead of offset pagination?",
+      "answer": "Cursor pagination continues after a stable ordering key and can avoid scanning large offsets. Use a deterministic order with a unique tie-breaker. Offset pagination is simpler for numbered pages but can shift under concurrent inserts or deletes.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "databases"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.postgresql.org/docs/current/queries-limit.html"
+    },
+    {
+      "id": "technical-v1-30",
+      "question": "What is optimistic concurrency control?",
+      "answer": "A writer sends the version it read, and the server applies the update only if that version still matches. A conflict requires reloading or reconciling changes instead of silently overwriting another write. The check and update must be atomic.",
+      "tagIds": [
+        "technical",
+        "backend",
+        "databases"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-Match"
+    },
+    {
+      "id": "technical-v1-31",
+      "question": "What is the difference between unit, integration, and end-to-end tests?",
+      "answer": "Unit tests isolate a small behavior; integration tests exercise collaborating components or a boundary; end-to-end tests exercise a user flow through the system. Use each where it provides useful evidence, and keep expensive end-to-end coverage focused on important flows.",
+      "tagIds": [
+        "technical",
+        "testing"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html"
+    },
+    {
+      "id": "technical-v1-32",
+      "question": "What makes a test reliable?",
+      "answer": "A reliable test controls its inputs, isolates state, avoids uncontrolled timing, and checks observable behavior. Wait for meaningful conditions rather than arbitrary sleeps. Test failures should identify a specific broken expectation and reproduce consistently.",
+      "tagIds": [
+        "technical",
+        "testing"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://playwright.dev/docs/best-practices"
+    },
+    {
+      "id": "technical-v1-33",
+      "question": "How would you debug a production-only error?",
+      "answer": "Establish the failing input and environment, inspect relevant logs and traces, and compare versions and configuration. Form a testable hypothesis, reproduce safely, and isolate the smallest cause. Validate a targeted fix and add regression coverage without exposing sensitive data.",
+      "tagIds": [
+        "technical",
+        "testing",
+        "backend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://sre.google/sre-book/effective-troubleshooting/"
+    },
+    {
+      "id": "technical-v1-34",
+      "question": "What does Big O notation describe?",
+      "answer": "Big O bounds how an algorithm’s resource use grows with input size. State the input variable, resource, and case being analyzed. It does not directly predict wall-clock performance; constants, data distribution, and hardware still matter.",
+      "tagIds": [
+        "technical",
+        "algorithms"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://xlinux.nist.gov/dads/HTML/bigOnotation.html"
+    },
+    {
+      "id": "technical-v1-35",
+      "question": "How do arrays and linked lists differ?",
+      "answer": "Arrays support efficient indexed access and usually good locality, but insertion in the middle may shift elements. Linked lists follow pointers, making indexed access linear; insertion can be constant time when the relevant node is already known. Account for allocation and pointer overhead.",
+      "tagIds": [
+        "technical",
+        "algorithms"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://opendatastructures.org/ods-java/"
+    },
+    {
+      "id": "technical-v1-36",
+      "question": "How does a hash table work?",
+      "answer": "A hash function maps keys to buckets, and a collision strategy resolves competing keys. Lookup is typically expected constant time under suitable hashing and load, but worst-case behavior depends on the implementation. Resizing and key equality semantics also matter.",
+      "tagIds": [
+        "technical",
+        "algorithms"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://opendatastructures.org/ods-java/"
+    },
+    {
+      "id": "technical-v1-37",
+      "question": "When can you use binary search?",
+      "answer": "Use binary search on an ordered search space or a monotonic predicate. Repeatedly discard half the remaining candidates, yielding logarithmic comparisons. Define boundary conventions carefully and test empty inputs, duplicates, and missing values.",
+      "tagIds": [
+        "technical",
+        "algorithms"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://xlinux.nist.gov/dads/HTML/binarySearch.html"
+    },
+    {
+      "id": "technical-v1-38",
+      "question": "How do breadth-first and depth-first search differ?",
+      "answer": "BFS explores by distance using a queue and finds shortest paths in unweighted graphs. DFS follows a path deeply using a stack or recursion. Track visited nodes when cycles are possible; with adjacency lists both visit vertices and edges in O(V + E).",
+      "tagIds": [
+        "technical",
+        "algorithms"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://opendatastructures.org/ods-java/"
+    },
+    {
+      "id": "technical-v1-39",
+      "question": "What is a race condition?",
+      "answer": "A race condition occurs when correctness depends on the relative timing of concurrent operations. A read-modify-write sequence can lose updates. Use appropriate atomic operations, locks, transactions, or version checks, and test competing operations.",
+      "tagIds": [
+        "technical",
+        "backend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.postgresql.org/docs/current/transaction-iso.html"
+    },
+    {
+      "id": "technical-v1-40",
+      "question": "What is a cache invalidation strategy?",
+      "answer": "Choose cache keys, lifetime, and invalidation around how stale the data may be. Options include expiry, explicit invalidation on writes, and versioned keys. Consider concurrent misses, failed refreshes, and whether private responses can be cached safely.",
+      "tagIds": [
+        "technical",
+        "system-design"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+    },
+    {
+      "id": "technical-v1-41",
+      "question": "How would you design a rate limiter?",
+      "answer": "Define the subject, limit, time window, and behavior on rejection. Fixed windows are simple but allow boundary bursts; token buckets support controlled bursts. Distributed enforcement needs shared or coordinated state and a deliberate failure policy.",
+      "tagIds": [
+        "technical",
+        "system-design",
+        "backend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://redis.io/docs/latest/develop/use/patterns/rate-limiting/"
+    },
+    {
+      "id": "technical-v1-42",
+      "question": "How should retries handle transient failures?",
+      "answer": "Retry only failures likely to be temporary, with bounded attempts, backoff, jitter, and timeouts. Ensure operations are safe to repeat or use idempotency keys. Avoid retry amplification across service layers and preserve a useful final error.",
+      "tagIds": [
+        "technical",
+        "system-design"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+    },
+    {
+      "id": "technical-v1-43",
+      "question": "What is the CAP theorem’s practical tradeoff?",
+      "answer": "During a network partition, a distributed system cannot guarantee both linearizable consistency and availability for every request in the theorem’s sense. Discuss which operations may reject or serve stale data during that partition; CAP does not describe every consistency tradeoff.",
+      "tagIds": [
+        "technical",
+        "system-design"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://www.ibm.com/think/topics/cap-theorem"
+    },
+    {
+      "id": "technical-v1-44",
+      "question": "When would you introduce a background job queue?",
+      "answer": "Use a queue for work that can complete asynchronously or must absorb bursts. Plan retries, duplicate delivery, idempotent handlers, poison messages, monitoring, and completion feedback. Enqueuing a job does not mean its business operation has succeeded.",
+      "tagIds": [
+        "technical",
+        "system-design",
+        "backend"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html"
+    },
+    {
+      "id": "technical-v1-45",
+      "question": "How would you approach a system design interview?",
+      "answer": "Clarify users, functional requirements, scale, and reliability needs before drawing components. Define the main data and request flow, then examine bottlenecks and failure modes. Explain tradeoffs and validate estimates rather than choosing technologies by habit.",
+      "tagIds": [
+        "technical",
+        "system-design"
+      ],
+      "frequency": 0,
+      "revision": 0,
+      "card": null,
+      "source": "https://sre.google/workbook/implementing-slos/"
+    }
+  ],
+  "events": []
+}

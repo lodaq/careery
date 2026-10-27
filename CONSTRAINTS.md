@@ -20,9 +20,11 @@ User's standing rules, made checkable: **simple code, minimal code, fast app.**
 | Lint | Zero errors, zero warnings | `pnpm lint` | every edit |
 | Tests | All pass | `pnpm test` | every edit |
 | Resolver coverage | `src/lib/resolver.ts` ≥ 90% lines | `pnpm test -- src/lib/resolver.test.ts --coverage` | task end |
-| Client JS | ≤ 180 kB gzip first-load per route (modern-browser initial scripts, including framework) | `pnpm build` output, read at task end | task end |
+| Client JS | ≤ 180 kB gzip first-load per route; `/interview-questions` ≤ 185 kB (modern-browser initial scripts, including framework) | `pnpm build` output, read at task end | task end |
 | PDF generation | ≤ 5 s per resume, warm browser | timing script at `src/lib/pdf.ts` task end | task end |
 | Dependencies | Runtime dep count must not grow (recorded below) | diff of `package.json` dependencies at review | review |
+
+User-approved exception (2026-10-27): the TanStack questions table may exceed 180 kB. Its route-specific ceiling is 185,000 gzip bytes; all other routes retain the 180,000-byte ceiling.
 
 Reasons: 180 kB includes the measured 139 kB Next.js baseline and leaves roughly 41 kB for interactivity. The user approved keeping Next.js and revising this budget on 2026-10-25; Server Components remain the default. 5 s keeps the direct-download button feeling instant. The dep ratchet encodes "minimal code": every new dependency is a ask-first decision per `SPEC-MAP.md`.
 
@@ -70,3 +72,11 @@ The implementation measured below is no longer in the repository. Preserve these
 - Testing-build loaded JavaScript ranges from 144,172 to 152,499 gzip bytes across home, Career Record, Profile and Unfiled checks, within the user-approved 180,000-byte limit.
 - Browser verification covered preserved-page ID uniqueness, RTL Arabic fields, mobile width and axe accessibility; zero violations or incomplete checks after the ID fix.
 - Profile/Resume copying and deletion behavior are verified with isolated fixtures. Resume editing remains the next implementation phase.
+
+## Resume editor redesign checkpoint (2026-10-25)
+
+- Tadween-inspired three-pane resume studio: native section navigation, independently scrolling section editor and persistent PDF/live preview. Collapsed entries retain all form values; sidebar navigation never submits the form. Mobile has horizontally scrolling section navigation and a Preview view.
+- 35 Vitest tests pass. All 14 production browser scenarios pass (12 on the initial full run, the content-picker scenario after adapting its navigation to the new sidebar, and the new editor-layout/draft/invalid-field scenario on the final normal build). Coverage reports all 45 resolver statements covered; line coverage remains above 90%.
+- Typecheck, zero-warning lint, and normal production build pass. Desktop/mobile axe audits report zero violations and zero incomplete checks; mobile document width is 390 px at a 390 px viewport. Next.js MCP reports no runtime or compilation errors.
+- Normal production resume initial modern-browser scripts: 149,317 gzip bytes, excluding the non-loaded legacy nomodule asset. Browser-loaded scripts in the testing build measured 155,197 gzip bytes on the resume route. Both are below 180,000 bytes; PDF/browser checks retain the warm export ≤5-second assertion.
+- Runtime dependencies remain three. Source lines grew from 1,758 to 1,902 (8.2%); all edited source files remain below 300 lines. No personal workspace data was changed for testing; all browser writes used isolated fixtures.

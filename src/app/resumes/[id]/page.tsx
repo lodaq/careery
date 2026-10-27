@@ -16,5 +16,5 @@ async function ResumeContent({ params }: { params: Promise<{ id: string }> }) {
   return <RecordEditor key={id} record={{ version: 1, basics: resume.basics, entries: resume.entries }} revision={resumeRevision(resume)} saveAction={saveResumeAction.bind(null, id)} resume={resume} profiles={workspace.profiles.map(({ id, name }) => ({ id, name }))} availableEntries={record.entries} />;
 }
 export default function ResumePage({ params }: { params: Promise<{ id: string }> }) {
-  return <WorkspaceShell navigation={<Link href="/">Back to workspace</Link>} className="record-main resume-main"><h1>Edit Resume</h1><p className="page-intro">Tailor your own copy. Your Career Record and Profiles keep their wording.</p><Suspense fallback={<p role="status">Loading your Resume…</p>}><ResumeContent params={params} /></Suspense></WorkspaceShell>;
+  return <WorkspaceShell navigation={<Link prefetch={false} href="/">Back to workspace</Link>} className="record-main resume-main"><Suspense fallback={<p role="status">Loading your Resume…</p>}><ResumeContent params={params} /></Suspense></WorkspaceShell>;
 }

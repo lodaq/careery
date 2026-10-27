@@ -24,5 +24,5 @@ async function ProfileContent({ params }: { params: Promise<{ id: string }> }) {
   </>;
 }
 export default function ProfilePage({ params }: { params: Promise<{ id: string }> }) {
-  return <WorkspaceShell navigation={<Link href="/">Back to workspace</Link>} className="record-main"><h1>Profile</h1><p className="page-intro">Choose a starting point for a career direction. These copies are yours to adjust.</p><Suspense fallback={<p role="status">Loading your Profile…</p>}><ProfileContent params={params} /></Suspense></WorkspaceShell>;
+  return <WorkspaceShell contentId="profile-content" navigation={<Link prefetch={false} href="/profiles">Back to workspace</Link>} className="record-main"><h1>Profile</h1><p className="page-intro">Choose a starting point for a career direction. These copies are yours to adjust.</p><Suspense fallback={<p role="status">Loading your Profile…</p>}><ProfileContent params={params} /></Suspense></WorkspaceShell>;
 }

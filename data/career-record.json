@@ -28,11 +28,49 @@
   },
   "entries": [
     {
+      "id": "demo-experience-2",
+      "kind": "experience",
+      "employer": {
+        "en": "Atlas Studio (fictional)",
+        "ar": "استوديو أطلس (تجريبي)"
+      },
+      "title": {
+        "en": "Full-stack developer",
+        "ar": "مطور متكامل"
+      },
+      "dates": {
+        "start": "2013-01",
+        "end": "2013-12"
+      },
+      "bullets": [
+        {
+          "id": "demo-exp-2-a",
+          "text": {
+            "en": "Delivered accessible, maintainable solutions as a full-stack developer in a fictional cross-functional team.",
+            "ar": "تطوير حلول سهلة الوصول وقابلة للصيانة ضمن فريق متعدد التخصصات."
+          }
+        },
+        {
+          "id": "demo-exp-2-c",
+          "text": {
+            "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
+            "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
+          }
+        },
+        {
+          "id": "demo-exp-2-b",
+          "text": {
+            "en": "Documented decisions and improved handoffs between design, engineering, and operations.",
+            "ar": "توثيق القرارات وتحسين التعاون بين فرق التصميم والهندسة والتشغيل."
+          }
+        }
+      ]
+    },
+    {
       "id": "demo-experience-1",
       "kind": "experience",
       "employer": {
-        "en": "Cedar Labs (fictional)",
-        "ar": "مختبرات سيدار (تجريبي)"
+        "en": "Cedar Labs (fictional)"
       },
       "title": {
         "en": "Frontend engineer",
@@ -58,45 +96,6 @@
         },
         {
           "id": "demo-exp-1-c",
-          "text": {
-            "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
-            "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
-          }
-        }
-      ]
-    },
-    {
-      "id": "demo-experience-2",
-      "kind": "experience",
-      "employer": {
-        "en": "Atlas Studio (fictional)",
-        "ar": "استوديو أطلس (تجريبي)"
-      },
-      "title": {
-        "en": "Full-stack developer",
-        "ar": "مطور متكامل"
-      },
-      "dates": {
-        "start": "2013-01",
-        "end": "2013-12"
-      },
-      "bullets": [
-        {
-          "id": "demo-exp-2-a",
-          "text": {
-            "en": "Delivered accessible, maintainable solutions as a full-stack developer in a fictional cross-functional team.",
-            "ar": "تطوير حلول سهلة الوصول وقابلة للصيانة ضمن فريق متعدد التخصصات."
-          }
-        },
-        {
-          "id": "demo-exp-2-b",
-          "text": {
-            "en": "Documented decisions and improved handoffs between design, engineering, and operations.",
-            "ar": "توثيق القرارات وتحسين التعاون بين فرق التصميم والهندسة والتشغيل."
-          }
-        },
-        {
-          "id": "demo-exp-2-c",
           "text": {
             "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
             "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
@@ -729,35 +728,6 @@
       ]
     },
     {
-      "id": "demo-project-4",
-      "kind": "projects",
-      "name": {
-        "en": "Support knowledge base",
-        "ar": "قاعدة معرفة الدعم"
-      },
-      "description": {
-        "en": "A fictional support knowledge base built to demonstrate product thinking, clear interfaces, and maintainable implementation.",
-        "ar": "مشروع تجريبي يعرض التفكير في المنتج ووضوح الواجهات وسهولة الصيانة."
-      },
-      "url": "https://example.com/projects/4",
-      "bullets": [
-        {
-          "id": "demo-project-4-a",
-          "text": {
-            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
-            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
-          }
-        },
-        {
-          "id": "demo-project-4-b",
-          "text": {
-            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
-            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
-          }
-        }
-      ]
-    },
-    {
       "id": "demo-project-5",
       "kind": "projects",
       "name": {
@@ -779,6 +749,35 @@
         },
         {
           "id": "demo-project-5-b",
+          "text": {
+            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
+            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-project-4",
+      "kind": "projects",
+      "name": {
+        "en": "Support knowledge base",
+        "ar": "قاعدة معرفة الدعم"
+      },
+      "description": {
+        "en": "A fictional support knowledge base built to demonstrate product thinking, clear interfaces, and maintainable implementation.",
+        "ar": "مشروع تجريبي يعرض التفكير في المنتج ووضوح الواجهات وسهولة الصيانة."
+      },
+      "url": "https://example.com/projects/4",
+      "bullets": [
+        {
+          "id": "demo-project-4-a",
+          "text": {
+            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
+            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
+          }
+        },
+        {
+          "id": "demo-project-4-b",
           "text": {
             "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
             "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
@@ -931,34 +930,6 @@
       ]
     },
     {
-      "id": "demo-project-11",
-      "kind": "projects",
-      "name": {
-        "en": "Customer feedback hub",
-        "ar": "مركز ملاحظات العملاء"
-      },
-      "description": {
-        "en": "A fictional customer feedback hub built to demonstrate product thinking, clear interfaces, and maintainable implementation."
-      },
-      "url": "https://example.com/projects/11",
-      "bullets": [
-        {
-          "id": "demo-project-11-a",
-          "text": {
-            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
-            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
-          }
-        },
-        {
-          "id": "demo-project-11-b",
-          "text": {
-            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
-            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
-          }
-        }
-      ]
-    },
-    {
       "id": "demo-project-12",
       "kind": "projects",
       "name": {
@@ -980,6 +951,34 @@
         },
         {
           "id": "demo-project-12-b",
+          "text": {
+            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
+            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-project-11",
+      "kind": "projects",
+      "name": {
+        "en": "Customer feedback hub",
+        "ar": "مركز ملاحظات العملاء"
+      },
+      "description": {
+        "en": "A fictional customer feedback hub built to demonstrate product thinking, clear interfaces, and maintainable implementation."
+      },
+      "url": "https://example.com/projects/11",
+      "bullets": [
+        {
+          "id": "demo-project-11-a",
+          "text": {
+            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
+            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
+          }
+        },
+        {
+          "id": "demo-project-11-b",
           "text": {
             "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
             "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
@@ -1702,6 +1701,478 @@
       },
       "date": "2025-06",
       "url": "https://example.com/certificates/12"
+    },
+    {
+      "id": "demo-expanded-experience-1",
+      "kind": "experience",
+      "employer": {
+        "en": "Fictional Career Lab",
+        "ar": "بيانات تجريبية: Fictional Career Lab"
+      },
+      "title": {
+        "en": "Accessibility consultant",
+        "ar": "بيانات تجريبية: Accessibility consultant"
+      },
+      "dates": {
+        "start": "2024-01",
+        "end": "2025-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-experience-1-bullet-1",
+          "text": {
+            "en": "Delivered accessible, maintainable solutions as a full-stack developer in a fictional cross-functional team.",
+            "ar": "تطوير حلول سهلة الوصول وقابلة للصيانة ضمن فريق متعدد التخصصات."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-1-bullet-2",
+          "text": {
+            "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
+            "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-1-bullet-3",
+          "text": {
+            "en": "Documented decisions and improved handoffs between design, engineering, and operations.",
+            "ar": "توثيق القرارات وتحسين التعاون بين فرق التصميم والهندسة والتشغيل."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-experience-2",
+      "kind": "experience",
+      "employer": {
+        "en": "Fictional Career Lab",
+        "ar": "بيانات تجريبية: Fictional Career Lab"
+      },
+      "title": {
+        "en": "Platform engineer",
+        "ar": "بيانات تجريبية: Platform engineer"
+      },
+      "dates": {
+        "start": "2024-01",
+        "end": "2025-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-experience-2-bullet-1",
+          "text": {
+            "en": "Delivered accessible, maintainable solutions as a full-stack developer in a fictional cross-functional team.",
+            "ar": "تطوير حلول سهلة الوصول وقابلة للصيانة ضمن فريق متعدد التخصصات."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-2-bullet-2",
+          "text": {
+            "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
+            "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-2-bullet-3",
+          "text": {
+            "en": "Documented decisions and improved handoffs between design, engineering, and operations.",
+            "ar": "توثيق القرارات وتحسين التعاون بين فرق التصميم والهندسة والتشغيل."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-experience-3",
+      "kind": "experience",
+      "employer": {
+        "en": "Fictional Career Lab",
+        "ar": "بيانات تجريبية: Fictional Career Lab"
+      },
+      "title": {
+        "en": "Analytics engineer",
+        "ar": "بيانات تجريبية: Analytics engineer"
+      },
+      "dates": {
+        "start": "2024-01",
+        "end": "2025-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-experience-3-bullet-1",
+          "text": {
+            "en": "Delivered accessible, maintainable solutions as a full-stack developer in a fictional cross-functional team.",
+            "ar": "تطوير حلول سهلة الوصول وقابلة للصيانة ضمن فريق متعدد التخصصات."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-3-bullet-2",
+          "text": {
+            "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
+            "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-3-bullet-3",
+          "text": {
+            "en": "Documented decisions and improved handoffs between design, engineering, and operations.",
+            "ar": "توثيق القرارات وتحسين التعاون بين فرق التصميم والهندسة والتشغيل."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-experience-4",
+      "kind": "experience",
+      "employer": {
+        "en": "Fictional Career Lab",
+        "ar": "بيانات تجريبية: Fictional Career Lab"
+      },
+      "title": {
+        "en": "Developer advocate",
+        "ar": "بيانات تجريبية: Developer advocate"
+      },
+      "dates": {
+        "start": "2024-01",
+        "end": "2025-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-experience-4-bullet-1",
+          "text": {
+            "en": "Delivered accessible, maintainable solutions as a full-stack developer in a fictional cross-functional team.",
+            "ar": "تطوير حلول سهلة الوصول وقابلة للصيانة ضمن فريق متعدد التخصصات."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-4-bullet-2",
+          "text": {
+            "en": "Built repeatable checks and supported colleagues through reviews and mentoring.",
+            "ar": "بناء إجراءات تحقق متكررة ودعم الزملاء بالمراجعة والإرشاد."
+          }
+        },
+        {
+          "id": "demo-expanded-experience-4-bullet-3",
+          "text": {
+            "en": "Documented decisions and improved handoffs between design, engineering, and operations.",
+            "ar": "توثيق القرارات وتحسين التعاون بين فرق التصميم والهندسة والتشغيل."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-education-1",
+      "kind": "education",
+      "institution": {
+        "en": "Fictional Learning Institute 1",
+        "ar": "معهد التعلم التجريبي 1"
+      },
+      "qualification": {
+        "en": "Applied statistics (demo)",
+        "ar": "بيانات تجريبية: Applied statistics (demo)"
+      },
+      "dates": {
+        "start": "2010-09",
+        "end": "2011-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-education-1-bullet-1",
+          "text": {
+            "en": "Completed practical coursework and a collaborative capstone project.",
+            "ar": "إكمال دراسة تطبيقية ومشروع تخرج تعاوني."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-education-2",
+      "kind": "education",
+      "institution": {
+        "en": "Fictional Learning Institute 1",
+        "ar": "معهد التعلم التجريبي 1"
+      },
+      "qualification": {
+        "en": "Distributed systems (demo)",
+        "ar": "بيانات تجريبية: Distributed systems (demo)"
+      },
+      "dates": {
+        "start": "2010-09",
+        "end": "2011-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-education-2-bullet-1",
+          "text": {
+            "en": "Completed practical coursework and a collaborative capstone project.",
+            "ar": "إكمال دراسة تطبيقية ومشروع تخرج تعاوني."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-education-3",
+      "kind": "education",
+      "institution": {
+        "en": "Fictional Learning Institute 1",
+        "ar": "معهد التعلم التجريبي 1"
+      },
+      "qualification": {
+        "en": "Design leadership (demo)",
+        "ar": "بيانات تجريبية: Design leadership (demo)"
+      },
+      "dates": {
+        "start": "2010-09",
+        "end": "2011-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-education-3-bullet-1",
+          "text": {
+            "en": "Completed practical coursework and a collaborative capstone project.",
+            "ar": "إكمال دراسة تطبيقية ومشروع تخرج تعاوني."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-education-4",
+      "kind": "education",
+      "institution": {
+        "en": "Fictional Learning Institute 1",
+        "ar": "معهد التعلم التجريبي 1"
+      },
+      "qualification": {
+        "en": "Arabic technical communication (demo)",
+        "ar": "بيانات تجريبية: Arabic technical communication (demo)"
+      },
+      "dates": {
+        "start": "2010-09",
+        "end": "2011-06"
+      },
+      "bullets": [
+        {
+          "id": "demo-expanded-education-4-bullet-1",
+          "text": {
+            "en": "Completed practical coursework and a collaborative capstone project.",
+            "ar": "إكمال دراسة تطبيقية ومشروع تخرج تعاوني."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-projects-1",
+      "kind": "projects",
+      "name": {
+        "en": "Application tracking workspace (demo)",
+        "ar": "بيانات تجريبية: Application tracking workspace (demo)"
+      },
+      "description": {
+        "en": "A fictional accessible component library built to demonstrate product thinking, clear interfaces, and maintainable implementation."
+      },
+      "url": "https://example.com/projects/1",
+      "bullets": [
+        {
+          "id": "demo-expanded-projects-1-bullet-1",
+          "text": {
+            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
+            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
+          }
+        },
+        {
+          "id": "demo-expanded-projects-1-bullet-2",
+          "text": {
+            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
+            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-projects-2",
+      "kind": "projects",
+      "name": {
+        "en": "Interview preparation notebook (demo)",
+        "ar": "بيانات تجريبية: Interview preparation notebook (demo)"
+      },
+      "description": {
+        "en": "A fictional accessible component library built to demonstrate product thinking, clear interfaces, and maintainable implementation."
+      },
+      "url": "https://example.com/projects/1",
+      "bullets": [
+        {
+          "id": "demo-expanded-projects-2-bullet-1",
+          "text": {
+            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
+            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
+          }
+        },
+        {
+          "id": "demo-expanded-projects-2-bullet-2",
+          "text": {
+            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
+            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-projects-3",
+      "kind": "projects",
+      "name": {
+        "en": "Bilingual reporting toolkit (demo)",
+        "ar": "بيانات تجريبية: Bilingual reporting toolkit (demo)"
+      },
+      "description": {
+        "en": "A fictional accessible component library built to demonstrate product thinking, clear interfaces, and maintainable implementation."
+      },
+      "url": "https://example.com/projects/1",
+      "bullets": [
+        {
+          "id": "demo-expanded-projects-3-bullet-1",
+          "text": {
+            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
+            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
+          }
+        },
+        {
+          "id": "demo-expanded-projects-3-bullet-2",
+          "text": {
+            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
+            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-projects-4",
+      "kind": "projects",
+      "name": {
+        "en": "Volunteer scheduling service (demo)",
+        "ar": "بيانات تجريبية: Volunteer scheduling service (demo)"
+      },
+      "description": {
+        "en": "A fictional accessible component library built to demonstrate product thinking, clear interfaces, and maintainable implementation."
+      },
+      "url": "https://example.com/projects/1",
+      "bullets": [
+        {
+          "id": "demo-expanded-projects-4-bullet-1",
+          "text": {
+            "en": "Designed the core user flow, implemented the working slice, and verified behavior with real-browser tests.",
+            "ar": "تصميم تجربة الاستخدام وتنفيذها والتحقق من السلوك باختبارات المتصفح."
+          }
+        },
+        {
+          "id": "demo-expanded-projects-4-bullet-2",
+          "text": {
+            "en": "Recorded assumptions and trade-offs so future contributors could extend the project safely.",
+            "ar": "توثيق الافتراضات والمفاضلات لتسهيل تطوير المشروع مستقبلاً."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-expanded-skills-1",
+      "kind": "skills",
+      "name": {
+        "en": "Observability (demo)",
+        "ar": "بيانات تجريبية: Observability (demo)"
+      },
+      "category": {
+        "en": "Professional practice",
+        "ar": "بيانات تجريبية: Professional practice"
+      }
+    },
+    {
+      "id": "demo-expanded-skills-2",
+      "kind": "skills",
+      "name": {
+        "en": "Domain modeling (demo)",
+        "ar": "بيانات تجريبية: Domain modeling (demo)"
+      },
+      "category": {
+        "en": "Professional practice",
+        "ar": "بيانات تجريبية: Professional practice"
+      }
+    },
+    {
+      "id": "demo-expanded-skills-3",
+      "kind": "skills",
+      "name": {
+        "en": "Data quality (demo)",
+        "ar": "بيانات تجريبية: Data quality (demo)"
+      },
+      "category": {
+        "en": "Professional practice",
+        "ar": "بيانات تجريبية: Professional practice"
+      }
+    },
+    {
+      "id": "demo-expanded-skills-4",
+      "kind": "skills",
+      "name": {
+        "en": "Mentoring (demo)",
+        "ar": "بيانات تجريبية: Mentoring (demo)"
+      },
+      "category": {
+        "en": "Professional practice",
+        "ar": "بيانات تجريبية: Professional practice"
+      }
+    },
+    {
+      "id": "demo-expanded-certifications-1",
+      "kind": "certifications",
+      "name": {
+        "en": "Inclusive design practice (demo)",
+        "ar": "بيانات تجريبية: Inclusive design practice (demo)"
+      },
+      "issuer": {
+        "en": "Fictional Skills Academy",
+        "ar": "أكاديمية المهارات التجريبية"
+      },
+      "date": "2020-06",
+      "url": "https://example.com/certificates/1"
+    },
+    {
+      "id": "demo-expanded-certifications-2",
+      "kind": "certifications",
+      "name": {
+        "en": "Database reliability (demo)",
+        "ar": "بيانات تجريبية: Database reliability (demo)"
+      },
+      "issuer": {
+        "en": "Fictional Skills Academy",
+        "ar": "أكاديمية المهارات التجريبية"
+      },
+      "date": "2020-06",
+      "url": "https://example.com/certificates/1"
+    },
+    {
+      "id": "demo-expanded-certifications-3",
+      "kind": "certifications",
+      "name": {
+        "en": "Analytics engineering (demo)",
+        "ar": "بيانات تجريبية: Analytics engineering (demo)"
+      },
+      "issuer": {
+        "en": "Fictional Skills Academy",
+        "ar": "أكاديمية المهارات التجريبية"
+      },
+      "date": "2020-06",
+      "url": "https://example.com/certificates/1"
+    },
+    {
+      "id": "demo-expanded-certifications-4",
+      "kind": "certifications",
+      "name": {
+        "en": "Team facilitation (demo)",
+        "ar": "بيانات تجريبية: Team facilitation (demo)"
+      },
+      "issuer": {
+        "en": "Fictional Skills Academy",
+        "ar": "أكاديمية المهارات التجريبية"
+      },
+      "date": "2020-06",
+      "url": "https://example.com/certificates/1"
     }
   ]
 }

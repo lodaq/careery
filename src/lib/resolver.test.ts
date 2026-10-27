@@ -48,3 +48,10 @@ it('clears only the locally translated gap and never reads later source translat
   resume.language = 'en'; expect(resolveResume(resume).name.value).toBe('Name');
   resume.language = 'ar'; expect(resolveResume(resume).name.value).toBe('اسم محلي');
 });
+it('omits hidden sections and their translation warnings without discarding their content', () => {
+  const resume = copyResume(emptyRecord(), emptyWorkspace(), 'hidden', 'Hidden sections');
+  resume.language = 'ar'; resume.summary = { en: 'Summary still saved' }; resume.entries = [{ id: 'skill', kind: 'skills', name: { en: 'Skill still saved' } }];
+  resume.hiddenSections = ['summary', 'skills'];
+  const resolved = resolveResume(resume); expect(resolved.summary.value).toBe(''); expect(resolved.sections.some((section) => section.kind === 'skills')).toBe(false); expect(resolved.missingArabicCount).toBe(0);
+  resume.hiddenSections = []; expect(resolveResume(resume).missingArabicCount).toBe(2); expect(resolveResume(resume).summary.value).toBe('Summary still saved');
+});

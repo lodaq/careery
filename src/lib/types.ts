@@ -30,10 +30,14 @@ export interface CareerRecord { version: 1; basics: Basics; entries: CareerEntry
 export interface Profile {
   id: string; name: string; basics: Basics; entries: CareerEntry[]; headline: Bilingual; summary: Bilingual;
 }
+export interface ResumeAppearance {
+  template: 'classic' | 'professional' | 'centered' | 'accent' | 'cream' | 'ledger';
+  font: 'sans' | 'serif' | 'mono'; bodySize: number; nameSize: number; accent: string; spacing: number;
+}
 export interface Resume {
   id: string; name: string; profileId: string | null; language: Language;
   basics: Basics; entries: CareerEntry[]; headline: Bilingual; summary: Bilingual;
-  hiddenEntryIds: string[]; sectionOrder: Section[]; updatedAt?: string;
+  hiddenEntryIds: string[]; sectionOrder: Section[]; updatedAt?: string; appearance?: ResumeAppearance; hiddenSections?: Section[];
 }
 export interface Workspace {
   version: 1; profiles: Profile[]; resumes: Resume[]; lastLanguage: Language;
@@ -44,7 +48,7 @@ export interface ResolvedEntry {
   date?: string; url?: string; bullets: { id: string; text: ResolvedText }[];
 }
 export interface ResolvedDocument {
-  language: Language;
+  language: Language; appearance?: ResumeAppearance;
   name: ResolvedText; headline: ResolvedText; summary: ResolvedText; location: ResolvedText;
   email: string; phone: string; links: Basics['links'];
   sections: { kind: Section; entries: ResolvedEntry[] }[];

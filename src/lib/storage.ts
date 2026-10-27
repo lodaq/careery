@@ -5,9 +5,9 @@ import { emptyRecord, emptyWorkspace } from './types';
 import type { CareerRecord, Workspace } from './types';
 
 const queues = new Map<string, Promise<void>>();
-const dataDirectory = () => process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data');
+export const dataDirectory = () => process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data');
 function missing(error: unknown): boolean { return error instanceof Error && 'code' in error && error.code === 'ENOENT'; }
-async function readJson<T>(path: string, fallback: () => T): Promise<T> {
+export async function readJson<T>(path: string, fallback: () => T): Promise<T> {
   let text: string;
   try { text = await readFile(path, 'utf8'); }
   catch (error) { if (missing(error)) return fallback(); throw error; }
@@ -37,7 +37,7 @@ export async function readWorkspace(directory = dataDirectory()): Promise<Worksp
   throw new Error('Legacy profiles.json exists; an explicit migration is required before writing workspace data.');
 }
 
-async function updateJson<T>(path: string, read: () => Promise<T>, mutate: (data: T) => void): Promise<T> {
+export async function updateJson<T>(path: string, read: () => Promise<T>, mutate: (data: T) => void): Promise<T> {
   const key = resolve(path);
   const previous = queues.get(key) ?? Promise.resolve();
   const operation = previous.then(async () => {

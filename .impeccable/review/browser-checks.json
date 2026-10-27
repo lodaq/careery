@@ -1,0 +1,93 @@
+{
+  "report": [
+    {
+      "name": "profiles",
+      "device": "desktop",
+      "violations": [],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "resumes",
+      "device": "desktop",
+      "violations": [],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "career",
+      "device": "desktop",
+      "violations": [],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "profile",
+      "device": "desktop",
+      "violations": [],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "unfiled",
+      "device": "desktop",
+      "violations": [],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "editor",
+      "device": "desktop",
+      "violations": [],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "profiles",
+      "device": "mobile",
+      "violations": [],
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "resumes",
+      "device": "mobile",
+      "violations": [],
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "career",
+      "device": "mobile",
+      "violations": [],
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "profile",
+      "device": "mobile",
+      "violations": [],
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "unfiled",
+      "device": "mobile",
+      "violations": [],
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "editor",
+      "device": "mobile",
+      "violations": [],
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "dark",
+      "violations": []
+    }
+  ],
+  "errors": []
+}

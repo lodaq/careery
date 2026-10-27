@@ -8,6 +8,7 @@ test('searches a large bilingual Career Record without changing saved selections
   execFileSync(process.execPath, ['scripts/seed-demo.mjs'], { env: { ...process.env, CAREERY_DATA_DIR: directory } });
   const before = await readFile(join(directory, 'workspace.json'), 'utf8');
   await page.goto('/resumes/demo-resume-1');
+  await page.getByRole('button', { name: /Choose content/ }).click();
   const picker = page.getByRole('region', { name: 'Choose from your Career Record', exact: true });
   await picker.getByText('Browse 80 available entries', { exact: true }).click();
   const checked = await picker.getByRole('checkbox', { checked: true }).count();

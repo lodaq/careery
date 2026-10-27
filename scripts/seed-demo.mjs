@@ -1,5 +1,6 @@
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
+import { populateTrackingDemo } from './tracking-demo.mjs';
 
 const directory = resolve(process.env.CAREERY_DATA_DIR ?? 'data');
 await mkdir(directory, { recursive: true });
@@ -16,7 +17,9 @@ async function save(name, value) {
 }
 const record = await read('career-record.json', { version: 1, basics, entries: [] });
 const workspace = await read('workspace.json', { version: 1, profiles: [], resumes: [], lastLanguage: 'en' });
+const applications = await read('applications.json', { version: 1, applications: [] });
 if (record.version !== 1 || workspace.version !== 1 || !Array.isArray(record.entries) || !Array.isArray(workspace.profiles) || !Array.isArray(workspace.resumes)) throw new Error('Unsupported data; no files changed.');
+if (applications.version !== 1 || !Array.isArray(applications.applications)) throw new Error('Unsupported application data; no files changed.');
 if (!record.basics.name.en && !record.basics.email && !record.basics.phone && !record.basics.links.length && !record.basics.title.en && !record.basics.location.en) record.basics = structuredClone(basics);
 const entries = [];
 const roles = [
@@ -53,6 +56,9 @@ for (let index=0; index<54; index++) {
   const profile = workspace.profiles.find(profile => profile.id === `demo-profile-${index%8+1}`);
   workspace.resumes.push({ id, name: `${['Specialist','Senior','Associate','Lead','Consultant','Generalist'][Math.floor(index/8)%6]} ${tracks[index%8]} ${index+1} (demo)`, profileId: index<48 ? profile.id : null, language: index%3 === 0 ? 'ar' : 'en', basics: structuredClone(profile.basics), entries: structuredClone(profile.entries.slice(0, index%4+5)), headline: structuredClone(profile.headline), summary: structuredClone(profile.summary), hiddenEntryIds: [], sectionOrder: [...sections] });
 }
+const today = process.env.CAREERY_DEMO_DATE ?? new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+populateTrackingDemo(record, workspace, applications, today);
 await save('career-record.json', record);
 await save('workspace.json', workspace);
-console.log(`Demo data ready: ${record.entries.length} career entries, ${workspace.profiles.length} Profiles, ${workspace.resumes.length} Resumes. Existing IDs were preserved.`);
+await save('applications.json', applications);
+console.log(`Demo data ready: ${record.entries.length} career entries, ${workspace.profiles.length} Profiles, ${workspace.resumes.length} Resumes, ${applications.applications.length} applications. Existing IDs were preserved.`);

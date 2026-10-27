@@ -1,0 +1,25 @@
+import { execFileSync } from 'node:child_process';
+import { expect, test } from '@playwright/test';
+test('navigates the resume studio without losing drafts and reveals invalid hidden fields', async ({ page }) => {
+  execFileSync(process.execPath, ['scripts/seed-demo.mjs'], { env: { ...process.env, CAREERY_DATA_DIR: process.env.CAREERY_E2E_DATA_DIR } });
+  await page.goto('/resumes/demo-resume-1');
+  await page.getByRole('button', { name: 'Experience 2', exact: true }).click();
+  await page.locator('[data-slot="collapsible"].entry-editor > [data-slot="collapsible-trigger"]').first().click();
+  const title = page.getByLabel('Job title', { exact: true }).first();
+  const original = await title.inputValue();
+  await title.fill('');
+  await page.getByRole('button', { name: 'Summary', exact: true }).click();
+  await page.getByRole('button', { name: 'Save now / retry' }).click();
+  await expect(title).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Experience 2', exact: true })).toHaveAttribute('aria-current', 'page');
+  await title.fill(original);
+  await page.getByRole('button', { name: 'Save now / retry' }).click();
+  await expect(page.getByRole('status')).toHaveText('Saved');
+  await page.getByRole('button', { name: 'Preview', exact: true }).click();
+  await expect(page.getByRole('navigation', { name: 'Resume sections' })).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Download PDF', exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Edit', exact: true }).click();
+  await expect(title).toHaveValue(original);
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+});
