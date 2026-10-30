@@ -3,7 +3,8 @@ test('header groups navigation and Settings persists the theme', async ({ page }
   await page.setViewportSize({ width: 801, height: 834 });
   await page.goto('/career-record');
   const dock = page.getByRole('navigation', { name: 'Workspace' });
-  await expect(dock.getByRole('link')).toHaveCount(7);
+  await expect(dock.getByRole('link')).toHaveCount(8);
+  await expect(dock.getByRole('link', { name: 'Resources', exact: true })).toBeVisible();
   await expect(dock.getByRole('link', { name: 'Interview questions', exact: true })).toBeVisible();
   await expect(dock.getByRole('link', { name: 'Home', exact: true })).toHaveCount(0);
   await dock.getByRole('link', { name: 'Profiles', exact: true }).hover();

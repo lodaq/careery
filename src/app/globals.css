@@ -259,7 +259,7 @@ input[type=checkbox] { width:18px; height:18px; accent-color:var(--primary); }
 /* Primary destinations follow the wordmark; Settings anchors the far edge. */
 .workspace-brand { justify-content:flex-start; }
 .workspace-navigation { flex:1; min-width:0; }
-.workspace-navigation-links { width:100%; }
+.workspace-navigation-links { width:100%; flex-wrap:wrap; }
 .navigation-settings { margin-left:auto; }
 .profiles-heading { align-items:center; margin-bottom:24px; }
 .profiles-heading h1 { margin:0; }
