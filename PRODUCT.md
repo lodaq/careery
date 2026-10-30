@@ -73,7 +73,7 @@ without confirmation.
 
 ## Evidence on Hand
 
-- SPEC-MAP.md and SPEC-*.md describe the product requirements and module contracts.
+- docs/specs/README.md and docs/specs/SPEC-*.md describe the product requirements and module contracts.
 - GLOSSARY.md defines product language; docs/adr/0002-independent-content-and-resume-organization.md
   records the independent-copy model.
 - Existing app routes, tests, and src/template/ provide implementation evidence;

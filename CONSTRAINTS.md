@@ -9,7 +9,7 @@ User's standing rules, made checkable: **simple code, minimal code, fast app.**
 - No suppression comments: `@ts-ignore`, `eslint-disable`, empty `catch {}`
 - No unimplemented stubs (`throw new Error("Not implemented")`) where the spec says something works
 - No skipped or deleted tests without a reason in the commit message
-- No secrets in source (`data/` holds personal info, not credentials — fine)
+- No secrets or editable personal data in source; keep local `data/` files ignored by Git and back them up separately.
 - This file is not weakened to make a change pass
 
 ## Enforced with numbers
@@ -26,7 +26,7 @@ User's standing rules, made checkable: **simple code, minimal code, fast app.**
 
 User-approved exception (2026-10-27): the TanStack questions table may exceed 180 kB. Its route-specific ceiling is 185,000 gzip bytes; all other routes retain the 180,000-byte ceiling.
 
-Reasons: 180 kB includes the measured 139 kB Next.js baseline and leaves roughly 41 kB for interactivity. The user approved keeping Next.js and revising this budget on 2026-10-25; Server Components remain the default. 5 s keeps the direct-download button feeling instant. The dep ratchet encodes "minimal code": every new dependency is a ask-first decision per `SPEC-MAP.md`.
+Reasons: 180 kB includes the measured 139 kB Next.js baseline and leaves roughly 41 kB for interactivity. The user approved keeping Next.js and revising this budget on 2026-10-25; Server Components remain the default. 5 s keeps the direct-download button feeling instant. The dep ratchet encodes "minimal code": every new dependency is a ask-first decision per `docs/specs/README.md`.
 
 ## Historical measurements, not current implementation evidence
 

@@ -1,6 +1,6 @@
 # Careery v1 — revised task list
 
-Revised 2026-10-25 for the same project after confirmed workflow decisions. Tasks 1–7 are implemented; Resume editing and the preview/PDF implementation have also landed as verified slices. The latest pagination verification below now proves exact preview/download parity. Checkpoint 1 was reviewed; the user approved retaining Next.js with a 180 kB JavaScript budget and continuing implementation. Former Tasks 1–5 evidence is retained in `previous-attempt.md`. This is the sole active task list.
+Revised 2026-10-25 for the same project after confirmed workflow decisions. Tasks 1–7 are implemented; Resume editing and the preview/PDF implementation have also landed as verified slices. The latest pagination verification below now proves exact preview/download parity. Checkpoint 1 was reviewed; the user approved retaining Next.js with a 180 kB JavaScript budget and continuing implementation. This is the sole active task list.
 
 Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm test`, `pnpm typecheck`, and `pnpm lint` for changes; build and runtime checks occur at checkpoints. File lists are estimates; split any non-mechanical slice exceeding five files. Runtime dependency additions beyond the existing approved stack require review under the current dependency rule.
 
@@ -27,7 +27,7 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 
 **Verification:** Generate and extract a real PDF; time warm generation and exercise concurrent requests
 **Dependencies:** 1
-**Files likely touched:** src/lib/pdf.ts, src/app/api/pdf/test/route.ts, package.json, pnpm-lock.yaml
+**Files likely touched:** src/lib/pdf.ts, src/app/api/resumes/[id]/pdf/route.ts, package.json, pnpm-lock.yaml
 **Estimated scope:** M
 
 ## Task 3: Persist independent bilingual content

@@ -6,7 +6,7 @@ Implement the confirmed workflow: create a Resume from copied Profile content or
 
 ## Current state and history
 
-The current implementation includes the local data foundation, Career Record and Profile editors, Resume organization/editing, and a shared English/Arabic preview and PDF download. Previous implementation history is preserved in `previous-attempt.md`. Current verification evidence is recorded in `todo.md`. The paginated preview now displays the generated PDF itself; short, long and oversized-entry fixtures verify exact counts and identical preview/download bytes.
+The current implementation includes the local data foundation, Career Record and Profile editors, Resume organization/editing, and a shared English/Arabic preview and PDF download. Current verification evidence is recorded in `todo.md`. The paginated preview now displays the generated PDF itself; short, long and oversized-entry fixtures verify exact counts and identical preview/download bytes.
 
 Requirements were confirmed on 2026-10-25. This revised implementation plan is ready for human review; implementation now covers Tasks 1–13, including exact PDF preview and fresh-process persistence checks. Human review of the finished application remains open. Functional checks pass; the user approved a revised 180 kB first-load JavaScript target against the 139,217-byte baseline and requested continued implementation.
 

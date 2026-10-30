@@ -2,15 +2,25 @@
 
 A personal, local-first resume builder: keep reusable English/Arabic career content, organize editable Profiles and independent Resumes, tailor a Resume, and download an A4 PDF.
 
-Implementation has started: the local app scaffold, Career Record editor for all five entry kinds, Profile management with independent copies and Unfiled, PDF smoke route, independent bilingual data contracts, and atomic JSON storage are implemented. Resume creation and editing are not implemented yet. The JavaScript budget is 180 kB per route, approved after measuring the framework baseline. See the task list for verified progress.
+The app includes Career Record editing, independent Profiles and Resumes, bilingual PDF export, application tracking, interview practice, analytics, and job-search resources. See the task list for implementation and verification notes.
 
-- [Project specification](SPEC-MAP.md) and linked module specs
+- [Project specification](docs/specs/README.md) and linked module specs
 - [Domain language](GLOSSARY.md)
 - [Independent content decision](docs/adr/0002-independent-content-and-resume-organization.md)
 - [Quality constraints](CONSTRAINTS.md)
 - [Implementation plan](tasks/plan.md) and [task cards](tasks/todo.md)
 
 Tooling: Next.js App Router, strict TypeScript, Tailwind for the app, isolated plain CSS for the Resume template, local JSON persistence, and Playwright PDF export.
+## Project layout
+
+- `src/app/`: routes with their feature components, actions, data access, and tests.
+- `src/components/`: shared components; `ui/` contains owned registry components.
+- `src/lib/`: shared types, storage, PDF generation, and resume resolution.
+- `src/template/`: resume rendering and print styles.
+- `docs/`: specifications, feature guides, tooling references, and architecture decisions.
+- `e2e/`: browser tests; `scripts/`: demo-data tools; `tasks/`: plans and open notes.
+- `public/`: static assets; `data/`: ignored local personal data.
+
 ## Run locally
 
 Requires Node.js 20.9+ and pnpm 12.14.0.
@@ -21,7 +31,7 @@ pnpm exec playwright install chromium
 NEXT_TELEMETRY_DISABLED=1 pnpm dev
 ```
 
-Open http://127.0.0.1:3000. The development server binds only to loopback. The `/career-record` page edits bilingual content with automatic saving, validation and retry. It prevents stale tabs from overwriting newer saves. The home page creates and lists Profiles; Profile editors select Career Record copies and edit them independently. Deleting a Profile moves its Resumes to Unfiled. The temporary `/api/pdf/test` route downloads a PDF of the home page; it will be replaced by Resume export later.
+Open http://127.0.0.1:3000. The development server binds only to loopback. The `/career-record` page edits bilingual content with automatic saving, validation and retry. It prevents stale tabs from overwriting newer saves. The home page creates and lists Profiles; Profile editors select Career Record copies and edit them independently. Deleting a Profile moves its Resumes to Unfiled. Resume PDF downloads use `/api/resumes/[id]/pdf`.
 
 ## Verify
 
@@ -32,9 +42,9 @@ pnpm lint
 CAREERY_BUILD_DIR=.next-build NEXT_TELEMETRY_DISABLED=1 pnpm build
 ```
 
-The separate build directory preserves the running development server. For the production readiness test, build with `CAREERY_INSTANT_TEST=1` as documented in `instant-nav.rig.md`, then run `pnpm exec playwright test`.
+The separate build directory preserves the running development server. For the production readiness test, build with `CAREERY_INSTANT_TEST=1` as documented in [navigation test guide](docs/instant-navigation.md), then run `pnpm exec playwright test`.
 
-`data/` contains editable personal data and is intended to be versioned in this local project. Tests use isolated temporary directories. Storage rejects legacy `profiles.json` until an explicit migration is provided.
+`data/` contains editable personal data and is ignored by Git. Existing local data is preserved; a fresh checkout starts empty. Back up this directory separately. Tests use isolated temporary directories. Storage rejects legacy `profiles.json` until an explicit migration is provided. Downloaded documentation caches in `llms.txt/` are also ignored; consult the official documentation links in `AGENTS.md`.
 
 ### Fictional demo data and Resume editing
 

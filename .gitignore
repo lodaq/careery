@@ -35,11 +35,17 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.next-build/
 test-results/
 playwright-report/
 captures/
 
-.next-browser/
 
-.next-design/
+
+# Local workspace data and downloaded documentation caches
+/data/*
+!/data/.gitkeep
+/llms.txt/
+
+# Generated build variants and local design-tool artifacts
+/.next-*/
+/.impeccable/
