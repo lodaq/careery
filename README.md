@@ -1,5 +1,7 @@
 # Careery
 
+![Status: Under development](https://img.shields.io/badge/status-under_development-orange)
+
 A personal, local-first resume builder: keep reusable English/Arabic career content, organize editable Profiles and independent Resumes, tailor a Resume, and download an A4 PDF.
 
 The app includes Career Record editing, independent Profiles and Resumes, bilingual PDF export, application tracking, interview practice, analytics, and job-search resources. See the task list for implementation and verification notes.
@@ -11,6 +13,10 @@ The app includes Career Record editing, independent Profiles and Resumes, biling
 - [Implementation plan](tasks/plan.md) and [task cards](tasks/todo.md)
 
 Tooling: Next.js App Router, strict TypeScript, Tailwind for the app, isolated plain CSS for the Resume template, local JSON persistence, and Playwright PDF export.
+## Development status
+
+Careery is a personal app under active development, with local JSON storage rather than a hosted account service. Back up personal data separately and review the implementation notes before relying on a workflow. Resume data and PDFs can contain sensitive career information.
+
 ## Project layout
 
 - `src/app/`: routes with their feature components, actions, data access, and tests.
