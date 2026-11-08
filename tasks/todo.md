@@ -319,3 +319,40 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 - Moved all shared BilingualInput Arabic controls beside field labels; inputs/textareas now fill the available width. Badges are 26×22px with populated styling, accessible labels, keyboard focus and larger coarse-pointer hit regions.
 - Unified shared lavender/plum tokens and inherited app control fonts; aligned primary actions, input borders and translation dialogs. Resume document typography remains separate.
 - Verified 38 tests, typecheck/lint, native dialog open/close, and no horizontal overflow at 320/768/1024/1440px. Axe reports no confirmed violations; the pre-existing closed native dialog aria-controls check requires manual review, and references resolve to mounted dialogs. Next reports no compilation issues.
+
+## Post-v1 modules (2026-10-27 – 2026-10-30)
+
+Commit `ae17fd2` added the job-search workspace beyond the original Resume plan; `9b78a62` added curated resources and `864a7f7` organized docs. These modules were not added to the task list when they landed, so this section records them retroactively.
+
+- Application tracking: `/applications` and `/applications/[id]` track statuses, tasks, activity, contacts, interview rounds, submitted Resume snapshots and uploaded PDFs, with archive and deletion. Guide: `docs/application-tracking.md`.
+- Today: `/today` lists overdue, due, upcoming and undated tasks plus the next seven days of interviews and deadlines in Cairo time.
+- Interview questions: `/interview-questions` adds a tagged question library and FSRS practice sessions with undo and an activity calendar. Guide: `docs/interview-questions.md`.
+- Analytics: `/analytics` now covers workspace inventory, coverage, review checks, Resume breakdown, template use and application/search metrics. Guide: `docs/analytics.md`.
+- Resume studio: Edit / Customize / AI Review modes, six template variants, typography/color/spacing controls, section visibility and ordering, and the optional OpenRouter review. Guide: `docs/resume-ai-review.md` and `docs/resume-editor-design.md`.
+- Resources and Settings: `/resources` lists curated job-search links; `/settings` held only the theme switch until Task 14.
+- Navigation: the workspace dock renders all primary destinations and keeps Settings at the far edge.
+- Verification recorded at the feature commit: lint, typecheck, 82 unit tests and production build pass; the new `e2e` specs cover applications, analytics, interview practice, AI review, Resume customization, profile polish, record tabs and the workspace dock. Route budgets are recorded in `docs/application-tracking.md`. The user approved continuing work on 2026-11-08; a fresh full-application human review remains a standing checkpoint.
+
+## Task 14: Back up and restore local data
+
+**Description:** Add a Settings section that downloads one JSON bundle of every local store and restores it after validation, keeping a copy of the replaced data.
+
+**Acceptance criteria:**
+- [x] Download includes every existing store and omits missing files rather than inventing them.
+- [x] Restore validates through the same readers as the app, replaces only files present in the bundle, and preserves current files and reports an error when validation fails.
+- [x] A timestamped copy of the replaced files is written under `data/backups/` before writing.
+- [x] Missing or cross-origin requests are rejected; oversized bodies are limited.
+- [x] Older interview-question files migrate during restore.
+
+**Verification:** `src/app/settings/backup.test.ts`; `e2e/backup.spec.ts`; manual curl round-trip with a temporary data directory; `pnpm test`, `pnpm typecheck`, `pnpm lint`, `pnpm build`.
+**Dependencies:** 3, 13
+**Files:** `src/app/settings/backup.ts`, `src/app/settings/DataSettings.tsx`, `src/app/api/backup/route.ts`, `src/app/settings/page.tsx`, `src/app/settings/backup.test.ts`, `e2e/backup.spec.ts`, `src/lib/storage.ts`, `src/app/applications/application-data.ts`, `src/app/globals.css`
+
+## Bookkeeping and dependency cleanup (2026-11-08)
+
+- Recorded the post-v1 modules above and updated `docs/specs/README.md` with the current capability map, structure and deferred list.
+- Added `docs/interview-questions.md` and `docs/analytics.md`; the earlier feature-guide cleanup had removed their only verification notes.
+- Corrected `CONSTRAINTS.md`: the three-dependency figure is historical; the approved stack now has 12 runtime dependencies and the ratchet still applies. Replaced the outdated "no UI library" simplicity rule with the `AGENTS.md` stack rule.
+- Resolved `tasks/FIXME.md`: `cn` is the legitimate shadcn-ui class-merge package; `shadcn` is build-only and moved to `devDependencies`.
+- Made the `ResumeList` filter test wait up to 5 s for its lazy `ToggleGroup`; the 1 s default intermittently missed the chunk under full-suite load.
+

@@ -12,7 +12,7 @@ test('collapsed entry order is shared by editor, saved document, and PDF', async
   await writeFile(join(dir, 'career-record.json'), JSON.stringify(record)); await writeFile(join(dir, 'workspace.json'), JSON.stringify(workspace));
   await page.goto('/resumes/order-test');
   await page.getByRole('button', { name: 'Experience 3', exact: true }).click();
-  await page.getByRole('button', { name: 'Reorder experience 3', exact: true }).focus(); await page.keyboard.press('ArrowUp');
+  await page.getByRole('button', { name: 'Move experience 3 up', exact: true }).click();
   await expect(page.locator('.entry-editor > [data-slot=collapsible-trigger]').filter({ visible: true })).toHaveText([/Alpha/, /Gamma/, /Beta/]);
   await expect(page.locator('.resume-preview-panel article h3')).toHaveText(['Alpha role', 'Gamma role', 'Beta role']);
   await page.getByRole('button', { name: 'Choose content', exact: true }).click();

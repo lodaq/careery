@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { gzipSync } from 'node:zlib';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { copyResume, emptyRecord, emptyWorkspace } from '../src/lib/types';
+import { initialScriptBytes } from './initial-js';
 
 test('live preview, Arabic fallback, saved PDF downloads, long and oversized entries', async ({ page, request }) => {
   const directory = process.env.CAREERY_E2E_DATA_DIR;
@@ -40,10 +40,8 @@ test('live preview, Arabic fallback, saved PDF downloads, long and oversized ent
   const exportedBytes = await readFile(downloadPath);
   expect(exportedBytes.subarray(0, 5).toString()).toBe('%PDF-');
   expect([...exportedBytes.toString('latin1').matchAll(/\/Type\s*\/Page\b/g)]).toHaveLength(1);
-  await page.waitForLoadState('networkidle');
-  const scripts = await page.evaluate(() => [...new Set(performance.getEntriesByType('resource').map((entry) => new URL(entry.name).pathname).filter((path) => path.startsWith('/_next/static/') && path.endsWith('.js')))]);
-  const bytes = (await Promise.all(scripts.map(async (path) => gzipSync(await readFile(join('.next-build', path.replace('/_next/', '')))).length))).reduce((sum, size) => sum + size, 0);
-  console.log(`/resumes/[id]: ${bytes} gzip bytes of loaded JavaScript`);
+  const bytes = await initialScriptBytes(request, '/resumes/pdf-short');
+  console.log(`/resumes/[id]: ${bytes} gzip bytes of initial JavaScript`);
   await page.goto('/render/pdf-short');
   await expect(page.getByRole('article')).toContainText('Latest unsaved wording');
   const direction = await page.locator('bdi').first().evaluate((node) => getComputedStyle(node).direction);

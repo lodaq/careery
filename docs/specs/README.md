@@ -13,6 +13,12 @@ Personal, local-first resume builder. Copy bilingual Career Record content into 
 | `resumes` | Independent Resume CRUD, Unfiled, movement, content selection, autosave, remembered language; pure Resume resolver and missing-Arabic flags | `profiles` |
 | `template` | The one ATS template: A4, single column, EN + RTL-Arabic rendering (Arabic month names, Western digits) | `resumes` (its resolved-data shape) |
 | `pdf-export` | "Download PDF" button → server route → Playwright → file download | `template` |
+| `applications` | Local application tracking: statuses, tasks, interviews, contacts, submitted materials, snapshots and uploads | `resumes` (snapshot copies) |
+| `interview-questions` | Bilingual question library, tags, activity calendar and FSRS practice sessions | — |
+| `analytics` | Read-only workspace inventory and application/search metrics | `career-record`, `profiles`, `resumes`, `applications` |
+| `today` | Workload view over open applications: tasks, dates and interviews for the next seven days | `applications` |
+| `resources` | Curated static job-search links | — |
+| `settings` | Theme preference and full local data backup/restore | all stores |
 
 **Build order:** `career-record` → `profiles` → `resumes` → `template` → `pdf-export`. `template` may be developed in parallel against a resolved-data fixture, then wired up.
 
@@ -42,14 +48,19 @@ Lint:      pnpm lint
 ## Project Structure
 
 ```
-src/app/         → Routes: home grid and Unfiled, Career Record editor, Profile editor, Resume editor, PDF render route
+src/app/         → Routes: home grid and Unfiled, Career Record editor, Profile editor, Resume editor, applications, interview questions, analytics, Today, resources, settings, PDF/review/backup routes
 src/components/  → App UI components
 src/template/    → Resume template component + its CSS (isolated from app UI)
 src/lib/         → Domain types, resolver, storage (JSON read/atomic write)
-data/            → career-record.json, workspace.json (ignored by Git, personal data)
+data/            → career-record.json, workspace.json, applications.json, interview-questions.json (ignored by Git); backups/ holds pre-restore copies
 docs/adr/        → Architecture decision records
 docs/specs/      → Module specs (this file is the index)
 ```
+
+Feature guides live in `docs/`: [application tracking](../application-tracking.md),
+[interview questions](../interview-questions.md), [analytics](../analytics.md),
+[Resume AI review](../resume-ai-review.md), and
+[Resume editor design](../resume-editor-design.md).
 
 Tests are colocated with source (`*.test.ts` / `*.test.tsx`).
 
@@ -96,7 +107,10 @@ export function resolveDocument(
 
 ## Deferred (recorded, not spec'd)
 
-PDF version history → CV document type → AI trimming/tailoring suggestions (paste JD) → ATS checker → AI mock interviews → application tracking. Permanently out: public personal page, credit billing.
+PDF version history → CV document type → AI trimming/tailoring suggestions from a
+pasted job description → ATS checker → AI mock interviews. Application tracking,
+interview practice and AI Review were deferred earlier and are now implemented;
+their guides are linked above. Permanently out: public personal page, credit billing.
 
 ## Module specifications
 

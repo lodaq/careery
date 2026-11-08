@@ -46,7 +46,7 @@ test('autosaves bilingual CRUD for every entry kind and retries failed saves', a
   await page.getByRole('button', { name: /edit Arabic version/, expanded: true }).click();
   await experience.getByRole('button', { name: 'Add achievement' }).click();
   await experience.getByLabel('Achievement 2', { exact: true }).fill('Improved performance');
-  await experience.getByRole('button', { name: 'Reorder achievement 2', exact: true }).focus(); await page.keyboard.press('ArrowUp');
+  await experience.getByRole('button', { name: 'Move achievement 2 up', exact: true }).click();
   await saved();
   await page.getByRole('tab', { name: /^Education/ }).click();
   await page.getByRole('button', { name: 'Add education', exact: true }).click();

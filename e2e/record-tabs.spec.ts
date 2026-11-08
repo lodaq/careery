@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { emptyRecord } from '../src/lib/types';
 
-test('tabs isolate content while collapsible entries and achievements retain edits and persist drag order', async ({ page }) => {
+test('tabs isolate content while collapsible entries and achievements retain edits and persist reorder', async ({ page }) => {
   const directory = process.env.CAREERY_E2E_DATA_DIR!;
   const record = emptyRecord();
   record.entries = [
@@ -17,20 +17,12 @@ test('tabs isolate content while collapsible entries and achievements retain edi
   await expect(page.getByLabel('Name', { exact: true })).toBeHidden();
   await expect(page.getByRole('tabpanel')).toHaveCount(1);
   const entries = page.getByRole('list', { name: 'Experience entries', exact: true });
-  const drag = page.getByRole('button', { name: 'Reorder experience 2', exact: true });
-  const source = await drag.boundingBox();
-  const target = await page.getByRole('button', { name: 'Reorder experience 1', exact: true }).boundingBox();
-  if (!source || !target) throw new Error('Missing drag handles');
-  await page.mouse.move(source.x + source.width / 2, source.y + source.height / 2);
-  await page.mouse.down();
-  await page.mouse.move(target.x + target.width / 2, target.y + target.height / 2 - 12, { steps: 15 });
-  await page.mouse.up();
+  await page.getByRole('button', { name: 'Move experience 2 up', exact: true }).click();
   await expect(entries.locator('.entry-card').first()).toContainText('Second role');
   await page.getByRole('button', { name: /First role/ }).click();
   const role = page.getByRole('group', { name: 'Experience 2', exact: true });
   await role.getByLabel('Job title', { exact: true }).fill('Updated role');
-  await role.getByRole('button', { name: 'Reorder achievement 2', exact: true }).focus();
-  await page.keyboard.press('ArrowUp');
+  await role.getByRole('button', { name: 'Move achievement 2 up', exact: true }).click();
   await role.getByRole('button', { name: /Achievement 1.*Second achievement/ }).click();
   await role.getByLabel('Achievement 1', { exact: true }).fill('Updated achievement');
   await page.getByRole('tab', { name: /^Education/ }).click();

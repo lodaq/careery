@@ -64,3 +64,7 @@ export function updateRecord(mutate: (record: CareerRecord) => void, directory =
 export function updateWorkspace(mutate: (workspace: Workspace) => void, directory = dataDirectory()): Promise<Workspace> {
   return updateJson(join(directory, 'workspace.json'), () => readWorkspace(directory), mutate);
 }
+/** Replaces a whole store through the same queue and atomic rename used by updates. */
+export function replaceJson<T>(path: string, data: T): Promise<T> {
+  return updateJson(path, async () => data, () => undefined);
+}

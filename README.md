@@ -9,6 +9,7 @@ The app includes Career Record editing, independent Profiles and Resumes, biling
 - [Project specification](docs/specs/README.md) and linked module specs
 - [Domain language](GLOSSARY.md)
 - [Independent content decision](docs/adr/0002-independent-content-and-resume-organization.md)
+- Feature guides: [applications](docs/application-tracking.md), [interview questions](docs/interview-questions.md), [analytics](docs/analytics.md), [Resume AI review](docs/resume-ai-review.md)
 - [Quality constraints](CONSTRAINTS.md)
 - [Implementation plan](tasks/plan.md) and [task cards](tasks/todo.md)
 
@@ -25,7 +26,7 @@ Careery is a personal app under active development, with local JSON storage rath
 - `src/template/`: resume rendering and print styles.
 - `docs/`: specifications, feature guides, tooling references, and architecture decisions.
 - `e2e/`: browser tests; `scripts/`: demo-data tools; `tasks/`: plans and open notes.
-- `public/`: static assets; `data/`: ignored local personal data.
+- `public/`: static assets; `data/`: ignored local personal data; `data/backups/` holds pre-restore copies.
 
 ## Run locally
 
@@ -38,6 +39,8 @@ NEXT_TELEMETRY_DISABLED=1 pnpm dev
 ```
 
 Open http://127.0.0.1:3000. The development server binds only to loopback. The `/career-record` page edits bilingual content with automatic saving, validation and retry. It prevents stale tabs from overwriting newer saves. The home page creates and lists Profiles; Profile editors select Career Record copies and edit them independently. Deleting a Profile moves its Resumes to Unfiled. Resume PDF downloads use `/api/resumes/[id]/pdf`.
+
+`/settings` downloads a single JSON backup of every local store and restores one. A restore validates the file with the app's readers, replaces only the stores in the bundle, and copies the replaced files to `data/backups/` first. Keep backup files private; they contain personal career information.
 
 ## Verify
 

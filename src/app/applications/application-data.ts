@@ -4,8 +4,8 @@ import { dataDirectory, readJson, readWorkspace, updateJson } from '@/lib/storag
 import { cairoDate, closedStatuses, detailFields, statuses } from './application-types';
 import type { ApplicationStore, JobApplication, ApplicationStatus, ApplicationEvent, Interview, Contact } from './application-types';
 
-export async function readApplications(): Promise<ApplicationStore> {
-  const store = await readJson<ApplicationStore>(join(dataDirectory(), 'applications.json'), () => ({ version: 1, applications: [] }));
+export async function readApplications(directory = dataDirectory()): Promise<ApplicationStore> {
+  const store = await readJson<ApplicationStore>(join(directory, 'applications.json'), () => ({ version: 1, applications: [] }));
   if (!Array.isArray(store.applications) || store.applications.some((app) => !app.id || !statuses.includes(app.status) || !Number.isInteger(app.revision) || !app.details || ![app.tasks, app.events, app.interviews, app.contacts, app.documents].every(Array.isArray))) throw new Error('Invalid application data; original file was preserved.');
   return store;
 }

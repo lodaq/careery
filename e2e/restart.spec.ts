@@ -29,11 +29,11 @@ test('resume movement, bilingual edits, ordering and remembered language survive
     await page.getByRole('button', { name: /^Skills/ }).click();
     await page.locator('[data-slot="collapsible"].entry-editor > [data-slot="collapsible-trigger"]').nth(0).click();
     await page.locator('[data-slot="collapsible"].entry-editor > [data-slot="collapsible-trigger"]').nth(1).click();
-    await page.getByRole('button', { name: 'Reorder skill 2', exact: true }).focus(); await page.keyboard.press('ArrowUp');
+    await page.getByRole('button', { name: 'Move skill 2 up', exact: true }).click();
     await expect(page.getByRole('checkbox', { name: 'Hide in Resume', exact: true })).toHaveCount(0);
     await page.getByRole('button', { name: 'Customize', exact: true }).click();
     await page.getByRole('button', { name: 'Layout', exact: true }).click();
-    await page.getByRole('button', { name: 'Reorder experience section', exact: true }).focus(); await page.keyboard.press('ArrowUp');
+    await page.getByRole('button', { name: 'Move experience section up', exact: true }).click();
     await page.getByRole('button', { name: 'Save', exact: true }).click(); await expect(page.getByRole('status')).toHaveText('Saved');
     await stop(); server = launch(); await ready(); await page.reload();
     await expect(page.getByLabel('Language', { exact: true })).toHaveValue('ar');

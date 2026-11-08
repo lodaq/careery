@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import { expect, test } from '@playwright/test';
 
-test('profile creation dialog and compact drag targets work across viewports', async ({ page }) => {
+test('profile creation dialog and compact reorder targets work across viewports', async ({ page }) => {
   execFileSync(process.execPath, ['scripts/seed-demo.mjs'], { env: { ...process.env, CAREERY_DATA_DIR: process.env.CAREERY_E2E_DATA_DIR } });
   for (const width of [1044, 390]) {
     await page.setViewportSize({ width, height: 854 });
@@ -17,11 +17,15 @@ test('profile creation dialog and compact drag targets work across viewports', a
     await page.keyboard.press('Escape');
     await expect(trigger).toBeFocused();
     await page.getByRole('tab', { name: /^Experience/ }).click();
-    const handle = page.getByRole('button', { name: 'Reorder experience 1', exact: true });
+    const handle = page.getByRole('group', { name: 'Reorder experience 1', exact: true });
     const target = await handle.boundingBox();
     expect(target!.width).toBeGreaterThanOrEqual(44);
-    expect(target!.height).toBeGreaterThanOrEqual(60);
-    expect(target!.height).toBeLessThanOrEqual(64);
+    expect(target!.height).toBeGreaterThanOrEqual(44);
+    for (const button of await handle.getByRole('button').all()) {
+      const box = await button.boundingBox();
+      expect(box!.width).toBeGreaterThanOrEqual(24);
+      expect(box!.height).toBeGreaterThanOrEqual(24);
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
   }
   await page.goto('/profiles/demo-profile-1');

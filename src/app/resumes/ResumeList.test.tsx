@@ -9,7 +9,7 @@ afterEach(cleanup);
 it('combines organization and search filters without changing the source list', async () => {
   const resumes = [{ id: '1', name: 'Engineer', language: 'en', revision: 'a', profileName: 'Technology' }, { id: '2', name: 'Writer', language: 'ar', revision: 'b' }];
   render(<ResumeList resumes={resumes} dashboard />);
-  fireEvent.click(await screen.findByRole('button', { name: /In profiles/ }));
+  fireEvent.click(await screen.findByRole('button', { name: /In profiles/ }, { timeout: 5000 }));
   expect(screen.queryByRole('link', { name: 'Writer' })).toBeNull();
   fireEvent.change(screen.getByRole('searchbox'), { target: { value: ' TECHNOLOGY ' } });
   expect(screen.getByRole('link', { name: 'Engineer' })).toBeTruthy();

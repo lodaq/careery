@@ -1,6 +1,6 @@
 # Constraints
 
-Last reviewed: 2026-10-25 by sebaq
+Last reviewed: 2026-11-08 by sebaq
 
 User's standing rules, made checkable: **simple code, minimal code, fast app.**
 
@@ -42,7 +42,7 @@ The implementation measured below is no longer in the repository. Preserve these
 
 1. Server Components by default; `"use client"` only where interactivity requires it.
 2. `src/lib/types.ts`, `storage.ts`, `resolver.ts`, `pdf.ts` are the only shared modules. A new shared module needs a reason spoken out loud first.
-3. No UI component library, no state library, no form library — Tailwind classes + server actions + `useState` until that genuinely hurts.
+3. Use the approved stack in `AGENTS.md` (shadcn/ui on Base UI plus the named registries) instead of adding another UI library. No state or form library — server actions and `useState` until that genuinely hurts.
 4. Comments only for constraints the code can't show.
 5. Any file over 300 lines gets looked at with suspicion at review.
 
@@ -80,3 +80,30 @@ The implementation measured below is no longer in the repository. Preserve these
 - Typecheck, zero-warning lint, and normal production build pass. Desktop/mobile axe audits report zero violations and zero incomplete checks; mobile document width is 390 px at a 390 px viewport. Next.js MCP reports no runtime or compilation errors.
 - Normal production resume initial modern-browser scripts: 149,317 gzip bytes, excluding the non-loaded legacy nomodule asset. Browser-loaded scripts in the testing build measured 155,197 gzip bytes on the resume route. Both are below 180,000 bytes; PDF/browser checks retain the warm export ≤5-second assertion.
 - Runtime dependencies remain three. Source lines grew from 1,758 to 1,902 (8.2%); all edited source files remain below 300 lines. No personal workspace data was changed for testing; all browser writes used isolated fixtures.
+
+## Dependency baseline (2026-11-08)
+
+The October 2026 feature work (application tracking, interview practice, analytics,
+AI review, and shadcn/ui on Base UI) added dependencies approved through `AGENTS.md`
+and `PRODUCT.md`. The three-dependency figures above are historical.
+
+- Runtime dependencies: 12 (`@base-ui/react`, `@tanstack/react-table`,
+  `class-variance-authority`, `cn`, `lucide-react`, `motion`, `next`, `react`,
+  `react-dom`, `recharts`, `ts-fsrs`, `tw-animate-css`).
+- `shadcn` is build-only (`@import "shadcn/tailwind.css"`) and lives in
+  `devDependencies`.
+- The ratchet still applies: any further runtime dependency needs the ask-first
+  decision described in `docs/specs/README.md`.
+
+## Current verification (2026-11-08)
+
+- `pnpm test`: 87 tests pass across 28 files; `pnpm typecheck`, `pnpm lint` and
+  the production build pass.
+- Data backup/restore: unit tests cover round-trip, validation, pre-restore
+  snapshot and interview-question migration; `e2e/backup.spec.ts` downloads and
+  restores through Settings. A manual curl check confirmed 403 for missing or
+  cross-origin requests and no change on an invalid bundle.
+- Known review flags: `src/app/career-record/RecordEditor.tsx` is 325 lines
+  (above the 300-line review threshold); `src/app/today/page.tsx` and
+  `src/app/resumes/ResumeList.tsx` are dense single-line render functions.
+

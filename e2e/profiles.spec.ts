@@ -1,11 +1,11 @@
 import { expect, test } from '@playwright/test';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { gzipSync } from 'node:zlib';
 import { emptyRecord, emptyWorkspace, copyResume } from '../src/lib/types';
+import { initialScriptBytes } from './initial-js';
 
 // All fixtures are written to the temporary directory owned by the test server.
-test('creates, selects, edits, and deletes a Profile without changing independent copies', async ({ page }) => {
+test('creates, selects, edits, and deletes a Profile without changing independent copies', async ({ page, request }) => {
   const directory = process.env.CAREERY_E2E_DATA_DIR;
   if (!directory) throw new Error('Missing isolated test directory');
   const source = emptyRecord(); source.basics.name.en = 'Profile verification';
@@ -55,11 +55,8 @@ test('creates, selects, edits, and deletes a Profile without changing independen
   await page.getByRole('main').getByLabel('Skill', { exact: true }).fill('Profile-only wording');
   await expect(page.getByRole('status')).toHaveText('Saved');
   expect(JSON.parse(await readFile(join(directory, 'workspace.json'), 'utf8')).resumes[0]).toEqual(resume);
-  await page.waitForLoadState('networkidle');
-  const scripts = await page.evaluate(() => [...new Set(performance.getEntriesByType('resource').map((entry) => new URL(entry.name).pathname).filter((path) => path.startsWith('/_next/static/') && path.endsWith('.js')))]);
-  const sizes = await Promise.all(scripts.map(async (path) => gzipSync(await readFile(join('.next-build', path.replace('/_next/', '')))).length));
-  const bytes = sizes.reduce((sum, size) => sum + size, 0);
-  console.log(`/profiles/[id]: ${bytes} gzip bytes of loaded JavaScript`);
+  const bytes = await initialScriptBytes(request, `/profiles/${profile.id}`);
+  console.log(`/profiles/[id]: ${bytes} gzip bytes of initial JavaScript`);
   await page.getByRole('link', { name: 'Back to workspace', exact: true }).click();
   await expect(page.getByRole('link', { name: 'Frontend development', exact: true })).toBeVisible();
   await expect(page.getByText('1 entries · 1 Resumes', { exact: true })).toBeVisible();

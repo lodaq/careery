@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { readFile } from 'node:fs/promises';
-import { join } from 'node:path';
-import { gzipSync } from 'node:zlib';
+import { initialScriptBytes } from './initial-js';
 
 test('questions support tags, frequency, practice recovery, undo, and preserved daily history', async ({ page }) => {
   await page.goto('/interview-questions');
@@ -56,15 +54,13 @@ test('questions support tags, frequency, practice recovery, undo, and preserved 
   await expect(page.getByRole('textbox', { name: 'Rename tag Practice test tag', exact: true })).toHaveCount(0);
 });
 
-test('question table fits mobile and initial JavaScript stays within budget', async ({ page }) => {
+test('question table fits mobile and initial JavaScript stays within budget', async ({ page, request }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/interview-questions');
   await expect(page.getByRole('button', { name: 'Add question', exact: true })).toBeEnabled();
   await page.waitForLoadState('networkidle');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
-  const scripts = await page.evaluate(() => [...new Set(performance.getEntriesByType('resource').map((entry) => new URL(entry.name).pathname).filter((path) => path.startsWith('/_next/static/') && path.endsWith('.js')))]);
-  const sizes = await Promise.all(scripts.map(async (path) => gzipSync(await readFile(join('.next-build', path.replace('/_next/', '')))).length));
-  const bytes = sizes.reduce((sum, size) => sum + size, 0);
+  const bytes = await initialScriptBytes(request, '/interview-questions');
   console.log(`Interview questions: ${bytes} gzip bytes of initial JavaScript`);
   expect(bytes).toBeLessThanOrEqual(185000);
 });
