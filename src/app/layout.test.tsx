@@ -5,6 +5,8 @@ import { renderToString } from 'react-dom/server';
 import { afterEach, expect, it, vi } from 'vitest';
 import RootLayout from './layout';
 
+vi.mock('@clerk/nextjs', () => ({ ClerkProvider: ({ children }: { children: React.ReactNode }) => children }));
+
 let root: Root | undefined;
 afterEach(async () => { if (root) await act(async () => root!.unmount()); root = undefined; vi.restoreAllMocks(); });
 it('tolerates extension attributes on body without removing them', async () => {

@@ -1,3 +1,4 @@
+import { PageHeading } from '@/components/PageHeading';
 import Link from 'next/link';
 import { SubmittedResume } from './SubmittedResume';
 import { NativeSelect } from '@/components/ui/native-select';
@@ -33,7 +34,7 @@ export function ApplicationDetail({ app: application, resumes }: { app: JobAppli
   return <>
     <Link href="/applications" prefetch={false}>← Applications</Link>
     <p className="application-meta">{app.details.appliedDate ? `${daysSince(app.details.appliedDate)} days since applying` : 'Not applied'} · {contact ? `${daysSince(contact)} days since last contact` : 'No contact recorded'}</p>
-    <div className="section-title application-detail-title"><div><h1>{app.company}</h1><p>{app.role} · {app.status}{app.archived ? ' · Archived' : ''}</p><p className="application-meta">{nextTask(app) ? `Next: ${nextTask(app)!.title}${nextTask(app)!.due ? ` · ${nextTask(app)!.due}` : ''}` : 'No next action scheduled'}</p></div>{app.details.jobUrl && <a href={app.details.jobUrl} target="_blank" rel="noreferrer">Open job posting ↗</a>}</div>
+    <div className="section-title application-detail-title"><div><PageHeading><h1>{app.company}</h1><p>{app.role} · {app.status}{app.archived ? ' · Archived' : ''}</p></PageHeading><p className="application-meta">{nextTask(app) ? `Next: ${nextTask(app)!.title}${nextTask(app)!.due ? ` · ${nextTask(app)!.due}` : ''}` : 'No next action scheduled'}</p></div>{app.details.jobUrl && <a href={app.details.jobUrl} target="_blank" rel="noreferrer">Open job posting ↗</a>}</div>
     <ApplicationForm id={app.id} revision={app.revision} operation="edit"><div className="application-fields"><AppField name="company" label="Company" value={app.company} required /><AppField name="role" label="Job title" value={app.role} required /><AppField name="status" label="Status" options={statuses} value={app.status} /><AppField name="priority" label="Priority" options={['High', 'Medium', 'Low']} value={app.priority} /></div></ApplicationForm>
     <Tasks app={app} />
     <Tabs defaultValue="overview" className="application-tabs"><TabsList variant="line" aria-label="Application details">{['Overview', 'Activity', 'Interviews', 'Documents', 'Offer'].map((tab) => <TabsTrigger key={tab} value={tab.toLowerCase()}>{tab}</TabsTrigger>)}</TabsList>

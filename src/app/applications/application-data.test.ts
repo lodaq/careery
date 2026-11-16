@@ -1,3 +1,5 @@
+import { mkdir } from 'node:fs/promises';
+vi.mock('@clerk/nextjs/server', () => ({ auth: async () => ({ userId: 'user_test' }) }));
 import { mkdtemp, rm, writeFile, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -9,7 +11,7 @@ import { updateWorkspace } from '@/lib/storage';
 import { copyResume, emptyRecord, emptyWorkspace } from '@/lib/types';
 let directory = '';
 afterEach(async () => { vi.unstubAllEnvs(); if (directory) await rm(directory, { recursive: true, force: true }); });
-async function setup() { directory = await mkdtemp(join(tmpdir(), 'careery-applications-')); vi.stubEnv('CAREERY_DATA_DIR', directory); return createApplication({ company: 'Acme', role: 'Engineer' }); }
+async function setup() { directory = await mkdtemp(join(tmpdir(), 'careery-applications-')); vi.stubEnv('CAREERY_DATA_DIR', directory); directory = join(directory, 'users', 'user_test'); await mkdir(directory, { recursive: true }); return createApplication({ company: 'Acme', role: 'Engineer' }); }
 it('persists validated applications, records status history, and rejects stale edits', async () => {
   const app = await setup();
   expect(app.status).toBe('Saved');

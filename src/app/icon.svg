@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Careery</title>
+  <rect width="512" height="512" rx="64" fill="#103c2c"/>
+  <rect width="512" height="472" rx="64" fill="#28583f"/>
+  <path d="M331 163a120 120 0 1 0 0 170" fill="none" stroke="#faf9f3" stroke-width="56" stroke-linecap="square"/>
+  <path d="M332 110h70v70h-70z" fill="#faf9f3"/>
+</svg>

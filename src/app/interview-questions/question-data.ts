@@ -44,15 +44,18 @@ function normalize(raw: Record<string, unknown>): Library {
   return library;
 }
 const readRaw = (directory: string) => readJson<Record<string, unknown>>(pathFor(directory), () => ({ version: 1, questions: starterQuestions() }));
-export async function readQuestions(directory = dataDirectory()): Promise<Library> {
+export async function readQuestions(directory?: string): Promise<Library> {
+  directory ??= await dataDirectory();
   const raw = await readRaw(directory);
   if (raw.schema === 2) return normalize(raw);
   return updateQuestions(() => undefined, directory);
 }
-export function updateQuestions(mutate: (library: Library) => void, directory = dataDirectory()) {
+export async function updateQuestions(mutate: (library: Library) => void, directory?: string) {
+  directory ??= await dataDirectory();
   return updateJson(pathFor(directory), async () => normalize(await readRaw(directory)), mutate);
 }
-export async function libraryMutation(mutate: (library: Library) => void, directory = dataDirectory()): Promise<LibraryResult> {
+export async function libraryMutation(mutate: (library: Library) => void, directory?: string): Promise<LibraryResult> {
+  directory ??= await dataDirectory();
   try { return { library: await updateQuestions(mutate, directory) }; }
   catch (error) { return { error: error instanceof Error && error.message.startsWith('Check:') ? error.message.slice(7) : 'Could not save. Your changes are still here. Check local disk access and retry.' }; }
 }
@@ -63,7 +66,8 @@ export function currentQuestion(library: Library, id: string, revision: unknown)
   check(String(q.revision) === String(revision), 'This question changed in another tab. Copy your edits, then reload.');
   return q;
 }
-export async function changeQuestion(form: FormData, directory = dataDirectory()): Promise<LibraryResult> {
+export async function changeQuestion(form: FormData, directory?: string): Promise<LibraryResult> {
+  directory ??= await dataDirectory();
   return libraryMutation((library) => {
     const operation = form.get('operation');
     check(['create', 'edit', 'delete'].includes(String(operation)), 'Choose a valid question action.');
@@ -80,7 +84,8 @@ export async function changeQuestion(form: FormData, directory = dataDirectory()
     else library.questions.unshift(item);
   }, directory);
 }
-export async function changeTag(form: FormData, directory = dataDirectory()): Promise<LibraryResult> {
+export async function changeTag(form: FormData, directory?: string): Promise<LibraryResult> {
+  directory ??= await dataDirectory();
   return libraryMutation((library) => {
     check(String(library.tagRevision) === form.get('revision'), 'Tags changed in another tab. Reload before saving.');
     const operation = form.get('operation');

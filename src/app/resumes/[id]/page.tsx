@@ -15,6 +15,8 @@ async function ResumeContent({ params }: { params: Promise<{ id: string }> }) {
   if (!resume) notFound();
   return <RecordEditor key={id} record={{ version: 1, basics: resume.basics, entries: resume.entries }} revision={resumeRevision(resume)} saveAction={saveResumeAction.bind(null, id)} resume={resume} profiles={workspace.profiles.map(({ id, name }) => ({ id, name }))} availableEntries={record.entries} />;
 }
+export const metadata = { title: 'Resume', description: 'Create and tailor English and Arabic resumes.', robots: { index: false, follow: false } };
+
 export default function ResumePage({ params }: { params: Promise<{ id: string }> }) {
   return <WorkspaceShell navigation={<Link prefetch={false} href="/">Back to workspace</Link>} className="record-main resume-main"><Suspense fallback={<p role="status">Loading your Resume…</p>}><ResumeContent params={params} /></Suspense></WorkspaceShell>;
 }

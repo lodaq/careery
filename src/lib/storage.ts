@@ -1,3 +1,5 @@
+import { connection } from 'next/server';
+import { auth } from '@clerk/nextjs/server';
 import { mkdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -5,7 +7,12 @@ import { emptyRecord, emptyWorkspace } from './types';
 import type { CareerRecord, Workspace } from './types';
 
 const queues = new Map<string, Promise<void>>();
-export const dataDirectory = () => process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data');
+export async function dataDirectory() {
+  await connection();
+  const { userId } = await auth();
+  if (!userId || !/^user_[a-zA-Z0-9]+$/.test(userId)) throw new Error('Authentication required.');
+  return join(process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data'), 'users', userId);
+}
 function missing(error: unknown): boolean { return error instanceof Error && 'code' in error && error.code === 'ENOENT'; }
 export async function readJson<T>(path: string, fallback: () => T): Promise<T> {
   let text: string;
@@ -18,12 +25,14 @@ export async function readJson<T>(path: string, fallback: () => T): Promise<T> {
   return value as T;
 }
 
-export async function readRecord(directory = dataDirectory()): Promise<CareerRecord> {
+export async function readRecord(directory?: string): Promise<CareerRecord> {
+  directory ??= await dataDirectory();
   const record = await readJson(join(directory, 'career-record.json'), emptyRecord);
   if (!record.basics || !Array.isArray(record.entries)) throw new Error('Invalid Career Record; original data was preserved.');
   return record;
 }
-export async function readWorkspace(directory = dataDirectory()): Promise<Workspace> {
+export async function readWorkspace(directory?: string): Promise<Workspace> {
+  directory ??= await dataDirectory();
   try {
     await stat(join(directory, 'profiles.json'));
   } catch (error) {
@@ -58,10 +67,12 @@ export async function updateJson<T>(path: string, read: () => Promise<T>, mutate
   void settled.then(() => { if (queues.get(key) === settled) queues.delete(key); });
   return operation;
 }
-export function updateRecord(mutate: (record: CareerRecord) => void, directory = dataDirectory()): Promise<CareerRecord> {
+export async function updateRecord(mutate: (record: CareerRecord) => void, directory?: string): Promise<CareerRecord> {
+  directory ??= await dataDirectory();
   return updateJson(join(directory, 'career-record.json'), () => readRecord(directory), mutate);
 }
-export function updateWorkspace(mutate: (workspace: Workspace) => void, directory = dataDirectory()): Promise<Workspace> {
+export async function updateWorkspace(mutate: (workspace: Workspace) => void, directory?: string): Promise<Workspace> {
+  directory ??= await dataDirectory();
   return updateJson(join(directory, 'workspace.json'), () => readWorkspace(directory), mutate);
 }
 /** Replaces a whole store through the same queue and atomic rename used by updates. */

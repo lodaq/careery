@@ -61,4 +61,11 @@ populateTrackingDemo(record, workspace, applications, today);
 await save('career-record.json', record);
 await save('workspace.json', workspace);
 await save('applications.json', applications);
+const existingToolbox = await read('toolbox.json', null);
+if (!existingToolbox || !Array.isArray(existingToolbox.tools) || existingToolbox.tools.length === 0) {
+  try {
+    const seedTools = JSON.parse(await readFile(new URL('../src/app/toolbox/seed-tools.json', import.meta.url), 'utf8'));
+    await save('toolbox.json', { version: 1, tools: seedTools });
+  } catch { /* optional toolbox seed */ }
+}
 console.log(`Demo data ready: ${record.entries.length} career entries, ${workspace.profiles.length} Profiles, ${workspace.resumes.length} Resumes, ${applications.applications.length} applications. Existing IDs were preserved.`);

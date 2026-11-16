@@ -1,0 +1,4210 @@
+[
+  {
+    "id": "egypt-1",
+    "name": "Wuzzuf",
+    "url": "https://wuzzuf.net/",
+    "icon": "https://www.google.com/s2/favicons?domain=wuzzuf.net&sz=64",
+    "description": "Egypt's best-known job board, covering entry-level to senior roles across industries; run by BasharSoft.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-2",
+    "name": "Forasna",
+    "url": "https://forasna.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=forasna.com&sz=64",
+    "description": "Arabic-first, mobile-friendly board for entry-level and blue-collar jobs, from the Wuzzuf team.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-3",
+    "name": "Jobzella",
+    "url": "https://www.jobzella.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobzella.com&sz=64",
+    "description": "Egyptian professional network and job board with career content and CV tools.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-4",
+    "name": "Tanqeeb Egypt",
+    "url": "https://egypt.tanqeeb.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=egypt.tanqeeb.com&sz=64",
+    "description": "Arabic-first aggregator that pulls listings from many Arab job boards into one search.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-5",
+    "name": "Akhtaboot",
+    "url": "https://www.akhtaboot.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.akhtaboot.com&sz=64",
+    "description": "Middle East job board with Egypt listings and free posting options for employers.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-6",
+    "name": "3amal.com",
+    "url": "https://3amal.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=3amal.com&sz=64",
+    "description": "Egypt and MENA job board with sector-specific and niche postings.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-7",
+    "name": "Qureos",
+    "url": "https://www.qureos.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.qureos.com&sz=64",
+    "description": "AI recruitment platform with Egypt listings, Arabic support and career guides.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-8",
+    "name": "Indeed Egypt",
+    "url": "https://eg.indeed.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=eg.indeed.com&sz=64",
+    "description": "Egyptian edition of Indeed with large listing volume and alerts.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-9",
+    "name": "LinkedIn Jobs Egypt",
+    "url": "https://www.linkedin.com/jobs/egypt-jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.linkedin.com&sz=64",
+    "description": "Egypt-filtered LinkedIn listings, strong for white-collar, tech and multinational roles.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-10",
+    "name": "Bayt Egypt",
+    "url": "https://www.bayt.com/en/egypt/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.bayt.com&sz=64",
+    "description": "Bayt's Egypt listings; the region's large job site, useful for Gulf and MENA roles too.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-11",
+    "name": "GulfTalent",
+    "url": "https://www.gulftalent.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.gulftalent.com&sz=64",
+    "description": "Senior and mid-level jobs across the Gulf, popular with Egyptians seeking regional roles.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-12",
+    "name": "NaukriGulf",
+    "url": "https://www.naukrigulf.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.naukrigulf.com&sz=64",
+    "description": "Gulf-focused job portal also used for Egypt and regional hiring.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-13",
+    "name": "Edarabia Jobs",
+    "url": "https://www.edarabia.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.edarabia.com&sz=64",
+    "description": "Education-sector jobs across Egypt and the region (teachers, admin, schools).",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-14",
+    "name": "BasharSoft",
+    "url": "https://basharsoft.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=basharsoft.com&sz=64",
+    "description": "Parent company of Wuzzuf, Forasna and iCareer; see its products and reports.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-15",
+    "name": "Daily SW Jobs (Telegram)",
+    "url": "https://t.me/s/DailySWJobs",
+    "icon": "https://www.google.com/s2/favicons?domain=t.me&sz=64",
+    "description": "Telegram channel posting software jobs, many remote or Egypt-based.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-16",
+    "name": "Technical Jobs Apply (Telegram)",
+    "url": "https://t.me/s/technicalJobsapply",
+    "icon": "https://www.google.com/s2/favicons?domain=t.me&sz=64",
+    "description": "Telegram channel with tech job posts and referrals for Egyptian engineers.",
+    "category": "EGYPTIAN JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "egypt-17",
+    "name": "Egypt Government Jobs Portal",
+    "url": "https://jobs.caoa.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobs.caoa.gov.eg&sz=64",
+    "description": "Official portal of the Central Agency for Organization and Administration for public-sector competitions.",
+    "category": "GOVERNMENT, PUBLIC SECTOR & OFFICIAL CHANNELS"
+  },
+  {
+    "id": "egypt-18",
+    "name": "Ministry of Labor",
+    "url": "https://www.manpower.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.manpower.gov.eg&sz=64",
+    "description": "Ministry of Labor and Migration site; official channel for overseas job opportunities.",
+    "category": "GOVERNMENT, PUBLIC SECTOR & OFFICIAL CHANNELS"
+  },
+  {
+    "id": "egypt-19",
+    "name": "Warning: Fake Overseas Job Ads",
+    "url": "https://cairo.gov.eg/en/news/2026/june/10_june/821e8ce154604d36b9508f78ce6bc334",
+    "icon": "https://www.google.com/s2/favicons?domain=cairo.gov.eg&sz=64",
+    "description": "Labor Ministry notice urging applicants to use only official channels for jobs abroad.",
+    "category": "GOVERNMENT, PUBLIC SECTOR & OFFICIAL CHANNELS"
+  },
+  {
+    "id": "egypt-20",
+    "name": "Ministry of Planning Jobs",
+    "url": "https://mped.gov.eg/Jobs?lang=en",
+    "icon": "https://www.google.com/s2/favicons?domain=mped.gov.eg&sz=64",
+    "description": "Vacancies page of the Ministry of Planning and Economic Development.",
+    "category": "GOVERNMENT, PUBLIC SECTOR & OFFICIAL CHANNELS"
+  },
+  {
+    "id": "egypt-21",
+    "name": "MCIT Egypt",
+    "url": "https://mcit.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=mcit.gov.eg&sz=64",
+    "description": "Ministry of Communications and IT, behind national tech training and employment initiatives.",
+    "category": "GOVERNMENT, PUBLIC SECTOR & OFFICIAL CHANNELS"
+  },
+  {
+    "id": "egypt-22",
+    "name": "CAPMAS",
+    "url": "https://www.capmas.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.capmas.gov.eg&sz=64",
+    "description": "Official statistics agency with labor force and employment data.",
+    "category": "GOVERNMENT, PUBLIC SECTOR & OFFICIAL CHANNELS"
+  },
+  {
+    "id": "egypt-23",
+    "name": "DEPI (Digital Egypt Pioneers)",
+    "url": "https://depi.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=depi.gov.eg&sz=64",
+    "description": "Free MCIT scholarship with tech and digital tracks for students and graduates.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-24",
+    "name": "DEPI Freelance Yard",
+    "url": "https://depi.career-180.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=depi.career-180.com&sz=64",
+    "description": "Support for freelancing careers under the DEPI umbrella.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-25",
+    "name": "ITIDA",
+    "url": "https://itida.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=itida.gov.eg&sz=64",
+    "description": "IT Industry Development Agency: internships, Train to Hire programs and employment fairs.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-26",
+    "name": "ITIDA Employment Fair",
+    "url": "https://itida.gov.eg/English/MediaCenter/Events/Pages/22nd-ITIDA-Employment-Fair.aspx",
+    "icon": "https://www.google.com/s2/favicons?domain=itida.gov.eg&sz=64",
+    "description": "Employment fair connecting graduates and professionals with ICT employers (22nd edition held online 30 Sep 2026).",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-27",
+    "name": "NTI Summer Training",
+    "url": "https://www.nti.sci.eg/summertraining",
+    "icon": "https://www.google.com/s2/favicons?domain=www.nti.sci.eg&sz=64",
+    "description": "4-week, 120-hour summer training for undergraduates with ITIDA.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-28",
+    "name": "ITI",
+    "url": "https://www.iti.gov.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.iti.gov.eg&sz=64",
+    "description": "Information Technology Institute, a government tech training institute.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-29",
+    "name": "Wazeefa Tech",
+    "url": "https://next-eg.com/wazeefa-tech/",
+    "icon": "https://www.google.com/s2/favicons?domain=next-eg.com&sz=64",
+    "description": "MCIT initiative to qualify and place fresh graduates in IT roles with NTI and ITI.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-30",
+    "name": "Egyptian Knowledge Bank",
+    "url": "https://www.ekb.eg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.ekb.eg&sz=64",
+    "description": "Free national learning and research portal for Egyptians.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-31",
+    "name": "AUC Career Center",
+    "url": "https://careercenter.aucegypt.edu/",
+    "icon": "https://www.google.com/s2/favicons?domain=careercenter.aucegypt.edu&sz=64",
+    "description": "Employment fairs, mock interviews and workshops (AUC students and alumni only).",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-32",
+    "name": "Egypt Innovate",
+    "url": "https://www.egyptinnovate.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.egyptinnovate.com&sz=64",
+    "description": "Platform for Egypt's startup and innovation ecosystem.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-33",
+    "name": "Flat6Labs",
+    "url": "https://www.flat6labs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.flat6labs.com&sz=64",
+    "description": "Cairo-founded regional accelerator; useful for startup roles and careers.",
+    "category": "TRAINING, SCHOLARSHIPS, INTERNSHIPS & CAREER FAIRS"
+  },
+  {
+    "id": "egypt-34",
+    "name": "Mostaql",
+    "url": "https://mostaql.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=mostaql.com&sz=64",
+    "description": "Largest Arabic-language freelance platform, run by Hsoub.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-35",
+    "name": "Khamsat",
+    "url": "https://khamsat.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=khamsat.com&sz=64",
+    "description": "Arabic micro-services marketplace with gigs starting at $5.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-36",
+    "name": "Hsoub",
+    "url": "https://www.hsoub.com/en",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hsoub.com&sz=64",
+    "description": "Company behind Mostaql and Khamsat.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-37",
+    "name": "Ureed",
+    "url": "https://ureed.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=ureed.com&sz=64",
+    "description": "Arabic freelance marketplace with a Gulf client base.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-38",
+    "name": "Jobbers",
+    "url": "https://www.jobbers.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobbers.io&sz=64",
+    "description": "Trilingual freelance marketplace advertising zero commission.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-39",
+    "name": "Upwork",
+    "url": "https://www.upwork.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.upwork.com&sz=64",
+    "description": "Largest global freelance marketplace, a common first stop for Egyptian freelancers.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-40",
+    "name": "Fiverr",
+    "url": "https://www.fiverr.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.fiverr.com&sz=64",
+    "description": "Global gig marketplace.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-41",
+    "name": "Freelancer.com",
+    "url": "https://www.freelancer.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.freelancer.com&sz=64",
+    "description": "Global freelance project marketplace.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-42",
+    "name": "Toptal",
+    "url": "https://www.toptal.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.toptal.com&sz=64",
+    "description": "Vetted network for top freelance talent.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-43",
+    "name": "Remoteplatz",
+    "url": "https://remoteplatz.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=remoteplatz.com&sz=64",
+    "description": "Egyptian startup connecting developers in Egypt with European tech firms.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-44",
+    "name": "Jobgether Egypt Remote Jobs",
+    "url": "https://dynamic.jobgether.com/remote-jobs/egypt",
+    "icon": "https://www.google.com/s2/favicons?domain=dynamic.jobgether.com&sz=64",
+    "description": "Remote and flexible jobs open to people in Egypt.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-45",
+    "name": "We Work Remotely",
+    "url": "https://weworkremotely.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=weworkremotely.com&sz=64",
+    "description": "Remote-only board with low spam.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-46",
+    "name": "Remote OK",
+    "url": "https://remoteok.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=remoteok.com&sz=64",
+    "description": "Large remote job board with tech filters.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-47",
+    "name": "Remotive",
+    "url": "https://remotive.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=remotive.com&sz=64",
+    "description": "Curated remote tech jobs.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-48",
+    "name": "Himalayas",
+    "url": "https://himalayas.app/",
+    "icon": "https://www.google.com/s2/favicons?domain=himalayas.app&sz=64",
+    "description": "Remote jobs with time zone and hiring-country details.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-49",
+    "name": "Wellfound",
+    "url": "https://wellfound.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=wellfound.com&sz=64",
+    "description": "Startup jobs with upfront salary and equity.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-50",
+    "name": "Payoneer",
+    "url": "https://www.payoneer.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.payoneer.com&sz=64",
+    "description": "Widely used by Egyptian freelancers to receive international payments.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-51",
+    "name": "Wise",
+    "url": "https://wise.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=wise.com&sz=64",
+    "description": "Low-cost international transfers for remote workers.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-52",
+    "name": "Raenest",
+    "url": "https://www.raenest.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.raenest.com&sz=64",
+    "description": "Multi-currency account for freelancers in Egypt and Africa.",
+    "category": "FREELANCE, REMOTE & GETTING PAID"
+  },
+  {
+    "id": "egypt-53",
+    "name": "Levels.fyi Egypt (Software Engineer)",
+    "url": "https://www.levels.fyi/t/software-engineer/locations/egypt",
+    "icon": "https://www.google.com/s2/favicons?domain=www.levels.fyi&sz=64",
+    "description": "Crowd-sourced software engineer pay in Egypt by company and level.",
+    "category": "SALARY & LABOR-MARKET DATA"
+  },
+  {
+    "id": "egypt-54",
+    "name": "ERI Salary Egypt",
+    "url": "https://www.erieri.com/salary/job/computer-programmer/egypt",
+    "icon": "https://www.google.com/s2/favicons?domain=www.erieri.com&sz=64",
+    "description": "Salary survey data for roles in Egypt.",
+    "category": "SALARY & LABOR-MARKET DATA"
+  },
+  {
+    "id": "egypt-55",
+    "name": "Egypt Salary Guide",
+    "url": "https://globalcostdata.com/salary/egypt/",
+    "icon": "https://www.google.com/s2/favicons?domain=globalcostdata.com&sz=64",
+    "description": "Average net monthly salary across 93 professions benchmarked to cost of living.",
+    "category": "SALARY & LABOR-MARKET DATA"
+  },
+  {
+    "id": "egypt-56",
+    "name": "TalentUp Egypt Salaries",
+    "url": "https://talentup.io/country/egypt-salaries",
+    "icon": "https://www.google.com/s2/favicons?domain=talentup.io&sz=64",
+    "description": "Salary benchmarks for Egypt by role.",
+    "category": "SALARY & LABOR-MARKET DATA"
+  },
+  {
+    "id": "egypt-57",
+    "name": "Average Salary in Egypt Guide",
+    "url": "https://hellopebl.com/resources/blog/average-salary-egypt/",
+    "icon": "https://www.google.com/s2/favicons?domain=hellopebl.com&sz=64",
+    "description": "Salary ranges, minimum wage and employer costs in Egypt.",
+    "category": "SALARY & LABOR-MARKET DATA"
+  },
+  {
+    "id": "egypt-58",
+    "name": "Wuzzuf Women in Labour Market Report",
+    "url": "https://identity-mag.com/basharsoft-releases-first-wuzzuf-report-on-women-in-egypts-labour-market/",
+    "icon": "https://www.google.com/s2/favicons?domain=identity-mag.com&sz=64",
+    "description": "WUZZUF data on women's job search and application behavior in Egypt.",
+    "category": "SALARY & LABOR-MARKET DATA"
+  },
+  {
+    "id": "egypt-59",
+    "name": "How to Find Jobs in Egypt",
+    "url": "https://www.qureos.com/career-guide/how-to-find-jobs-in-egypt",
+    "icon": "https://www.google.com/s2/favicons?domain=www.qureos.com&sz=64",
+    "description": "2026 guide to where to search, networking and ATS-ready CVs.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-60",
+    "name": "Top Recruitment Platforms in Egypt",
+    "url": "https://www.qureos.com/hiring-guide/top-recruitment-platforms-in-egypt",
+    "icon": "https://www.google.com/s2/favicons?domain=www.qureos.com&sz=64",
+    "description": "Comparison of Egyptian job platforms plus labor market and law basics (employer-oriented).",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-61",
+    "name": "Top 10 Job Sites in Egypt",
+    "url": "https://www.zimyo.com/middle-east/insights/job-posting-sites-in-egypt/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.zimyo.com&sz=64",
+    "description": "Roundup of Egyptian job portals and how to use them.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-62",
+    "name": "Job Boards in Egypt (Betterteam)",
+    "url": "https://betterteam.com/job-posting-sites-egypt",
+    "icon": "https://www.google.com/s2/favicons?domain=betterteam.com&sz=64",
+    "description": "Overview and pricing of job boards in Egypt.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-63",
+    "name": "Careers in Egyptian Tech",
+    "url": "https://hellm.vercel.app/careers",
+    "icon": "https://www.google.com/s2/favicons?domain=hellm.vercel.app&sz=64",
+    "description": "Guide to Egyptian tech hiring, companies and remote work.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-64",
+    "name": "How to Land a Remote Job in Egypt",
+    "url": "https://www.cairo360.com/?p=1783233",
+    "icon": "https://www.google.com/s2/favicons?domain=www.cairo360.com&sz=64",
+    "description": "Practical guide to remote platforms, portfolios and getting paid.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-65",
+    "name": "Best Freelance Platforms for Egyptians",
+    "url": "https://www.raenest.com/blog/best-freelance-platforms-for-egyptians-in-2026",
+    "icon": "https://www.google.com/s2/favicons?domain=www.raenest.com&sz=64",
+    "description": "Comparison of local and global freelance platforms.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-66",
+    "name": "Egypt Freelancers Guide",
+    "url": "https://www.jobbers.io/?p=74129",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobbers.io&sz=64",
+    "description": "Registration, payments and compliance for Egyptian freelancers.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-67",
+    "name": "Digital Pioneers Initiative Explained",
+    "url": "https://enterpriseam.com/egypt/blackboards/cit-ministry-is-trying-to-close-the-tech-talent-gap-with-digital-pioneers-initiative/",
+    "icon": "https://www.google.com/s2/favicons?domain=enterpriseam.com&sz=64",
+    "description": "Coverage of the government's Digital Pioneers tech training initiative.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-68",
+    "name": "Egypt Digital Talent Programs",
+    "url": "https://www.zawya.com/en/economy/north-africa/egypt-expands-digital-talent-programs-as-offshoring-exports-target-6bln-in-2026-v6k21gtg",
+    "icon": "https://www.google.com/s2/favicons?domain=www.zawya.com&sz=64",
+    "description": "Overview of ITIDA, ITI, NTI and Train to Hire programs.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "egypt-69",
+    "name": "Top Recruitment Agencies in Cairo",
+    "url": "https://forsnajobs.blogspot.com/2025/06/top-recruitment-agencies-in-cairo-2025.html",
+    "icon": "https://www.google.com/s2/favicons?domain=forsnajobs.blogspot.com&sz=64",
+    "description": "Overview of well-known job platforms and agencies in Cairo.",
+    "category": "CAREER GUIDES, ARTICLES & MARKET OVERVIEWS"
+  },
+  {
+    "id": "tool-70",
+    "name": "LinkedIn Jobs",
+    "url": "https://www.linkedin.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.linkedin.com&sz=64",
+    "description": "Largest professional network with huge job volume, recruiter visibility and referral paths.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-71",
+    "name": "Indeed",
+    "url": "https://www.indeed.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.indeed.com&sz=64",
+    "description": "Largest job aggregator with salary estimates, company reviews and strong filters.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-72",
+    "name": "Glassdoor Jobs",
+    "url": "https://www.glassdoor.com/Job/index.htm",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.com&sz=64",
+    "description": "Job listings paired with company reviews, salary data and interview insights.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-73",
+    "name": "ZipRecruiter",
+    "url": "https://www.ziprecruiter.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.ziprecruiter.com&sz=64",
+    "description": "Matching-engine job board with one-click apply and a good mobile app.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-74",
+    "name": "Welcome to the Jungle",
+    "url": "https://www.welcometothejungle.com/en",
+    "icon": "https://www.google.com/s2/favicons?domain=www.welcometothejungle.com&sz=64",
+    "description": "Curated jobs (absorbed Otta) with rich company profiles, strong for tech and product roles.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-75",
+    "name": "Google Jobs",
+    "url": "https://www.google.com/search?q=jobs&ibp=htl;jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.google.com&sz=64",
+    "description": "Search layer that indexes listings from thousands of sites and company career pages.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-76",
+    "name": "SimplyHired",
+    "url": "https://www.simplyhired.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.simplyhired.com&sz=64",
+    "description": "Clean job aggregator in the Indeed family with a salary estimator.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-77",
+    "name": "Monster",
+    "url": "https://www.monster.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.monster.com&sz=64",
+    "description": "Veteran job board, still useful for admin, customer service and operations roles.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-78",
+    "name": "Adzuna",
+    "url": "https://www.adzuna.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.adzuna.com&sz=64",
+    "description": "Multi-country job aggregator with salary stats and a resume valuation tool.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-79",
+    "name": "The Ladders",
+    "url": "https://www.theladders.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theladders.com&sz=64",
+    "description": "Job board focused on roles paying $100k and up.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-80",
+    "name": "Jooble",
+    "url": "https://jooble.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=jooble.org&sz=64",
+    "description": "Aggregator covering dozens of countries, good for international searches.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-81",
+    "name": "Talent.com",
+    "url": "https://www.talent.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.talent.com&sz=64",
+    "description": "Large international aggregator with a take-home pay calculator.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-82",
+    "name": "CareerBuilder",
+    "url": "https://www.careerbuilder.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careerbuilder.com&sz=64",
+    "description": "Long-running job board whose resume database still gets recruiter traffic.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-83",
+    "name": "FlexJobs",
+    "url": "https://www.flexjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.flexjobs.com&sz=64",
+    "description": "Hand-screened remote and flexible jobs (subscription) with career resources.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-84",
+    "name": "Hiring Cafe",
+    "url": "https://hiring.cafe/",
+    "icon": "https://www.google.com/s2/favicons?domain=hiring.cafe&sz=64",
+    "description": "Search engine pulling fresh listings straight from company career pages with deep filters.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-85",
+    "name": "Jobright.ai",
+    "url": "https://jobright.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobright.ai&sz=64",
+    "description": "AI job-search copilot with match scoring, resume tips and referral finder.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-86",
+    "name": "Simplify",
+    "url": "https://simplify.jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=simplify.jobs&sz=64",
+    "description": "Job matching plus a browser extension that autofills applications.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-87",
+    "name": "Jobgether",
+    "url": "https://jobgether.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobgether.com&sz=64",
+    "description": "Aggregates remote and flexible roles worldwide, scored against your profile.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-88",
+    "name": "micro1",
+    "url": "https://www.micro1.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.micro1.ai&sz=64",
+    "description": "Engineers pass one AI-led interview, then get matched to multiple companies.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-89",
+    "name": "Mercor",
+    "url": "https://mercor.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=mercor.com&sz=64",
+    "description": "AI hiring marketplace with well-paid expert contract work.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-90",
+    "name": "Swooped",
+    "url": "https://swooped.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=swooped.co&sz=64",
+    "description": "Remote-leaning job board with AI resume and cover letter tooling.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-91",
+    "name": "Craigslist Jobs",
+    "url": "https://www.craigslist.org/about/sites",
+    "icon": "https://www.google.com/s2/favicons?domain=www.craigslist.org&sz=64",
+    "description": "Still strong for local small-business and trade roles.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-92",
+    "name": "Forage Jobs",
+    "url": "https://www.theforage.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Jobs from Forage's partner companies for people who complete job simulations.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-93",
+    "name": "People First Jobs",
+    "url": "https://peoplefirstjobs.com",
+    "icon": "https://www.google.com/s2/favicons?domain=peoplefirstjobs.com&sz=64",
+    "description": "Job board for companies that prioritize culture.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-94",
+    "name": "Still Hiring Today",
+    "url": "https://stillhiring.today",
+    "icon": "https://www.google.com/s2/favicons?domain=stillhiring.today&sz=64",
+    "description": "Board listing only roles from companies actively hiring.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-95",
+    "name": "JobHero",
+    "url": "https://www.jobhero.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobhero.com&sz=64",
+    "description": "Resume builder and job search help site.",
+    "category": "GENERAL JOB BOARDS & AGGREGATORS"
+  },
+  {
+    "id": "tool-96",
+    "name": "Greenhouse Job Boards",
+    "url": "https://boards.greenhouse.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=boards.greenhouse.io&sz=64",
+    "description": "ATS-hosted company job boards; search with Google site: queries.",
+    "category": "ATS / HIDDEN JOB MARKET (search these directly via Google site: queries)"
+  },
+  {
+    "id": "tool-97",
+    "name": "Lever Job Boards",
+    "url": "https://jobs.lever.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobs.lever.co&sz=64",
+    "description": "ATS-hosted company job boards; search with Google site: queries.",
+    "category": "ATS / HIDDEN JOB MARKET (search these directly via Google site: queries)"
+  },
+  {
+    "id": "tool-98",
+    "name": "Ashby Job Boards",
+    "url": "https://jobs.ashbyhq.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobs.ashbyhq.com&sz=64",
+    "description": "ATS boards popular with startups; search with Google site: queries.",
+    "category": "ATS / HIDDEN JOB MARKET (search these directly via Google site: queries)"
+  },
+  {
+    "id": "tool-99",
+    "name": "Workable Job Boards",
+    "url": "https://apply.workable.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=apply.workable.com&sz=64",
+    "description": "ATS boards skewing small and mid-size companies.",
+    "category": "ATS / HIDDEN JOB MARKET (search these directly via Google site: queries)"
+  },
+  {
+    "id": "tool-100",
+    "name": "Hidden Job Market Guide",
+    "url": "https://huntr.co/blog/hidden-job-market",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "263 companies not on LinkedIn, niche boards and 163 networking groups.",
+    "category": "ATS / HIDDEN JOB MARKET (search these directly via Google site: queries)"
+  },
+  {
+    "id": "tool-101",
+    "name": "Hidden Job Market Spreadsheet",
+    "url": "https://docs.google.com/spreadsheets/d/1Nyk98gBbCEM5iIBABhcjhdXLP5aAwMWICUgpNLdUnrM/edit?usp=sharing",
+    "icon": "https://www.google.com/s2/favicons?domain=docs.google.com&sz=64",
+    "description": "Filterable sheet of companies, boards and groups by field, location and remote.",
+    "category": "ATS / HIDDEN JOB MARKET (search these directly via Google site: queries)"
+  },
+  {
+    "id": "tool-102",
+    "name": "Dice",
+    "url": "https://www.dice.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.dice.com&sz=64",
+    "description": "Biggest US tech job board, heavy on contract and staffing roles.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-103",
+    "name": "Built In",
+    "url": "https://builtin.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=builtin.com&sz=64",
+    "description": "Tech jobs with company profiles and city hubs like NYC, Chicago and LA.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-104",
+    "name": "Work at a Startup",
+    "url": "https://www.workatastartup.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.workatastartup.com&sz=64",
+    "description": "Y Combinator's board: one profile applies to hundreds of YC startups.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-105",
+    "name": "YC Jobs",
+    "url": "https://www.ycombinator.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.ycombinator.com&sz=64",
+    "description": "Browse jobs at Y Combinator-funded startups.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-106",
+    "name": "Startup.jobs",
+    "url": "https://startup.jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=startup.jobs&sz=64",
+    "description": "Startup roles worldwide with good international coverage.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-107",
+    "name": "Underdog.io",
+    "url": "https://underdog.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=underdog.io&sz=64",
+    "description": "One application seen by curated startups.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-108",
+    "name": "Hacker News Jobs",
+    "url": "https://news.ycombinator.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=64",
+    "description": "Job posts from the Hacker News community and YC companies.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-109",
+    "name": "Levels.fyi Jobs",
+    "url": "https://www.levels.fyi/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.levels.fyi&sz=64",
+    "description": "Tech roles with verified compensation data.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-110",
+    "name": "Python Job Board",
+    "url": "https://www.python.org/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.python.org&sz=64",
+    "description": "Official Python Software Foundation job board.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-111",
+    "name": "CyberSecurityJobs",
+    "url": "https://cybersecurityjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=cybersecurityjobs.com&sz=64",
+    "description": "Free security job board updated daily, many remote roles.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-112",
+    "name": "Start with Identity Jobs",
+    "url": "https://startwithidentity.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=startwithidentity.com&sz=64",
+    "description": "Free board for identity and access management jobs.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-113",
+    "name": "Just Join IT",
+    "url": "https://justjoin.it/",
+    "icon": "https://www.google.com/s2/favicons?domain=justjoin.it&sz=64",
+    "description": "Poland's main tech board; every listing shows a salary range.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-114",
+    "name": "DOU",
+    "url": "https://dou.ua/",
+    "icon": "https://www.google.com/s2/favicons?domain=dou.ua&sz=64",
+    "description": "Ukraine's tech community with jobs, salary surveys and forums.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-115",
+    "name": "Djinni",
+    "url": "https://djinni.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=djinni.co&sz=64",
+    "description": "Ukraine's anonymous matching platform where companies pitch you.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-116",
+    "name": "Free-Work",
+    "url": "https://www.free-work.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.free-work.com&sz=64",
+    "description": "French IT jobs, freelance and permanent.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-117",
+    "name": "Ruby on Remote",
+    "url": "https://rubyonremote.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=rubyonremote.com&sz=64",
+    "description": "Remote jobs for Ruby and Rails developers.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-118",
+    "name": "HackerRank",
+    "url": "https://www.hackerrank.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hackerrank.com&sz=64",
+    "description": "Coding practice and assessments used by many employers.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-119",
+    "name": "Open Source Jobs (GitHub)",
+    "url": "https://github.com/t9tio/open-source-jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Curated list of companies hiring for open-source work.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-120",
+    "name": "FOSS Jobs",
+    "url": "https://www.fossjobs.net/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.fossjobs.net&sz=64",
+    "description": "Job board for free and open-source software roles.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-121",
+    "name": "ClearanceJobs",
+    "url": "https://www.clearancejobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.clearancejobs.com&sz=64",
+    "description": "Jobs requiring an active US security clearance.",
+    "category": "TECH, STARTUP & ENGINEERING BOARDS"
+  },
+  {
+    "id": "tool-122",
+    "name": "Remote Rocketship",
+    "url": "https://www.remoterocketship.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.remoterocketship.com&sz=64",
+    "description": "Aggregates tens of thousands of remote listings, filter by time zone and visa.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-123",
+    "name": "Dynamite Jobs",
+    "url": "https://dynamitejobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=dynamitejobs.com&sz=64",
+    "description": "Hand-screened remote jobs.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-124",
+    "name": "Jobicy",
+    "url": "https://jobicy.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobicy.com&sz=64",
+    "description": "Remote job board with many categories including DevOps.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-125",
+    "name": "Jobspresso",
+    "url": "https://jobspresso.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobspresso.co&sz=64",
+    "description": "Hand-curated remote roles.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-126",
+    "name": "Working Nomads",
+    "url": "https://www.workingnomads.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.workingnomads.com&sz=64",
+    "description": "Remote jobs and contracts for digital nomads.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-127",
+    "name": "Remote.co",
+    "url": "https://remote.co/remote-jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=remote.co&sz=64",
+    "description": "Remote job listings plus remote-work advice.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-128",
+    "name": "4 Day Week",
+    "url": "https://4dayweek.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=4dayweek.io&sz=64",
+    "description": "Jobs at companies running four-day work weeks.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-129",
+    "name": "Remotely Awesome Jobs",
+    "url": "https://www.remotelyawesomejobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.remotelyawesomejobs.com&sz=64",
+    "description": "Curated remote job board.",
+    "category": "REMOTE & FLEXIBLE WORK"
+  },
+  {
+    "id": "tool-130",
+    "name": "Handshake",
+    "url": "https://joinhandshake.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=joinhandshake.com&sz=64",
+    "description": "Campus recruiting platform for students and new grads.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-131",
+    "name": "Joinrs",
+    "url": "https://www.joinrs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.joinrs.com&sz=64",
+    "description": "Jobs and internships for students and grads in Europe.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-132",
+    "name": "Internshala",
+    "url": "https://internshala.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=internshala.com&sz=64",
+    "description": "India's main internship and training platform.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-133",
+    "name": "Bright Network",
+    "url": "https://www.brightnetwork.co.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.brightnetwork.co.uk&sz=64",
+    "description": "UK internships, graduate schemes and free courses.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-134",
+    "name": "RippleMatch",
+    "url": "https://ripplematch.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=ripplematch.com&sz=64",
+    "description": "Build one profile and employers reach out for entry-level roles.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-135",
+    "name": "Summer 2027 Internships",
+    "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Daily-updated tech internship tracker by Simplify and Pitt CSC.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-136",
+    "name": "Summer 2026 Internships",
+    "url": "https://github.com/SimplifyJobs/Summer2026-Internships",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Archived summer 2026 tech internship tracker.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-137",
+    "name": "New Grad Positions",
+    "url": "https://github.com/SimplifyJobs/New-Grad-Positions",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Tracker of full-time new grad roles in SWE, quant and PM.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-138",
+    "name": "Forage Job Simulations",
+    "url": "https://www.theforage.com/simulations",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Free virtual work experiences from top companies.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-139",
+    "name": "Forage Simulation Quiz",
+    "url": "https://www.theforage.com/quiz",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Quiz that matches you to job simulations to explore careers.",
+    "category": "STUDENTS, INTERNSHIPS & NEW GRADS"
+  },
+  {
+    "id": "tool-140",
+    "name": "GovernmentJobs.com",
+    "url": "https://www.governmentjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.governmentjobs.com&sz=64",
+    "description": "Front door to most US state, county and city jobs; top interview rate in Huntr data.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-141",
+    "name": "USAJOBS",
+    "url": "https://www.usajobs.gov/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.usajobs.gov&sz=64",
+    "description": "Official portal for US federal jobs.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-142",
+    "name": "SchoolJobs.com",
+    "url": "https://www.schooljobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.schooljobs.com&sz=64",
+    "description": "K-12 district and education agency jobs.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-143",
+    "name": "HigherEdJobs",
+    "url": "https://www.higheredjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.higheredjobs.com&sz=64",
+    "description": "Faculty, admin and staff jobs at colleges and universities.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-144",
+    "name": "MyCareersFuture",
+    "url": "https://www.mycareersfuture.gov.sg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.mycareersfuture.gov.sg&sz=64",
+    "description": "Singapore's government job portal.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-145",
+    "name": "Careers@Gov",
+    "url": "https://www.careers.gov.sg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careers.gov.sg&sz=64",
+    "description": "Singapore public service roles.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-146",
+    "name": "Find a Job (GOV.UK)",
+    "url": "https://findajob.dwp.gov.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=findajob.dwp.gov.uk&sz=64",
+    "description": "Official UK government job listing service.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-147",
+    "name": "Civil Service Jobs (UK)",
+    "url": "https://www.civilservicejobs.service.gov.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.civilservicejobs.service.gov.uk&sz=64",
+    "description": "UK civil service roles using structured applications.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-148",
+    "name": "NHS Jobs",
+    "url": "https://www.jobs.nhs.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobs.nhs.uk&sz=64",
+    "description": "Official board for UK National Health Service roles.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-149",
+    "name": "CalCareers",
+    "url": "https://www.calcareers.ca.gov/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.calcareers.ca.gov&sz=64",
+    "description": "Official site for California state jobs.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-150",
+    "name": "CalOpps",
+    "url": "https://www.calopps.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.calopps.org&sz=64",
+    "description": "Jobs at California cities and special districts.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-151",
+    "name": "EURES",
+    "url": "https://eures.europa.eu/",
+    "icon": "https://www.google.com/s2/favicons?domain=eures.europa.eu&sz=64",
+    "description": "EU job mobility portal covering every EU country.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-152",
+    "name": "Job Bank (Canada)",
+    "url": "https://www.jobbank.gc.ca/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobbank.gc.ca&sz=64",
+    "description": "Government of Canada's national job board with wage data.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-153",
+    "name": "EU Careers",
+    "url": "https://eu-careers.europa.eu/en/job-opportunities/open-for-application",
+    "icon": "https://www.google.com/s2/favicons?domain=eu-careers.europa.eu&sz=64",
+    "description": "Open positions at EU institutions.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-154",
+    "name": "UN Careers",
+    "url": "https://careers.un.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=careers.un.org&sz=64",
+    "description": "United Nations Secretariat job portal.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-155",
+    "name": "EdJoin",
+    "url": "https://www.edjoin.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.edjoin.org&sz=64",
+    "description": "California school district and education jobs.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-156",
+    "name": "SchoolSpring",
+    "url": "https://www.schoolspring.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.schoolspring.com&sz=64",
+    "description": "K-12 teaching and staff jobs.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-157",
+    "name": "PSHRA Job Board",
+    "url": "https://pshra.org/job-board/",
+    "icon": "https://www.google.com/s2/favicons?domain=pshra.org&sz=64",
+    "description": "Public-sector HR jobs.",
+    "category": "GOVERNMENT & PUBLIC SECTOR"
+  },
+  {
+    "id": "tool-158",
+    "name": "Idealist",
+    "url": "https://www.idealist.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.idealist.org&sz=64",
+    "description": "Nonprofit and social-impact jobs, volunteering and internships.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-159",
+    "name": "Work for Good",
+    "url": "https://www.workforgood.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.workforgood.org&sz=64",
+    "description": "Nonprofit job board.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-160",
+    "name": "CareerCircle",
+    "url": "https://www.careercircle.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careercircle.com&sz=64",
+    "description": "Jobs plus free coaching for underrepresented talent.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-161",
+    "name": "EdTech.com",
+    "url": "https://edtech.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=edtech.com&sz=64",
+    "description": "Jobs at education technology companies.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-162",
+    "name": "TeamWork Online",
+    "url": "https://www.teamworkonline.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.teamworkonline.com&sz=64",
+    "description": "Hiring hub for the sports industry.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-163",
+    "name": "DEJobs",
+    "url": "https://dejobs.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=dejobs.org&sz=64",
+    "description": "Listings pulled directly from DirectEmployers member companies.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-164",
+    "name": "UI/UX Jobs Board",
+    "url": "https://uiuxjobsboard.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=uiuxjobsboard.com&sz=64",
+    "description": "Design-only job board with remote filters.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-165",
+    "name": "Dribbble Jobs",
+    "url": "https://dribbble.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=dribbble.com&sz=64",
+    "description": "Design jobs on a portfolio community.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-166",
+    "name": "Tech Jobs for Good",
+    "url": "https://www.techjobsforgood.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.techjobsforgood.com&sz=64",
+    "description": "Tech roles at nonprofits and social enterprises.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-167",
+    "name": "eFinancialCareers",
+    "url": "https://www.efinancialcareers.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.efinancialcareers.com&sz=64",
+    "description": "Banking, asset management, fintech and quant roles.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-168",
+    "name": "Snagajob",
+    "url": "https://www.snagajob.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.snagajob.com&sz=64",
+    "description": "Largest board for hourly and shift work.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-169",
+    "name": "myGwork",
+    "url": "https://www.mygwork.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.mygwork.com&sz=64",
+    "description": "Jobs at inclusive employers for LGBTQ+ professionals.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-170",
+    "name": "Behance Job List",
+    "url": "https://www.behance.net/joblist",
+    "icon": "https://www.google.com/s2/favicons?domain=www.behance.net&sz=64",
+    "description": "Creative jobs from Adobe's portfolio platform.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-171",
+    "name": "Authentic Jobs",
+    "url": "https://authenticjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=authenticjobs.com&sz=64",
+    "description": "Design and development jobs since 2005.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-172",
+    "name": "Coroflot Jobs",
+    "url": "https://www.coroflot.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.coroflot.com&sz=64",
+    "description": "Industrial and product design jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-173",
+    "name": "NYFA Classifieds",
+    "url": "https://www.nyfa.org/classifieds/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.nyfa.org&sz=64",
+    "description": "Arts jobs and artist calls.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-174",
+    "name": "CreativeMornings Jobs",
+    "url": "https://creativemornings.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=creativemornings.com&sz=64",
+    "description": "Jobs from 800+ firms in the creative network.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-175",
+    "name": "UXPA Job Bank",
+    "url": "https://uxpa.org/job-bank/",
+    "icon": "https://www.google.com/s2/favicons?domain=uxpa.org&sz=64",
+    "description": "Free UX job board with a remote filter.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-176",
+    "name": "Working Not Working",
+    "url": "https://workingnotworking.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=workingnotworking.com&sz=64",
+    "description": "Creative freelance and full-time jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-177",
+    "name": "AAPC Job Board",
+    "url": "https://jobs.aapc.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobs.aapc.com&sz=64",
+    "description": "Medical billing, coding and revenue cycle jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-178",
+    "name": "HFMA Job Bank",
+    "url": "https://jobbank.hfma.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobbank.hfma.org&sz=64",
+    "description": "Healthcare finance jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-179",
+    "name": "Health eCareers",
+    "url": "https://www.healthecareers.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.healthecareers.com&sz=64",
+    "description": "Clinical and administrative healthcare roles.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-180",
+    "name": "Vivian Health",
+    "url": "https://www.vivian.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.vivian.com&sz=64",
+    "description": "Nurse and allied health jobs with pay shown up front.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-181",
+    "name": "ALA JobLIST",
+    "url": "https://joblist.ala.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=joblist.ala.org&sz=64",
+    "description": "Library jobs from the American Library Association.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-182",
+    "name": "Nature Careers",
+    "url": "https://www.nature.com/naturecareers/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.nature.com&sz=64",
+    "description": "Research and science jobs worldwide.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-183",
+    "name": "Going Concern Jobs",
+    "url": "https://www.goingconcern.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.goingconcern.com&sz=64",
+    "description": "Accounting jobs, many remote.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-184",
+    "name": "WorldatWork Careers",
+    "url": "https://careers.worldatwork.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=careers.worldatwork.org&sz=64",
+    "description": "Compensation and total rewards jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-185",
+    "name": "PSJD",
+    "url": "https://www.psjd.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.psjd.org&sz=64",
+    "description": "Public-interest law jobs from NALP.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-186",
+    "name": "AgCareers.com",
+    "url": "https://www.agcareers.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.agcareers.com&sz=64",
+    "description": "Farm, food and ag science jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-187",
+    "name": "Culinary Agents",
+    "url": "https://culinaryagents.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=culinaryagents.com&sz=64",
+    "description": "Restaurant and hospitality jobs in 30+ US cities.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-188",
+    "name": "Hcareers",
+    "url": "https://www.hcareers.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hcareers.com&sz=64",
+    "description": "Hotel and restaurant jobs board.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-189",
+    "name": "JournalismJobs.com",
+    "url": "https://www.journalismjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.journalismjobs.com&sz=64",
+    "description": "Long-running newsroom job board.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-190",
+    "name": "Mediabistro Jobs",
+    "url": "https://www.mediabistro.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.mediabistro.com&sz=64",
+    "description": "Journalism, PR and content roles.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-191",
+    "name": "Climate Change Jobs",
+    "url": "https://climatechangejobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=climatechangejobs.com&sz=64",
+    "description": "Sustainability and climate roles.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-192",
+    "name": "Climatebase",
+    "url": "https://climatebase.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=climatebase.org&sz=64",
+    "description": "Largest job board for climate careers.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-193",
+    "name": "80,000 Hours Job Board",
+    "url": "https://jobs.80000hours.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobs.80000hours.org&sz=64",
+    "description": "High-impact jobs in policy, research and nonprofits.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-194",
+    "name": "Devex Jobs",
+    "url": "https://www.devex.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.devex.com&sz=64",
+    "description": "International development jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-195",
+    "name": "ReliefWeb Jobs",
+    "url": "https://reliefweb.int/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=reliefweb.int&sz=64",
+    "description": "Humanitarian jobs worldwide.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-196",
+    "name": "Hire Heroes USA",
+    "url": "https://jobs.hireheroesusa.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=jobs.hireheroesusa.org&sz=64",
+    "description": "Job board and free coaching for veterans and military spouses.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-197",
+    "name": "Honest Jobs",
+    "url": "https://www.honestjobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.honestjobs.com&sz=64",
+    "description": "Fair-chance jobs for people with records.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-198",
+    "name": "PowerToFly",
+    "url": "https://powertofly.com/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=powertofly.com&sz=64",
+    "description": "Diversity-focused remote and hybrid jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-199",
+    "name": "The Mom Project",
+    "url": "https://themomproject.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=themomproject.com&sz=64",
+    "description": "Jobs for moms and caregivers.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-200",
+    "name": "Ethical Jobs",
+    "url": "https://www.ethicaljobs.com.au/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.ethicaljobs.com.au&sz=64",
+    "description": "Australian nonprofit, community and green jobs.",
+    "category": "NICHE & INDUSTRY BOARDS"
+  },
+  {
+    "id": "tool-201",
+    "name": "Robert Half",
+    "url": "https://www.roberthalf.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.roberthalf.com&sz=64",
+    "description": "Specialized staffing in finance, admin, legal and tech.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-202",
+    "name": "TEKsystems",
+    "url": "https://www.teksystems.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.teksystems.com&sz=64",
+    "description": "Large IT staffing and contract firm.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-203",
+    "name": "Insight Global",
+    "url": "https://insightglobal.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=insightglobal.com&sz=64",
+    "description": "Staffing across IT, healthcare, finance and government.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-204",
+    "name": "Motion Recruitment",
+    "url": "https://motionrecruitment.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=motionrecruitment.com&sz=64",
+    "description": "Tech staffing with developer salary guides.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-205",
+    "name": "Apex Systems",
+    "url": "https://www.apexsystems.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.apexsystems.com&sz=64",
+    "description": "Tech and engineering contractor placement.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-206",
+    "name": "Michael Page",
+    "url": "https://www.michaelpage.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.michaelpage.com&sz=64",
+    "description": "Global recruiter for finance, engineering, marketing and executive roles.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-207",
+    "name": "Randstad USA",
+    "url": "https://www.randstadusa.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.randstadusa.com&sz=64",
+    "description": "One of the world's largest staffing companies.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-208",
+    "name": "Kforce",
+    "url": "https://www.kforce.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.kforce.com&sz=64",
+    "description": "Technology and finance staffing.",
+    "category": "STAFFING & RECRUITING AGENCIES"
+  },
+  {
+    "id": "tool-209",
+    "name": "Reed",
+    "url": "https://www.reed.co.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reed.co.uk&sz=64",
+    "description": "One of the UK's biggest job boards.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-210",
+    "name": "Totaljobs",
+    "url": "https://www.totaljobs.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.totaljobs.com&sz=64",
+    "description": "Full-market UK job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-211",
+    "name": "CV-Library",
+    "url": "https://www.cv-library.co.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.cv-library.co.uk&sz=64",
+    "description": "UK board with a recruiter-searchable CV database.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-212",
+    "name": "Glassdoor UK",
+    "url": "https://www.glassdoor.co.uk/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.co.uk&sz=64",
+    "description": "UK listings with reviews and salary data.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-213",
+    "name": "Seek (Australia)",
+    "url": "https://www.seek.com.au/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.seek.com.au&sz=64",
+    "description": "Dominant Australian job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-214",
+    "name": "Seek (New Zealand)",
+    "url": "https://www.seek.co.nz/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.seek.co.nz&sz=64",
+    "description": "Leading New Zealand job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-215",
+    "name": "Glassdoor Canada",
+    "url": "https://www.glassdoor.ca/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.ca&sz=64",
+    "description": "Canadian listings with company research tools.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-216",
+    "name": "elempleo",
+    "url": "https://www.elempleo.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.elempleo.com&sz=64",
+    "description": "Colombia's leading job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-217",
+    "name": "Computrabajo",
+    "url": "https://www.computrabajo.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.computrabajo.com&sz=64",
+    "description": "Largest job board network in Latin America.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-218",
+    "name": "Magneto365",
+    "url": "https://www.magneto365.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.magneto365.com&sz=64",
+    "description": "Fast-growing Colombian job platform.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-219",
+    "name": "Catho",
+    "url": "https://www.catho.com.br/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.catho.com.br&sz=64",
+    "description": "Major Brazilian board with salary comparison tools.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-220",
+    "name": "Glassdoor Brazil",
+    "url": "https://www.glassdoor.com.br/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.com.br&sz=64",
+    "description": "Reviews plus jobs for Brazil.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-221",
+    "name": "InfoJobs Brazil",
+    "url": "https://www.infojobs.com.br/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.infojobs.com.br&sz=64",
+    "description": "Major Brazilian board for operational and commercial roles.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-222",
+    "name": "OCC",
+    "url": "https://www.occ.com.mx/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.occ.com.mx&sz=64",
+    "description": "Mexico's largest job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-223",
+    "name": "Sólides",
+    "url": "https://www.solides.com.br/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.solides.com.br&sz=64",
+    "description": "Brazilian hiring platform used by SMEs.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-224",
+    "name": "Gupy Portal",
+    "url": "https://portal.gupy.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=portal.gupy.io&sz=64",
+    "description": "Open roles at 4,000+ Brazilian firms.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-225",
+    "name": "HelloWork",
+    "url": "https://www.hellowork.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hellowork.com&sz=64",
+    "description": "France's largest private job platform.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-226",
+    "name": "Xing",
+    "url": "https://www.xing.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.xing.com&sz=64",
+    "description": "Professional network for German-speaking markets.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-227",
+    "name": "Glassdoor Spain",
+    "url": "https://www.glassdoor.es/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.es&sz=64",
+    "description": "Localized reviews and jobs for Spain.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-228",
+    "name": "InfoJobs",
+    "url": "https://www.infojobs.net/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.infojobs.net&sz=64",
+    "description": "Spain's biggest job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-229",
+    "name": "Glassdoor Germany",
+    "url": "https://www.glassdoor.de/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.de&sz=64",
+    "description": "Localized reviews and jobs for Germany.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-230",
+    "name": "Glassdoor Italy",
+    "url": "https://www.glassdoor.it/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.it&sz=64",
+    "description": "Localized reviews and jobs for Italy.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-231",
+    "name": "Apec",
+    "url": "https://www.apec.fr/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.apec.fr&sz=64",
+    "description": "French managerial jobs plus free career counseling.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-232",
+    "name": "Pracuj.pl",
+    "url": "https://www.pracuj.pl/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.pracuj.pl&sz=64",
+    "description": "Poland's largest general job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-233",
+    "name": "Jobs.cz",
+    "url": "https://www.jobs.cz/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobs.cz&sz=64",
+    "description": "Leading Czech job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-234",
+    "name": "Arbeitsagentur",
+    "url": "https://www.arbeitsagentur.de/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.arbeitsagentur.de&sz=64",
+    "description": "Germany's federal employment agency job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-235",
+    "name": "Arbeitnow",
+    "url": "https://www.arbeitnow.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.arbeitnow.com&sz=64",
+    "description": "English-language jobs in Germany with visa sponsorship filter.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-236",
+    "name": "JobStreet",
+    "url": "https://www.jobstreet.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobstreet.com&sz=64",
+    "description": "Leading board in Malaysia, Singapore and the Philippines.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-237",
+    "name": "Naukri",
+    "url": "https://www.naukri.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.naukri.com&sz=64",
+    "description": "India's largest job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-238",
+    "name": "Glints",
+    "url": "https://glints.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=glints.com&sz=64",
+    "description": "Southeast Asia board strong for tech and startups.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-239",
+    "name": "Glassdoor Singapore",
+    "url": "https://www.glassdoor.sg/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.sg&sz=64",
+    "description": "Reviews and jobs for Singapore.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-240",
+    "name": "Glassdoor India",
+    "url": "https://www.glassdoor.co.in/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.co.in&sz=64",
+    "description": "Reviews and jobs for India.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-241",
+    "name": "Kalibrr",
+    "url": "https://www.kalibrr.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.kalibrr.com&sz=64",
+    "description": "Philippines job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-242",
+    "name": "hh.ru",
+    "url": "https://hh.ru/",
+    "icon": "https://www.google.com/s2/favicons?domain=hh.ru&sz=64",
+    "description": "Dominant board across Russia and Central Asia.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-243",
+    "name": "Bayt",
+    "url": "https://www.bayt.com/en/international/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.bayt.com&sz=64",
+    "description": "Largest Middle East job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-244",
+    "name": "BrighterMonday",
+    "url": "https://www.brightermonday.co.ke/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.brightermonday.co.ke&sz=64",
+    "description": "Kenya's main job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-245",
+    "name": "Fuzu",
+    "url": "https://www.fuzu.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.fuzu.com&sz=64",
+    "description": "Jobs in Kenya, Nigeria and Uganda.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-246",
+    "name": "Jobberman",
+    "url": "https://www.jobberman.com/jobs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobberman.com&sz=64",
+    "description": "Nigeria's top job board.",
+    "category": "REGIONAL JOB SITES (UK / EU / CANADA / ANZ / LATAM / ASIA / MEA)"
+  },
+  {
+    "id": "tool-247",
+    "name": "Contra",
+    "url": "https://contra.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=contra.com&sz=64",
+    "description": "Commission-free freelance work and community.",
+    "category": "FREELANCE & GIG"
+  },
+  {
+    "id": "tool-248",
+    "name": "Freelancers Union",
+    "url": "https://www.freelancersunion.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.freelancersunion.org&sz=64",
+    "description": "Advocacy, benefits and community for independent workers.",
+    "category": "FREELANCE & GIG"
+  },
+  {
+    "id": "tool-249",
+    "name": "Nomads.com",
+    "url": "https://nomads.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=nomads.com&sz=64",
+    "description": "Community and tools for digital nomads.",
+    "category": "FREELANCE & GIG"
+  },
+  {
+    "id": "tool-250",
+    "name": "Canva Resumes",
+    "url": "https://www.canva.com/resumes/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.canva.com&sz=64",
+    "description": "Design-forward resume templates with a drag-and-drop editor.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-251",
+    "name": "FlowCV",
+    "url": "https://flowcv.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=flowcv.com&sz=64",
+    "description": "Free resume builder with clean templates.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-252",
+    "name": "Zety",
+    "url": "https://zety.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=zety.com&sz=64",
+    "description": "Resume builder with expert tips throughout.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-253",
+    "name": "Kickresume",
+    "url": "https://www.kickresume.com/en",
+    "icon": "https://www.google.com/s2/favicons?domain=www.kickresume.com&sz=64",
+    "description": "Resume builder with prewritten templates for many industries.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-254",
+    "name": "Resume Genius",
+    "url": "https://resumegenius.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=resumegenius.com&sz=64",
+    "description": "Resume and cover letter builder.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-255",
+    "name": "Novoresume",
+    "url": "https://novoresume.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=novoresume.com&sz=64",
+    "description": "One-page resume builder with ATS-friendly templates.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-256",
+    "name": "VisualCV",
+    "url": "https://www.visualcv.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.visualcv.com&sz=64",
+    "description": "Resume builder plus portfolio-style online CV.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-257",
+    "name": "Enhancv",
+    "url": "https://enhancv.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=enhancv.com&sz=64",
+    "description": "Visual resume builder with a free checker.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-258",
+    "name": "Hiration",
+    "url": "https://www.hiration.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hiration.com&sz=64",
+    "description": "AI resume writer and builder.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-259",
+    "name": "Rezi",
+    "url": "https://www.rezi.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.rezi.ai&sz=64",
+    "description": "ATS-focused AI resume writer.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-260",
+    "name": "PopResume",
+    "url": "https://www.popresume.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.popresume.com&sz=64",
+    "description": "Resume builder tied to a broader job-search platform.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-261",
+    "name": "Toptal Resume",
+    "url": "https://www.toptal.com/resume",
+    "icon": "https://www.google.com/s2/favicons?domain=www.toptal.com&sz=64",
+    "description": "Resume builder, ATS checker and cover letter tool.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-262",
+    "name": "LiveCareer",
+    "url": "https://www.livecareer.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.livecareer.com&sz=64",
+    "description": "Resume, cover letter and career-path resources.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-263",
+    "name": "Reactive Resume",
+    "url": "https://rxresu.me/",
+    "icon": "https://www.google.com/s2/favicons?domain=rxresu.me&sz=64",
+    "description": "Free open-source resume builder.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-264",
+    "name": "JSON Resume",
+    "url": "https://jsonresume.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=jsonresume.org&sz=64",
+    "description": "Open standard for resumes as JSON with themes.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-265",
+    "name": "RenderCV",
+    "url": "https://github.com/rendercv/rendercv",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Generate polished PDF CVs from YAML.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-266",
+    "name": "Overleaf CV Templates",
+    "url": "https://www.overleaf.com/latex/templates/tagged/cv",
+    "icon": "https://www.google.com/s2/favicons?domain=www.overleaf.com&sz=64",
+    "description": "LaTeX CV and resume templates.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-267",
+    "name": "Cultivated Culture Templates",
+    "url": "https://cultivatedculture.com/resume-templates/",
+    "icon": "https://www.google.com/s2/favicons?domain=cultivatedculture.com&sz=64",
+    "description": "ATS-friendly customizable resume templates.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-268",
+    "name": "Wonsulting Resume Templates",
+    "url": "https://www.wonsulting.com/free-resume-templates",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Free templates used by clients landing top-company jobs.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-269",
+    "name": "Wonsulting Resume Template",
+    "url": "https://www.wonsulting.com/resources/wonsulting-resume-template",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Editable resume template.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-270",
+    "name": "Huntr AI Resume Builder",
+    "url": "https://huntr.co/product/ai-resume-builder",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Job-tailored resumes built with AI.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-271",
+    "name": "Huntr Resume Examples",
+    "url": "https://huntr.co/resume-examples",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Resume examples by role.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-272",
+    "name": "Huntr Resume Skill Guides",
+    "url": "https://huntr.co/resume-skills",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Guides on which skills to list for different roles.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-273",
+    "name": "Scale.jobs",
+    "url": "https://scale.jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=scale.jobs&sz=64",
+    "description": "Free resume builder and ATS checker with optional human application help.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-274",
+    "name": "Forage Resume Masterclass",
+    "url": "https://www.theforage.com/simulations/forage-masterclass/resume-writing-masterclass-cvct",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Free self-paced course on writing a resume step by step.",
+    "category": "RESUME / CV BUILDERS & TEMPLATES"
+  },
+  {
+    "id": "tool-275",
+    "name": "Jobscan",
+    "url": "https://www.jobscan.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jobscan.co&sz=64",
+    "description": "Scans your resume against a job posting for keyword match.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-276",
+    "name": "Resume Worded",
+    "url": "https://resumeworded.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=resumeworded.com&sz=64",
+    "description": "Feedback on your resume and LinkedIn profile.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-277",
+    "name": "ResyMatch",
+    "url": "https://cultivatedculture.com/resume-scanner",
+    "icon": "https://www.google.com/s2/favicons?domain=cultivatedculture.com&sz=64",
+    "description": "Scores how well your resume matches a job description.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-278",
+    "name": "Huntr Resume Checker",
+    "url": "https://huntr.co/product/resume-checker",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Checks spelling, length, metrics and repetition.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-279",
+    "name": "Huntr AI Resume Review",
+    "url": "https://huntr.co/product/ai-resume-review",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "AI feedback on your resume.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-280",
+    "name": "Huntr Resume Tailor",
+    "url": "https://huntr.co/product/resume-tailor",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Tailors your resume to each job description.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-281",
+    "name": "Huntr Keyword Scanner",
+    "url": "https://huntr.co/product/resume-keyword-scanner",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Finds missing keywords in your resume.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-282",
+    "name": "Huntr Job Keyword Finder",
+    "url": "https://huntr.co/product/job-description-keyword-finder",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Extracts keywords from job descriptions.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-283",
+    "name": "ResumAI",
+    "url": "https://www.wonsulting.com/resumai",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "AI resume writer from Wonsulting.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-284",
+    "name": "Wonsulting Free Resume Feedback",
+    "url": "https://www.wonsulting.com/free-resume-feedback",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Free human resume review.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-285",
+    "name": "LoopCV",
+    "url": "https://www.loopcv.pro/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.loopcv.pro&sz=64",
+    "description": "Free ATS score, job tracker and auto-apply tooling.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-286",
+    "name": "Best Free ATS Checkers",
+    "url": "https://blog.loopcv.pro/best-free-ats-resume-checker-tools/amp/",
+    "icon": "https://www.google.com/s2/favicons?domain=blog.loopcv.pro&sz=64",
+    "description": "Comparison of free ATS resume checker tools.",
+    "category": "ATS CHECKERS, RESUME REVIEW & TAILORING"
+  },
+  {
+    "id": "tool-287",
+    "name": "Huntr AI Cover Letters",
+    "url": "https://huntr.co/product/ai-cover-letter-generator",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Cover letters tailored to a job's requirements.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-288",
+    "name": "CoverLetterAI",
+    "url": "https://www.wonsulting.com/coverletterai",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "AI cover letter generator from Wonsulting.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-289",
+    "name": "Wonsulting Cover Letter Template",
+    "url": "https://www.wonsulting.com/resources/wonsulting-cover-letter-template",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Step-by-step cover letter template.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-290",
+    "name": "Wonsulting Networking Tracker",
+    "url": "https://www.wonsulting.com/resources/wonsulting-networking-tracker",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Spreadsheet to organize networking outreach.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-291",
+    "name": "Coverdoc.ai",
+    "url": "https://coverdoc.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=coverdoc.ai&sz=64",
+    "description": "AI cover letter writer.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-292",
+    "name": "Rytr Cover Letter",
+    "url": "https://rytr.me/use-cases/cover-letter",
+    "icon": "https://www.google.com/s2/favicons?domain=rytr.me&sz=64",
+    "description": "AI cover letter drafting.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-293",
+    "name": "Lavender",
+    "url": "https://www.lavender.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.lavender.ai&sz=64",
+    "description": "Email coach for polishing cold outreach.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-294",
+    "name": "Job Search Email Templates",
+    "url": "https://www.themuse.com/advice/10-email-templates-youll-need-during-your-job-search",
+    "icon": "https://www.google.com/s2/favicons?domain=www.themuse.com&sz=64",
+    "description": "Fill-in-the-blank emails from coffee-chat requests to thank-yous.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-295",
+    "name": "NetworkAI",
+    "url": "https://www.wonsulting.com/networkai",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Automated networking tool.",
+    "category": "COVER LETTERS & OUTREACH"
+  },
+  {
+    "id": "tool-296",
+    "name": "Teal",
+    "url": "https://www.tealhq.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.tealhq.com&sz=64",
+    "description": "Job tracker, resume builder and Chrome extension.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-297",
+    "name": "Huntr",
+    "url": "https://huntr.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "All-in-one job tracker with resume tailoring and autofill.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-298",
+    "name": "Huntr Job Tracker",
+    "url": "https://huntr.co/product/job-tracker",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Kanban-style application tracker.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-299",
+    "name": "Huntr Autofill",
+    "url": "https://huntr.co/product/job-application-autofill",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "One-click application form filling.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-300",
+    "name": "Huntr Contact Tracker",
+    "url": "https://huntr.co/product/contact-tracker",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Personal CRM for job-search contacts.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-301",
+    "name": "Huntr Interview Tracker",
+    "url": "https://huntr.co/product/interview-tracker",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Keep track of interview stages and prep.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-302",
+    "name": "Huntr Job Search Metrics",
+    "url": "https://huntr.co/product/job-search-metrics",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "See which sources lead to interviews.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-303",
+    "name": "JibberJobber",
+    "url": "https://www.jibberjobber.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.jibberjobber.com&sz=64",
+    "description": "Track applications, companies and contacts.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-304",
+    "name": "Careerflow",
+    "url": "https://www.careerflow.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careerflow.ai&sz=64",
+    "description": "Application tracking and LinkedIn tools.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-305",
+    "name": "StartWire",
+    "url": "https://www.startwire.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.startwire.com&sz=64",
+    "description": "Application tracking platform.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-306",
+    "name": "JobTrackerAI",
+    "url": "https://www.wonsulting.com/jobtrackerai",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "AI-assisted job tracker from Wonsulting.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-307",
+    "name": "Wonsulting AutoApply",
+    "url": "https://www.wonsulting.com/autoapply",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Automated job application tool.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-308",
+    "name": "LazyApply",
+    "url": "https://lazyapply.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=lazyapply.com&sz=64",
+    "description": "Automated job application submission.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-309",
+    "name": "Massive",
+    "url": "https://usemassive.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=usemassive.com&sz=64",
+    "description": "Automated job application submission.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-310",
+    "name": "Huntr Chrome Extension",
+    "url": "https://chrome.google.com/webstore/detail/huntr-job-search-tracker/mihdfbecejheednfigjpdacgeilhlmnf",
+    "icon": "https://www.google.com/s2/favicons?domain=chrome.google.com&sz=64",
+    "description": "Save jobs from any site into your tracker.",
+    "category": "APPLICATION TRACKERS & AUTOFILL"
+  },
+  {
+    "id": "tool-311",
+    "name": "Big Interview",
+    "url": "https://www.biginterview.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.biginterview.com&sz=64",
+    "description": "Video courses plus AI mock interview practice.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-312",
+    "name": "Exponent",
+    "url": "https://www.tryexponent.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.tryexponent.com&sz=64",
+    "description": "Interview prep courses, mocks and coaching for PM, SWE and more.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-313",
+    "name": "Pramp",
+    "url": "https://pramp.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=pramp.com&sz=64",
+    "description": "Free peer-to-peer mock interviews.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-314",
+    "name": "interviewing.io",
+    "url": "https://interviewing.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=interviewing.io&sz=64",
+    "description": "Anonymous mock technical interviews with engineers.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-315",
+    "name": "Final Round AI",
+    "url": "https://www.finalroundai.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.finalroundai.com&sz=64",
+    "description": "AI mock interviews and interview workflow tools.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-316",
+    "name": "InterviewBuddy",
+    "url": "https://interviewbuddy.net/",
+    "icon": "https://www.google.com/s2/favicons?domain=interviewbuddy.net&sz=64",
+    "description": "Virtual face-to-face mock interviews.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-317",
+    "name": "My Interview Practice",
+    "url": "https://myinterviewpractice.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=myinterviewpractice.com&sz=64",
+    "description": "Mock interview practice with feedback.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-318",
+    "name": "Yoodli",
+    "url": "https://app.yoodli.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=app.yoodli.ai&sz=64",
+    "description": "AI communication and speech coaching.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-319",
+    "name": "Adzuna Prepper",
+    "url": "https://www.adzuna.com/prepper",
+    "icon": "https://www.google.com/s2/favicons?domain=www.adzuna.com&sz=64",
+    "description": "Interview coaching tool.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-320",
+    "name": "Interview Prep AI",
+    "url": "https://interviewprep-ai.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=interviewprep-ai.com&sz=64",
+    "description": "AI interview coaching.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-321",
+    "name": "Huru",
+    "url": "https://www.huru.ai/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.huru.ai&sz=64",
+    "description": "AI mock interview practice.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-322",
+    "name": "CleverPrep",
+    "url": "https://www.cleverprep.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.cleverprep.com&sz=64",
+    "description": "Company-specific interview prep packages.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-323",
+    "name": "InterviewAI",
+    "url": "https://www.wonsulting.com/interviewai",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "AI interview practice from Wonsulting.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-324",
+    "name": "Huntr Interview Question Guides",
+    "url": "https://huntr.co/interview-questions",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Interview questions and answers by role.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-325",
+    "name": "Interview Question Generator",
+    "url": "https://huntr.co/product/interview-question-generator",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Generates practice questions for a given job.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-326",
+    "name": "Glassdoor Interviews",
+    "url": "https://www.glassdoor.com/Interview/index.htm",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.com&sz=64",
+    "description": "Real interview questions reported by candidates.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-327",
+    "name": "Blind",
+    "url": "https://www.teamblind.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.teamblind.com&sz=64",
+    "description": "Anonymous workplace forum on pay, referrals and culture.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-328",
+    "name": "20 Common Interview Questions",
+    "url": "https://www.theforage.com/blog/interview-questions/job-interview-questions-and-answers",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Recruiter advice on answering common questions.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-329",
+    "name": "Forage Interview Tips",
+    "url": "https://www.theforage.com/blog/basics/interview-tips",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Guide to preparing for interviews.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-330",
+    "name": "Wonsulting Interview Prep Template",
+    "url": "https://www.wonsulting.com/resources/wonsulting-interview-prep-template",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Template for structuring interview preparation.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-331",
+    "name": "BCLP Interview Preparation",
+    "url": "https://www.theforage.com/simulations/bclp/interview-preparation-zg8z",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Free program on strengths, research and storytelling.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-332",
+    "name": "Discover Professional Skills",
+    "url": "https://www.theforage.com/simulations/discover/interview-career-skill-idyd",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Free simulation on values and interview prep.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-333",
+    "name": "National Urban League Career Readiness",
+    "url": "https://www.theforage.com/simulations/national-urban-league/career-readiness-nhwo",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Free program covering resumes, pitch and networking.",
+    "category": "INTERVIEW PREP: GENERAL, BEHAVIORAL & MOCK INTERVIEWS"
+  },
+  {
+    "id": "tool-334",
+    "name": "LeetCode",
+    "url": "https://leetcode.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=leetcode.com&sz=64",
+    "description": "Problem set most coding interviews draw from.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-335",
+    "name": "NeetCode",
+    "url": "https://neetcode.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=neetcode.io&sz=64",
+    "description": "Free curated roadmap and video walkthroughs for coding interviews.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-336",
+    "name": "AlgoExpert",
+    "url": "https://www.algoexpert.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.algoexpert.io&sz=64",
+    "description": "Curated coding interview problems with video explanations.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-337",
+    "name": "Tech Interview Handbook",
+    "url": "https://www.techinterviewhandbook.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.techinterviewhandbook.org&sz=64",
+    "description": "Free guide covering coding, system design, resume and behavioral prep.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-338",
+    "name": "Tech Interview Handbook (GitHub)",
+    "url": "https://github.com/yangshun/tech-interview-handbook",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Open-source repo behind the handbook and Blind 75/Grind 75.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-339",
+    "name": "System Design Primer",
+    "url": "https://github.com/donnemartin/system-design-primer",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Top free guide to learning system design.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-340",
+    "name": "Coding Interview University",
+    "url": "https://github.com/jwasham/coding-interview-university",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Comprehensive study plan for software engineering interviews.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-341",
+    "name": "Hello Interview",
+    "url": "https://www.hellointerview.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hellointerview.com&sz=64",
+    "description": "Structured system design and low-level design tracks.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-342",
+    "name": "ByteByteGo",
+    "url": "https://bytebytego.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=bytebytego.com&sz=64",
+    "description": "Visual system design content from Alex Xu.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-343",
+    "name": "Educative",
+    "url": "https://www.educative.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.educative.io&sz=64",
+    "description": "Text-based courses for coding and system design prep.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-344",
+    "name": "DesignGurus",
+    "url": "https://www.designgurus.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.designgurus.io&sz=64",
+    "description": "Grokking-series courses for coding and system design interviews.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-345",
+    "name": "GreatFrontEnd",
+    "url": "https://www.greatfrontend.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.greatfrontend.com&sz=64",
+    "description": "Front-end interview prep by ex-FAANG engineers.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-346",
+    "name": "BigFrontEnd.dev",
+    "url": "https://bigfrontend.dev/",
+    "icon": "https://www.google.com/s2/favicons?domain=bigfrontend.dev&sz=64",
+    "description": "Front-end coding and quiz problems from real interviews.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-347",
+    "name": "Awesome Interview Questions",
+    "url": "https://github.com/DopplerHQ/awesome-interview-questions",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Curated lists of technical interview questions by language.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-348",
+    "name": "Awesome Interview Questions (fork)",
+    "url": "https://github.com/amrendrakind/awesome-interview-questions",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Curated list of lists of interview questions.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-349",
+    "name": "JavaScript Interview Questions",
+    "url": "https://github.com/kennymkchan/interview-questions-in-javascript",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Short list of JS interview questions.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-350",
+    "name": "30 Seconds of Interviews",
+    "url": "https://github.com/Chalarangelo/30-seconds-of-interviews",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Common interview questions for quick revision.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-351",
+    "name": "React Interview Questions",
+    "url": "https://github.com/sudheerj/reactjs-interview-questions",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "500 React interview Q&As.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-352",
+    "name": "Vue Interview Questions",
+    "url": "https://github.com/sudheerj/vuejs-interview-questions",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "300 Vue interview Q&As.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-353",
+    "name": "Awesome JavaScript Interviews",
+    "url": "https://github.com/rohan-paul/Awesome-JavaScript-Interviews",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "1000 JavaScript interview questions.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-354",
+    "name": "Awesome Hiring Process",
+    "url": "https://github.com/stereobooster/awesome-hiring-process",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Links and ideas about the IT hiring process.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-355",
+    "name": "CTCI Study Guide",
+    "url": "https://shlegeris.com/2016/06/22/ctci",
+    "icon": "https://www.google.com/s2/favicons?domain=shlegeris.com&sz=64",
+    "description": "Study guide for Cracking the Coding Interview.",
+    "category": "INTERVIEW PREP: CODING, SYSTEM DESIGN & TECHNICAL"
+  },
+  {
+    "id": "tool-356",
+    "name": "Levels.fyi",
+    "url": "https://www.levels.fyi/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.levels.fyi&sz=64",
+    "description": "Salary benchmarking and compensation data for tech roles.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-357",
+    "name": "Payscale",
+    "url": "https://www.payscale.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.payscale.com&sz=64",
+    "description": "Personalized salary reports based on your skills.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-358",
+    "name": "Comparably",
+    "url": "https://www.comparably.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.comparably.com&sz=64",
+    "description": "Company reviews and salary data.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-359",
+    "name": "Salary.com",
+    "url": "https://www.salary.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.salary.com&sz=64",
+    "description": "Salary benchmarks by job title and location.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-360",
+    "name": "Robert Half Salary Guide",
+    "url": "https://www.roberthalf.com/us/en/insights/salary-guide",
+    "icon": "https://www.google.com/s2/favicons?domain=www.roberthalf.com&sz=64",
+    "description": "Projected salaries by job title.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-361",
+    "name": "Monster Salary",
+    "url": "https://www.monster.com/salary",
+    "icon": "https://www.google.com/s2/favicons?domain=www.monster.com&sz=64",
+    "description": "Search salaries by title and location.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-362",
+    "name": "BLS Occupational Outlook Handbook",
+    "url": "https://www.bls.gov/ooh/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.bls.gov&sz=64",
+    "description": "Pay, education and growth data for careers.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-363",
+    "name": "Successful Negotiation (Coursera)",
+    "url": "https://www.coursera.org/learn/negotiation-skills",
+    "icon": "https://www.google.com/s2/favicons?domain=www.coursera.org&sz=64",
+    "description": "University of Michigan negotiation course.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-364",
+    "name": "How to Negotiate Salary",
+    "url": "https://www.theforage.com/blog/basics/how-negotiate-salary",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Forage guide to salary negotiation.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-365",
+    "name": "Take-Home Pay Calculator",
+    "url": "https://www.theforage.com/blog/basics/take-home-pay-calculator",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Estimate net pay before accepting an offer.",
+    "category": "SALARY, COMPENSATION & NEGOTIATION"
+  },
+  {
+    "id": "tool-366",
+    "name": "O*NET OnLine",
+    "url": "https://www.onetonline.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.onetonline.org&sz=64",
+    "description": "US government database of occupations and skills.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-367",
+    "name": "O*NET Career Tools",
+    "url": "https://www.onetcenter.org/tools.html",
+    "icon": "https://www.google.com/s2/favicons?domain=www.onetcenter.org&sz=64",
+    "description": "Interest and skills assessments to match careers.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-368",
+    "name": "CareerOneStop",
+    "url": "https://www.careeronestop.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careeronestop.org&sz=64",
+    "description": "US Department of Labor career, training and job-search hub.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-369",
+    "name": "CareerOneStop Explore Careers",
+    "url": "https://www.careeronestop.org/ExploreCareers/explore-careers.aspx",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careeronestop.org&sz=64",
+    "description": "Assessments and profiles to learn about careers.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-370",
+    "name": "CareerExplorer",
+    "url": "https://www.careerexplorer.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.careerexplorer.com&sz=64",
+    "description": "Assessment that matches you to careers.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-371",
+    "name": "LinkedIn Career Explorer",
+    "url": "https://linkedin.github.io/career-explorer",
+    "icon": "https://www.google.com/s2/favicons?domain=linkedin.github.io&sz=64",
+    "description": "Find job titles matching your current skills.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-372",
+    "name": "CareersPro",
+    "url": "https://wouldyouratherbe.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=wouldyouratherbe.com&sz=64",
+    "description": "AI-powered career planning.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-373",
+    "name": "Forage Career Quiz",
+    "url": "https://www.theforage.com/blog/basics/career-quiz",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Quiz to see what career could suit you.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-374",
+    "name": "How to Choose a Career",
+    "url": "https://www.theforage.com/blog/basics/how-to-choose-career",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Forage guide to picking a career.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-375",
+    "name": "I Don't Know What Job I Want",
+    "url": "https://www.theforage.com/blog/basics/i-dont-know-what-job-i-want",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Guide for the undecided.",
+    "category": "CAREER EXPLORATION & ASSESSMENTS"
+  },
+  {
+    "id": "tool-376",
+    "name": "Ask a Manager",
+    "url": "https://www.askamanager.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.askamanager.org&sz=64",
+    "description": "Hiring-manager advice on resumes, interviews and workplace issues.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-377",
+    "name": "The Muse Advice",
+    "url": "https://www.themuse.com/advice",
+    "icon": "https://www.google.com/s2/favicons?domain=www.themuse.com&sz=64",
+    "description": "Articles on job search, career paths and succeeding at work.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-378",
+    "name": "Indeed Career Guide",
+    "url": "https://www.indeed.com/career-advice",
+    "icon": "https://www.google.com/s2/favicons?domain=www.indeed.com&sz=64",
+    "description": "Free tips for every stage of the job search.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-379",
+    "name": "Glassdoor Blog",
+    "url": "https://www.glassdoor.com/blog/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.glassdoor.com&sz=64",
+    "description": "Career advice, salary and workplace trends.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-380",
+    "name": "Harvard Business Review",
+    "url": "https://hbr.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=hbr.org&sz=64",
+    "description": "Management and career-development articles.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-381",
+    "name": "Cultivated Culture",
+    "url": "https://cultivatedculture.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=cultivatedculture.com&sz=64",
+    "description": "Austin Belcak's guides to landing jobs without traditional paths.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-382",
+    "name": "Career Sherpa",
+    "url": "https://careersherpa.net/",
+    "icon": "https://www.google.com/s2/favicons?domain=careersherpa.net&sz=64",
+    "description": "Job-search strategy from career coach Hannah Morgan.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-383",
+    "name": "Undercover Recruiter",
+    "url": "https://theundercoverrecruiter.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=theundercoverrecruiter.com&sz=64",
+    "description": "Workplace trends and job-search tips.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-384",
+    "name": "Ms. Career Girl",
+    "url": "https://www.mscareergirl.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.mscareergirl.com&sz=64",
+    "description": "Career advice for ambitious young women.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-385",
+    "name": "Career Sidekick",
+    "url": "https://careersidekick.com/blog/",
+    "icon": "https://www.google.com/s2/favicons?domain=careersidekick.com&sz=64",
+    "description": "Recruiter-written advice on job search and salary.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-386",
+    "name": "TopResume Career Advice",
+    "url": "https://www.topresume.com/career-advice",
+    "icon": "https://www.google.com/s2/favicons?domain=www.topresume.com&sz=64",
+    "description": "Resume, personal branding and job-search advice.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-387",
+    "name": "Career Trend",
+    "url": "https://careertrend.net/blog",
+    "icon": "https://www.google.com/s2/favicons?domain=careertrend.net&sz=64",
+    "description": "Resume and interview tips.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-388",
+    "name": "The Ladders Career Advice",
+    "url": "https://www.theladders.com/career-advice",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theladders.com&sz=64",
+    "description": "High-volume advice on job search and office life.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-389",
+    "name": "Personal Branding Blog",
+    "url": "http://personalbrandingblog.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=personalbrandingblog.com&sz=64",
+    "description": "Articles on building a personal brand.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-390",
+    "name": "JobSeer Blog",
+    "url": "https://jobseer.ai/blog",
+    "icon": "https://www.google.com/s2/favicons?domain=jobseer.ai&sz=64",
+    "description": "Job-search strategy articles.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-391",
+    "name": "How I Got My Job",
+    "url": "https://howigotjob.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=howigotjob.com&sz=64",
+    "description": "Stories of how people landed their careers.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-392",
+    "name": "Wonsulting Blog",
+    "url": "https://www.wonsulting.com/blog",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Job-search guides for students and early-career professionals.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-393",
+    "name": "Wonsulting Job Search Hub",
+    "url": "https://www.wonsulting.com/job-search-hub",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Free job-search resources.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-394",
+    "name": "Wonsulting Resource Library",
+    "url": "https://www.wonsulting.com/resources",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Templates and free career resources.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-395",
+    "name": "Huntr Blog",
+    "url": "https://huntr.co/blog",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Data-driven job-search research and guides.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-396",
+    "name": "Huntr Research",
+    "url": "https://huntr.co/research",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Quarterly job-search trend reports.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-397",
+    "name": "FlexJobs Blog",
+    "url": "https://www.flexjobs.com/blog/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.flexjobs.com&sz=64",
+    "description": "Remote work and job-search advice.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-398",
+    "name": "JobStars Career Blogs",
+    "url": "https://jobstars.com/blogs-forums",
+    "icon": "https://www.google.com/s2/favicons?domain=jobstars.com&sz=64",
+    "description": "List of career blogs and forums.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-399",
+    "name": "Work It Daily",
+    "url": "https://www.workitdaily.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.workitdaily.com&sz=64",
+    "description": "Career coaching, resources and advice.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-400",
+    "name": "Forage Blog",
+    "url": "https://www.theforage.com/blog",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Hundreds of career articles.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-401",
+    "name": "How to Get a Job",
+    "url": "https://www.theforage.com/blog/basics/how-to-get-job",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Forage's ultimate guide to getting hired.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-402",
+    "name": "What Is Networking",
+    "url": "https://www.theforage.com/blog/basics/networking",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Why networking matters and how to do it.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-403",
+    "name": "New Grad Tech Market 2027",
+    "url": "https://simplify.jobs/blog/tech-job-market-new-grads-2027",
+    "icon": "https://www.google.com/s2/favicons?domain=simplify.jobs&sz=64",
+    "description": "Who's hiring and recruiting timelines for new grads.",
+    "category": "CAREER ADVICE BLOGS & PUBLICATIONS"
+  },
+  {
+    "id": "tool-404",
+    "name": "Get a Job in Tech Podcast",
+    "url": "https://garymcneelyit.com/podcast/",
+    "icon": "https://www.google.com/s2/favicons?domain=garymcneelyit.com&sz=64",
+    "description": "Securing a tech job and interview stories.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-405",
+    "name": "Copeland Coaching Podcast",
+    "url": "https://www.copelandcoaching.com/categorypodcast/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.copelandcoaching.com&sz=64",
+    "description": "Interview, negotiation and branding tips.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-406",
+    "name": "48 Days Podcast",
+    "url": "http://48days.com/category/48-days-podcast/",
+    "icon": "https://www.google.com/s2/favicons?domain=48days.com&sz=64",
+    "description": "Finding meaningful work.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-407",
+    "name": "Voice of Job Seekers",
+    "url": "https://thevoiceofjobseekers.com/voice-job-seekers-podcast/",
+    "icon": "https://www.google.com/s2/favicons?domain=thevoiceofjobseekers.com&sz=64",
+    "description": "Podcast empowering job seekers.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-408",
+    "name": "College Central Podcast",
+    "url": "https://www.collegecentral.com/shareapodcast/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.collegecentral.com&sz=64",
+    "description": "Career advice for students and entry-level seekers.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-409",
+    "name": "Mastering College to Career",
+    "url": "https://masteringcollegetocareer.libsyn.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=masteringcollegetocareer.libsyn.com&sz=64",
+    "description": "Networking, interviews and resumes for students.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-410",
+    "name": "Graduate Job Podcast",
+    "url": "https://www.graduatejobpodcast.com/category/podcast/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.graduatejobpodcast.com&sz=64",
+    "description": "Landing a graduate job and writing applications.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-411",
+    "name": "Linda Raynier (YouTube)",
+    "url": "https://www.youtube.com/lindaraynier",
+    "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64",
+    "description": "Resume, interview and confidence tips.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-412",
+    "name": "Andrew LaCivita (YouTube)",
+    "url": "https://www.youtube.com/andylacivita",
+    "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64",
+    "description": "Career and leadership coaching.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-413",
+    "name": "Madeline Mann (YouTube)",
+    "url": "https://www.youtube.com/selfmademillennial",
+    "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64",
+    "description": "Recruiter-written tips for job applications.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-414",
+    "name": "Marat Chavtarayev (YouTube)",
+    "url": "https://www.youtube.com/c/myemmotion",
+    "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64",
+    "description": "Interview confidence and strengths.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-415",
+    "name": "David Ross (YouTube)",
+    "url": "https://youtube.com/xamplio",
+    "icon": "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
+    "description": "Resumes and career help for students.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-416",
+    "name": "Work It Daily (YouTube)",
+    "url": "https://www.youtube.com/c/Workitdaily/playlists",
+    "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64",
+    "description": "Career change, LinkedIn and networking videos.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-417",
+    "name": "Wonsulting (YouTube)",
+    "url": "https://www.youtube.com/wonsulting",
+    "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64",
+    "description": "Weekly career tips and advice.",
+    "category": "PODCASTS & YOUTUBE"
+  },
+  {
+    "id": "tool-418",
+    "name": "Google Career Certificates",
+    "url": "https://grow.google/certificates/",
+    "icon": "https://www.google.com/s2/favicons?domain=grow.google&sz=64",
+    "description": "Job-ready certificate programs from Google.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-419",
+    "name": "Coursera",
+    "url": "https://www.coursera.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.coursera.org&sz=64",
+    "description": "University and industry courses and certificates.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-420",
+    "name": "edX",
+    "url": "https://www.edx.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.edx.org&sz=64",
+    "description": "University courses and professional programs.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-421",
+    "name": "LinkedIn Learning",
+    "url": "https://www.linkedin.com/learning/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.linkedin.com&sz=64",
+    "description": "Video courses on professional skills.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-422",
+    "name": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.freecodecamp.org&sz=64",
+    "description": "Free coding curriculum and certifications.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-423",
+    "name": "Complete Resume & LinkedIn Course",
+    "url": "https://www.udemy.com/course/thecompletejobinterviewresumenetworknewcareerguide/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.udemy.com&sz=64",
+    "description": "12-hour course on resumes, interviews and networking.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-424",
+    "name": "Win Any Job Interview",
+    "url": "https://www.udemy.com/course/get-your-dream-job-blueprint-for-winning-any-job-interview/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.udemy.com&sz=64",
+    "description": "Course on interview strategy and negotiation.",
+    "category": "COURSES & LEARNING"
+  },
+  {
+    "id": "tool-425",
+    "name": "Best Remote Job Boards",
+    "url": "https://www.flexjobs.com/blog/post/best-remote-job-boards/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.flexjobs.com&sz=64",
+    "description": "FlexJobs roundup of remote and hybrid job boards.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-426",
+    "name": "85 Best Job Search Sites",
+    "url": "https://www.theforage.com/blog/basics/best-job-search-sites",
+    "icon": "https://www.google.com/s2/favicons?domain=www.theforage.com&sz=64",
+    "description": "Forage list of AI tools, boards, resume builders and trackers.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-427",
+    "name": "101 Job Search Sites",
+    "url": "https://huntr.co/blog/job-search-sites",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Huntr's data-ranked list by category and region.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-428",
+    "name": "Best Job Search Sites 2026",
+    "url": "https://huntr.co/blog/best-job-search-sites-2026",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "The nine best sites and how to use each.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-429",
+    "name": "Best Job Boards by Interview Rate",
+    "url": "https://huntr.co/research/best-job-boards",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Ranking of 25 boards by interview conversion.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-430",
+    "name": "Q3 2026 Job Search Trends",
+    "url": "https://huntr.co/research/job-search-trends-q3-2026",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Quarterly report on which sites beat LinkedIn.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-431",
+    "name": "Best Niche Job Boards",
+    "url": "https://huntr.co/blog/best-niche-job-boards-to-find-hard-to-land-roles",
+    "icon": "https://www.google.com/s2/favicons?domain=huntr.co&sz=64",
+    "description": "Niche boards by category and how to use them.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-432",
+    "name": "TechRadar Best Job Sites",
+    "url": "https://techradar.com/best/us-job-sites",
+    "icon": "https://www.google.com/s2/favicons?domain=techradar.com&sz=64",
+    "description": "Review-style roundup of the best US job sites.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-433",
+    "name": "7 Best Job Search Sites 2026",
+    "url": "https://www.guideflow.com/blog/job-search-sites",
+    "icon": "https://www.google.com/s2/favicons?domain=www.guideflow.com&sz=64",
+    "description": "Comparison by inventory, filters and application flow.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-434",
+    "name": "FitGap Job Search Sites",
+    "url": "https://us.fitgap.com/search/job-search-sites",
+    "icon": "https://www.google.com/s2/favicons?domain=us.fitgap.com&sz=64",
+    "description": "Directory comparing job search platforms.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-435",
+    "name": "60+ Resources for Job Seekers",
+    "url": "https://www.wonsulting.com/blog/60-best-online-resources-every-job-seeker-needs-to-know",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wonsulting.com&sz=64",
+    "description": "Blogs, podcasts, books, templates and courses.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-436",
+    "name": "Best Resume Builders",
+    "url": "https://geekflare.com/guides/best-resume-builders/",
+    "icon": "https://www.google.com/s2/favicons?domain=geekflare.com&sz=64",
+    "description": "Comparison of resume builders including free options.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-437",
+    "name": "Resume Builder Comparison",
+    "url": "https://www.toptal.com/resume/career-center/best-resume-builder-in-2026-how-the-top-resume-builders-compare",
+    "icon": "https://www.google.com/s2/favicons?domain=www.toptal.com&sz=64",
+    "description": "How the top resume builders compare on price and features.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-438",
+    "name": "Best Free Resume Tools",
+    "url": "https://blog.scale.jobs/best-free-resume-tools-job-seekers-2026",
+    "icon": "https://www.google.com/s2/favicons?domain=blog.scale.jobs&sz=64",
+    "description": "ATS-friendly free builders and human-reviewed services.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-439",
+    "name": "Best Coding Interview Platforms",
+    "url": "https://scrimba.com/articles/best-coding-interview-prep-platforms-2026/",
+    "icon": "https://www.google.com/s2/favicons?domain=scrimba.com&sz=64",
+    "description": "Platforms ranked by interview pipeline stage.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-440",
+    "name": "10 GitHub Repos for Tech Interviews",
+    "url": "https://www.kdnuggets.com/10-github-repositories-to-ace-any-tech-interview",
+    "icon": "https://www.google.com/s2/favicons?domain=www.kdnuggets.com&sz=64",
+    "description": "Top repos for coding and system design prep.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-441",
+    "name": "Free Coding Interview Resources",
+    "url": "https://dev.to/alex_hunter_44f4c9ed6671e/best-free-coding-interview-prep-resources-in-2026-complete-list-en1",
+    "icon": "https://www.google.com/s2/favicons?domain=dev.to&sz=64",
+    "description": "Free DSA, system design and behavioral prep with study plans.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-442",
+    "name": "Resources for Big Tech Interviews",
+    "url": "https://blog.algomaster.io/p/resources-for-big-tech-interviews",
+    "icon": "https://www.google.com/s2/favicons?domain=blog.algomaster.io&sz=64",
+    "description": "Coding, system design, LLD and behavioral prep resources.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-443",
+    "name": "10 Best Interview Prep Tools",
+    "url": "https://dev.to/finalroundai/10-best-interview-prep-tools-for-2026-4nfp",
+    "icon": "https://www.google.com/s2/favicons?domain=dev.to&sz=64",
+    "description": "Comparison of interview prep tools.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-444",
+    "name": "11 Best AI Mock Interview Tools",
+    "url": "https://favtutor.com/best-ai-mock-interview-tools-2026/",
+    "icon": "https://www.google.com/s2/favicons?domain=favtutor.com&sz=64",
+    "description": "Tested AI mock interview tools with pricing.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-445",
+    "name": "Websites for Career Advice",
+    "url": "https://www.makeuseof.com/websites-to-get-career-advice/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.makeuseof.com&sz=64",
+    "description": "Career-advice sites for every career stage.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-446",
+    "name": "Top 10 Career Blogs",
+    "url": "https://www.flexjobs.com/blog/post/top-10-career-blogs",
+    "icon": "https://www.google.com/s2/favicons?domain=www.flexjobs.com&sz=64",
+    "description": "Great blogs for career advice and job-search tips.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-447",
+    "name": "100 Best Career Blogs",
+    "url": "https://bloggers.feedspot.com/career_blogs/",
+    "icon": "https://www.google.com/s2/favicons?domain=bloggers.feedspot.com&sz=64",
+    "description": "Directory of career blogs to follow.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-448",
+    "name": "Top Career Blogs and Websites",
+    "url": "https://hqhire.com/top-career-blogs-and-websites",
+    "icon": "https://www.google.com/s2/favicons?domain=hqhire.com&sz=64",
+    "description": "Curated list of career blogs.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-449",
+    "name": "Online Career Resources Guide",
+    "url": "https://www.visualcv.com/blog/online-career-resources/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.visualcv.com&sz=64",
+    "description": "Curated job-search articles and websites.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-450",
+    "name": "10 Best Career Advice Websites",
+    "url": "https://psychologytoday.com/ca/blog/design-your-path/201507/10-best-career-advice-websites",
+    "icon": "https://www.google.com/s2/favicons?domain=psychologytoday.com&sz=64",
+    "description": "Career coach's favorite advice sites (older article).",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-451",
+    "name": "LinkedIn Job Seeker Checklist",
+    "url": "https://economicgraph.linkedin.com/content/dam/me/economicgraph/en-us/download/Job-Seeker-Checklist.pdf",
+    "icon": "https://www.google.com/s2/favicons?domain=economicgraph.linkedin.com&sz=64",
+    "description": "PDF checklist for finding jobs on LinkedIn.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-452",
+    "name": "Job Hunting Resources for Developers",
+    "url": "https://devgrowth.gumroad.com/l/TheUltimateListofJobHuntingResourcesforSoftwareDevelopers",
+    "icon": "https://www.google.com/s2/favicons?domain=devgrowth.gumroad.com&sz=64",
+    "description": "Free ebook of resources for each interview stage.",
+    "category": "ROUNDUP ARTICLES & GUIDES (job sites, tools, resources)"
+  },
+  {
+    "id": "tool-453",
+    "name": "Awesome Job Boards (emredurukn)",
+    "url": "https://github.com/emredurukn/awesome-job-boards",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Job boards by field: AI, data, design, remote and more.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-454",
+    "name": "Awesome Job Boards (tramcar)",
+    "url": "https://github.com/tramcar/awesome-job-boards",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Curated list of job boards.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-455",
+    "name": "Awesome Remote Job",
+    "url": "https://github.com/lukasz-madon/awesome-remote-job",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Resources and job boards for remote work.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-456",
+    "name": "Awesome Job List",
+    "url": "https://github.com/randallkanna/awesome-job-list",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Best places to job hunt, curated for years.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-457",
+    "name": "Job Hunting Resources",
+    "url": "https://github.com/kelset/job-hunting-resources",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Websites, tools and tutorials for finding tech roles.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-458",
+    "name": "Dbz Job Board",
+    "url": "https://github.com/dbz/job-board",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "List of places to look for tech jobs.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-459",
+    "name": "Systematic Job Search",
+    "url": "https://github.com/nmicht/systematic-job-search",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Repo to prepare and run a tech job search.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-460",
+    "name": "Ultimate Job Hunting Guide",
+    "url": "https://github.com/jacobmoyle/Ultimate-Job-Hunting-Guide",
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    "description": "Compilation of job-hunting tools and resources.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-461",
+    "name": "Job Search Resources Gist",
+    "url": "https://gist.github.com/ronnieftw/7907630469242f0999ea",
+    "icon": "https://www.google.com/s2/favicons?domain=gist.github.com&sz=64",
+    "description": "Curated resources on interviews, resumes and negotiation.",
+    "category": "GITHUB 'AWESOME' LISTS FOR JOB HUNTING"
+  },
+  {
+    "id": "tool-462",
+    "name": "Undercover Recruiter LinkedIn Group",
+    "url": "https://www.linkedin.com/groups/2524597/profile",
+    "icon": "https://www.google.com/s2/favicons?domain=www.linkedin.com&sz=64",
+    "description": "Job-search tips group on LinkedIn.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-463",
+    "name": "Never Search Alone",
+    "url": "https://neversearchalone.org",
+    "icon": "https://www.google.com/s2/favicons?domain=neversearchalone.org&sz=64",
+    "description": "Small peer job-search councils on a set plan.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-464",
+    "name": "ADPList",
+    "url": "https://adplist.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=adplist.org&sz=64",
+    "description": "Free mentorship calls with people at target companies.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-465",
+    "name": "MentorCruise",
+    "url": "https://mentorcruise.com",
+    "icon": "https://www.google.com/s2/favicons?domain=mentorcruise.com&sz=64",
+    "description": "Paid 1:1 mentors in tech, design, data and PM.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-466",
+    "name": "Meetup",
+    "url": "https://www.meetup.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.meetup.com&sz=64",
+    "description": "Local in-person professional groups.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-467",
+    "name": "Eventbrite",
+    "url": "https://www.eventbrite.com",
+    "icon": "https://www.google.com/s2/favicons?domain=www.eventbrite.com&sz=64",
+    "description": "Find career fairs and industry meetups.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-468",
+    "name": "Luma",
+    "url": "https://luma.com/discover",
+    "icon": "https://www.google.com/s2/favicons?domain=luma.com&sz=64",
+    "description": "Find local tech and startup events.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-469",
+    "name": "Toastmasters",
+    "url": "https://www.toastmasters.org",
+    "icon": "https://www.google.com/s2/favicons?domain=www.toastmasters.org&sz=64",
+    "description": "Local clubs to practice speaking and meet people.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-470",
+    "name": "r/careerguidance",
+    "url": "https://www.reddit.com/r/careerguidance/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reddit.com&sz=64",
+    "description": "Peer Q&A on career choices.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-471",
+    "name": "r/cscareerquestions",
+    "url": "https://www.reddit.com/r/cscareerquestions/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reddit.com&sz=64",
+    "description": "Tech hiring, offers and layoffs discussion.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-472",
+    "name": "r/forhire",
+    "url": "https://www.reddit.com/r/forhire/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reddit.com&sz=64",
+    "description": "Direct hiring posts for contract and full-time work.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-473",
+    "name": "r/resumes",
+    "url": "https://www.reddit.com/r/resumes/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reddit.com&sz=64",
+    "description": "Community resume reviews.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-474",
+    "name": "r/jobs",
+    "url": "https://www.reddit.com/r/jobs/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reddit.com&sz=64",
+    "description": "General job-search discussion.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-475",
+    "name": "r/dataengineering",
+    "url": "https://www.reddit.com/r/dataengineering/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reddit.com&sz=64",
+    "description": "Forum for data engineers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-476",
+    "name": "Lean In Circles",
+    "url": "https://leanin.org/circles",
+    "icon": "https://www.google.com/s2/favicons?domain=leanin.org&sz=64",
+    "description": "Small peer groups for career support.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-477",
+    "name": "Tech Ladies",
+    "url": "https://www.hiretechladies.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hiretechladies.com&sz=64",
+    "description": "Community and job board for women in tech.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-478",
+    "name": "100Devs",
+    "url": "https://100devs.org/about",
+    "icon": "https://www.google.com/s2/favicons?domain=100devs.org&sz=64",
+    "description": "Free live coding bootcamp with Discord community.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-479",
+    "name": "MLOps Community",
+    "url": "https://mlops.community/",
+    "icon": "https://www.google.com/s2/favicons?domain=mlops.community&sz=64",
+    "description": "Slack, reading groups and meetups for ML engineers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-480",
+    "name": "DataTalks.Club",
+    "url": "https://datatalks.club",
+    "icon": "https://www.google.com/s2/favicons?domain=datatalks.club&sz=64",
+    "description": "Data and ML community with free Zoomcamp courses.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-481",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/discussions",
+    "icon": "https://www.google.com/s2/favicons?domain=www.kaggle.com&sz=64",
+    "description": "Competitions and notebooks that double as a portfolio.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-482",
+    "name": "CNCF Slack",
+    "url": "https://slack.cncf.io/",
+    "icon": "https://www.google.com/s2/favicons?domain=slack.cncf.io&sz=64",
+    "description": "Cloud and Kubernetes engineer community.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-483",
+    "name": "DEV Community",
+    "url": "https://dev.to",
+    "icon": "https://www.google.com/s2/favicons?domain=dev.to&sz=64",
+    "description": "Write posts and build a public developer profile.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-484",
+    "name": "Reactiflux",
+    "url": "https://www.reactiflux.com",
+    "icon": "https://www.google.com/s2/favicons?domain=www.reactiflux.com&sz=64",
+    "description": "Large Discord for React and JS developers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-485",
+    "name": "Support Driven",
+    "url": "https://www.supportdriven.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.supportdriven.com&sz=64",
+    "description": "Community for support and CX professionals.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-486",
+    "name": "Product School Slack",
+    "url": "https://www.productschool.com/slack-community",
+    "icon": "https://www.google.com/s2/favicons?domain=www.productschool.com&sz=64",
+    "description": "PM community with AMAs and job posts.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-487",
+    "name": "ProductTank",
+    "url": "https://www.mindtheproduct.com/producttank/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.mindtheproduct.com&sz=64",
+    "description": "Product manager meetups in 200+ cities.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-488",
+    "name": "CreativeMornings",
+    "url": "https://creativemornings.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=creativemornings.com&sz=64",
+    "description": "Free monthly talks in 260 cities.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-489",
+    "name": "Friends of Figma",
+    "url": "https://friends.figma.com",
+    "icon": "https://www.google.com/s2/favicons?domain=friends.figma.com&sz=64",
+    "description": "Local and virtual design meetups.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-490",
+    "name": "Write the Docs",
+    "url": "https://www.writethedocs.org/slack/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.writethedocs.org&sz=64",
+    "description": "Technical writers community with Slack and meetups.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-491",
+    "name": "RevGenius",
+    "url": "https://www.revgenius.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.revgenius.com&sz=64",
+    "description": "Sales and marketing Slack with jobs channel.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-492",
+    "name": "Superpath",
+    "url": "https://www.superpath.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.superpath.co&sz=64",
+    "description": "Content marketing community with jobs board.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-493",
+    "name": "Online Geniuses",
+    "url": "https://onlinegeniuses.com",
+    "icon": "https://www.google.com/s2/favicons?domain=onlinegeniuses.com&sz=64",
+    "description": "Slack for marketers and SEOs.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-494",
+    "name": "Wall Street Oasis",
+    "url": "https://www.wallstreetoasis.com/forums",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wallstreetoasis.com&sz=64",
+    "description": "Finance career forums on banking, PE and interviews.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-495",
+    "name": "PMI Chapters",
+    "url": "https://www.pmi.org/membership/chapters",
+    "icon": "https://www.google.com/s2/favicons?domain=www.pmi.org&sz=64",
+    "description": "Local project management chapters.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-496",
+    "name": "OWASP Chapters",
+    "url": "https://owasp.org/chapters/",
+    "icon": "https://www.google.com/s2/favicons?domain=owasp.org&sz=64",
+    "description": "Local application security chapters.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-497",
+    "name": "BSides",
+    "url": "https://bsides.org/events/",
+    "icon": "https://www.google.com/s2/favicons?domain=bsides.org&sz=64",
+    "description": "Low-cost local security conferences.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-498",
+    "name": "Ministry of Testing",
+    "url": "https://www.ministryoftesting.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.ministryoftesting.com&sz=64",
+    "description": "Community for software testers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-499",
+    "name": "Work on Climate",
+    "url": "https://workonclimate.org",
+    "icon": "https://www.google.com/s2/favicons?domain=workonclimate.org&sz=64",
+    "description": "Slack and events for climate job seekers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-500",
+    "name": "NTEN",
+    "url": "https://www.nten.org",
+    "icon": "https://www.google.com/s2/favicons?domain=www.nten.org&sz=64",
+    "description": "Nonprofit tech community with job board.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-501",
+    "name": "Upwardly Global",
+    "url": "https://www.upwardlyglobal.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.upwardlyglobal.org&sz=64",
+    "description": "Coaching for immigrant and refugee professionals.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-502",
+    "name": "iRelaunch",
+    "url": "https://www.irelaunch.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.irelaunch.com&sz=64",
+    "description": "Events and support for returning after a career break.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-503",
+    "name": "Path Forward",
+    "url": "https://www.pathforward.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.pathforward.org&sz=64",
+    "description": "Tool for finding returnship programs.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-504",
+    "name": "Military Spouse Professional Network",
+    "url": "https://www.hiringourheroes.org/career-services/education-networking/mspn/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.hiringourheroes.org&sz=64",
+    "description": "Regional networks for military spouses.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-505",
+    "name": "FourBlock",
+    "url": "https://www.fourblock.org/apply",
+    "icon": "https://www.google.com/s2/favicons?domain=www.fourblock.org&sz=64",
+    "description": "Free career cohorts for veterans and spouses.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-506",
+    "name": "VetsinTech",
+    "url": "https://vetsintech.co",
+    "icon": "https://www.google.com/s2/favicons?domain=vetsintech.co&sz=64",
+    "description": "Veterans in tech with chapters and mentoring.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-507",
+    "name": "Year Up United",
+    "url": "https://www.yearup.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.yearup.org&sz=64",
+    "description": "Free training and internships for young adults.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-508",
+    "name": "Braven",
+    "url": "https://www.braven.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.braven.org&sz=64",
+    "description": "Career coaching for first-gen and low-income students.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-509",
+    "name": "Defy Ventures",
+    "url": "https://defyventures.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=defyventures.org&sz=64",
+    "description": "Business and job training for people with records.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-510",
+    "name": "Mentra",
+    "url": "https://www.mentra.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.mentra.com&sz=64",
+    "description": "Job network for neurodivergent people.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-511",
+    "name": "Lime Connect",
+    "url": "https://limeconnect.com/join-us/",
+    "icon": "https://www.google.com/s2/favicons?domain=limeconnect.com&sz=64",
+    "description": "Network for students and professionals with disabilities.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-512",
+    "name": "Out in Tech",
+    "url": "https://outintech.com",
+    "icon": "https://www.google.com/s2/favicons?domain=outintech.com&sz=64",
+    "description": "LGBTQ+ tech community with mentoring.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-513",
+    "name": "Women in AI",
+    "url": "https://www.womeninai.co/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.womeninai.co&sz=64",
+    "description": "Chapters, mentoring and hackathons.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-514",
+    "name": "Ladies Get Paid",
+    "url": "https://www.ladiesgetpaid.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.ladiesgetpaid.com&sz=64",
+    "description": "Community helping women with career and pay.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-515",
+    "name": "/dev/color",
+    "url": "https://www.devcolor.org",
+    "icon": "https://www.google.com/s2/favicons?domain=www.devcolor.org&sz=64",
+    "description": "Community for Black software engineers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-516",
+    "name": "Techqueria",
+    "url": "https://techqueria.org",
+    "icon": "https://www.google.com/s2/favicons?domain=techqueria.org&sz=64",
+    "description": "Latiné tech professionals community.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-517",
+    "name": "Latinas in Tech",
+    "url": "https://latinasintech.org",
+    "icon": "https://www.google.com/s2/favicons?domain=latinasintech.org&sz=64",
+    "description": "Meetups, mentoring and recruiting events.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-518",
+    "name": "NSBE",
+    "url": "https://www.nsbe.org/memberships/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.nsbe.org&sz=64",
+    "description": "National Society of Black Engineers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-519",
+    "name": "SHPE",
+    "url": "https://shpe.org/membership/become-a-member/",
+    "icon": "https://www.google.com/s2/favicons?domain=shpe.org&sz=64",
+    "description": "Society of Hispanic Professional Engineers.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-520",
+    "name": "Society of Women Engineers",
+    "url": "https://swe.org/membership/join-swe/",
+    "icon": "https://www.google.com/s2/favicons?domain=swe.org&sz=64",
+    "description": "Sections and a big annual conference.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-521",
+    "name": "WiCyS",
+    "url": "https://www.wicys.org/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.wicys.org&sz=64",
+    "description": "Women in cybersecurity chapters and mentoring.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-522",
+    "name": "Lenny's Community",
+    "url": "https://www.lennysnewsletter.com/p/community",
+    "icon": "https://www.google.com/s2/favicons?domain=www.lennysnewsletter.com&sz=64",
+    "description": "Paid Slack and city meetups for product people.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-523",
+    "name": "Slofile",
+    "url": "https://slofile.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=slofile.com&sz=64",
+    "description": "Directory of niche Slack communities.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-524",
+    "name": "Indie Hackers Hiring",
+    "url": "https://indiehackers.com/groups/hiring",
+    "icon": "https://www.google.com/s2/favicons?domain=indiehackers.com&sz=64",
+    "description": "Roles at bootstrapped businesses.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-525",
+    "name": "Hacker News: Who Is Hiring",
+    "url": "https://news.ycombinator.com/submitted?id=whoishiring",
+    "icon": "https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=64",
+    "description": "Monthly hiring and seeking-work threads.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  },
+  {
+    "id": "tool-526",
+    "name": "Max Up",
+    "url": "https://www.themaxup.com/",
+    "icon": "https://www.google.com/s2/favicons?domain=www.themaxup.com&sz=64",
+    "description": "Slack community for students with free resume review.",
+    "category": "NETWORKING, MENTORING & COMMUNITIES"
+  }
+]

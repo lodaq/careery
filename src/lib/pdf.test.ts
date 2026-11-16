@@ -1,4 +1,5 @@
 import { expect, it, vi } from 'vitest';
+vi.mock('next/headers', () => ({ headers: async () => new Headers() }));
 const mock = vi.hoisted(() => {
   const pdf = vi.fn<() => Promise<Buffer>>().mockResolvedValue(Buffer.from('pdf'));
   const close = vi.fn().mockResolvedValue(undefined);

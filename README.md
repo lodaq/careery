@@ -2,7 +2,7 @@
 
 ![Status: Under development](https://img.shields.io/badge/status-under_development-orange)
 
-A personal, local-first resume builder: keep reusable English/Arabic career content, organize editable Profiles and independent Resumes, tailor a Resume, and download an A4 PDF.
+An authenticated career and resume platform: keep reusable English/Arabic career content, organize editable Profiles and independent Resumes, tailor a Resume, and download an A4 PDF.
 
 The app includes Career Record editing, independent Profiles and Resumes, bilingual PDF export, application tracking, interview practice, analytics, and job-search resources. See the task list for implementation and verification notes.
 
@@ -16,7 +16,7 @@ The app includes Career Record editing, independent Profiles and Resumes, biling
 Tooling: Next.js App Router, strict TypeScript, Tailwind for the app, isolated plain CSS for the Resume template, local JSON persistence, and Playwright PDF export.
 ## Development status
 
-Careery is a personal app under active development, with local JSON storage rather than a hosted account service. Back up personal data separately and review the implementation notes before relying on a workflow. Resume data and PDFs can contain sensitive career information.
+Careery is a personal app under active development, with Clerk authentication and server-side JSON storage separated by user ID. Back up personal data separately and review the implementation notes before relying on a workflow. Resume data and PDFs can contain sensitive career information.
 
 ## Project layout
 
@@ -62,3 +62,15 @@ Run `pnpm seed:demo` to add 80 bilingual career entries, 8 Profiles, and 54 Resu
 Open a Profile or Unfiled to create, reopen, or delete Resumes. The Resume editor supports independent bilingual wording, Career Record selection, hiding and ordering entries, section order, language choice, autosave, and moving between Profiles and Unfiled. The live A4 preview and PDF download share one template. Arabic uses RTL with unchanged LTR email/URL values; missing Arabic shows highlighted local English. The paginated preview shows the generated PDF itself, with an exact page count and a small overflow warning. It refreshes after saving; the selectable live text preview remains available while it updates. Download waits for autosave and offers retry after failures. Preview and download use identical PDF bytes, including page boundaries. Browsers without embedded PDF support can open the preview in a new tab.
 
 Saved Resume lists put the most recently edited items first. Existing undated Resumes retain their relative order until edited; no historical edit dates are invented. Opening previews and downloading PDFs do not update edit times.
+
+### Authentication
+
+Create a Clerk application and set the two keys in `.env.example` in `.env.local`. All signed-in users can access the app. Each user's data is stored privately under `CAREERY_DATA_DIR/users/<Clerk user ID>` (default: `data/users/<Clerk user ID>`), including backups. No owner user ID is needed.
+
+Existing files at the data root are preserved and are never exposed to new accounts. To migrate existing data, stop the server and copy the workspace JSON files into the intended user's directory, or restore a previously exported backup while signed in as that user. Never copy another person's files into a user's directory.
+
+Use persistent storage for deployment; ephemeral serverless filesystems do not preserve workspace data.
+
+## Search indexing
+
+Set `CAREERY_SITE_URL` to the HTTPS production origin. Home and Resources are the public sitemap entries; account-content pages use noindex metadata, and API responses (including PDFs) use X-Robots-Tag. Clerk middleware initializes sessions; storage checks the authenticated user before reading or writing account data. Search directives do not replace authorization.

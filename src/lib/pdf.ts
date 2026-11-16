@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import { chromium } from 'playwright';
 import type { Browser } from 'playwright';
 
@@ -17,7 +18,8 @@ export async function printPdf(url: string): Promise<Buffer> {
       return instance;
     }).catch((error: unknown) => { browser = undefined; throw error; });
     const instance = await browser;
-    const context = await instance.newContext();
+    const cookie = (await headers()).get('cookie');
+    const context = await instance.newContext({ extraHTTPHeaders: cookie ? { cookie } : {} });
     try {
       await context.route('**/*', (route) => new URL(route.request().url()).origin === target.origin ? route.continue() : route.abort());
       const page = await context.newPage();

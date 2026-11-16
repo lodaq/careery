@@ -1,3 +1,5 @@
+import { mkdir } from 'node:fs/promises';
+vi.mock('@clerk/nextjs/server', () => ({ auth: async () => ({ userId: 'user_test' }) }));
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -9,7 +11,7 @@ import { saveCareerRecord } from './actions';
 let directory: string;
 afterEach(async () => { vi.unstubAllEnvs(); if (directory) await rm(directory, { recursive: true, force: true }); });
 it('persists valid edits and rejects a stale tab without overwriting the newer file', async () => {
-  directory = await mkdtemp(join(tmpdir(), 'careery-actions-')); vi.stubEnv('CAREERY_DATA_DIR', directory);
+  directory = await mkdtemp(join(tmpdir(), 'careery-actions-')); vi.stubEnv('CAREERY_DATA_DIR', directory); directory = join(directory, 'users', 'user_test'); await mkdir(directory, { recursive: true });
   const form = new FormData(); form.set('name.en', 'First saved name'); form.set('_revision', recordRevision(emptyRecord()));
   expect((await saveCareerRecord(form)).revision).toBeDefined();
   const bytes = await readFile(join(directory, 'career-record.json'), 'utf8');
@@ -23,7 +25,7 @@ it('persists valid edits and rejects a stale tab without overwriting the newer f
 });
 
 it('source edits and deletion leave saved Profile and Resume files byte-identical', async () => {
-  directory = await mkdtemp(join(tmpdir(), 'careery-independence-')); vi.stubEnv('CAREERY_DATA_DIR', directory);
+  directory = await mkdtemp(join(tmpdir(), 'careery-independence-')); vi.stubEnv('CAREERY_DATA_DIR', directory); directory = join(directory, 'users', 'user_test'); await mkdir(directory, { recursive: true });
   const source = emptyRecord(); source.entries.push({ id: 'skill-1', kind: 'skills', name: { en: 'TypeScript' } });
   await updateRecord((record) => { Object.assign(record, source); }, directory);
   const profile = copyProfile(source, 'profile-1', 'Web', ['skill-1']);

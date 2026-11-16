@@ -8,6 +8,8 @@ async function Questions() {
   const library = await readQuestions();
   return <QuestionLibrary initialLibrary={library} initialNow={new Date().toISOString()} />;
 }
+export const metadata = { title: 'Interview questions', description: 'Organize interview questions and practice your answers.', robots: { index: false, follow: false } };
+
 export default function InterviewQuestionsPage() {
   return <WorkspaceShell contentId="questions-content"><Suspense fallback={<p role="status">Loading interview questions…</p>}><Questions /></Suspense></WorkspaceShell>;
 }

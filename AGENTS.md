@@ -114,3 +114,7 @@ Impeccable owns design judgment; this file owns the toolchain.
 - Design hook findings: fix them. If a finding is intentional (e.g. a glow in a
   library component), say so and record a scoped ignore with a reason. Don't
   contort the design to silence the detector.
+
+## Required visual system
+
+All UI/UX work must follow `DESIGN.md`, including its shared 3D depth hierarchy, interaction states, accessibility rules and flat document-output boundary. Reuse the shared theme and owned components rather than creating page-specific treatments.

@@ -1,5 +1,8 @@
 import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
+  async headers() {
+    return [{ source: '/api/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }];
+  },
   cacheComponents: true,
   partialPrefetching: true,
   distDir: process.env.CAREERY_BUILD_DIR ?? '.next',

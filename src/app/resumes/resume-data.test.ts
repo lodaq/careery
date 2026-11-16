@@ -1,3 +1,5 @@
+import { mkdir } from 'node:fs/promises';
+vi.mock('@clerk/nextjs/server', () => ({ auth: async () => ({ userId: 'user_test' }) }));
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -8,7 +10,7 @@ import { createResume, saveResume, deleteResume, resumeRevision, sortResumes } f
 let directory: string;
 afterEach(async () => { vi.unstubAllEnvs(); vi.useRealTimers(); if (directory) await rm(directory, { recursive: true, force: true }); });
 it('creates independent Profile and blank Resumes, edits and moves without changing sources, rejects stale saves and deletes', async () => {
-  directory = await mkdtemp(join(tmpdir(), 'careery-resume-')); vi.stubEnv('CAREERY_DATA_DIR', directory);
+  directory = await mkdtemp(join(tmpdir(), 'careery-resume-')); vi.stubEnv('CAREERY_DATA_DIR', directory); directory = join(directory, 'users', 'user_test'); await mkdir(directory, { recursive: true });
   await updateRecord((record) => { record.basics.name.en = 'Original'; record.entries.push({ id: 'skill-1', kind: 'skills', name: { en: 'TypeScript' } }); });
   const record = await readRecord(), profile = copyProfile(record, 'profile-1', 'Developer', ['skill-1']);
   await updateWorkspace((workspace) => { workspace.profiles.push(profile); workspace.lastLanguage = 'ar'; });
@@ -44,7 +46,7 @@ it('sorts recent edits first while preserving legacy and equal-date order withou
 });
 it('timestamps real changes and leaves a no-op save at its previous edit time', async () => {
   vi.useFakeTimers({ toFake: ['Date'] }); vi.setSystemTime(new Date('2026-10-25T12:00:00Z'));
-  directory = await mkdtemp(join(tmpdir(), 'careery-edit-time-')); vi.stubEnv('CAREERY_DATA_DIR', directory);
+  directory = await mkdtemp(join(tmpdir(), 'careery-edit-time-')); vi.stubEnv('CAREERY_DATA_DIR', directory); directory = join(directory, 'users', 'user_test'); await mkdir(directory, { recursive: true });
   const form = new FormData(); form.set('name', 'Test'); const created = await createResume(form);
   if (!created.id) throw new Error(created.error);
   let resume = (await readWorkspace()).resumes[0]; expect(resume.updatedAt).toBe('2026-10-25T12:00:00.000Z');

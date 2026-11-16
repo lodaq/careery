@@ -12,6 +12,8 @@ async function Content({ params, searchParams }: { params: Promise<{ id: string 
   if (!resume || (query.revision && resumeRevision(resume) !== query.revision)) notFound();
   return <ResumeDocument document={resolveResume(resume)} />;
 }
+export const metadata = { title: 'Resume preview', description: 'Preview your resume before exporting.', robots: { index: false, follow: false } };
+
 export default function RenderPage(props: { params: Promise<{ id: string }>; searchParams: Promise<{ revision?: string }> }) {
   return <Suspense fallback={null}><Content {...props} /></Suspense>;
 }

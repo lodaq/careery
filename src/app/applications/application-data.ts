@@ -4,12 +4,16 @@ import { dataDirectory, readJson, readWorkspace, updateJson } from '@/lib/storag
 import { cairoDate, closedStatuses, detailFields, statuses } from './application-types';
 import type { ApplicationStore, JobApplication, ApplicationStatus, ApplicationEvent, Interview, Contact } from './application-types';
 
-export async function readApplications(directory = dataDirectory()): Promise<ApplicationStore> {
+export async function readApplications(directory?: string): Promise<ApplicationStore> {
+  directory ??= await dataDirectory();
   const store = await readJson<ApplicationStore>(join(directory, 'applications.json'), () => ({ version: 1, applications: [] }));
   if (!Array.isArray(store.applications) || store.applications.some((app) => !app.id || !statuses.includes(app.status) || !Number.isInteger(app.revision) || !app.details || ![app.tasks, app.events, app.interviews, app.contacts, app.documents].every(Array.isArray))) throw new Error('Invalid application data; original file was preserved.');
   return store;
 }
-const update = (mutate: (store: ApplicationStore) => void) => updateJson(join(dataDirectory(), 'applications.json'), readApplications, mutate);
+const update = async (mutate: (store: ApplicationStore) => void) => {
+  const directory = await dataDirectory();
+  return updateJson(join(directory, 'applications.json'), () => readApplications(directory), mutate);
+};
 const value = (values: Record<string, string>, key: string) => (values[key] ?? '').trim();
 function required(values: Record<string, string>, key: string, label = key) { const text = value(values, key); if (!text) throw new Error(`${label} is required.`); if (text.length > 500) throw new Error(`${label} is too long.`); return text; }
 function date(text: string) { if (text && (!/^\d{4}-\d{2}-\d{2}$/.test(text) || !Number.isFinite(Date.parse(text)) || new Date(text).toISOString().slice(0, 10) !== text)) throw new Error('Enter a valid date.'); return text; }

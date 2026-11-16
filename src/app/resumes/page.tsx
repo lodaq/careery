@@ -12,6 +12,8 @@ async function AllResumes() {
   const workspace = await readWorkspace();
   return <ResumeList dashboard resumes={sortResumes(workspace.resumes).map((resume) => ({ id: resume.id, name: resume.name, language: resume.language, revision: resumeRevision(resume), profileName: workspace.profiles.find((profile) => profile.id === resume.profileId)?.name, updatedAt: resume.updatedAt }))} />;
 }
+export const metadata = { title: 'Resumes', description: 'Create and tailor English and Arabic resumes.', robots: { index: false, follow: false } };
+
 export default function ResumesPage() {
   return <WorkspaceShell contentId="resumes-content" className="resume-dashboard" navigation={<nav aria-label="Workspace"><Link prefetch={false} href="/">Profiles</Link><Link href="/resumes" aria-current="page">Resumes</Link><Link href="/career-record">Career Record</Link></nav>}><Suspense fallback={<p role="status">Loading your Resumes…</p>}><AllResumes /></Suspense></WorkspaceShell>;
 }

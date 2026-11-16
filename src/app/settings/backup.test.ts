@@ -6,6 +6,7 @@ import { readRecord, readWorkspace } from '@/lib/storage';
 import { POST as restoreRequest } from '@/app/api/backup/route';
 import { readApplications } from '../applications/application-data';
 import { readQuestions } from '../interview-questions/question-data';
+import { readTools } from '../toolbox/data';
 import { backupFiles, createBackup, restoreBackup } from './backup';
 
 const directories: string[] = [];
@@ -21,7 +22,7 @@ const workspace = { version: 1, profiles: [], resumes: [], lastLanguage: 'en' };
 const applications = { version: 1, applications: [] };
 const questions = { version: 1, schema: 2, tagRevision: 0, tags: [], questions: [], events: [] };
 async function writeAll(path: string) {
-  await Promise.all(backupFiles.map((name) => writeFile(join(path, name), JSON.stringify({ 'career-record.json': record, 'workspace.json': workspace, 'applications.json': applications, 'interview-questions.json': questions }[name], null, 2) + '\n')));
+  await Promise.all(backupFiles.map((name) => writeFile(join(path, name), JSON.stringify({ 'career-record.json': record, 'workspace.json': workspace, 'applications.json': applications, 'interview-questions.json': questions, 'notes.json': { version: 1, notes: [] }, 'lessons.json': { version: 1, notes: [] }, 'toolbox.json': { version: 1, tools: [{ id: 'example', name: 'Example', url: 'https://example.com/', icon: '' }] } }[name], null, 2) + '\n')));
 }
 
 it('round-trips every store and keeps a copy of the replaced data', async () => {
@@ -29,7 +30,7 @@ it('round-trips every store and keeps a copy of the replaced data', async () => 
   await writeAll(source);
   const bundle = await createBackup(source);
   expect(bundle.app).toBe('careery');
-  expect(Object.keys(bundle.files)).toHaveLength(4);
+  expect(Object.keys(bundle.files)).toHaveLength(7);
 
   const target = await directory();
   await writeFile(join(target, 'career-record.json'), JSON.stringify({ ...record, basics: { ...record.basics, name: { en: 'Before restore' } } }) + '\n');
@@ -41,6 +42,7 @@ it('round-trips every store and keeps a copy of the replaced data', async () => 
   expect((await readWorkspace(target)).lastLanguage).toBe('en');
   expect((await readApplications(target)).applications).toEqual([]);
   expect((await readQuestions(target)).schema).toBe(2);
+  expect((await readTools(target)).tools[0].name).toBe('Example');
   const saved = await readFile(join(target, 'backups', result.snapshot!, 'career-record.json'), 'utf8');
   expect(JSON.parse(saved).basics.name.en).toBe('Before restore');
 });

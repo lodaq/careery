@@ -1,17 +1,20 @@
+import { readTools } from '../toolbox/data';
+import { readNotes } from '../notes/data';
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { dataDirectory, readRecord, readWorkspace, replaceJson } from '@/lib/storage';
 import { readApplications } from '../applications/application-data';
 import { readQuestions } from '../interview-questions/question-data';
 
-export const backupFiles = ['career-record.json', 'workspace.json', 'applications.json', 'interview-questions.json'] as const;
+export const backupFiles = ['career-record.json', 'workspace.json', 'applications.json', 'interview-questions.json', 'notes.json', 'lessons.json', 'toolbox.json'] as const;
 export type BackupFile = typeof backupFiles[number];
 export interface Backup { app: 'careery'; format: 1; exportedAt: string; files: Partial<Record<BackupFile, unknown>> }
 
 const missing = (error: unknown) => error instanceof Error && 'code' in error && error.code === 'ENOENT';
 
 /** Reads every store as-is; a missing file is omitted rather than invented. */
-export async function createBackup(directory = dataDirectory()): Promise<Backup> {
+export async function createBackup(directory?: string): Promise<Backup> {
+  directory ??= await dataDirectory();
   const files: Backup['files'] = {};
   for (const name of backupFiles) {
     try { files[name] = JSON.parse(await readFile(join(/*turbopackIgnore: true*/ directory, name), 'utf8')); }
@@ -52,7 +55,8 @@ async function snapshot(directory: string) {
  * Validates the bundle with the same readers the app uses, snapshots current
  * data, then replaces only the files present in the bundle.
  */
-export async function restoreBackup(input: unknown, directory = dataDirectory()) {
+export async function restoreBackup(input: unknown, directory?: string) {
+  directory ??= await dataDirectory();
   const bundle = parseBackup(input);
   await mkdir(directory, { recursive: true });
   const temporary = await mkdtemp(join(/*turbopackIgnore: true*/ directory, '.restore-'));
@@ -61,11 +65,14 @@ export async function restoreBackup(input: unknown, directory = dataDirectory())
       const value = bundle.files[name];
       if (value !== undefined) await writeFile(join(/*turbopackIgnore: true*/ temporary, name), JSON.stringify(value, null, 2) + '\n', { flag: 'wx' });
     }
+    if (bundle.files['toolbox.json'] !== undefined) await readTools(temporary);
     if (bundle.files['career-record.json'] !== undefined) await readRecord(temporary);
     if (bundle.files['workspace.json'] !== undefined) await readWorkspace(temporary);
     if (bundle.files['applications.json'] !== undefined) await readApplications(temporary);
     // Reading also migrates an older interview-question schema inside the temporary copy.
     if (bundle.files['interview-questions.json'] !== undefined) await readQuestions(temporary);
+    if (bundle.files['notes.json'] !== undefined) await readNotes(temporary);
+    if (bundle.files['lessons.json'] !== undefined) await readNotes(temporary, 'lessons.json');
     const restored = backupFiles.filter((name) => bundle.files[name] !== undefined);
     const snapshotName = await snapshot(directory);
     for (const name of restored) {

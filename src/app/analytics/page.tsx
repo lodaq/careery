@@ -1,3 +1,4 @@
+import { PageHeading } from '@/components/PageHeading';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { connection } from 'next/server';
@@ -12,7 +13,7 @@ import './analytics.css';
 import { readApplications } from '../applications/application-data';
 import { ApplicationAnalytics } from './ApplicationAnalytics';
 
-export const metadata = { title: 'Analytics · Careery' };
+export const metadata = { title: 'Analytics', description: 'Review your application activity and career progress.', robots: { index: false, follow: false } };
 const percent = (count: number, total: number) => total ? `${Math.round(count / total * 100)}%` : '—';
 
 async function Analytics() {
@@ -24,7 +25,7 @@ async function Analytics() {
   const recent = data.resumes.filter((resume) => resume.updatedAt).sort((a, b) => Date.parse(b.updatedAt!) - Date.parse(a.updatedAt!)).slice(0, 5);
   const attention = data.resumes.filter((resume) => resume.issues.length || (resume.language === 'ar' && resume.missingArabic));
   return <>
-    <div className="section-title analytics-heading"><div><h1>Analytics</h1><p>Your saved workspace, at a glance. Everything here stays on your machine.</p></div><div className="row-actions"><Link href="#analytics-charts">View charts</Link><RefreshAnalytics /></div></div>
+    <div className="section-title analytics-heading"><div><PageHeading><h1>Analytics</h1><p>Your saved workspace, at a glance. Everything here stays on your machine.</p></PageHeading></div><div className="row-actions"><Link href="#analytics-charts">View charts</Link><RefreshAnalytics /></div></div>
     <ApplicationAnalytics applications={applications.applications} />
     <dl className="analytics-totals">
       {[[record.entries.length, 'Career Record entries', '/career-record'], [workspace.profiles.length, 'Profiles', '/profiles'], [data.resumes.length, 'Resumes', '/resumes'], [unfiled, 'Unfiled Resumes', '/unfiled']].map(([count, label, href]) => <div key={label}><dt><Link href={String(href)} prefetch={false}>{label}</Link></dt><dd>{count}</dd></div>)}

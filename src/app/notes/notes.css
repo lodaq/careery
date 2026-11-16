@@ -1,0 +1,88 @@
+/* Notes board: one composer, pinned notes, then a masonry grid of note cards. */
+.notes-board { display:flex; flex-direction:column; gap:28px; }
+.notes-topbar { display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; }
+.notes-composer { flex:1 1 420px; max-width:640px; min-width:0; --note-surface:var(--card); --note-ink:var(--foreground); --note-base:var(--depth-base); border:1px solid var(--border); border-radius:var(--radius-xl); background-color:var(--note-surface); color:var(--note-ink); box-shadow:0 var(--depth-card) 0 var(--note-base); }
+.notes-composer[data-color='gray'] { --note-surface:var(--note-gray); --note-base:var(--note-gray-base); }
+.notes-composer[data-color='amber'] { --note-surface:var(--note-amber); --note-base:var(--note-amber-base); }
+.notes-composer[data-color='mint'] { --note-surface:var(--note-mint); --note-base:var(--note-mint-base); }
+.notes-composer[data-color='blue'] { --note-surface:var(--note-blue); --note-base:var(--note-blue-base); }
+.notes-composer[data-color='rose'] { --note-surface:var(--note-rose); --note-base:var(--note-rose-base); }
+.notes-composer[data-color='lilac'] { --note-surface:var(--note-lilac); --note-base:var(--note-lilac-base); }
+.notes-composer:focus-within { border-color:var(--ring); box-shadow:0 var(--depth-card) 0 var(--note-base), 0 0 0 3px color-mix(in oklch, var(--ring) 30%, transparent); }
+.notes-composer-body { display:flex; flex-direction:column; gap:10px; padding:14px 16px 8px; }
+.notes-composer [data-slot='textarea'], .note-editor [data-slot='input'], .note-editor [data-slot='textarea'] { border:0; background:transparent; box-shadow:none; color:var(--note-ink); font:inherit; font-size:15px; line-height:1.6; padding:0; min-height:0; }
+.notes-composer [data-slot='textarea'] { resize:none; overflow:hidden; }
+.notes-composer [data-slot='textarea']::placeholder, .note-editor [data-slot='input']::placeholder, .note-editor [data-slot='textarea']::placeholder { color:color-mix(in oklch, var(--note-ink) 55%, var(--note-surface)); }
+.notes-composer-title { font-size:16px; font-weight:600; }
+.notes-composer-toolbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding:6px 12px 12px; }
+.notes-composer-spacer { flex:1; }
+.notes-status { min-height:20px; margin:0; font-size:13px; color:var(--muted-foreground); }
+.notes-status-error { color:var(--destructive); }
+.notes-search { flex:1 1 260px; max-width:320px; display:flex; flex-direction:column; gap:8px; }
+.notes-search label { font-size:14px; font-weight:500; }
+.notes-section { display:flex; flex-direction:column; gap:16px; }
+.notes-section > h2 { margin:0; font-size:16px; font-weight:600; }
+.notes-section > h2 span { color:var(--muted-foreground); font-weight:400; font-variant-numeric:tabular-nums; }
+.notes-grid { columns:4 250px; column-gap:16px; }
+.notes-empty { padding:32px 0; color:var(--muted-foreground); max-width:65ch; }
+.notes-empty h2 { font-size:16px; margin:0 0 6px; }
+.notes-empty p { margin:0; }
+
+/* Note cards carry their own surface, ink and shadow base. */
+.note-card { --note-surface:var(--card); --note-ink:var(--card-foreground); --note-base:var(--depth-base); position:relative; break-inside:avoid; display:inline-block; width:100%; margin:0 0 16px; padding:16px; border:1px solid color-mix(in oklch, var(--note-ink) 12%, var(--note-surface)); border-radius:var(--radius-xl); background-color:var(--note-surface); color:var(--note-ink); box-shadow:0 var(--depth-card) 0 var(--note-base); }
+.note-card-pin { position:absolute; top:14px; right:14px; display:flex; color:color-mix(in oklch, var(--note-ink) 70%, var(--note-surface)); }
+.note-card-pin svg { width:16px; height:16px; }
+.note-card:focus-within { border-color:var(--ring); box-shadow:0 var(--depth-card) 0 var(--note-base), 0 0 0 3px color-mix(in oklch, var(--ring) 30%, transparent); }
+.note-card[data-color='gray'] { --note-surface:var(--note-gray); --note-ink:var(--foreground); --note-base:var(--note-gray-base); }
+.note-card[data-color='amber'] { --note-surface:var(--note-amber); --note-ink:var(--foreground); --note-base:var(--note-amber-base); }
+.note-card[data-color='mint'] { --note-surface:var(--note-mint); --note-ink:var(--foreground); --note-base:var(--note-mint-base); }
+.note-card[data-color='blue'] { --note-surface:var(--note-blue); --note-ink:var(--foreground); --note-base:var(--note-blue-base); }
+.note-card[data-color='rose'] { --note-surface:var(--note-rose); --note-ink:var(--foreground); --note-base:var(--note-rose-base); }
+.note-card[data-color='lilac'] { --note-surface:var(--note-lilac); --note-ink:var(--foreground); --note-base:var(--note-lilac-base); }
+.note-card-title { margin:0 0 4px; padding-inline-end:26px; font-size:16px; font-weight:600; line-height:1.35; overflow-wrap:anywhere; }
+.note-card-text { margin:0; font-size:15px; line-height:1.55; white-space:pre-wrap; overflow-wrap:anywhere; }
+.note-card-meta { margin:0; font-size:12px; color:color-mix(in oklch, var(--note-ink) 68%, var(--note-surface)); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.note-card-footer { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:12px; }
+.note-card-items { list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.note-item-row { display:flex; align-items:flex-start; gap:10px; font-size:14px; line-height:1.5; }
+.note-item-row > span { min-width:0; overflow-wrap:anywhere; }
+.note-item-row[data-done='true'] > span { text-decoration:line-through; color:color-mix(in oklch, var(--note-ink) 60%, var(--note-surface)); }
+.note-item-row [data-slot='checkbox'] { margin-top:2px; background-color:transparent; }
+.note-card-actions { display:flex; align-items:center; justify-content:flex-end; gap:2px; opacity:0; transition:opacity var(--depth-duration) ease-out; }
+.note-card:hover .note-card-actions, .note-card:focus-within .note-card-actions { opacity:1; }
+@media (hover:none) { .note-card-actions { opacity:1; } }
+.note-card-actions [data-slot='button'] { padding:0; border-color:transparent; background-color:var(--note-surface); --press-base:var(--note-base); color:var(--note-ink); }
+@media(pointer:coarse) { .note-card-actions [data-slot='button'] { width:44px; min-height:44px; } }
+.note-card-actions [data-slot='button']:hover { background-color:color-mix(in oklch, var(--note-ink) 10%, var(--note-surface)); }
+.note-card-actions [data-slot='button']:active { background-color:color-mix(in oklch, var(--note-ink) 16%, var(--note-surface)); }
+
+/* The editor swaps the card body for its own fields. */
+.note-editor { display:flex; flex-direction:column; gap:12px; }
+.note-editor-title { font-size:16px; font-weight:600; }
+.note-editor [data-slot='input'] { font-size:16px; font-weight:600; }
+.note-editor [data-slot='textarea'] { resize:none; }
+.note-editor-items { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.note-editor-toolbar { display:flex; flex-direction:column; gap:10px; padding-top:4px; }
+.note-editor-tools { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.note-editor-actions { display:flex; align-items:center; gap:8px; justify-content:flex-end; }
+.note-editor-items [data-slot='input'] { font-size:14px; font-weight:400; }
+.note-item-editor-row { display:flex; align-items:center; gap:8px; }
+.note-item-editor-row [data-slot='input'] { flex:1; min-width:0; }
+.note-item-editor-row [data-slot='button'] { width:32px; min-height:32px; padding:0; border-color:transparent; background-color:var(--note-surface); --press-base:var(--note-base); color:var(--note-ink); }
+.note-item-editor-row [data-slot='button']:hover { background-color:color-mix(in oklch, var(--note-ink) 10%, var(--note-surface)); }
+.note-add-item { margin-top:10px; }
+
+/* Colour swatches double as the composer and card palette. */
+.note-palette { display:flex; align-items:center; gap:5px; }
+.note-palette-popover { width:auto; }
+.note-swatch { width:24px; height:24px; padding:0; border:1px solid var(--depth-base); border-radius:50%; background-color:var(--note-surface); cursor:pointer; }
+@media(pointer:coarse) { .note-swatch { width:28px; height:28px; } }
+.note-swatch[data-color='default'] { --note-surface:var(--card); }
+.note-swatch[data-color='gray'] { --note-surface:var(--note-gray); }
+.note-swatch[data-color='amber'] { --note-surface:var(--note-amber); }
+.note-swatch[data-color='mint'] { --note-surface:var(--note-mint); }
+.note-swatch[data-color='blue'] { --note-surface:var(--note-blue); }
+.note-swatch[data-color='rose'] { --note-surface:var(--note-rose); }
+.note-swatch[data-color='lilac'] { --note-surface:var(--note-lilac); }
+.note-swatch[aria-pressed='true'] { box-shadow:0 0 0 2px var(--ring); }
+.note-swatch:focus-visible { outline:2px solid var(--ring); outline-offset:2px; }

@@ -3,12 +3,17 @@ import { cleanup, render, screen, within } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import ResourcesPage from './page';
 
+vi.mock('@/components/WorkspaceAccount', () => ({ WorkspaceAccount: () => null }));
 vi.mock('next/navigation', () => ({ usePathname: () => '/resources' }));
+vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() })));
 afterEach(cleanup);
 
 it('makes the curated directory reachable and starts with the requested Mokabla link', () => {
   render(<ResourcesPage />);
   expect(screen.getByRole('heading', { level: 1, name: 'Resources' })).toBeDefined();
+  expect(screen.getByText('Careery')).toBeDefined();
+  expect(within(screen.getByRole('banner')).getByRole('heading', { level: 1, name: 'Resources' })).toBeDefined();
+  expect(within(screen.getByRole('main')).queryByRole('heading', { level: 1 })).toBeNull();
   const navigation = screen.getByRole('navigation', { name: 'Workspace' });
   const resourcesLink = within(navigation).getByRole('link', { name: 'Resources' });
   expect(resourcesLink.getAttribute('href')).toBe('/resources');

@@ -7,14 +7,16 @@ const scheduler = fsrs({ request_retention: 0.9, enable_short_term: true, learni
 const restore = (card: StoredCard | null, now: Date): Card => card ? { ...card, due: new Date(card.due), last_review: card.last_review ? new Date(card.last_review) : undefined } : createEmptyCard(now);
 const serialize = (card: Card): StoredCard => ({ ...card, due: card.due.toISOString(), last_review: card.last_review?.toISOString() });
 export type ReviewInput = { questionId: string; revision: number; rating: number; submissionId: string; sessionId: string };
-export async function previewQuestion(id: string, directory = dataDirectory(), now = new Date()) {
+export async function previewQuestion(id: string, directory?: string, now = new Date()) {
+  directory ??= await dataDirectory();
   const library = await readQuestions(directory);
   const question = library.questions.find((q) => q.id === id);
   if (!question) return { error: 'This question was removed. Reload to continue.' };
   const previews = scheduler.repeat(restore(question.card, now), now);
   return { revision: question.revision, options: ([1, 2, 3, 4] as const).map((rating) => ({ rating, due: previews[rating].card.due.toISOString() })) };
 }
-export async function reviewQuestion(input: ReviewInput, directory = dataDirectory(), now = new Date()) {
+export async function reviewQuestion(input: ReviewInput, directory?: string, now = new Date()) {
+  directory ??= await dataDirectory();
   return libraryMutation((library) => {
     check(typeof input.sessionId === 'string' && input.sessionId.length > 0 && input.sessionId.length <= 100 && typeof input.submissionId === 'string' && input.submissionId.length > 0 && input.submissionId.length <= 100, 'Invalid practice submission. Restart the session.');
     const duplicate = library.events.find((event) => event.id === input.submissionId);
@@ -31,7 +33,8 @@ export async function reviewQuestion(input: ReviewInput, directory = dataDirecto
     question.card = after; question.revision++;
   }, directory);
 }
-export async function undoReview(reviewId: string, sessionId: string, directory = dataDirectory(), now = new Date()) {
+export async function undoReview(reviewId: string, sessionId: string, directory?: string, now = new Date()) {
+  directory ??= await dataDirectory();
   return libraryMutation((library) => {
     const review = library.events.find((event): event is ReviewEvent => event.kind === 'review' && event.id === reviewId && event.sessionId === sessionId);
     check(review, 'This review could not be found. Reload to continue.');

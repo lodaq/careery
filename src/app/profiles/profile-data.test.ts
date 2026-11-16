@@ -1,3 +1,5 @@
+import { mkdir } from 'node:fs/promises';
+vi.mock('@clerk/nextjs/server', () => ({ auth: async () => ({ userId: 'user_test' }) }));
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -8,7 +10,7 @@ import { createProfile, deleteProfile, saveProfile, profileRevision } from './pr
 let directory: string;
 afterEach(async () => { vi.unstubAllEnvs(); if (directory) await rm(directory, { recursive: true, force: true }); });
 async function setup() {
-  directory = await mkdtemp(join(tmpdir(), 'careery-profile-')); vi.stubEnv('CAREERY_DATA_DIR', directory);
+  directory = await mkdtemp(join(tmpdir(), 'careery-profile-')); vi.stubEnv('CAREERY_DATA_DIR', directory); directory = join(directory, 'users', 'user_test'); await mkdir(directory, { recursive: true });
   await updateRecord((record) => { record.basics.name.en = 'Original'; record.entries.push({ id: 'skill-1', kind: 'skills', name: { en: 'TypeScript', ar: 'تايب سكريبت' } }); });
   const form = new FormData(); form.set('name', 'Web developer');
   const result = await createProfile(form);

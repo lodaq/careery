@@ -1,4 +1,5 @@
 'use client';
+import { PageHeading } from '@/components/PageHeading';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { lazy, Suspense, useState, useTransition } from 'react';
@@ -21,7 +22,7 @@ export function ApplicationList({ applications }: { applications: ApplicationSum
   function move(id: string, target: string) { const app = applications.find((item) => item.id === id); if (!app || target === 'Closed') return; start(async () => { const form = new FormData(); form.set('status', target); const result = await applicationAction(id, app.revision, 'status', form); setError(result.error ?? ''); router.refresh(); }); }
   function statusSelect(app: ApplicationSummary) { return <NativeSelect aria-label={`Status for ${app.company} ${app.role}`} value={app.status} disabled={pending} onChange={(event) => move(app.id, event.target.value)}>{statuses.map((item) => <option key={item}>{item}</option>)}</NativeSelect>; }
   return <>
-    <div className="section-title"><div><h1>Applications</h1><p>{applications.filter((app) => !app.archived && !closedStatuses.includes(app.status)).length} active opportunities</p></div><Button onClick={() => setCreate(!create)} aria-expanded={create}><PlusIcon aria-hidden="true" />Add application</Button></div>
+    <div className="section-title"><div><PageHeading><h1>Applications</h1><p>{applications.filter((app) => !app.archived && !closedStatuses.includes(app.status)).length} active opportunities</p></PageHeading></div><Button onClick={() => setCreate(!create)} aria-expanded={create}><PlusIcon aria-hidden="true" />Add application</Button></div>
     {create && <Suspense fallback={<p role="status">Opening application form…</p>}><ApplicationCreate /></Suspense>}
     <div className="application-toolbar"><div><Label htmlFor="application-search">Search</Label><Input id="application-search" placeholder="Company, role, or tag" value={search} onChange={(event) => setSearch(event.target.value)} /></div>
       {[['filter-status', 'Status', status, setStatus, ['All', ...statuses]], ['filter-priority', 'Priority', priority, setPriority, ['All', 'High', 'Medium', 'Low']], ['filter-archive', 'Archive', archive, setArchive, ['Active', 'Archived', 'All']], ['filter-sort', 'Sort', sort, setSort, ['Updated', 'Company', 'Due date', 'Applied date']]].map(([id, label, value, setter, options]) => <div key={String(id)}><Label htmlFor={String(id)}>{String(label)}</Label><NativeSelect id={String(id)} value={String(value)} onChange={(event) => (setter as (value: string) => void)(event.target.value)}>{(options as string[]).map((option) => <option key={option}>{option}</option>)}</NativeSelect></div>)}

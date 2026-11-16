@@ -9,7 +9,7 @@ web
 ## Users
 
 A person maintaining their own career information and preparing job-specific
-Resumes in English or Arabic. Careery is a single-user, local application;
+Resumes in English or Arabic. Careery is an authenticated, multi-user web application;
 Profiles represent career-specific content collections, not user accounts.
 
 ## Product Purpose
@@ -20,14 +20,14 @@ wording and predictable output without changing previously prepared Resumes.
 
 ## Positioning
 
-A personal, local-first resume workspace built around reusable English/Arabic
+An authenticated career and resume platform built around reusable English/Arabic
 content and independent copies. Source edits never silently change a Profile or
 Resume that already copied that content.
 
 ## Operating Context
 
-Run locally with `pnpm dev` on loopback. Personal content is stored in JSON files
-under `data/`, with atomic writes and no cloud, accounts, or database.
+Run the web application with Clerk authentication. Account content is stored in server-side JSON files
+under `data/users/<userId>/`, with atomic writes, Clerk accounts and per-user storage isolation.
 
 The core workflow is Career Record → independently editable Profile content →
 job-specific Resume → A4 PDF. Resumes may also start empty and receive content

@@ -1,4 +1,5 @@
 'use client';
+import { PageHeading } from '@/components/PageHeading';
 import { lazy, Suspense, useId, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -32,7 +33,7 @@ export function ProfileGrid({ profiles, unfiledCount }: { profiles: ProfileTile[
     finally { pending.current = false; setBusy(false); }
   }
   return <><section aria-labelledby={`${id}-title`} className="profile-workspace">
-    <div className="section-title profiles-heading"><div><h1 id={`${id}-title`}>Profiles</h1><p>Organize your career directions and their Resumes.</p></div><div className="row-actions"><Link prefetch={false} className="plain-link" href="/unfiled">Unfiled ({unfiledCount})</Link><Button type="button" onClick={() => setCreating(true)}>Create Profile</Button></div></div>
+    <div className="section-title profiles-heading"><div><PageHeading><h1 id={`${id}-title`}>Profiles</h1><p>Organize your career directions and their Resumes.</p></PageHeading></div><div className="row-actions"><Link prefetch={false} className="plain-link" href="/unfiled">Unfiled ({unfiledCount})</Link><Button type="button" onClick={() => setCreating(true)}>Create Profile</Button></div></div>
     <p role="status" aria-live="polite">{status}</p>
     {profiles.length === 0 ? <Empty><EmptyHeader><EmptyTitle role="heading" aria-level={3}>No profiles yet</EmptyTitle><EmptyDescription>Create a Profile, then choose content from your Career Record.</EmptyDescription></EmptyHeader></Empty> : <div className="profile-grid">
       {profiles.map((profile) => <Card role="article" className="profile-tile" key={profile.id}>

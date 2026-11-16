@@ -1,8 +1,9 @@
+import { PageHeading } from '@/components/PageHeading';
 import type { Metadata } from 'next';
 import { ArrowUpRightIcon } from 'lucide-react';
 import { WorkspaceShell } from '@/components/WorkspaceShell';
 
-export const metadata: Metadata = { title: 'Resources | Careery' };
+export const metadata: Metadata = { ...(process.env.CAREERY_SITE_URL ? { alternates: { canonical: new URL('/resources', process.env.CAREERY_SITE_URL).href } } : {}), title: 'Job search and interview resources', description: 'Explore resources for job searching, company research, salary comparisons, interview preparation and stronger resumes.' };
 
 const groups = [
   {
@@ -40,8 +41,8 @@ const groups = [
 
 export default function ResourcesPage() {
   return <WorkspaceShell contentId="resources-content">
-    <h1>Resources</h1>
-    <p className="page-intro">Useful websites and tools for finding a role, researching employers and preparing your next application.</p>
+    <PageHeading><h1>Resources</h1>
+    <p className="page-intro">Useful websites and tools for finding a role, researching employers and preparing your next application.</p></PageHeading>
     <p className="text-sm text-muted-foreground">These links open external websites. Some services require an account or payment. Check what you share before uploading personal documents.</p>
     <div className="max-w-4xl">
       {groups.map(({ title, resources }, index) => <section key={title} className="mt-8" aria-labelledby={`resource-group-${index}`}>
