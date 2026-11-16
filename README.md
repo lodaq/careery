@@ -81,6 +81,6 @@ Set `CAREERY_SITE_URL` to the HTTPS production origin. Home and Resources are th
 
 ### Deployment verification (2026-11-16)
 
-Lint, typecheck, build and 111 tests passed. A temporary Clerk test user verified production backup download, restore to private Blob storage and Chromium PDF export; its account and storage were removed afterward. Local personal data was not migrated.
+Lint, typecheck, build and 113 tests passed. Temporary Clerk test users verified production backup download, repeated full restores with recovery snapshots, user isolation, protected storage and English/Arabic Chromium PDF exports. Signed-out visitors reach Clerk sign-in, and unauthenticated backup requests return 401. Test accounts were removed afterward. The final recheck could not directly verify or remove private Blob test records because production Blob credentials are unavailable locally. Local personal data was not migrated.
 
 Dependency audit reports 10 existing transitive findings. The high-severity Zod finding is in the shadcn CLI dependency tree (4.1.11); the runtime Blob dependency resolves Zod 4.6.7. The remaining findings concern development CLI/lint dependencies, not exposed application handlers. Dependency upgrades are deferred to a separate tooling update; review by 2026-11-23. The deployed app currently uses the existing Clerk development instance. Vercel's request-body limit also applies to large backup restores and attachment uploads.

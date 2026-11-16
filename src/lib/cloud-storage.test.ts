@@ -10,7 +10,7 @@ it('uses private uncached reads and conditional writes to prevent lost updates',
     expect(await readCloudText(path)).toBe('{}');
     await writeCloudText(path, '{"version":1}');
   });
-  expect(blob.get).toHaveBeenCalledWith('users/user_test/workspace.json', { access: 'private', useCache: false });
+  expect(blob.get).toHaveBeenCalledWith('users/user_test/workspace.json', { access: 'private', useCache: false, headers: { 'accept-encoding': 'identity' } });
   expect(blob.put).toHaveBeenCalledWith('users/user_test/workspace.json', '{"version":1}', expect.objectContaining({ access: 'private', allowOverwrite: true, ifMatch: 'version-1' }));
   blob.put.mockRejectedValueOnce(new Error('Precondition failed'));
   await expect(cloudUpdate(() => writeCloudText(path, '{}'))).rejects.toThrow('Precondition');

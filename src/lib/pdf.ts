@@ -1,3 +1,5 @@
+import { copyFile, mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
 import { headers } from 'next/headers';
 import { chromium } from 'playwright-core';
 import type { Browser } from 'playwright-core';
@@ -18,7 +20,10 @@ export async function printPdf(url: string): Promise<Buffer> {
     browser ??= (async () => {
       if (process.env.VERCEL !== '1') return chromium.launch();
       const { default: serverless } = await import('@sparticuz/chromium');
-      return chromium.launch({ args: serverless.args, executablePath: await serverless.executablePath(), headless: true });
+      const executablePath = await serverless.executablePath();
+      await mkdir('/tmp/fonts', { recursive: true });
+      await copyFile(join(process.cwd(), 'public/fonts/noto-sans-arabic.ttf'), '/tmp/fonts/noto-sans-arabic.ttf');
+      return chromium.launch({ args: serverless.args, executablePath, headless: true });
     })().then((instance) => {
       instance.once('disconnected', () => { browser = undefined; });
       return instance;
@@ -37,6 +42,7 @@ export async function printPdf(url: string): Promise<Buffer> {
       return await page.pdf({ format: 'A4', printBackground: true, margin: { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' } });
     } finally {
       await context.close();
+      if (process.env.VERCEL === '1') { browser = undefined; await instance.close(); }
     }
   } finally {
     busy = false;

@@ -11,7 +11,8 @@ const queues = new Map<string, Promise<void>>();
 export async function dataDirectory() {
   await connection();
   if (process.env.CAREERY_LOCAL_USER) return join(process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data'), 'users', process.env.CAREERY_LOCAL_USER);
-  const { userId } = await auth();
+  const { userId, redirectToSignIn } = await auth();
+  if (!userId) return redirectToSignIn();
   if (!userId || !/^user_[a-zA-Z0-9]+$/.test(userId)) throw new Error('Authentication required.');
   return join(process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data'), 'users', userId);
 }

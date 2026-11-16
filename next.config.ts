@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
     return [{ source: '/api/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }];
   },
   serverExternalPackages: ['@sparticuz/chromium'],
-  outputFileTracingIncludes: { '/api/resumes/*/pdf': ['node_modules/@sparticuz/chromium/bin/**', 'node_modules/playwright-core/browsers.json'] },
+  outputFileTracingIncludes: { '/api/resumes/*/pdf': ['node_modules/@sparticuz/chromium/bin/**', 'node_modules/playwright-core/browsers.json', 'public/fonts/noto-sans-arabic.ttf'] },
   outputFileTracingExcludes: { '/*': ['data/**', '.env*', '.next-build/**', 'captures/**', 'llms.txt/**'] },
   cacheComponents: true,
   partialPrefetching: true,

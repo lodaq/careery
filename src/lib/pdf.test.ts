@@ -5,8 +5,9 @@ const mock = vi.hoisted(() => {
   const close = vi.fn().mockResolvedValue(undefined);
   const page = { goto: vi.fn().mockResolvedValue({ ok: () => true }), locator: vi.fn().mockReturnValue({ waitFor: vi.fn().mockResolvedValue(undefined) }), evaluate: vi.fn().mockResolvedValue(undefined), pdf };
   const context = { route: vi.fn().mockResolvedValue(undefined), newPage: vi.fn().mockResolvedValue(page), close };
-  const browser = { once: vi.fn(), newContext: vi.fn().mockResolvedValue(context) };
-  return { pdf, close, page, launch: vi.fn().mockResolvedValue(browser) };
+  const closeBrowser = vi.fn().mockResolvedValue(undefined);
+  const browser = { close: closeBrowser, once: vi.fn(), newContext: vi.fn().mockResolvedValue(context) };
+  return { pdf, close, page, closeBrowser, launch: vi.fn().mockResolvedValue(browser) };
 });
 vi.mock('playwright-core', () => ({ chromium: { launch: mock.launch } }));
 import { printPdf } from './pdf';
@@ -35,5 +36,6 @@ it('allows only the configured HTTPS origin on Vercel', async () => {
   try {
     await expect(printPdf('https://attacker.example/render/id')).rejects.toThrow('local');
     expect(await printPdf('https://careery.example/render/id')).toEqual(Buffer.from('pdf'));
+    expect(mock.closeBrowser).toHaveBeenCalledOnce();
   } finally { vi.unstubAllEnvs(); }
 });

@@ -1,3 +1,4 @@
+import { auth } from '@clerk/nextjs/server';
 import { sameOrigin } from '@/lib/request-origin';
 import { connection } from 'next/server';
 import { createBackup, restoreBackup } from '@/app/settings/backup';
@@ -5,6 +6,7 @@ import { createBackup, restoreBackup } from '@/app/settings/backup';
 
 export async function GET() {
   await connection();
+  if (!process.env.CAREERY_LOCAL_USER && !(await auth()).userId) return Response.json({ error: 'Authentication required.' }, { status: 401 });
   const backup = await createBackup();
   return new Response(JSON.stringify(backup, null, 2) + '\n', {
     headers: {

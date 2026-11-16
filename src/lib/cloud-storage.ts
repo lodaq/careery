@@ -11,7 +11,8 @@ function key(path: string) {
 }
 export async function readCloudText(path: string): Promise<string | null> {
   const name = key(path);
-  const result = await get(name, { access: 'private', useCache: false });
+  // Compression weakens the response ETag, making it unusable for conditional writes.
+  const result = await get(name, { access: 'private', useCache: false, headers: { 'accept-encoding': 'identity' } });
   revisions.getStore()?.set(name, result?.blob.etag);
   return result ? new Response(result.stream).text() : null;
 }
