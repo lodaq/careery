@@ -1,8 +1,11 @@
+import { tmpdir } from 'node:os';
+import { randomUUID } from 'node:crypto';
+import { cloudStorage } from '@/lib/cloud-storage';
 import { readTools } from '../toolbox/data';
 import { readNotes } from '../notes/data';
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { dataDirectory, readRecord, readWorkspace, replaceJson } from '@/lib/storage';
+import { dataDirectory, readRecord, readWorkspace, replaceJson, readStoredText } from '@/lib/storage';
 import { readApplications } from '../applications/application-data';
 import { readQuestions } from '../interview-questions/question-data';
 
@@ -17,7 +20,7 @@ export async function createBackup(directory?: string): Promise<Backup> {
   directory ??= await dataDirectory();
   const files: Backup['files'] = {};
   for (const name of backupFiles) {
-    try { files[name] = JSON.parse(await readFile(join(/*turbopackIgnore: true*/ directory, name), 'utf8')); }
+    try { const text = await readStoredText(join(/*turbopackIgnore: true*/ directory, name)); if (text !== null) files[name] = JSON.parse(text); }
     catch (error) { if (!missing(error)) throw error; }
   }
   return { app: 'careery', format: 1, exportedAt: new Date().toISOString(), files };
@@ -40,11 +43,16 @@ function parseBackup(input: unknown): Backup {
 async function snapshot(directory: string) {
   const existing: { name: BackupFile; text: string }[] = [];
   for (const name of backupFiles) {
-    try { existing.push({ name, text: await readFile(join(/*turbopackIgnore: true*/ directory, name), 'utf8') }); }
+    try { const text = await readStoredText(join(/*turbopackIgnore: true*/ directory, name)); if (text !== null) existing.push({ name, text }); }
     catch (error) { if (!missing(error)) throw error; }
   }
   if (!existing.length) return null;
   const root = join(/*turbopackIgnore: true*/ directory, 'backups');
+  if (cloudStorage()) {
+    const id = randomUUID();
+    for (const { name, text } of existing) await replaceJson(join(root, id, name), JSON.parse(text));
+    return id;
+  }
   await mkdir(root, { recursive: true });
   const target = await mkdtemp(join(/*turbopackIgnore: true*/ root, `${new Date().toISOString().replace(/[:.]/g, '-')}-`));
   await Promise.all(existing.map(({ name, text }) => writeFile(join(/*turbopackIgnore: true*/ target, name), text)));
@@ -58,8 +66,9 @@ async function snapshot(directory: string) {
 export async function restoreBackup(input: unknown, directory?: string) {
   directory ??= await dataDirectory();
   const bundle = parseBackup(input);
-  await mkdir(directory, { recursive: true });
-  const temporary = await mkdtemp(join(/*turbopackIgnore: true*/ directory, '.restore-'));
+  const staging = cloudStorage() ? tmpdir() : directory;
+  await mkdir(staging, { recursive: true });
+  const temporary = await mkdtemp(join(/*turbopackIgnore: true*/ staging, '.restore-'));
   try {
     for (const name of backupFiles) {
       const value = bundle.files[name];

@@ -1,0 +1,9 @@
+data
+.env*
+!.env.example
+.next*
+captures
+llms.txt
+.impeccable
+playwright-report
+test-results

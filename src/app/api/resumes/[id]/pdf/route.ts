@@ -1,3 +1,4 @@
+export const maxDuration = 60;
 import { readWorkspace } from '../../../../../lib/storage';
 import { printPdf } from '../../../../../lib/pdf';
 import { resumeRevision } from '../../../../resumes/resume-data';

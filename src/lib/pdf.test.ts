@@ -8,7 +8,7 @@ const mock = vi.hoisted(() => {
   const browser = { once: vi.fn(), newContext: vi.fn().mockResolvedValue(context) };
   return { pdf, close, page, launch: vi.fn().mockResolvedValue(browser) };
 });
-vi.mock('playwright', () => ({ chromium: { launch: mock.launch } }));
+vi.mock('playwright-core', () => ({ chromium: { launch: mock.launch } }));
 import { printPdf } from './pdf';
 it('refuses non-local render origins before launching a browser', async () => {
   await expect(printPdf('https://example.com')).rejects.toThrow('local');
@@ -28,4 +28,12 @@ it('rejects concurrent work, closes contexts on failure, and releases the lock f
   await expect(printPdf('http://127.0.0.1:3000/render/missing')).rejects.toThrow('could not be loaded');
   expect(await printPdf('http://127.0.0.1:3000/render/example')).toEqual(Buffer.from('pdf'));
   expect(mock.close).toHaveBeenCalledTimes(4); expect(mock.launch).toHaveBeenCalledTimes(1);
+});
+
+it('allows only the configured HTTPS origin on Vercel', async () => {
+  vi.stubEnv('VERCEL', '1'); vi.stubEnv('CAREERY_SITE_URL', 'https://careery.example');
+  try {
+    await expect(printPdf('https://attacker.example/render/id')).rejects.toThrow('local');
+    expect(await printPdf('https://careery.example/render/id')).toEqual(Buffer.from('pdf'));
+  } finally { vi.unstubAllEnvs(); }
 });

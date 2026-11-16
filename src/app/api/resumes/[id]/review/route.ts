@@ -1,18 +1,11 @@
+import { sameOrigin } from '@/lib/request-origin';
 import { resumeRevision } from '@/app/resumes/resume-data';
 import { readWorkspace } from '@/lib/storage';
 import { parseAiReview, reviewContent, validatedFindingEdits, validatedFindingSkills } from '@/app/resumes/ai-review';
 
 const active = new Set<string>();
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
-  const origin = request.headers.get('origin');
-  let sameOrigin = false;
-  try {
-    const requested = new URL(request.url);
-    const host = request.headers.get('host') || requested.host;
-    const local = new URL(`${requested.protocol}//${host}`);
-    sameOrigin = Boolean(origin && new URL(origin).origin === local.origin && ['localhost', '127.0.0.1', '[::1]'].includes(local.hostname));
-  } catch { /* Invalid origins are rejected below. */ }
-  if (!sameOrigin || !request.headers.get('content-type')?.startsWith('application/json')) return Response.json({ error: 'Use AI Review from your local workspace.' }, { status: 403 });
+  if (!sameOrigin(request) || !request.headers.get('content-type')?.startsWith('application/json')) return Response.json({ error: 'Invalid request origin.' }, { status: 403 });
   const key = process.env.OPENROUTER_API_KEY;
   if (!key) return Response.json({ error: 'OpenRouter is not configured. Add a server-side OPENROUTER_API_KEY and restart the app.' }, { status: 503 });
   const { id } = await params;

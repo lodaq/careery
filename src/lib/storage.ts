@@ -1,3 +1,4 @@
+import { cloudStorage, readCloudText, writeCloudText, cloudUpdate } from './cloud-storage';
 import { connection } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 import { mkdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
@@ -15,10 +16,14 @@ export async function dataDirectory() {
   return join(process.env.CAREERY_DATA_DIR ?? join(process.cwd(), 'data'), 'users', userId);
 }
 function missing(error: unknown): boolean { return error instanceof Error && 'code' in error && error.code === 'ENOENT'; }
+export async function readStoredText(path: string): Promise<string | null> {
+  if (cloudStorage() && !path.includes('/.restore-')) return readCloudText(path);
+  try { return await readFile(path, 'utf8'); }
+  catch (error) { if (missing(error)) return null; throw error; }
+}
 export async function readJson<T>(path: string, fallback: () => T): Promise<T> {
-  let text: string;
-  try { text = await readFile(path, 'utf8'); }
-  catch (error) { if (missing(error)) return fallback(); throw error; }
+  const text = await readStoredText(path);
+  if (text === null) return fallback();
   const value: unknown = JSON.parse(text);
   if (!value || typeof value !== 'object' || !('version' in value) || value.version !== 1) {
     throw new Error(`Unsupported data at ${path}; migration is required.`);
@@ -35,7 +40,9 @@ export async function readRecord(directory?: string): Promise<CareerRecord> {
 export async function readWorkspace(directory?: string): Promise<Workspace> {
   directory ??= await dataDirectory();
   try {
-    await stat(join(directory, 'profiles.json'));
+    if (cloudStorage() && !directory.includes('/.restore-')) {
+      if (await readStoredText(join(directory, 'profiles.json')) === null) throw Object.assign(new Error('Missing'), { code: 'ENOENT' });
+    } else await stat(join(directory, 'profiles.json'));
   } catch (error) {
     if (!missing(error)) throw error;
     const workspace = await readJson(join(directory, 'workspace.json'), emptyWorkspace);
@@ -48,6 +55,13 @@ export async function readWorkspace(directory?: string): Promise<Workspace> {
 }
 
 export async function updateJson<T>(path: string, read: () => Promise<T>, mutate: (data: T) => void): Promise<T> {
+  if (cloudStorage() && !path.includes('/.restore-')) return cloudUpdate(async () => {
+    await readStoredText(path);
+    const data = await read();
+    mutate(data);
+    await writeCloudText(path, JSON.stringify(data, null, 2) + '\n');
+    return data;
+  });
   const key = resolve(path);
   const previous = queues.get(key) ?? Promise.resolve();
   const operation = previous.then(async () => {

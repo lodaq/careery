@@ -1,15 +1,7 @@
+import { sameOrigin } from '@/lib/request-origin';
 import { connection } from 'next/server';
 import { createBackup, restoreBackup } from '@/app/settings/backup';
 
-const sameOrigin = (request: Request) => {
-  const origin = request.headers.get('origin');
-  try {
-    const requested = new URL(request.url);
-    const host = request.headers.get('host') || requested.host;
-    const local = new URL(`${requested.protocol}//${host}`);
-    return Boolean(origin && new URL(origin).origin === local.origin && ['localhost', '127.0.0.1', '[::1]'].includes(local.hostname));
-  } catch { return false; }
-};
 
 export async function GET() {
   await connection();
@@ -25,7 +17,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   if (!sameOrigin(request) || !request.headers.get('content-type')?.startsWith('application/json')) {
-    return Response.json({ error: 'Restore from Careery Settings on this machine.' }, { status: 403 });
+    return Response.json({ error: 'Restore from Careery Settings.' }, { status: 403 });
   }
   if (Number(request.headers.get('content-length') ?? 0) > 25_000_000) {
     return Response.json({ error: 'That backup is too large.' }, { status: 413 });

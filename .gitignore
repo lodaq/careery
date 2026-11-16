@@ -49,3 +49,4 @@ captures/
 # Generated build variants and local design-tool artifacts
 /.next-*/
 /.impeccable/
+.env*

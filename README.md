@@ -69,8 +69,18 @@ Create a Clerk application and set the two keys in `.env.example` in `.env.local
 
 Existing files at the data root are preserved and are never exposed to new accounts. To migrate existing data, stop the server and copy the workspace JSON files into the intended user's directory, or restore a previously exported backup while signed in as that user. Never copy another person's files into a user's directory.
 
-Use persistent storage for deployment; ephemeral serverless filesystems do not preserve workspace data.
+On Vercel, set `CAREERY_STORAGE=blob` and connect a **private** Vercel Blob store to production. The Blob connection supplies storage credentials; user JSON stores and pre-restore backups remain private under each Clerk user ID. Conditional writes reject concurrent changes instead of overwriting them. Local development continues using disk storage. Existing local data is not uploaded automatically; export and restore a backup while signed in to migrate it.
+
+Set `CAREERY_SITE_URL` to the production HTTPS origin. PDF export on Vercel uses packaged serverless Chromium and only renders this trusted origin, forwarding the signed-in session only to that origin. The PDF function has a 60-second execution budget. Set Clerk and optional OpenRouter credentials in Vercel environment settings; use Clerk production keys before opening the service beyond development/testing.
+
+Deploy with `vercel --prod` after running the verification commands below. `.vercelignore` and output tracing exclusions keep local data, credentials and generated artifacts out of the deployment.
 
 ## Search indexing
 
 Set `CAREERY_SITE_URL` to the HTTPS production origin. Home and Resources are the public sitemap entries; account-content pages use noindex metadata, and API responses (including PDFs) use X-Robots-Tag. Clerk middleware initializes sessions; storage checks the authenticated user before reading or writing account data. Search directives do not replace authorization.
+
+### Deployment verification (2026-11-16)
+
+Lint, typecheck, build and 111 tests passed. A temporary Clerk test user verified production backup download, restore to private Blob storage and Chromium PDF export; its account and storage were removed afterward. Local personal data was not migrated.
+
+Dependency audit reports 10 existing transitive findings. The high-severity Zod finding is in the shadcn CLI dependency tree (4.1.11); the runtime Blob dependency resolves Zod 4.6.7. The remaining findings concern development CLI/lint dependencies, not exposed application handlers. Dependency upgrades are deferred to a separate tooling update; review by 2026-11-23. The deployed app currently uses the existing Clerk development instance. Vercel's request-body limit also applies to large backup restores and attachment uploads.
