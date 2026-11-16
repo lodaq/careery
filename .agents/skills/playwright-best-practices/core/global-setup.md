@@ -138,10 +138,10 @@ async function globalSetup() {
   console.log("Running database migrations...");
 
   // Run migrations
-  execSync("npx prisma migrate deploy", { stdio: "inherit" });
+  execSync("bunx prisma migrate deploy", { stdio: "inherit" });
 
   // Seed test data
-  execSync("npx prisma db seed", { stdio: "inherit" });
+  execSync("bunx prisma db seed", { stdio: "inherit" });
 }
 
 export default globalSetup;
@@ -166,8 +166,8 @@ async function globalSetup() {
 
   // First run: migrate and create snapshot
   console.log("Creating database snapshot...");
-  execSync("npx prisma migrate deploy", { stdio: "inherit" });
-  execSync("npx prisma db seed", { stdio: "inherit" });
+  execSync("bunx prisma migrate deploy", { stdio: "inherit" });
+  execSync("bunx prisma db seed", { stdio: "inherit" });
   execSync(`pg_dump $DATABASE_URL > ${SNAPSHOT_PATH}`, { stdio: "inherit" });
 }
 
@@ -212,7 +212,7 @@ let serverProcess: any;
 
 async function globalSetup() {
   // Start backend server
-  serverProcess = spawn("npm", ["run", "start:test"], {
+  serverProcess = spawn("bun", ["run", "start:test"], {
     stdio: "pipe",
     detached: true,
   });

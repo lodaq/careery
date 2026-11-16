@@ -14,7 +14,7 @@ import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select'
 import { FieldGroup, FieldLabel } from '@/components/ui/field';
 
 import { flushSync } from 'react-dom';
-import { useEffect, useEffectEvent, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useEffectEvent, useId, useLayoutEffect, useRef, useState } from 'react';
 import type { CareerEntry, CareerRecord, Profile, Resume, Section } from '../../lib/types';
 import { BilingualInput } from '../../components/BilingualInput';
 const EntryPicker = lazy(() => import('./EntryPicker').then((module) => ({ default: module.EntryPicker })));
@@ -101,7 +101,10 @@ export function RecordEditor({ record, revision, saveAction, profile, resume, pr
     const success = await operation;
     return success && generation.current !== saved.current ? saveNow() : success;
   }
-  function changed() {
+  const changedRef = useRef(markChanged);
+  useLayoutEffect(() => { changedRef.current = markChanged; });
+  const changed = useCallback(() => changedRef.current(), []);
+  function markChanged() {
     if (resume) {
       clearTimeout(previewTimer.current);
       previewTimer.current = setTimeout(() => {
@@ -267,7 +270,7 @@ export function RecordEditor({ record, revision, saveAction, profile, resume, pr
       </FieldGroup>
       <p>Moving changes where this Resume is listed. Its wording stays the same.</p>
     </EditorPanel> : null}
-    {resume ? <EditorPanel resume={Boolean(resume)} hidden={resume ? sectionHidden('customize') : undefined} value={'customize'} data-editor-section="customize" className="editor-section customize-section" aria-label="Customize Resume">{activeSection === 'customize' ? <Suspense fallback={<p>Loading customization…</p>}><ResumeCustomize resume={draft} appearance={appearance} onChange={(value) => { setAppearance(value); changed(); }} language={language} onLanguageChange={setLanguage} layout={<Collapsible className="section-order" defaultOpen><CollapsibleTrigger render={<Button variant="ghost" />}>Section order</CollapsibleTrigger><CollapsibleContent keepMounted><fieldset><legend className="sr-only">Section order</legend><SortableList items={sectionOrder.map((kind) => ({ id: kind }))} label="Resume section order" itemLabel={(item) => `${item.id} section`} onReorder={(items) => { setSectionOrder(items.map((item) => item.id)); changed(); }} renderItem={(item, _index, handle) => <div className="section-order-row">{handle}<span className="layout-section-name">{item.id}</span></div>} /></fieldset></CollapsibleContent></Collapsible>} /></Suspense> : null}</EditorPanel> : null}
+    {resume ? <EditorPanel resume={Boolean(resume)} hidden={resume ? sectionHidden('customize') : undefined} value={'customize'} data-editor-section="customize" className="editor-section customize-section" aria-label="Customize Resume">{activeSection === 'customize' ? <Suspense fallback={<p>Loading customization…</p>}><ResumeCustomize resume={draft} appearance={appearance} onChange={(value) => { setAppearance(value); changed(); }} language={language} onLanguageChange={setLanguage} layout={<Collapsible className="section-order" defaultOpen><CollapsibleTrigger render={<Button variant="ghost" />}>Section order</CollapsibleTrigger><CollapsibleContent keepMounted><fieldset><legend className="sr-only">Section order</legend><SortableList items={sectionOrder.map((kind) => ({ id: kind }))} label="Resume section order" itemLabel={(item) => `${item.id} section`} onReorder={(items) => { setSectionOrder(items.map((item) => item.id)); changed(); }} renderItem={(item, _index, handle) => <Button type="button" variant="ghost" className="sortable-header section-order-row">{handle}<span className="layout-section-name">{item.id}</span></Button>} /></fieldset></CollapsibleContent></Collapsible>} /></Suspense> : null}</EditorPanel> : null}
     {resume && draft && activeSection === 'review' ? <EditorPanel resume={Boolean(resume)} hidden={resume ? sectionHidden('review') : undefined} value={'review'} data-editor-section="review" className="editor-section review-section" aria-label="Resume review"><Suspense fallback={<p>Loading review…</p>}><ResumeReview resume={draft} onSelect={selectSection} review={aiReview} stale={Boolean(aiReview && JSON.stringify(reviewContent(draft)) !== reviewSnapshot)} onRun={runAiReview} onApplySummary={applyAiSummary} onApplyFinding={applyAiFinding} appliedFindings={appliedFindings} /></Suspense></EditorPanel> : null}
     {resume ? <EditorPanel resume={Boolean(resume)} hidden={resume ? sectionHidden('summary') : undefined} value={'summary'} data-editor-section="summary" className="editor-section" aria-label="Professional summary"><h2>Professional summary</h2><p>A short introduction to what you do and the value you bring.</p><BilingualInput key={summaryOverride ? JSON.stringify(summaryOverride) : 'original-summary'} name="summary" label="Summary" value={summaryOverride ?? resume.summary} multiline /></EditorPanel> : null}
     {profile ? <EditorPanel resume={false} value="details" data-editor-section="details" id={`${editorId}-details`} tabIndex={-1} className="editor-section" aria-labelledby={`${editorId}-profile-details-heading`}>
@@ -312,7 +315,7 @@ export function RecordEditor({ record, revision, saveAction, profile, resume, pr
         setEntries((items) => { let index = 0; return items.map((item) => item.kind === section.kind ? ordered[index++] : item); }); changed();
       }} renderItem={(entry, index, handle) => <fieldset className="entry-card" key={entry.id}>
         <legend className="sr-only">{section.title} {index + 1}</legend>
-        <Collapsible className="entry-editor" defaultOpen={newEntryIds.includes(entry.id)}><div className="entry-drag-handle">{handle}</div><CollapsibleTrigger render={<Button variant="ghost" />}><span>{entryHeading(entry) || `New ${section.singular}`}<small>{'employer' in entry ? entry.employer.en || entry.employer.ar : 'institution' in entry ? entry.institution.en || entry.institution.ar : 'issuer' in entry ? entry.issuer.en || entry.issuer.ar : entry.kind}</small></span><ChevronDownIcon className="entry-chevron" aria-hidden="true" /></CollapsibleTrigger><CollapsibleContent keepMounted>
+        <Collapsible className="entry-editor" defaultOpen={newEntryIds.includes(entry.id)}><CollapsibleTrigger className="sortable-header" render={<Button variant="ghost" />}>{handle}<span>{entryHeading(entry) || `New ${section.singular}`}<small>{'employer' in entry ? entry.employer.en || entry.employer.ar : 'institution' in entry ? entry.institution.en || entry.institution.ar : 'issuer' in entry ? entry.issuer.en || entry.issuer.ar : entry.kind}</small></span><ChevronDownIcon className="entry-chevron" aria-hidden="true" /></CollapsibleTrigger><CollapsibleContent keepMounted>
         <input type="hidden" name={`${entry.id}.kind`} value={entry.kind} />
         <EntryFields key={`${entry.id}-${entryVersions[entry.id] ?? 0}`} entry={entry} changed={changed} />
         <div className="entry-actions"><Button variant="destructive" className="danger" type="button" onClick={async () => { if (await confirm(resume ? 'Remove this entry from this Resume?' : profile ? 'Remove this copied entry from the Profile? Existing Resumes keep their copies.' : 'Delete this entry from your Career Record? Existing Profiles and Resumes keep their copies.')) { setEntries((items) => items.filter((item) => item.id !== entry.id)); changed(); } }}>Delete {section.singular}</Button></div></CollapsibleContent></Collapsible>

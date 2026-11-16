@@ -34,10 +34,10 @@ defineConfig({
 
 ```bash
 # jsdom
-npm i -D jsdom
+bun add -D jsdom
 
 # happy-dom (faster, fewer APIs)
-npm i -D happy-dom
+bun add -D happy-dom
 ```
 
 ## Per-File Environment

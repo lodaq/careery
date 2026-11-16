@@ -2,7 +2,7 @@
   "name": "careery",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@12.14.0",
+  "packageManager": "bun@1.4.4",
   "scripts": {
     "dev": "next dev --hostname localhost",
     "build": "next build",
@@ -17,6 +17,8 @@
   "dependencies": {
     "@base-ui/react": "^1.9.0",
     "@clerk/nextjs": "^7.10.0",
+    "@dnd-kit/dom": "^0.5.3",
+    "@dnd-kit/react": "^0.5.3",
     "@tanstack/react-table": "9.3.1",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.0",

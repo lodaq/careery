@@ -22,7 +22,7 @@ docker run --rm \
   -e CI=true \
   -e BASE_URL=http://host.docker.internal:3000 \
   mcr.microsoft.com/playwright:v1.48.0-noble \
-  bash -c "npm ci && npx playwright test"
+  bash -c "bun install --frozen-lockfile && bunx playwright test"
 ```
 
 Extract reports with bind mounts:
@@ -34,7 +34,7 @@ docker run --rm \
   -v $(pwd)/test-results:/app/test-results \
   -w /app \
   mcr.microsoft.com/playwright:v1.48.0-noble \
-  bash -c "npm ci && npx playwright test"
+  bash -c "bun install --frozen-lockfile && bunx playwright test"
 ```
 
 ### Custom Dockerfile
@@ -46,12 +46,12 @@ FROM mcr.microsoft.com/playwright:v1.48.0-noble
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
 COPY . .
 
-CMD ["npx", "playwright", "test"]
+CMD ["bunx", "playwright", "test"]
 ```
 
 Chromium-only slim image:
@@ -59,14 +59,14 @@ Chromium-only slim image:
 ```dockerfile
 FROM node:latest-slim
 
-RUN npx playwright install --with-deps chromium
+RUN bunx playwright install --with-deps chromium
 
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 COPY . .
 
-CMD ["npx", "playwright", "test", "--project=chromium"]
+CMD ["bunx", "playwright", "test", "--project=chromium"]
 ```
 
 ### Docker Compose Stack
@@ -111,7 +111,7 @@ services:
       - BASE_URL=http://app:3000
     depends_on:
       - app
-    command: bash -c "npm ci && npx playwright test"
+    command: bash -c "bun install --frozen-lockfile && bunx playwright test"
     profiles:
       - test
 ```
@@ -136,8 +136,8 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.48.0-noble
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci
-      - run: npx playwright test
+      - run: bun install --frozen-lockfile
+      - run: bunx playwright test
         env:
           HOME: /root
 ```
@@ -148,8 +148,8 @@ jobs:
 test:
   image: mcr.microsoft.com/playwright:v1.48.0-noble
   script:
-    - npm ci
-    - npx playwright test
+    - bun install --frozen-lockfile
+    - bunx playwright test
 ```
 
 **Jenkins:**
@@ -165,8 +165,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'npm ci'
-                sh 'npx playwright test'
+                sh 'bun install --frozen-lockfile'
+                sh 'bunx playwright test'
             }
         }
     }
@@ -186,7 +186,7 @@ VS Code Dev Container or GitHub Codespaces configuration:
       "version": "20"
     }
   },
-  "postCreateCommand": "npm ci",
+  "postCreateCommand": "bun install --frozen-lockfile",
   "customizations": {
     "vscode": {
       "extensions": ["ms-playwright.playwright"]
@@ -225,7 +225,7 @@ VS Code Dev Container or GitHub Codespaces configuration:
 Playwright version mismatch with Docker image. Ensure `@playwright/test` version matches image tag:
 
 ```bash
-npm ls @playwright/test
+bun pm ls @playwright/test
 docker pull mcr.microsoft.com/playwright:v<matching-version>-noble
 ```
 
@@ -257,7 +257,7 @@ Match user IDs or run as root:
 docker run --rm -u $(id -u):$(id -g) \
   -v $(pwd):/app -w /app \
   mcr.microsoft.com/playwright:v1.48.0-noble \
-  npx playwright test
+  bunx playwright test
 ```
 
 ### Slow container tests on macOS/Windows
@@ -268,8 +268,8 @@ Docker Desktop I/O overhead. Copy files instead of mounting:
 FROM mcr.microsoft.com/playwright:v1.48.0-noble
 WORKDIR /app
 COPY . .
-RUN npm ci
-CMD ["npx", "playwright", "test"]
+RUN bun install --frozen-lockfile
+CMD ["bunx", "playwright", "test"]
 ```
 
 Or use delegated mount:
@@ -279,5 +279,5 @@ docker run --rm \
   -v $(pwd):/app:delegated \
   -w /app \
   mcr.microsoft.com/playwright:v1.48.0-noble \
-  bash -c "npm ci && npx playwright test"
+  bash -c "bun install --frozen-lockfile && bunx playwright test"
 ```

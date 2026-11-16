@@ -1,3 +1,4 @@
+vi.mock('next/server', () => ({ connection: async () => {} }));
 import { mkdir } from 'node:fs/promises';
 vi.mock('@clerk/nextjs/server', () => ({ auth: async () => ({ userId: 'user_test' }) }));
 import { mkdtemp, rm, writeFile, readFile } from 'node:fs/promises';

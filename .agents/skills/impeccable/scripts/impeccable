@@ -4,7 +4,7 @@
 # Order: $IMPECCABLE_BIN, the sibling binary, ~/.impeccable/bin/impeccable,
 # the version-pinned cache, then `impeccable` on PATH. Never needs Node.
 # The unversioned home binary and the PATH candidate are validated with the
-# engine-probe handshake first: the retired 3.x npm CLI also installed a bin
+# engine-probe handshake first: the retired 3.x Bun CLI also installed a bin
 # named `impeccable`, and exec'ing it would fail every verb with
 # "Unknown command". The sibling binary must also report the version in
 # VERSION: it is gitignored, so a skill upgrade that copies files over this

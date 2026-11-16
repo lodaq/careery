@@ -33,11 +33,11 @@ hand-build a component, say so in your summary.
 
 Use the shadcn CLI with the official registries only:
 
-- shadcn/ui: `npx shadcn@latest add <name>`
-- coss ui: `npx shadcn@latest add @coss/<name>`
-- Cult UI: `npx shadcn@latest add @cult-ui/<name>`
-- Magic UI: `npx shadcn@latest add @magicui/<name>`
-- Velora UI: `npx shadcn@latest add https://velora.colorlib.com/r/<name>.json`
+- shadcn/ui: `bunx shadcn@latest add <name>`
+- coss ui: `bunx shadcn@latest add @coss/<name>`
+- Cult UI: `bunx shadcn@latest add @cult-ui/<name>`
+- Magic UI: `bunx shadcn@latest add @magicui/<name>`
+- Velora UI: `bunx shadcn@latest add https://velora.colorlib.com/r/<name>.json`
 
 Rules:
 
@@ -46,7 +46,7 @@ Rules:
   and components.
 - Never pass `--overwrite` without asking. Check `components/ui/` for filename
   collisions first (two libraries may both ship `button`, `dialog`, etc.).
-- Preview before installing: `npx shadcn@latest view @namespace/<name>`.
+- Preview before installing: `bunx shadcn@latest view @namespace/<name>`.
 - Never use 21st.dev mirror install URLs.
 - After an install, check `git diff` for changes to `components.json` and
   `app/globals.css` (tokens, keyframes) and mention them in your summary.

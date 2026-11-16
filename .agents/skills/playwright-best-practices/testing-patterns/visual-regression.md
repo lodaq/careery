@@ -31,7 +31,7 @@ await expect(page).toHaveScreenshot({
 await expect(page).toHaveScreenshot({ animations: 'disabled' });
 
 // Update baselines
-npx playwright test --update-snapshots
+bunx playwright test --update-snapshots
 ```
 
 ## Patterns
@@ -205,15 +205,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
           node-version: lts/*
-          cache: npm
-
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Run visual tests
-        run: npx playwright test --project=visual
+        run: bunx playwright test --project=visual
         env:
           HOME: /root
 
@@ -230,7 +228,7 @@ jobs:
 ```bash
 docker run --rm -v $(pwd):/work -w /work \
   mcr.microsoft.com/playwright:v1.48.0-noble \
-  npx playwright test --update-snapshots --project=visual
+  bunx playwright test --update-snapshots --project=visual
 ```
 
 **Add script to `package.json`**:
@@ -238,8 +236,8 @@ docker run --rm -v $(pwd):/work -w /work \
 ```json
 {
   "scripts": {
-    "test:visual": "npx playwright test --project=visual",
-    "test:visual:update": "docker run --rm -v $(pwd):/work -w /work mcr.microsoft.com/playwright:v1.48.0-noble npx playwright test --update-snapshots --project=visual"
+    "test:visual": "bunx playwright test --project=visual",
+    "test:visual:update": "docker run --rm -v $(pwd):/work -w /work mcr.microsoft.com/playwright:v1.48.0-noble bunx playwright test --update-snapshots --project=visual"
   }
 }
 ```
@@ -403,27 +401,27 @@ test.describe('Card component', () => {
 
 ```bash
 # Update all snapshots
-npx playwright test --update-snapshots
+bunx playwright test --update-snapshots
 
 # Update for specific file
-npx playwright test tests/landing.spec.ts --update-snapshots
+bunx playwright test tests/landing.spec.ts --update-snapshots
 
 # Update for specific project
-npx playwright test --project=chromium --update-snapshots
+bunx playwright test --project=chromium --update-snapshots
 ```
 
 **Workflow for reviewing changes:**
 
 1. Run tests and view failures in HTML report:
    ```bash
-   npx playwright test
-   npx playwright show-report
+   bunx playwright test
+   bunx playwright show-report
    ```
    The report shows expected, actual, and diff images side-by-side.
 
 2. If changes are intentional, update:
    ```bash
-   npx playwright test --update-snapshots
+   bunx playwright test --update-snapshots
    ```
 
 3. Review updated snapshots before committing:
@@ -443,7 +441,7 @@ test('landing visual @visual', async ({ page }) => {
 ```
 
 ```bash
-npx playwright test --grep @visual --update-snapshots
+bunx playwright test --grep @visual --update-snapshots
 ```
 
 ### Cross-Browser Visual Testing
@@ -544,7 +542,7 @@ export default defineConfig({
 ```bash
 docker run --rm -v $(pwd):/work -w /work \
   mcr.microsoft.com/playwright:v1.48.0-noble \
-  npx playwright test --update-snapshots --project=visual
+  bunx playwright test --update-snapshots --project=visual
 ```
 
 Commit Linux-generated snapshots.

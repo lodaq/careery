@@ -16,16 +16,16 @@
 
 ```bash
 # React
-npm init playwright@latest -- --ct
+bun create playwright@latest --ct
 
 # Vue
-npm init playwright@latest -- --ct
+bun create playwright@latest --ct
 
 # Svelte
-npm init playwright@latest -- --ct
+bun create playwright@latest --ct
 
 # Solid
-npm init playwright@latest -- --ct
+bun create playwright@latest --ct
 ```
 
 ### Configuration

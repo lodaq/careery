@@ -110,7 +110,9 @@ it('switches Career Record tabs without losing drafts and saves keyboard entry o
   fireEvent.click(screen.getByRole('tab', { name: /^Skills/ }));
   expect(screen.getByRole('tabpanel', { name: /^Skills/ })).toBeTruthy();
   await waitFor(() => expect(screen.getByLabelText('Name').closest('section')?.hidden).toBe(true));
-  fireEvent.click(screen.getByRole('button', { name: 'Move skill 2 up' }));
+  expect(screen.queryByRole('button', { name: 'Reorder skill 2' })).toBeNull();
+  expect(screen.getByRole('button', { name: /Second skill/ }).querySelector('.sort-grip')).toBeTruthy();
+  fireEvent.keyDown(screen.getByRole('button', { name: /Second skill/ }), { key: 'ArrowUp' });
   fireEvent.click(screen.getByRole('button', { name: /Second skill/ }));
   fireEvent.change(screen.getAllByLabelText('Skill')[0], { target: { value: 'Updated second skill' } });
   fireEvent.click(screen.getByRole('tab', { name: 'Basics' }));

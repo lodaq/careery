@@ -2,9 +2,10 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { expect, it, vi } from 'vitest';
+import { connection } from 'next/server';
 import { dataDirectory, readRecord, updateRecord } from './storage';
 const session = vi.hoisted(() => ({ userId: 'user_alice' as string | null }));
-vi.mock('next/server', () => ({ connection: async () => {} }));
+vi.mock('next/server', () => ({ connection: vi.fn(async () => {}) }));
 vi.mock('@clerk/nextjs/server', () => ({ auth: async () => session }));
 it('isolates user records and rejects missing or invalid identities', async () => {
   const root = await mkdtemp(join(tmpdir(), 'careery-users-'));
@@ -21,4 +22,13 @@ it('isolates user records and rejects missing or invalid identities', async () =
       await expect(dataDirectory()).rejects.toThrow('Authentication required');
     }
   } finally { vi.unstubAllEnvs(); await rm(root, { recursive: true, force: true }); }
+});
+
+it('waits for a request before resolving local-user storage', async () => {
+  vi.stubEnv('CAREERY_LOCAL_USER', 'local');
+  vi.mocked(connection).mockClear();
+  try {
+    expect(await dataDirectory()).toMatch(/users\/local$/);
+    expect(connection).toHaveBeenCalledOnce();
+  } finally { vi.unstubAllEnvs(); }
 });

@@ -15,9 +15,8 @@ it('makes the curated directory reachable and starts with the requested Mokabla 
   expect(within(screen.getByRole('banner')).getByRole('heading', { level: 1, name: 'Resources' })).toBeDefined();
   expect(within(screen.getByRole('main')).queryByRole('heading', { level: 1 })).toBeNull();
   const navigation = screen.getByRole('navigation', { name: 'Workspace' });
-  const resourcesLink = within(navigation).getByRole('link', { name: 'Resources' });
-  expect(resourcesLink.getAttribute('href')).toBe('/resources');
-  expect(resourcesLink.getAttribute('aria-current')).toBe('page');
+  expect(within(navigation).queryByRole('link', { name: 'Resources' })).toBeNull();
+  expect(within(navigation).queryByRole('link', { name: 'Lessons' })).toBeNull();
   const links = within(screen.getByRole('main')).getAllByRole('link');
   expect(links[0].textContent).toBe('Mokabla');
   expect(links[0].getAttribute('href')).toBe('https://www.mokabla.com/ar/companies');

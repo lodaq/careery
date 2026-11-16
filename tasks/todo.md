@@ -2,7 +2,7 @@
 
 Revised 2026-10-25 for the same project after confirmed workflow decisions. Tasks 1–7 are implemented; Resume editing and the preview/PDF implementation have also landed as verified slices. The latest pagination verification below now proves exact preview/download parity. Checkpoint 1 was reviewed; the user approved retaining Next.js with a 180 kB JavaScript budget and continuing implementation. This is the sole active task list.
 
-Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm test`, `pnpm typecheck`, and `pnpm lint` for changes; build and runtime checks occur at checkpoints. File lists are estimates; split any non-mechanical slice exceeding five files. Runtime dependency additions beyond the existing approved stack require review under the current dependency rule.
+Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `bun run test`, `bun run typecheck`, and `bun run lint` for changes; build and runtime checks occur at checkpoints. File lists are estimates; split any non-mechanical slice exceeding five files. Runtime dependency additions beyond the existing approved stack require review under the current dependency rule.
 
 ## Task 1: Scaffold the local application
 
@@ -12,9 +12,9 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 - [x] All planned scripts exist; build, lint, typecheck and a meaningful app smoke test pass.
 - [x] The home page loads locally without outbound requests; data directory is tracked.
 
-**Verification:** pnpm test; pnpm typecheck; pnpm lint; pnpm build; browser home-page check
+**Verification:** bun run test; bun run typecheck; bun run lint; bun run build; browser home-page check
 **Dependencies:** None
-**Files likely touched:** package.json, pnpm-lock.yaml, framework/test configs, src/app/page.tsx
+**Files likely touched:** package.json, bun.lock, framework/test configs, src/app/page.tsx
 **Estimated scope:** L — mechanical scaffold exception
 
 ## Task 2: Prove local PDF generation
@@ -27,7 +27,7 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 
 **Verification:** Generate and extract a real PDF; time warm generation and exercise concurrent requests
 **Dependencies:** 1
-**Files likely touched:** src/lib/pdf.ts, src/app/api/resumes/[id]/pdf/route.ts, package.json, pnpm-lock.yaml
+**Files likely touched:** src/lib/pdf.ts, src/app/api/resumes/[id]/pdf/route.ts, package.json, bun.lock
 **Estimated scope:** M
 
 ## Task 3: Persist independent bilingual content
@@ -39,7 +39,7 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 - [x] Deep-copy tests prove Profile and Resume content is independent, including basics, bilingual slots and bullets.
 - [x] Existing user data, if found, is preserved and migrated with a tested migration before writing the new shape.
 
-**Verification:** Focused storage/copy tests plus pnpm test, pnpm typecheck, pnpm lint
+**Verification:** Focused storage/copy tests plus bun run test, bun run typecheck, bun run lint
 **Dependencies:** 1
 **Files likely touched:** src/lib/types.ts, src/lib/storage.ts, src/lib/storage.test.ts
 **Estimated scope:** M
@@ -195,7 +195,7 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 - [x] Gaps and overflow remain exportable; normal entries stay together and oversized ones do not clip.
 - [x] Save failure prevents stale export with retry; repeated/concurrent export preserves Resume count and releases the lock on errors.
 
-**Verification:** Browser end-to-end; real EN/AR PDF extraction and visual checks; warm timing; pnpm test, pnpm typecheck, pnpm lint, pnpm build
+**Verification:** Browser end-to-end; real EN/AR PDF extraction and visual checks; warm timing; bun run test, bun run typecheck, bun run lint, bun run build
 **Dependencies:** 2, 12
 **Files likely touched:** src/app/render/[resumeId]/page.tsx, src/app/api/resumes/[id]/pdf/route.ts, src/lib/pdf.ts, download component, colocated tests
 **Estimated scope:** M
@@ -228,7 +228,7 @@ Each task must preserve `CONSTRAINTS.md`. Once the scaffold exists, run `pnpm te
 
 ## Populated workspace and Resume editing (2026-10-25)
 
-- Added repeatable `pnpm seed:demo`: real workspace contains 80 fictional career entries, 8 Profiles and 54 Resumes, including 6 Unfiled. Rerun preserves IDs and does not duplicate data.
+- Added repeatable `bun run seed:demo`: real workspace contains 80 fictional career entries, 8 Profiles and 54 Resumes, including 6 Unfiled. Rerun preserves IDs and does not duplicate data.
 - Implemented Resume creation from current Profile copies or blank Unfiled; list links and confirmed deletion; local bilingual editing, source selection, entry visibility/order, section order, language persistence, moving and autosave with revision conflict protection.
 - 23 unit/component tests and 9 production browser tests pass. New browser flow uses the large seed in an isolated directory and verifies create/edit/reload/move/delete. Unit tests prove source independence and stale-save/deletion rejection.
 - Existing route budgets remain below 180,000 gzip bytes (home 153,844; Career Record 149,440; Unfiled 146,672; Profile 145,317).
@@ -344,7 +344,7 @@ Commit `ae17fd2` added the job-search workspace beyond the original Resume plan;
 - [x] Missing or cross-origin requests are rejected; oversized bodies are limited.
 - [x] Older interview-question files migrate during restore.
 
-**Verification:** `src/app/settings/backup.test.ts`; `e2e/backup.spec.ts`; manual curl round-trip with a temporary data directory; `pnpm test`, `pnpm typecheck`, `pnpm lint`, `pnpm build`.
+**Verification:** `src/app/settings/backup.test.ts`; `e2e/backup.spec.ts`; manual curl round-trip with a temporary data directory; `bun run test`, `bun run typecheck`, `bun run lint`, `bun run build`.
 **Dependencies:** 3, 13
 **Files:** `src/app/settings/backup.ts`, `src/app/settings/DataSettings.tsx`, `src/app/api/backup/route.ts`, `src/app/settings/page.tsx`, `src/app/settings/backup.test.ts`, `e2e/backup.spec.ts`, `src/lib/storage.ts`, `src/app/applications/application-data.ts`, `src/app/globals.css`
 

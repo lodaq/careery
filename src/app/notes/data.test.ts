@@ -1,3 +1,4 @@
+vi.mock('next/server', () => ({ connection: async () => {} }));
 import { afterEach, expect, it, vi } from 'vitest';
 import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';

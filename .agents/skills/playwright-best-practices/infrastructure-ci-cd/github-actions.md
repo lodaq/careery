@@ -14,10 +14,10 @@
 ## CLI Commands
 
 ```bash
-npx playwright install --with-deps    # browsers + OS dependencies
-npx playwright test --shard=1/4       # run shard 1 of 4
-npx playwright test --reporter=github # PR annotations
-npx playwright merge-reports ./blob-report  # combine shard reports
+bunx playwright install --with-deps    # browsers + OS dependencies
+bunx playwright test --shard=1/4       # run shard 1 of 4
+bunx playwright test --reporter=github # PR annotations
+bunx playwright merge-reports ./blob-report  # combine shard reports
 ```
 
 ## Workflow Patterns
@@ -51,24 +51,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Cache browsers
         id: browser-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: pw-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: pw-${{ runner.os }}-${{ hashFiles('bun.lock') }}
 
       - name: Install browsers
         if: steps.browser-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Install OS dependencies
         if: steps.browser-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
+        run: bunx playwright install-deps
 
-      - run: npx playwright test
+      - run: bunx playwright test
 
       - name: Upload report
         uses: actions/upload-artifact@v4
@@ -121,25 +121,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Cache browsers
         id: browser-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: pw-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: pw-${{ runner.os }}-${{ hashFiles('bun.lock') }}
 
       - name: Install browsers
         if: steps.browser-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Install OS dependencies
         if: steps.browser-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
+        run: bunx playwright install-deps
 
       - name: Run tests (shard ${{ matrix.shard }})
-        run: npx playwright test --shard=${{ matrix.shard }}
+        run: bunx playwright test --shard=${{ matrix.shard }}
 
       - name: Upload blob report
         uses: actions/upload-artifact@v4
@@ -157,7 +157,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Download blob reports
         uses: actions/download-artifact@v4
@@ -167,7 +167,7 @@ jobs:
           merge-multiple: true
 
       - name: Merge reports
-        run: npx playwright merge-reports --reporter=html ./all-blobs
+        run: bunx playwright merge-reports --reporter=html ./all-blobs
 
       - name: Upload merged report
         uses: actions/upload-artifact@v4
@@ -213,10 +213,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Run tests
-        run: npx playwright test
+        run: bunx playwright test
         env:
           HOME: /root
 
@@ -257,25 +257,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Cache browsers
         id: browser-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: pw-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: pw-${{ runner.os }}-${{ hashFiles('bun.lock') }}
 
       - name: Install browsers
         if: steps.browser-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Install OS dependencies
         if: steps.browser-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
+        run: bunx playwright install-deps
 
       - name: Run smoke tests
-        run: npx playwright test --grep @smoke
+        run: bunx playwright test --grep @smoke
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -311,13 +311,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Install browsers
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Run full regression
-        run: npx playwright test --grep @regression
+        run: bunx playwright test --grep @regression
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -355,7 +355,7 @@ on:
         default: 'lts/*'
       test-command:
         type: string
-        default: 'npx playwright test'
+        default: 'bunx playwright test'
     secrets:
       BASE_URL:
         required: false
@@ -375,27 +375,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
           node-version: ${{ inputs.node-version }}
-          cache: npm
-
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Cache browsers
         id: browser-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: pw-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: pw-${{ runner.os }}-${{ hashFiles('bun.lock') }}
 
       - name: Install browsers
         if: steps.browser-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Install OS dependencies
         if: steps.browser-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
+        run: bunx playwright install-deps
 
       - name: Run tests
         run: ${{ inputs.test-command }}
@@ -452,7 +450,7 @@ jobs:
 | Hardcoded secrets | Security risk | Use GitHub Secrets and Environments |
 | All browsers on every PR | 3x CI cost | Chromium on PR; cross-browser on main |
 | No artifact retention | Default 90-day fills storage | Set `retention-days: 7-14` |
-| Missing `--with-deps` | Browser launch failures | Always use `npx playwright install --with-deps` |
+| Missing `--with-deps` | Browser launch failures | Always use `bunx playwright install --with-deps` |
 
 ## Troubleshooting
 
@@ -460,12 +458,12 @@ jobs:
 
 **Cause**: Browsers restored from cache but OS dependencies weren't cached.
 
-**Fix**: Run `npx playwright install-deps` on cache hit:
+**Fix**: Run `bunx playwright install-deps` on cache hit:
 
 ```yaml
 - name: Install OS dependencies
   if: steps.browser-cache.outputs.cache-hit == 'true'
-  run: npx playwright install-deps
+  run: bunx playwright install-deps
 ```
 
 ### Tests pass locally but timeout in CI

@@ -243,23 +243,23 @@ setup("cleanup previous run", async ({ request }) => {
 
 ```bash
 # Run single project
-npx playwright test --project=chromium
+bunx playwright test --project=chromium
 
 # Run multiple projects
-npx playwright test --project=chromium --project=firefox
+bunx playwright test --project=chromium --project=firefox
 ```
 
 ### Run by Grep
 
 ```bash
 # Run tests matching pattern
-npx playwright test --grep @smoke
+bunx playwright test --grep @smoke
 
 # Run project with grep
-npx playwright test --project=chromium --grep @critical
+bunx playwright test --project=chromium --grep @critical
 
 # Exclude pattern
-npx playwright test --grep-invert @slow
+bunx playwright test --grep-invert @slow
 ```
 
 ### Project-Specific Grep

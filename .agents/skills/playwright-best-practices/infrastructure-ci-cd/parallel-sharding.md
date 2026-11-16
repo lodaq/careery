@@ -14,19 +14,19 @@
 
 ```bash
 # Parallelism within one machine
-npx playwright test --workers=4
-npx playwright test --workers=50%
+bunx playwright test --workers=4
+bunx playwright test --workers=50%
 
 # Splitting across CI jobs
-npx playwright test --shard=1/4
-npx playwright test --shard=2/4
+bunx playwright test --shard=1/4
+bunx playwright test --shard=2/4
 
 # Merging shard outputs
-npx playwright merge-reports ./blob-report
-npx playwright merge-reports --reporter=html,json ./blob-report
+bunx playwright merge-reports ./blob-report
+bunx playwright merge-reports --reporter=html,json ./blob-report
 
 # Override config for single run
-npx playwright test --fully-parallel
+bunx playwright test --fully-parallel
 ```
 
 ## Patterns
@@ -106,13 +106,13 @@ export default defineConfig({
 
 ```bash
 # Merge all blobs into HTML
-npx playwright merge-reports --reporter=html ./all-blob-reports
+bunx playwright merge-reports --reporter=html ./all-blob-reports
 
 # Multiple formats
-npx playwright merge-reports --reporter=html,json,junit ./all-blob-reports
+bunx playwright merge-reports --reporter=html,json,junit ./all-blob-reports
 
 # Custom output location
-PLAYWRIGHT_HTML_REPORT=merged-report npx playwright merge-reports --reporter=html ./all-blob-reports
+PLAYWRIGHT_HTML_REPORT=merged-report bunx playwright merge-reports --reporter=html ./all-blob-reports
 ```
 
 **GitHub Actions merge job:**
@@ -124,7 +124,7 @@ merge-reports:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v4
-    - run: npm ci
+    - run: bun install --frozen-lockfile
 
     - uses: actions/download-artifact@v4
       with:
@@ -132,7 +132,7 @@ merge-reports:
         pattern: blob-report-*
         merge-multiple: true
 
-    - run: npx playwright merge-reports --reporter=html ./all-blob-reports
+    - run: bunx playwright merge-reports --reporter=html ./all-blob-reports
 
     - uses: actions/upload-artifact@v4
       with:
@@ -240,10 +240,10 @@ jobs:
       shard-matrix: ${{ steps.calc.outputs.matrix }}
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci
+      - run: bun install --frozen-lockfile
       - id: calc
         run: |
-          TEST_COUNT=$(npx playwright test --list --reporter=json 2>/dev/null | node -e "
+          TEST_COUNT=$(bunx playwright test --list --reporter=json 2>/dev/null | node -e "
             const data = require('fs').readFileSync('/dev/stdin', 'utf8');
             const parsed = JSON.parse(data);
             console.log(parsed.suites?.reduce((acc, s) => acc + (s.specs?.length || 0), 0) || 0);
@@ -270,9 +270,9 @@ jobs:
         shard: ${{ fromJson(needs.calculate-shards.outputs.shard-matrix) }}
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci
-      - run: npx playwright install --with-deps
-      - run: npx playwright test --shard=${{ matrix.shard }}
+      - run: bun install --frozen-lockfile
+      - run: bunx playwright install --with-deps
+      - run: bunx playwright test --shard=${{ matrix.shard }}
 ```
 
 ## Decision Guide
@@ -324,8 +324,8 @@ jobs:
 
 - **Too many shards**. Never exceed file count:
   ```bash
-  npx playwright test --shard=1/10   # ok if 10 files
-  npx playwright test --shard=1/20   # too many, some shards empty
+  bunx playwright test --shard=1/10   # ok if 10 files
+  bunx playwright test --shard=1/20   # too many, some shards empty
   ```
 
 ### Merged report missing results

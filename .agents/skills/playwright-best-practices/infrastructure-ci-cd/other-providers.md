@@ -18,10 +18,10 @@
 ## Common Commands
 
 ```bash
-npx playwright install --with-deps    # browsers + OS dependencies
-npx playwright test --shard=1/4       # parallel sharding
-npx playwright merge-reports ./blob-report  # combine shard results
-npx playwright test --reporter=dot,html     # multiple reporters
+bunx playwright install --with-deps    # browsers + OS dependencies
+bunx playwright test --shard=1/4       # parallel sharding
+bunx playwright merge-reports ./blob-report  # combine shard results
+bunx playwright test --reporter=dot,html     # multiple reporters
 ```
 
 ## Jenkins
@@ -41,7 +41,7 @@ pipeline {
     environment {
         CI = 'true'
         HOME = '/root'
-        npm_config_cache = "${WORKSPACE}/.npm"
+        BUN_INSTALL_CACHE_DIR = "${WORKSPACE}/.bun/install/cache"
     }
 
     options {
@@ -52,13 +52,13 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'npm ci'
+                sh 'bun install --frozen-lockfile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npx playwright test'
+                sh 'bunx playwright test'
             }
             post {
                 always {
@@ -111,8 +111,8 @@ pipeline {
                         }
                     }
                     steps {
-                        sh 'npm ci'
-                        sh 'npx playwright test --shard=1/4'
+                        sh 'bun install --frozen-lockfile'
+                        sh 'bunx playwright test --shard=1/4'
                     }
                     post {
                         always {
@@ -129,8 +129,8 @@ pipeline {
                         }
                     }
                     steps {
-                        sh 'npm ci'
-                        sh 'npx playwright test --shard=2/4'
+                        sh 'bun install --frozen-lockfile'
+                        sh 'bunx playwright test --shard=2/4'
                     }
                     post {
                         always {
@@ -147,8 +147,8 @@ pipeline {
                         }
                     }
                     steps {
-                        sh 'npm ci'
-                        sh 'npx playwright test --shard=3/4'
+                        sh 'bun install --frozen-lockfile'
+                        sh 'bunx playwright test --shard=3/4'
                     }
                     post {
                         always {
@@ -165,8 +165,8 @@ pipeline {
                         }
                     }
                     steps {
-                        sh 'npm ci'
-                        sh 'npx playwright test --shard=4/4'
+                        sh 'bun install --frozen-lockfile'
+                        sh 'bunx playwright test --shard=4/4'
                     }
                     post {
                         always {
@@ -202,10 +202,10 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - deps-{{ checksum "package-lock.json" }}
-      - run: npm ci
+            - deps-{{ checksum "bun.lock" }}
+      - run: bun install --frozen-lockfile
       - save_cache:
-          key: deps-{{ checksum "package-lock.json" }}
+          key: deps-{{ checksum "bun.lock" }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -223,7 +223,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npx playwright test --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL
+            bunx playwright test --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL
       - store_artifacts:
           path: pw-report
           destination: pw-report
@@ -265,7 +265,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run tests
-          command: npx playwright test --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL
+          command: bunx playwright test --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL
       - store_artifacts:
           path: pw-report
       - store_test_results:
@@ -298,7 +298,7 @@ pool:
 
 variables:
   CI: "true"
-  npm_config_cache: $(Pipeline.Workspace)/.npm
+  BUN_INSTALL_CACHE_DIR: $(Pipeline.Workspace)/.bun/install/cache
 
 steps:
   - task: NodeTool@0
@@ -308,19 +308,19 @@ steps:
 
   - task: Cache@2
     inputs:
-      key: 'npm | "$(Agent.OS)" | package-lock.json'
+      key: 'Bun | "$(Agent.OS)" | bun.lock'
       restoreKeys: |
-        npm | "$(Agent.OS)"
-      path: $(npm_config_cache)
-    displayName: "Cache npm"
+        Bun | "$(Agent.OS)"
+      path: $(BUN_INSTALL_CACHE_DIR)
+    displayName: "Cache Bun"
 
-  - script: npm ci
+  - script: bun install --frozen-lockfile
     displayName: "Install dependencies"
 
-  - script: npx playwright install --with-deps
+  - script: bunx playwright install --with-deps
     displayName: "Install browsers"
 
-  - script: npx playwright test
+  - script: bunx playwright test
     displayName: "Run tests"
 
   - task: PublishTestResults@2
@@ -379,13 +379,13 @@ stages:
             inputs:
               versionSpec: "20.x"
 
-          - script: npm ci
+          - script: bun install --frozen-lockfile
             displayName: "Install dependencies"
 
-          - script: npx playwright install --with-deps
+          - script: bunx playwright install --with-deps
             displayName: "Install browsers"
 
-          - script: npx playwright test --shard=$(SHARD)
+          - script: bunx playwright test --shard=$(SHARD)
             displayName: "Run tests (shard $(SHARD))"
 
           - task: PublishPipelineArtifact@1
@@ -407,7 +407,7 @@ stages:
             inputs:
               versionSpec: "20.x"
 
-          - script: npm ci
+          - script: bun install --frozen-lockfile
             displayName: "Install dependencies"
 
           - task: DownloadPipelineArtifact@2
@@ -423,7 +423,7 @@ stages:
               find downloaded-blob-reports -name '*.zip' -exec cp {} all-blob-reports/ \;
             displayName: "Flatten blob reports"
 
-          - script: npx playwright merge-reports --reporter=html ./all-blob-reports
+          - script: bunx playwright merge-reports --reporter=html ./all-blob-reports
             displayName: "Merge reports"
             env:
               PLAYWRIGHT_HTML_OUTPUT_DIR: pw-report
@@ -463,7 +463,7 @@ export default defineConfig({
 | Artifact upload   | `store_artifacts`                               | `PublishPipelineArtifact@1`      | `archiveArtifacts`     |
 | JUnit integration | `store_test_results`                            | `PublishTestResults@2`           | `junit` step           |
 | Shard variable    | `$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL` | Define in matrix: `SHARD: '1/4'` | Hardcode per stage     |
-| Cache key         | `checksum "package-lock.json"`                  | `Cache@2` with key template      | `stash`/`unstash`      |
+| Cache key         | `checksum "bun.lock"`                  | `Cache@2` with key template      | `stash`/`unstash`      |
 | Secrets           | Context + env variables                         | Variable groups                  | Credentials plugin     |
 
 ## Troubleshooting
@@ -515,7 +515,7 @@ CircleCI's `CIRCLE_NODE_INDEX` is 0-based, Playwright's `--shard` is 1-based:
 
 ```yaml
 # CircleCI - add 1
-command: npx playwright test --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL
+command: bunx playwright test --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL
 ```
 
 ## Anti-Patterns

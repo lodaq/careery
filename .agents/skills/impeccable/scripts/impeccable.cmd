@@ -10,7 +10,7 @@ rem   time, which made the old download path read back empty %url%/%cached%.
 rem   Linear goto flow keeps every expansion on its own line, and avoids
 rem   delayed expansion eating ! characters in user arguments.
 rem - The unversioned user binary and the PATH candidate are validated with
-rem   the engine-probe handshake (see :probe) so the retired 3.x npm CLI,
+rem   the engine-probe handshake (see :probe) so the retired 3.x Bun CLI,
 rem   whose bin is also named impeccable, is never exec'd. The sibling binary
 rem   must also report the version in VERSION: it is not tracked, so a skill
 rem   upgrade can leave an old engine in place. IMPECCABLE_BIN stays trusted.
@@ -94,11 +94,11 @@ goto run
 
 if defined IMPECCABLE_LAUNCHER_PROBE goto download
 rem The first impeccable on PATH, resolved once so the probe and the run see
-rem the same file. A batch shim (npm writes impeccable.cmd) must run under
+rem the same file. A batch shim (Bun writes impeccable.cmd) must run under
 rem call to return here (#1240), and call expands % in the arguments a second
 rem time; a real binary runs directly so a target such as a%20b reaches it intact.
 set "path_bin="
-rem where also lists npm's extensionless POSIX shim, which cmd cannot run:
+rem where also lists Bun's extensionless POSIX shim, which cmd cannot run:
 rem take the first match with a runnable extension.
 rem Loop letters c and k are not path modifiers, so %%~xc reads as the
 rem extension of c and never as a loop variable followed by text.
@@ -287,9 +287,9 @@ exit /b %errorlevel%
 :probe
 rem Sets probe_ok=1 when %1 answers the engine handshake: prints
 rem "impeccable-engine <version>" and exits 0, and probe_version to that
-rem version. The 3.x npm CLI answers any unknown verb with "Unknown command",
+rem version. The 3.x Bun CLI answers any unknown verb with "Unknown command",
 rem exit 1, so it never passes.
-rem The candidate runs under call: an npm .cmd shim run without it takes
+rem The candidate runs under call: an Bun .cmd shim run without it takes
 rem over this script and never returns (#1240).
 set "probe_ok="
 set "probe_version="

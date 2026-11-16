@@ -24,7 +24,7 @@ Personal, local-first resume builder. Copy bilingual Career Record content into 
 
 ## Tech Stack
 
-- Next.js (App Router) + TypeScript strict, run locally with `pnpm dev`. No auth, no cloud, no database.
+- Next.js (App Router) + TypeScript strict, run locally with `bun run dev`. No auth, no cloud, no database.
 - Storage: JSON files in `data/` (`career-record.json`, `workspace.json`), ignored by Git, written atomically (temp file + rename).
 - Tailwind for the app UI. The resume template is dedicated plain CSS — Tailwind preflight must not leak into it (print fidelity).
 - PDF: Playwright (headless Chromium) server-side.
@@ -37,12 +37,12 @@ Quality bar (simple, minimal, fast) is encoded with numbers and commands in [CON
 Commands are available. See the [project README](../../README.md) for loopback startup and separate development/production build directories.
 
 ```
-Dev:       pnpm dev
-Build:     pnpm build
-Test:      pnpm test            # vitest run
-Watch:     pnpm test:watch
-Typecheck: pnpm typecheck       # tsc --noEmit
-Lint:      pnpm lint
+Dev:       bun run dev
+Build:     bun run build
+Test:      bun run test            # vitest run
+Watch:     bun run test:watch
+Typecheck: bun run typecheck       # tsc --noEmit
+Lint:      bun run lint
 ```
 
 ## Project Structure
@@ -101,7 +101,7 @@ export function resolveDocument(
 
 ## Boundaries
 
-- **Always:** run `pnpm test` + `pnpm typecheck` before commits; update [GLOSSARY.md](../../GLOSSARY.md)/ADRs when the model changes; migrate `data/` JSON when its shape changes.
+- **Always:** run `bun run test` + `bun run typecheck` before commits; update [GLOSSARY.md](../../GLOSSARY.md)/ADRs when the model changes; migrate `data/` JSON when its shape changes.
 - **Ask first:** new dependencies; changing `data/` JSON shape; changing module boundaries in this map.
 - **Never:** auth/accounts in v1; automatic propagation between independent copies; committing generated PDFs; DOCX export.
 

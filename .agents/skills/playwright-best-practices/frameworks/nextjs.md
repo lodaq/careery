@@ -46,8 +46,8 @@ export default defineConfig({
 
   webServer: {
     command: process.env.CI
-      ? 'npm run build && npm run start'
-      : 'npm run dev',
+      ? 'bun run build && bun run start'
+      : 'bun run dev',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
@@ -417,16 +417,16 @@ test('authenticated user sees dashboard', async ({ page }) => {
 
 | Scenario | Command | Trade-off |
 |---|---|---|
-| Local development | `npm run dev` | Fast iteration, no production behavior |
-| CI pipeline | `npm run build && npm run start` | Tests real production bundle |
+| Local development | `bun run dev` | Fast iteration, no production behavior |
+| CI pipeline | `bun run build && bun run start` | Tests real production bundle |
 
 ### Turbopack
 
 ```typescript
 webServer: {
   command: process.env.CI
-    ? 'npm run build && npm run start'
-    : 'npx next dev --turbopack',
+    ? 'bun run build && bun run start'
+    : 'bunx next dev --turbopack',
   url: 'http://localhost:3000',
   reuseExistingServer: !process.env.CI,
 },
@@ -437,12 +437,12 @@ webServer: {
 ```typescript
 webServer: [
   {
-    command: 'npm run dev:api',
+    command: 'bun run dev:api',
     url: 'http://localhost:4000/health',
     reuseExistingServer: !process.env.CI,
   },
   {
-    command: 'npm run dev',
+    command: 'bun run dev',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
   },
@@ -457,7 +457,7 @@ webServer: [
 | Test `getServerSideProps` directly | Depends on req/res context | Navigate to page and verify rendered output |
 | Mock your own API routes | Hides real API bugs | Let real API handle requests; mock only external services |
 | `page.goto('http://localhost:3000/path')` | Breaks when port changes | Use `page.goto('/path')` with `baseURL` |
-| Run `npm run build` locally for every test | Extremely slow | Use `npm run dev` locally with `reuseExistingServer: true` |
+| Run `bun run build` locally for every test | Extremely slow | Use `bun run dev` locally with `reuseExistingServer: true` |
 | Test `next/image` by checking exact URLs | Paths change between dev/prod | Assert on `alt`, visibility, `naturalWidth > 0`, `srcset` |
 | Test server actions by calling as functions | Server actions need Next.js runtime | Trigger through UI (forms, buttons) |
 

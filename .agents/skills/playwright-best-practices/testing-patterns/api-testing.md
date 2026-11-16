@@ -662,7 +662,7 @@ test("GET /api/items matches schema", async ({ request }) => {
 // playwright.config.ts
 export default defineConfig({
   webServer: {
-    command: "npm run start:api",
+    command: "bun run start:api",
     url: "http://localhost:3000/api/health",
     reuseExistingServer: !process.env.CI,
   },

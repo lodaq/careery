@@ -30,19 +30,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: "npm"
-
+          bun-version: "1.4.4"
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: bunx playwright test
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -73,19 +71,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: "npm"
-
+          bun-version: "1.4.4"
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: bunx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: bunx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
       - name: Upload blob report
         if: ${{ !cancelled() }}
@@ -102,13 +98,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: "npm"
-
+          bun-version: "1.4.4"
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Download blob reports
         uses: actions/download-artifact@v4
@@ -118,7 +112,7 @@ jobs:
           merge-multiple: true
 
       - name: Merge reports
-        run: npx playwright merge-reports --reporter html ./all-blob-reports
+        run: bunx playwright merge-reports --reporter html ./all-blob-reports
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
@@ -141,16 +135,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: "npm"
-
+          bun-version: "1.4.4"
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Run tests
-        run: npx playwright test
+        run: bunx playwright test
         env:
           HOME: /root
 ```
@@ -165,11 +157,11 @@ FROM mcr.microsoft.com/playwright:v1.40.0-jammy
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+RUN bun install --frozen-lockfile
 
 COPY . .
 
-CMD ["npx", "playwright", "test"]
+CMD ["bunx", "playwright", "test"]
 ```
 
 ### Docker Compose
@@ -252,10 +244,10 @@ export default defineConfig({
 
 ```bash
 # Split into 4 shards, run shard 1
-npx playwright test --shard=1/4
+bunx playwright test --shard=1/4
 
 # Run shard 2
-npx playwright test --shard=2/4
+bunx playwright test --shard=2/4
 ```
 
 ### Configuration
@@ -275,7 +267,7 @@ export default defineConfig({
 
 ```bash
 # After all shards complete, merge blob reports
-npx playwright merge-reports --reporter html ./all-blob-reports
+bunx playwright merge-reports --reporter html ./all-blob-reports
 ```
 
 ## Environment Management
@@ -308,7 +300,7 @@ jobs:
         environment: [staging, production]
     steps:
       - name: Run tests
-        run: npx playwright test
+        run: bunx playwright test
         env:
           BASE_URL: ${{ matrix.environment == 'staging' && 'https://staging.example.com' || 'https://example.com' }}
           TEST_USER: ${{ secrets[format('TEST_USER_{0}', matrix.environment)] }}
@@ -319,7 +311,7 @@ jobs:
 ```yaml
 # GitHub Actions secrets
 - name: Run tests
-  run: npx playwright test
+  run: bunx playwright test
   env:
     TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
     TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
@@ -343,27 +335,25 @@ test("login", async ({ page }) => {
   id: playwright-cache
   with:
     path: ~/.cache/ms-playwright
-    key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+    key: playwright-${{ runner.os }}-${{ hashFiles('bun.lock') }}
 
 - name: Install Playwright browsers
   if: steps.playwright-cache.outputs.cache-hit != 'true'
-  run: npx playwright install --with-deps
+  run: bunx playwright install --with-deps
 
 - name: Install system deps only
   if: steps.playwright-cache.outputs.cache-hit == 'true'
-  run: npx playwright install-deps
+  run: bunx playwright install-deps
 ```
 
 ### Cache Node Modules
 
 ```yaml
-- uses: actions/setup-node@v4
+- uses: oven-sh/setup-bun@v2
   with:
-    node-version: 22
-    cache: "npm"
-
+    bun-version: "1.4.4"
 - name: Install dependencies
-  run: npm ci
+  run: bun install --frozen-lockfile
 ```
 
 ## Tag-Based Test Filtering
@@ -373,15 +363,15 @@ test("login", async ({ page }) => {
 ```yaml
 # Run smoke tests on PR
 - name: Run smoke tests
-  run: npx playwright test --grep @smoke
+  run: bunx playwright test --grep @smoke
 
 # Run full regression nightly
 - name: Run regression
-  run: npx playwright test --grep @regression
+  run: bunx playwright test --grep @regression
 
 # Exclude flaky tests
 - name: Run stable tests
-  run: npx playwright test --grep-invert @flaky
+  run: bunx playwright test --grep-invert @flaky
 ```
 
 ### PR vs Nightly Strategy
@@ -389,11 +379,11 @@ test("login", async ({ page }) => {
 ```yaml
 # .github/workflows/pr.yml - Fast feedback
 - name: Run critical tests
-  run: npx playwright test --grep "@smoke|@critical"
+  run: bunx playwright test --grep "@smoke|@critical"
 
 # .github/workflows/nightly.yml - Full coverage
 - name: Run all tests
-  run: npx playwright test --grep-invert @flaky
+  run: bunx playwright test --grep-invert @flaky
 ```
 
 ### Tag Filtering in Config
@@ -428,7 +418,7 @@ export default defineConfig({
 
 | Practice                      | Benefit                   |
 | ----------------------------- | ------------------------- |
-| Use `npm ci`                  | Deterministic installs    |
+| Use `bun install --frozen-lockfile`                  | Deterministic installs    |
 | Run headless in CI            | Faster, no display needed |
 | Set retries in CI only        | Handle flakiness          |
 | Upload artifacts on failure   | Debug failures            |

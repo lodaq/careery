@@ -52,7 +52,7 @@ The first argument is the action. Defaults to `status`.
    ```
 
 3. If `<action>` is `off`, follow up with a one-line note: "Done. New edits will not trigger the design hook in this project until you run `$impeccable hooks on`."
-4. If `<action>` is `on`, report what the command installed or repaired. If no installed skill folders were found or settings were skipped, surface that result and do not claim the hook will run. Otherwise note that the harness must load the updated settings (and satisfy any trust requirements) before it runs. On Hermes Agent, `on` cannot install or enable the plugin: if `impeccable context` reported `MANUAL_DETECTOR_REQUIRED`, tell the user to run `npx impeccable install` and then `hermes plugins enable impeccable-design-hook` instead.
+4. If `<action>` is `on`, report what the command installed or repaired. If no installed skill folders were found or settings were skipped, surface that result and do not claim the hook will run. Otherwise note that the harness must load the updated settings (and satisfy any trust requirements) before it runs. On Hermes Agent, `on` cannot install or enable the plugin: if `impeccable context` reported `MANUAL_DETECTOR_REQUIRED`, tell the user to run `bunx impeccable install` and then `hermes plugins enable impeccable-design-hook` instead.
 5. If `<action>` is `ignore-value`, `ignore-file`, or `ignore-rule`, just print the script output. The default scope is shared `.impeccable/config.json`; add `--local` only when the user explicitly asks for a private exception.
 6. If `<action>` is `status`, just print the script output. Do not add commentary unless the user asked a follow-up question.
 

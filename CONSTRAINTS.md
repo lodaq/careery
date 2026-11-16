@@ -16,11 +16,11 @@ User's standing rules, made checkable: **simple code, minimal code, fast app.**
 
 | Dimension | Rule | Checked by | Runs at |
 |-----------|------|-----------|---------|
-| Types | Zero type errors | `pnpm typecheck` | every edit |
-| Lint | Zero errors, zero warnings | `pnpm lint` | every edit |
-| Tests | All pass | `pnpm test` | every edit |
-| Resolver coverage | `src/lib/resolver.ts` ≥ 90% lines | `pnpm test -- src/lib/resolver.test.ts --coverage` | task end |
-| Client JS | ≤ 180 kB gzip first-load per route; `/interview-questions` ≤ 185 kB (modern-browser initial scripts, including framework) | `pnpm build` output, read at task end | task end |
+| Types | Zero type errors | `bun run typecheck` | every edit |
+| Lint | Zero errors, zero warnings | `bun run lint` | every edit |
+| Tests | All pass | `bun run test` | every edit |
+| Resolver coverage | `src/lib/resolver.ts` ≥ 90% lines | `bun run test -- src/lib/resolver.test.ts --coverage` | task end |
+| Client JS | ≤ 180 kB gzip first-load per route; `/interview-questions` ≤ 185 kB (modern-browser initial scripts, including framework) | `bun run build` output, read at task end | task end |
 | PDF generation | ≤ 5 s per resume, warm browser | timing script at `src/lib/pdf.ts` task end | task end |
 | Dependencies | Runtime dep count must not grow (recorded below) | diff of `package.json` dependencies at review | review |
 
@@ -97,7 +97,7 @@ and `PRODUCT.md`. The three-dependency figures above are historical.
 
 ## Current verification (2026-11-08)
 
-- `pnpm test`: 87 tests pass across 28 files; `pnpm typecheck`, `pnpm lint` and
+- `bun run test`: 87 tests pass across 28 files; `bun run typecheck`, `bun run lint` and
   the production build pass.
 - Data backup/restore: unit tests cover round-trip, validation, pre-restore
   snapshot and interview-question migration; `e2e/backup.spec.ts` downloads and

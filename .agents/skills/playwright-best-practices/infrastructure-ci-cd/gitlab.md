@@ -13,10 +13,10 @@
 ## Key Commands
 
 ```bash
-npx playwright install --with-deps    # install browsers + OS deps
-npx playwright test --shard=1/4       # run 1 of 4 parallel shards
-npx playwright merge-reports ./blob-report  # merge shard results
-npx playwright test --reporter=dot    # minimal output for CI logs
+bunx playwright install --with-deps    # install browsers + OS deps
+bunx playwright test --shard=1/4       # run 1 of 4 parallel shards
+bunx playwright merge-reports ./blob-report  # merge shard results
+bunx playwright test --reporter=dot    # minimal output for CI logs
 ```
 
 ## Patterns
@@ -36,20 +36,20 @@ stages:
 
 variables:
   CI: "true"
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  BUN_INSTALL_CACHE_DIR: "$CI_PROJECT_DIR/.bun/install/cache"
 
 cache:
   key:
     files:
-      - package-lock.json
+      - bun.lock
   paths:
-    - .npm/
+    - .bun/install/cache/
     - node_modules/
 
 setup:
   stage: install
   script:
-    - npm ci
+    - bun install --frozen-lockfile
   artifacts:
     paths:
       - node_modules/
@@ -59,7 +59,7 @@ e2e:
   stage: test
   needs: [setup]
   script:
-    - npx playwright test
+    - bunx playwright test
   artifacts:
     when: always
     paths:
@@ -86,20 +86,20 @@ stages:
 
 variables:
   CI: "true"
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  BUN_INSTALL_CACHE_DIR: "$CI_PROJECT_DIR/.bun/install/cache"
 
 cache:
   key:
     files:
-      - package-lock.json
+      - bun.lock
   paths:
-    - .npm/
+    - .bun/install/cache/
     - node_modules/
 
 setup:
   stage: install
   script:
-    - npm ci
+    - bun install --frozen-lockfile
   artifacts:
     paths:
       - node_modules/
@@ -110,7 +110,7 @@ e2e:
   needs: [setup]
   parallel: 4
   script:
-    - npx playwright test --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
+    - bunx playwright test --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
   artifacts:
     when: always
     paths:
@@ -125,7 +125,7 @@ combine-reports:
   needs: [e2e]
   when: always
   script:
-    - npx playwright merge-reports --reporter=html ./blob-report
+    - bunx playwright merge-reports --reporter=html ./blob-report
   artifacts:
     when: always
     paths:
@@ -164,9 +164,9 @@ e2e:staging:
     TEST_PASSWORD: $TEST_PASSWORD
     API_KEY: $API_KEY
   before_script:
-    - npm ci
+    - bun install --frozen-lockfile
   script:
-    - npx playwright test
+    - bunx playwright test
   artifacts:
     when: always
     paths:
@@ -204,7 +204,7 @@ variables:
 setup:
   stage: install
   script:
-    - npm ci
+    - bun install --frozen-lockfile
   artifacts:
     paths:
       - node_modules/
@@ -214,7 +214,7 @@ e2e:chromium:
   stage: test
   needs: [setup]
   script:
-    - npx playwright test --project=chromium
+    - bunx playwright test --project=chromium
   artifacts:
     when: always
     paths:
@@ -231,7 +231,7 @@ e2e:all-browsers:
     matrix:
       - PROJECT: [chromium, firefox, webkit]
   script:
-    - npx playwright test --project=$PROJECT
+    - bunx playwright test --project=$PROJECT
   artifacts:
     when: always
     paths:
@@ -265,11 +265,11 @@ e2e:integration:
     POSTGRES_PASSWORD: "postgres"
     POSTGRES_DB: "testdb"
   before_script:
-    - npm ci
-    - npx prisma db push
-    - npx prisma db seed
+    - bun install --frozen-lockfile
+    - bunx prisma db push
+    - bunx prisma db seed
   script:
-    - npx playwright test
+    - bunx playwright test
   artifacts:
     when: always
     paths:
@@ -290,9 +290,9 @@ e2e:nightly:
   stage: test
   image: mcr.microsoft.com/playwright:v1.48.0-noble
   before_script:
-    - npm ci
+    - bun install --frozen-lockfile
   script:
-    - npx playwright test --grep @regression
+    - bunx playwright test --grep @regression
   artifacts:
     when: always
     paths:
@@ -325,7 +325,7 @@ Set up the schedule in **CI/CD > Schedules**: `0 3 * * 1-5` (3 AM UTC, weekdays)
 | No `expire_in` on artifacts                          | Artifacts accumulate and consume storage                           | Set `expire_in: 14 days` for reports, `1 hour` for intermediate artifacts |
 | Hardcoding `CI_NODE_TOTAL` in shard flag             | Breaks when you change `parallel:` value                           | Use `--shard=$CI_NODE_INDEX/$CI_NODE_TOTAL`                               |
 | Skipping `needs:` between stages                     | Jobs wait for all previous stage jobs, not just their dependencies | Use `needs:` for precise dependency graphs                                |
-| Large `cache:` including `node_modules/` without key | Stale cache causes version conflicts                               | Key cache on `package-lock.json` hash                                     |
+| Large `cache:` including `node_modules/` without key | Stale cache causes version conflicts                               | Key cache on `bun.lock` hash                                     |
 
 ## Troubleshooting
 
@@ -336,7 +336,7 @@ Set up the schedule in **CI/CD > Schedules**: `0 3 * * 1-5` (3 AM UTC, weekdays)
 **Fix**: Match the Docker image tag to your Playwright version:
 
 ```yaml
-# Check your version: npm ls @playwright/test
+# Check your version: bun pm ls @playwright/test
 image: mcr.microsoft.com/playwright:v1.48.0-noble
 ```
 

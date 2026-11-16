@@ -7,11 +7,11 @@ import { FieldGroup, FieldLabel } from '@/components/ui/field';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { SortableList } from '@/components/ui/sortable-list';
 import { ChevronDownIcon } from 'lucide-react';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import type { CareerEntry } from '../../lib/types';
 import { BilingualInput } from '../../components/BilingualInput';
 
-export function EntryFields({ entry, changed }: { entry: CareerEntry; changed: () => void }) {
+export const EntryFields = memo(function EntryFields({ entry, changed }: { entry: CareerEntry; changed: () => void }) {
   const { confirm, confirmation } = useConfirmAction();
   const [newBulletIds, setNewBulletIds] = useState<string[]>([]);
   const [bullets, setBullets] = useState('bullets' in entry ? entry.bullets : []);
@@ -39,7 +39,7 @@ export function EntryFields({ entry, changed }: { entry: CareerEntry; changed: (
     {'bullets' in entry ? <div className="bullet-fields">
       <div className="achievement-section-heading"><h3>Achievements</h3><Button variant="outline" type="button" onClick={() => { const id = crypto.randomUUID(); setNewBulletIds((items) => [...items, id]); setBullets((items) => [...items, { id, text: { en: '' } }]); changed(); }}>Add achievement</Button></div>
       <SortableList items={bullets} label="Achievements" itemLabel={(_bullet, index) => `achievement ${index + 1}`} onReorder={(items) => { setBullets(items); changed(); }} renderItem={(bullet, index, handle) => <Collapsible className="bullet-row" key={bullet.id} onChangeCapture={(event) => { const input = event.target; if (input instanceof HTMLTextAreaElement && input.name.startsWith(`${entry.id}.${bullet.id}.`)) { const language = input.name.endsWith('.ar') ? 'ar' : 'en'; setBullets((items) => items.map((item) => item.id === bullet.id ? { ...item, text: { ...item.text, [language]: input.value } } : item)); } }} defaultOpen={newBulletIds.includes(bullet.id)}>
-        <div className="achievement-header">{handle}<CollapsibleTrigger render={<Button variant="ghost" />}><span>Achievement {index + 1}<small>{bullet.text.en || bullet.text.ar || 'New achievement'}</small></span><ChevronDownIcon className="entry-chevron" aria-hidden="true" /></CollapsibleTrigger></div>
+        <div className="achievement-header"><CollapsibleTrigger className="sortable-header" render={<Button variant="ghost" />}>{handle}<span>Achievement {index + 1}<small>{bullet.text.en || bullet.text.ar || 'New achievement'}</small></span><ChevronDownIcon className="entry-chevron" aria-hidden="true" /></CollapsibleTrigger></div>
         <CollapsibleContent keepMounted>
         <input type="hidden" name={`${entry.id}.bulletId`} value={bullet.id} />
         <BilingualInput name={`${entry.id}.${bullet.id}`} label={`Achievement ${index + 1}`} value={bullet.text} required multiline />
@@ -51,4 +51,4 @@ export function EntryFields({ entry, changed }: { entry: CareerEntry; changed: (
 
     </div> : null}
   </>;
-}
+});

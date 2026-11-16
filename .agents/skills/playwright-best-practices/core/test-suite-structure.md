@@ -13,7 +13,7 @@
 ### Project Setup
 
 ```bash
-npm init playwright@latest
+bun create playwright@latest
 ```
 
 ## Configuration
@@ -45,7 +45,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev",
+    command: "bun run dev",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
   },
@@ -113,7 +113,7 @@ test.describe("Checkout Flow", () => {
 Test individual components in isolation using Playwright Component Testing.
 
 ```bash
-npm init playwright@latest -- --ct
+bun create playwright@latest --ct
 ```
 
 For comprehensive component testing patterns including mounting, props, events, slots, mocking, and framework-specific examples (React, Vue, Svelte), see **[component-testing.md](../testing-patterns/component-testing.md)**.
@@ -280,10 +280,10 @@ export default defineConfig({
 
 ```bash
 # Update all snapshots
-npx playwright test --update-snapshots
+bunx playwright test --update-snapshots
 
 # Update specific test
-npx playwright test homepage.spec.ts --update-snapshots
+bunx playwright test homepage.spec.ts --update-snapshots
 ```
 
 ## Directory Structure
@@ -349,13 +349,13 @@ test.describe("API tests @api", () => {
 
 ```bash
 # Run smoke tests
-npx playwright test --grep @smoke
+bunx playwright test --grep @smoke
 
 # Run all except slow tests
-npx playwright test --grep-invert @slow
+bunx playwright test --grep-invert @slow
 
 # Combine tags
-npx playwright test --grep "@smoke|@critical"
+bunx playwright test --grep "@smoke|@critical"
 ```
 
 For project-based filtering and advanced project configuration, see **[projects-dependencies.md](projects-dependencies.md)**.

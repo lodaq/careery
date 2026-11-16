@@ -15,14 +15,14 @@
 ## CLI Quick Reference
 
 ```bash
-npm init playwright@latest                    # scaffold config + first test
-npx playwright test --config=custom.config.ts # use alternate config
-npx playwright test --project=chromium        # run single project
-npx playwright test --reporter=html           # override reporter
-npx playwright test --grep @smoke             # run tests tagged @smoke
-npx playwright test --grep-invert @slow       # exclude @slow tests
-npx playwright show-report                    # open last HTML report
-DEBUG=pw:api npx playwright test              # verbose logging
+bun create playwright@latest                    # scaffold config + first test
+bunx playwright test --config=custom.config.ts # use alternate config
+bunx playwright test --project=chromium        # run single project
+bunx playwright test --reporter=html           # override reporter
+bunx playwright test --grep @smoke             # run tests tagged @smoke
+bunx playwright test --grep-invert @slow       # exclude @slow tests
+bunx playwright show-report                    # open last HTML report
+DEBUG=pw:api bunx playwright test              # verbose logging
 ```
 
 ## Decision Guide
@@ -111,7 +111,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npm run start',
+    command: 'bun run start',
     url: 'http://localhost:4000',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
@@ -150,8 +150,8 @@ export default defineConfig({
 ```
 
 ```bash
-TEST_ENV=staging npx playwright test
-TEST_ENV=prod npx playwright test --grep @smoke
+TEST_ENV=staging bunx playwright test
+TEST_ENV=prod bunx playwright test --grep @smoke
 ```
 
 ### Setup Project with Dependencies
@@ -218,8 +218,8 @@ export default defineConfig({
   use: { baseURL: 'http://localhost:4000' },
   webServer: {
     command: process.env.CI
-      ? 'npm run build && npm run preview'
-      : 'npm run dev',
+      ? 'bun run build && bun run preview'
+      : 'bun run dev',
     url: 'http://localhost:4000',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
@@ -252,7 +252,7 @@ import { FullConfig } from '@playwright/test';
 
 export default async function globalSetup(config: FullConfig) {
   const { execSync } = await import('child_process');
-  execSync('npx prisma db seed', { stdio: 'inherit' });
+  execSync('bunx prisma db seed', { stdio: 'inherit' });
   process.env.TEST_RUN_ID = `run-${Date.now()}`;
 }
 ```
@@ -263,7 +263,7 @@ import { FullConfig } from '@playwright/test';
 
 export default async function globalTeardown(config: FullConfig) {
   const { execSync } = await import('child_process');
-  execSync('npx prisma db push --force-reset', { stdio: 'inherit' });
+  execSync('bunx prisma db push --force-reset', { stdio: 'inherit' });
 }
 ```
 
@@ -300,7 +300,7 @@ playwright/.auth/
 Install dotenv:
 
 ```bash
-npm install -D dotenv
+bun add -D dotenv
 ```
 
 ### Tag-Based Test Filtering
@@ -350,8 +350,8 @@ export default defineConfig({
 
 ```bash
 # Run specific project
-npx playwright test --project=smoke
-npx playwright test --project=regression
+bunx playwright test --project=smoke
+bunx playwright test --project=regression
 ```
 
 ### Artifact Collection Strategy
@@ -411,7 +411,7 @@ await page.goto('/dashboard');
 
 ```ts
 webServer: {
-  command: 'npm run dev',
+  command: 'bun run dev',
   url: 'http://localhost:4000/api/health',  // use real endpoint
   reuseExistingServer: !process.env.CI,
   timeout: 120_000,
@@ -439,8 +439,8 @@ export default defineConfig({
 **Fix**: Don't increase global timeout. Find slow step using trace:
 
 ```bash
-npx playwright test --trace on
-npx playwright show-report
+bunx playwright test --trace on
+bunx playwright show-report
 ```
 
 ## Related

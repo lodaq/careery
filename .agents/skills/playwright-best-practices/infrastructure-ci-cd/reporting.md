@@ -19,20 +19,20 @@
 
 ```bash
 # Display last HTML report
-npx playwright show-report
+bunx playwright show-report
 
 # Specify reporter
-npx playwright test --reporter=html
-npx playwright test --reporter=dot           # minimal CI output
-npx playwright test --reporter=line          # one line per test
-npx playwright test --reporter=json          # machine-readable
-npx playwright test --reporter=junit         # CI integration
+bunx playwright test --reporter=html
+bunx playwright test --reporter=dot           # minimal CI output
+bunx playwright test --reporter=line          # one line per test
+bunx playwright test --reporter=json          # machine-readable
+bunx playwright test --reporter=junit         # CI integration
 
 # Combine reporters
-npx playwright test --reporter=dot,html
+bunx playwright test --reporter=dot,html
 
 # Merge sharded reports
-npx playwright merge-reports --reporter=html ./blob-report
+bunx playwright merge-reports --reporter=html ./blob-report
 ```
 
 ## Reporter Configuration
@@ -218,10 +218,10 @@ export default defineConfig({
 
 ```bash
 # Local trace viewer
-npx playwright show-trace results/my-test/trace.zip
+bunx playwright show-trace results/my-test/trace.zip
 
 # From HTML report (click Traces tab)
-npx playwright show-report
+bunx playwright show-report
 
 # Online viewer: https://trace.playwright.dev
 ```

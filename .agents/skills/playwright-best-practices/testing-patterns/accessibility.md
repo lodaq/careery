@@ -13,7 +13,7 @@
 ### Setup
 
 ```bash
-npm install -D @axe-core/playwright
+bun add -D @axe-core/playwright
 ```
 
 ### Basic A11y Test
@@ -372,7 +372,7 @@ export default defineConfig({
 ```yaml
 # .github/workflows/a11y.yml
 - name: Run accessibility tests
-  run: npx playwright test --project=a11y
+  run: bunx playwright test --project=a11y
 ```
 
 ## Anti-Patterns to Avoid

@@ -28,12 +28,7 @@
 .resume-workbench .editor-section { grid-column:2; grid-row:2; min-height:0; overflow:auto; padding:28px; margin:0; border:0; border-radius:0; background:var(--card); }
 .resume-workbench .editor-section h2 { font-size:23px; }
 .resume-workbench .record-editor .entry-card { margin:0; padding:0; }
-.resume-workbench .entry-editor { grid-template-columns:44px minmax(0,1fr); }
-.resume-workbench .entry-editor > [data-slot=collapsible-trigger] { min-height:56px; padding:8px 12px; font-size:14px; }
-.resume-workbench .entry-drag-handle .sort-handle { min-height:56px; }
-.resume-workbench .entry-editor > [data-slot=collapsible-trigger] small { font-size:12px; }
 .resume-workbench .editor-section > .sortable-list { gap:12px; }
-.section-order-row { display:flex; align-items:center; gap:12px; min-height:44px; }
 .entry-edit-label { color:var(--primary); font-size:12px; }
 .resume-workbench .resume-preview-dock { grid-column:2; grid-row:2; overflow:auto; min-height:0; background:var(--muted); }
 .resume-workbench .preview-toolbar { position:sticky; top:0; padding:14px 16px; min-height:60px; border-bottom:1px solid var(--border); background:var(--card); z-index:4; }

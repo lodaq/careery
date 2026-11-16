@@ -324,7 +324,7 @@ export const test = base.extend<PerformanceFixtures>({
 ### Using playwright-lighthouse
 
 ```bash
-npm install -D playwright-lighthouse lighthouse
+bun add -D playwright-lighthouse lighthouse
 ```
 
 ```typescript
