@@ -50,3 +50,6 @@ captures/
 /.next-*/
 /.impeccable/
 .env*
+
+# Next.js local HTTPS certificates
+/certificates/

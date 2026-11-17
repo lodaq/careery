@@ -1,6 +1,6 @@
 # Careery — Capability Map & Project Spec
 
-> This map records the core resume-module contracts. See [implementation notes](../../tasks/todo.md) for progress and the feature guides in `docs/` for later additions.
+> This map records the core resume-module contracts. See the feature guides in `docs/` for later additions.
 
 Personal, local-first resume builder. Copy bilingual Career Record content into independent Profiles or Resumes; organize Resumes under Profiles or in Unfiled; tailor and export an A4 single-column PDF. See [domain language](../../GLOSSARY.md) and the [accepted content decision](../adr/0002-independent-content-and-resume-organization.md).
 

@@ -504,3 +504,22 @@ input[type=checkbox] { width:18px; height:18px; accent-color:var(--primary); }
   --landing-ledger: #f6efdc;
   --landing-ledger-border: #e2d8bb;
 }
+
+/* Clerk forms share the workspace palette and tactile control hierarchy. */
+.careery-auth-card {
+  border: 1px solid var(--border);
+  box-shadow: 0 var(--depth-card) 0 var(--depth-base);
+  max-width: calc(100vw - 32px);
+}
+.careery-auth-title { font-size: 1.5rem; font-weight: 650; letter-spacing: -.025em; }
+.careery-auth-subtitle { line-height: 1.6; }
+.careery-auth-primary, .careery-auth-social {
+  min-height: 44px;
+  box-shadow: 0 var(--depth-action) 0 var(--depth-base);
+}
+.careery-auth-primary { box-shadow: 0 var(--depth-action) 0 var(--depth-primary); }
+.careery-auth-input {
+  min-height: 44px;
+  box-shadow: inset 0 var(--depth-control) 0 var(--depth-base);
+}
+.careery-auth-footer { background: var(--muted); }

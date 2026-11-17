@@ -8,5 +8,27 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Browser extensions can add body attributes before React hydrates.
-  return <html lang="en" suppressHydrationWarning><body suppressHydrationWarning><script dangerouslySetInnerHTML={{ __html: "try{document.documentElement.classList.toggle('dark',localStorage.getItem('careery-theme')==='dark')}catch{document.documentElement.classList.remove('dark')}" }} /><ClerkProvider>{children}</ClerkProvider></body></html>;
+  return <html lang="en" suppressHydrationWarning><body suppressHydrationWarning><script dangerouslySetInnerHTML={{ __html: "try{document.documentElement.classList.toggle('dark',localStorage.getItem('careery-theme')==='dark')}catch{document.documentElement.classList.remove('dark')}" }} /><ClerkProvider appearance={{
+    options: { unsafe_disableDevelopmentModeWarnings: true },
+    variables: {
+      colorPrimary: 'var(--primary)',
+      colorPrimaryForeground: 'var(--primary-foreground)',
+      colorBackground: 'var(--card)',
+      colorForeground: 'var(--foreground)',
+      colorMutedForeground: 'var(--muted-foreground)',
+      colorBorder: 'var(--border)',
+      colorDanger: 'var(--destructive)',
+      fontFamily: 'var(--font-sans)',
+      borderRadius: 'var(--radius)',
+    },
+    elements: {
+      cardBox: 'careery-auth-card',
+      headerTitle: 'careery-auth-title',
+      headerSubtitle: 'careery-auth-subtitle',
+      formButtonPrimary: 'careery-auth-primary',
+      socialButtonsBlockButton: 'careery-auth-social',
+      formFieldInput: 'careery-auth-input',
+      footer: 'careery-auth-footer',
+    },
+  }}>{children}</ClerkProvider></body></html>;
 }

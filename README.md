@@ -11,7 +11,6 @@ The app includes Career Record editing, independent Profiles and Resumes, biling
 - [Independent content decision](docs/adr/0002-independent-content-and-resume-organization.md)
 - Feature guides: [applications](docs/application-tracking.md), [interview questions](docs/interview-questions.md), [analytics](docs/analytics.md), [Resume AI review](docs/resume-ai-review.md)
 - [Quality constraints](CONSTRAINTS.md)
-- [Implementation plan](tasks/plan.md) and [task cards](tasks/todo.md)
 
 Tooling: Next.js App Router, strict TypeScript, Tailwind for the app, isolated plain CSS for the Resume template, local JSON persistence, and Playwright PDF export.
 ## Development status
@@ -25,7 +24,7 @@ Careery is a personal app under active development, with Clerk authentication an
 - `src/lib/`: shared types, storage, PDF generation, and resume resolution.
 - `src/template/`: resume rendering and print styles.
 - `docs/`: specifications, feature guides, tooling references, and architecture decisions.
-- `e2e/`: browser tests; `scripts/`: demo-data tools; `tasks/`: plans and open notes.
+- `e2e/`: browser tests; `scripts/`: demo-data tools.
 - `public/`: static assets; `data/`: ignored local personal data; `data/backups/` holds pre-restore copies.
 
 ## Run locally
@@ -37,6 +36,10 @@ bun install
 bunx playwright install chromium
 NEXT_TELEMETRY_DISABLED=1 bun run dev
 ```
+
+For remote previews, run `bun run dev:https --hostname <development-hostname>` and trust the development certificate on the browser's machine. For an HTTPS tunnel, set `CAREERY_DEV_HOST` to its exact hostname. Non-loopback HTTP requests are rejected before authentication because Clerk's secure renewal cookies require HTTPS. Generated certificates are ignored by Git.
+
+The deployed `careery-lime.vercel.app` site currently uses Clerk development keys for testing. Production authentication requires an owned custom domain, verified Clerk DNS, matching production keys and production Google OAuth credentials. No custom domain is currently configured for use.
 
 Open http://127.0.0.1:3000. The development server binds only to loopback. The `/career-record` page edits bilingual content with automatic saving, validation and retry. It prevents stale tabs from overwriting newer saves. The home page creates and lists Profiles; Profile editors select Career Record copies and edit them independently. Deleting a Profile moves its Resumes to Unfiled. Resume PDF downloads use `/api/resumes/[id]/pdf`.
 

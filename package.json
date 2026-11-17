@@ -5,6 +5,7 @@
   "packageManager": "bun@1.4.4",
   "scripts": {
     "dev": "next dev --hostname localhost",
+    "dev:https": "next dev --experimental-https --hostname localhost",
     "build": "next build",
     "start": "next start --hostname localhost",
     "test": "vitest run",

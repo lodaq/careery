@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
+  allowedDevOrigins: process.env.CAREERY_DEV_HOST ? [process.env.CAREERY_DEV_HOST] : [],
   async headers() {
     return [{ source: '/api/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }];
   },
@@ -9,6 +10,6 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   distDir: process.env.CAREERY_BUILD_DIR ?? '.next',
-  experimental: { agentUpgrade: "security", exposeTestingApiInProductionBuild: process.env.CAREERY_INSTANT_TEST === '1' },
+  experimental: { exposeTestingApiInProductionBuild: process.env.CAREERY_INSTANT_TEST === '1' },
 };
 export default nextConfig;

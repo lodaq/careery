@@ -17,11 +17,11 @@ async function Feed({ searchParams }: { searchParams: Promise<Record<string, str
   const q = typeof params.q === 'string' ? params.q.slice(0, 200) : '';
   const category = typeof params.category === 'string' && categories.includes(params.category as typeof categories[number]) ? params.category : '';
   let feed;
-  try { feed = await readJobFeed(); } catch { return <section role="status"><h2>Jobs couldn’t be loaded</h2><p>The job source is unavailable. Try again shortly.</p><Button render={<a href="/jobs" />}>Try again</Button></section>; }
+  try { feed = await readJobFeed(); } catch { return <section role="status"><h2>Jobs couldn’t be loaded</h2><p>The job source is unavailable. Try again shortly.</p><Button nativeButton={false} render={<a href="/jobs" />}>Try again</Button></section>; }
   const jobs = feed.jobs.filter(j => (!category || j.category === category) && `${j.title} ${j.company}`.toLowerCase().includes(q.toLowerCase()));
   return <div className="max-w-4xl space-y-6">
     <search><form action="/jobs" method="get" className="flex flex-wrap items-end gap-3">
-      <div className="min-w-0 flex-1 space-y-2"><Label htmlFor="job-search">Role or company</Label><Input id="job-search" name="q" type="search" defaultValue={q} maxLength={200} /></div>
+      <div className="min-w-0 basis-full space-y-2 sm:flex-1 sm:basis-auto"><Label htmlFor="job-search">Role or company</Label><Input id="job-search" name="q" type="search" defaultValue={q} maxLength={200} /></div>
       <div className="space-y-2"><Label htmlFor="job-category">Category</Label><NativeSelect id="job-category" name="category" defaultValue={category}><NativeSelectOption value="">All categories</NativeSelectOption>{categories.map(c => <NativeSelectOption key={c} value={c}>{c}</NativeSelectOption>)}</NativeSelect></div>
       <Button type="submit">Filter jobs</Button>
     </form></search>
