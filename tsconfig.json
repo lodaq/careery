@@ -39,7 +39,9 @@
     ".next-browser/types/**/*.ts",
     ".next-browser/dev/types/**/*.ts",
     ".next-design/types/**/*.ts",
-    ".next-design/dev/types/**/*.ts"
+    ".next-design/dev/types/**/*.ts",
+    ".next-landing/types/**/*.ts",
+    ".next-landing/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -84,3 +84,18 @@ Set `CAREERY_SITE_URL` to the HTTPS production origin. Home and Resources are th
 Lint, typecheck, build and 113 tests passed. Temporary Clerk test users verified production backup download, repeated full restores with recovery snapshots, user isolation, protected storage and English/Arabic Chromium PDF exports. Signed-out visitors reach Clerk sign-in, and unauthenticated backup requests return 401. Test accounts were removed afterward. The final recheck could not directly verify or remove private Blob test records because production Blob credentials are unavailable locally. Local personal data was not migrated.
 
 Dependency audit reports 10 existing transitive findings. The high-severity Zod finding is in the shadcn CLI dependency tree (4.1.11); the runtime Blob dependency resolves Zod 4.6.7. The remaining findings concern development CLI/lint dependencies, not exposed application handlers. Dependency upgrades are deferred to a separate tooling update; review by 2026-11-23. The deployed app currently uses the existing Clerk development instance. Vercel's request-body limit also applies to large backup restores and attachment uploads.
+
+### Jobs feed
+
+Jobs discovers software engineering, school/university teaching, tutoring,
+instructional design and corporate training roles from Jobicy's free public API.
+Only explicit worldwide/Anywhere or Egypt eligibility is included. This source
+covers remote work, not Egypt on-site jobs. Category matching uses role titles;
+review the source listing before applying. No account content is sent to Jobicy.
+
+The shared Next.js cache revalidates on requests after one hour, with old results
+available during refresh (up to one day). Opening/filtering the page checks the
+cache; no background scheduler runs when nobody uses the feed. The discovery
+window is seven days with a three-hour source delay. Older listings leaving the
+feed are not classified as closed. Pagination is deduplicated by source ID;
+source failures show a retry state rather than publishing incomplete results.

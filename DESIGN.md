@@ -19,20 +19,20 @@ colors:
   chart-1: "var(--primary)"
   chart-2: "var(--muted-foreground)"
   chart-3: "var(--foreground)"
-  dark-background: "oklch(.19 .012 155)"
-  dark-foreground: "oklch(.93 .009 95)"
-  dark-card: "oklch(.23 .014 155)"
+  dark-background: "oklch(.205 .006 155)"
+  dark-foreground: "oklch(.93 .006 95)"
+  dark-card: "oklch(.30 .012 155)"
   dark-primary: "oklch(.76 .07 160)"
   dark-primary-foreground: "oklch(.19 .025 160)"
-  dark-secondary: "oklch(.29 .02 155)"
-  dark-muted: "oklch(.265 .012 155)"
-  dark-muted-foreground: "oklch(.72 .018 145)"
-  dark-accent: "oklch(.32 .035 155)"
-  dark-accent-foreground: "oklch(.9 .03 155)"
+  dark-secondary: "oklch(.37 .018 155)"
+  dark-muted: "oklch(.255 .009 155)"
+  dark-muted-foreground: "oklch(.79 .012 145)"
+  dark-accent: "oklch(.39 .04 155)"
+  dark-accent-foreground: "oklch(.93 .025 155)"
   dark-destructive: "oklch(.75 .13 28)"
-  dark-border: "oklch(.37 .017 155)"
-  dark-input: "oklch(.48 .02 155)"
-  dark-sidebar: "oklch(.21 .018 155)"
+  dark-border: "oklch(.66 .014 155)"
+  dark-input: "oklch(.68 .018 155)"
+  dark-sidebar: "oklch(.235 .009 155)"
 typography:
   headline:
     fontFamily: "Careery Sans, ui-sans-serif, system-ui, sans-serif"
@@ -165,6 +165,8 @@ Chart series reuse the existing palette: chart-1 aliases primary, chart-2 muted 
 Page headlines use the responsive headline role. Section titles use the title role; smaller headings use (16px, weight 600). Body text uses the body role; supporting copy commonly uses (12–14px). Standard controls use (14px, weight 500). Page introductions stop at (65ch). Counts use tabular numerals. The wordmark uses a compact heavy treatment (26px, weight 750), reduced to (23px) in the editor shell. The observed size ramp is recorded in frontmatter: caption (12px), supporting copy (13px), control label (14px), body (15px), subheading (16px), collection title (18px), section title (22px), editor title (23px), review score (24px), wordmark (26px), and responsive page headline (28–38px). Template miniature text (10px) is confined to document thumbnails and uses Georgia, serif rather than the interface font.
 
 ## Layout
+
+The public landing page at `/` follows the approved HTML reference: a raised header, forest-green ruled hero with overlapping flat document previews, feature cards, sample analytics, bilingual preview tabs and a final call to action. Signed-in users continue to Today. Its headline scales from 34px to 64px; small document-preview text scales from 8px to 12px. The 18px logo glyph and pill badges retain their supplied forms. Hero surfaces use `--hero-plate`, `--hero-rule` and `--depth-on-primary`, recomputed in both modes. Document-preview colors remain isolated from app theme colors.
 
 The workspace uses the official shadcn Base UI Sidebar, with a 232px expanded desktop rail, a 68px icon rail when collapsed, and a 288px mobile Sheet below 768px. SidebarHeader holds the wordmark, SidebarContent holds the scrollable navigation, and SidebarFooter holds the account menu with the avatar to the left of the name; sign out lives inside that menu. Browser tab titles use the root metadata template “Careery | Current page”; every route declares its page title. A shared header contains the sidebar toggle followed by the page’s existing title and description. Move page headings into that header through PageHeading, preserving dynamic text and rendering only one h1; do not repeat them in the page body. The toggle sits 12px from the main area’s left edge. SidebarHeader holds a 36px icon beside a compact Careery wordmark, The collapse trigger lives in the main header. In icon mode, hide the wordmark and destination labels, preserve the logo and 52px navigation targets, show destination tooltips, and keep the header toggle available. Account controls reduce to the avatar. Mobile uses the same header menu trigger and the registry Sheet, with its close control inside the sidebar.
 

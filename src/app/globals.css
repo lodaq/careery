@@ -490,3 +490,17 @@ input[type=checkbox] { width:18px; height:18px; accent-color:var(--primary); }
 .sortable-item .sortable-header:active { cursor:grabbing; }
 .sortable-item > .bullet-row,
 .sortable-item > .section-order-row { border:1px solid var(--border); border-radius:var(--radius); background:var(--card); box-shadow:0 var(--depth-card) 0 var(--depth-base); overflow:clip; }
+
+/* Landing surfaces recompute from the selected theme. Document colors stay isolated. */
+:root, .dark {
+  --depth-on-primary: color-mix(in oklch, var(--primary), black 55%);
+  --hero-plate: color-mix(in oklch, var(--primary), var(--primary-foreground) 24%);
+  --hero-rule: color-mix(in oklch, var(--primary-foreground), transparent 91%);
+  --landing-paper: #fff;
+  --landing-paper-border: #d8d4cb;
+  --landing-ink: #222;
+  --landing-paper-line: #d3cfc6;
+  --landing-paper-accent: #2f6f55;
+  --landing-ledger: #f6efdc;
+  --landing-ledger-border: #e2d8bb;
+}
